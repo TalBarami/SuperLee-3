@@ -1,10 +1,10 @@
-import Application.ConsoleInterface;
-import Application.ConsoleInterfaceImplementation;
+import Application.ConsoleMenu;
+import Application.ConsoleMenuImplementation;
 import Application.DatabaseImplementation;
 
 
 public class Program {
     public static void main(String[] args){
-        ConsoleInterface store = new ConsoleInterfaceImplementation(new DatabaseImplementation());
+        ConsoleMenu store = new ConsoleMenuImplementation(new DatabaseImplementation());
     }
 }

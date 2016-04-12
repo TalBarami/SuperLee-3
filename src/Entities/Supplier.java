@@ -1,10 +1,10 @@
 package Entities;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-/**
- * Created by Tal on 10/04/2016.
- */
+
 public class Supplier {
     private String id;
     private String name;
@@ -19,6 +19,7 @@ public class Supplier {
         this.bankAccount = bankAccount;
         this.paymentMethod = paymentMethod;
         this.contacts = contacts;
+        this.contract = null;
     }
 
     public String getId() {
@@ -67,5 +68,20 @@ public class Supplier {
 
     public void setContract(Contract contract) {
         this.contract = contract;
+    }
+
+    public HashMap<Product,Integer> getProducts(){
+        return contract.getProducts();
+    }
+
+    public List<String> getManufacturers(){
+        List<String> manufacturers = new ArrayList<>();
+        String m;
+        for(Product p : getProducts().keySet()){
+            m = p.getManufacturer();
+            if(!manufacturers.contains(m))
+                manufacturers.add(m);
+        }
+        return manufacturers;
     }
 }

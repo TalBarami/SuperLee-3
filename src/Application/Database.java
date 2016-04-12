@@ -3,21 +3,21 @@ package Application;
 import Entities.Order;
 import Entities.Supplier;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface Database {
 
     void AddSupplier();
     void EditSupplier();
     void RemoveSupplier();
-    Collection<Supplier> FindSupplierByID(String id);
-    Collection<Supplier> FindSuppliersByName(String name);
+    List<Supplier> FindSupplierByID(String id);
+    List<Supplier> FindSuppliersByName(String name);
     void AddContract();
 
     void CreateOrder();
-    Collection<Order> FindOrderByID(String id);
-    Collection<Order> FindOrdersByEmployee(String employeeID);
-    Collection<Order> FindOrdersBySupplier(String supplierID);
+    List<Order> FindOrderByID(String id);
+    List<Order> FindOrdersByEmployee(String employeeID);
+    List<Order> FindOrdersBySupplier(String supplierID);
 
     boolean checkCredentials(String username, String password);
 }

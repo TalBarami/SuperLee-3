@@ -2,14 +2,15 @@ package Entities;
 
 import javafx.util.Pair;
 
-/**
- * Created by Tal on 10/04/2016.
- */
+import java.util.HashMap;
+
+
 public class Contract {
     private DeliveryMethod deliveryMethod;
     private int deliveryTime;
     private Pair<Integer, Integer> discountLimits;
     private double discount;
+    private HashMap<Product,Integer> products;
 
     @Override
     public String toString() {
@@ -21,11 +22,12 @@ public class Contract {
                 '}';
     }
 
-    public Contract(DeliveryMethod deliveryMethod, int deliveryTime, Pair<Integer, Integer> discountLimits, double discount) {
+    public Contract(DeliveryMethod deliveryMethod, int deliveryTime, Pair<Integer, Integer> discountLimits, double discount, HashMap<Product, Integer> products) {
         this.deliveryMethod = deliveryMethod;
         this.deliveryTime = deliveryTime;
         this.discountLimits = discountLimits;
         this.discount = discount;
+        this.products = products;
     }
 
     public DeliveryMethod getDeliveryMethod() {
@@ -58,5 +60,13 @@ public class Contract {
 
     public void setDiscount(double discount) {
         this.discount = discount;
+    }
+
+    public HashMap<Product, Integer> getProducts(){
+        return products;
+    }
+
+    public void setProducts(HashMap<Product, Integer> products){
+        this.products = products;
     }
 }

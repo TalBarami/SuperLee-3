@@ -3,7 +3,7 @@ package Application;
 import Entities.Order;
 import Entities.Supplier;
 
-import java.util.Collection;
+import java.util.List;
 
 
 public class DatabaseImplementation implements Database {
@@ -23,12 +23,12 @@ public class DatabaseImplementation implements Database {
     }
 
     @Override
-    public Collection<Supplier> FindSupplierByID(String id) {
+    public List<Supplier> FindSupplierByID(String id) {
         return null;
     }
 
     @Override
-    public Collection<Supplier> FindSuppliersByName(String name) {
+    public List<Supplier> FindSuppliersByName(String name) {
         return null;
     }
 
@@ -43,17 +43,17 @@ public class DatabaseImplementation implements Database {
     }
 
     @Override
-    public Collection<Order> FindOrderByID(String id) {
+    public List<Order> FindOrderByID(String id) {
         return null;
     }
 
     @Override
-    public Collection<Order> FindOrdersByEmployee(String employeeID) {
+    public List<Order> FindOrdersByEmployee(String employeeID) {
         return null;
     }
 
     @Override
-    public Collection<Order> FindOrdersBySupplier(String supplierID) {
+    public List<Order> FindOrdersBySupplier(String supplierID) {
         return null;
     }
 
