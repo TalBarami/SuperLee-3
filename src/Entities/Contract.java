@@ -2,14 +2,16 @@ package Entities;
 
 import javafx.util.Pair;
 
-/**
- * Created by Tal on 10/04/2016.
- */
+import java.util.HashMap;
+
+
 public class Contract {
     private DeliveryMethod deliveryMethod;
     private int deliveryTime;
     private Pair<Integer, Integer> discountLimits;
     private double discount;
+    private HashMap<Product,Integer> products;
+
 
     @Override
     public String toString() {
