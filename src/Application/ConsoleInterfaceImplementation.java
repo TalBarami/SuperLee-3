@@ -38,9 +38,11 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
             "Back"
     };
     private BufferedReader buffer;
+    private Database database;
     private int selected;
 
-    public ConsoleInterfaceImplementation(){
+    public ConsoleInterfaceImplementation(Database database){
+        this.database = database;
         buffer = new BufferedReader(new InputStreamReader(System.in));
         RunStore();
     }
@@ -61,7 +63,7 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
         String password = readLine();
 
         // TODO: verify access.
-        if(true)
+        if(database.checkCredentials(username,password))
             System.out.println("Welcome to 'Super-Lee'!");
         else{
             System.out.printf("Invalid user name or password. (%d attempts left)\n",attempts-1);

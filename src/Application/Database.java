@@ -19,4 +19,6 @@ public interface Database {
     Order FindOrderByID(String id);
     Collection<Order> FindOrdersByEmployee(String employeeID);
     Collection<Order> FindOrdersBySupplier(String supplierID);
+
+    boolean checkCredentials(String username, String password);
 }
