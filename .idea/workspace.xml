@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/ConsoleInterfaceImplementation.java" afterPath="$PROJECT_DIR$/src/Application/ConsoleInterfaceImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Database.java" afterPath="$PROJECT_DIR$/src/Application/Database.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -513,7 +511,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460462268217</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added check credentials method in the interface.">
+      <created>1460462927248</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1460462927248</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -559,7 +563,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I am testing." />
     <MESSAGE value="Database interface changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Database interface changes." />
+    <MESSAGE value="Added check credentials method in the interface." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added check credentials method in the interface." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
