@@ -1,8 +1,13 @@
 package Application;
 
+import Entities.Order;
+import Entities.Supplier;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collection;
+import java.util.Collections;
 
 public class ConsoleInterfaceImplementation implements ConsoleInterface {
     private static final int MAX_ATTEMPTS = 3;
@@ -32,9 +37,9 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
             "Back"
     };
     private static final String orderSearch[] = {
+            "By order ID",
             "By employee ID",
             "By supplier ID",
-            "By order ID",
             "Back"
     };
     private BufferedReader buffer;
@@ -139,7 +144,9 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
     }
 
     private void ViewOrder(){
-
+        Collection<Order> orders = SearchOrder();
+        if(orders == null)
+            return;
     }
 
     private void AddNewSupplier(){
@@ -170,33 +177,49 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
 
     }
 
-    private void SearchSupplier(){
+    private Collection<Supplier> SearchSupplier(){
+        Collection<Supplier> suppliers = null;
         while(true) {
-            selected = MenuSelect(supplierSearch);
+            selected = MenuSelect("How would you like to search?",supplierSearch);
             switch (selected) {
                 case 1: // By id
+                    System.out.println("Please enter supplier ID:");
+                    suppliers = database.FindSupplierByID(readLine());
                     break;
                 case 2: // By name
+                    System.out.println("Please enter supplier name:");
+                    suppliers = database.FindSuppliersByName(readLine());
                     break;
                 case 3: // Back
-                    return;
+                    return null;
             }
+            if(suppliers == null || suppliers.isEmpty())
+                System.out.println("There were no suppliers matching this search.");
         }
     }
 
-    private void SearchOrder(){
+    private Collection<Order> SearchOrder(){
+        Collection<Order> orders = null;
         while(true) {
-            selected = MenuSelect(orderSearch);
+            selected = MenuSelect("How would you like to search?",orderSearch);
             switch (selected) {
                 case 1: // By id
+                    System.out.println("Please enter order ID:");
+                    orders = database.FindOrderByID(readLine());
                     break;
                 case 2: // By employee
+                    System.out.println("Please enter employee ID:");
+                    orders = database.FindOrdersByEmployee(readLine());
                     break;
                 case 3: // By supplier
+                    System.out.println("Please enter supplier ID:");
+                    orders = database.FindOrdersBySupplier(readLine());
                     break;
                 case 4: // Back
-                    return;
+                    return null;
             }
+            if(orders == null || orders.isEmpty())
+                System.out.println("There were no orders matching this search.");
         }
     }
 
@@ -240,5 +263,3 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
         return retValue;
     }
 }
-
-

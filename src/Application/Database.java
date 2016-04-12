@@ -10,13 +10,12 @@ public interface Database {
     void AddSupplier();
     void EditSupplier();
     void RemoveSupplier();
-    Supplier FindSupplierByID(String id);
+    Collection<Supplier> FindSupplierByID(String id);
     Collection<Supplier> FindSuppliersByName(String name);
-
     void AddContract();
 
     void CreateOrder();
-    Order FindOrderByID(String id);
+    Collection<Order> FindOrderByID(String id);
     Collection<Order> FindOrdersByEmployee(String employeeID);
     Collection<Order> FindOrdersBySupplier(String supplierID);
 

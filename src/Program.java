@@ -1,10 +1,10 @@
+import Application.ConsoleInterface;
 import Application.ConsoleInterfaceImplementation;
+import Application.DatabaseImplementation;
 
-/**
- * Created by Tal on 10/04/2016.
- */
+
 public class Program {
     public static void main(String[] args){
-        ConsoleInterfaceImplementation s = new ConsoleInterfaceImplementation();
+        ConsoleInterface store = new ConsoleInterfaceImplementation(new DatabaseImplementation());
     }
 }
