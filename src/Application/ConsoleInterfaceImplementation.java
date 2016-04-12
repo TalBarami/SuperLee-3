@@ -4,10 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Tal on 10/04/2016.
- */
-
 public class ConsoleInterfaceImplementation implements ConsoleInterface {
     private static final int MAX_ATTEMPTS = 3;
     private static final String menuCommands[] = {
@@ -46,12 +42,11 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
 
     public ConsoleInterfaceImplementation(){
         buffer = new BufferedReader(new InputStreamReader(System.in));
-        selected = 0;
-        System.out.println("Welcome to 'Super-Lee', please log-in to continue.");
         RunStore();
     }
 
     public void RunStore(){
+        System.out.println("Welcome to 'Super-Lee', please log-in to continue.");
         Login(MAX_ATTEMPTS);
         MainMenu();
         System.exit(0);
@@ -78,13 +73,13 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
         while(true){
             selected = MenuSelect(menuCommands);
             switch(selected){
-                case 1:
+                case 1: // Suppliers
                     SuppliersMenu();
                     break;
-                case 2:
+                case 2: // Orders
                     OrdersMenu();
                     break;
-                case 3:
+                case 3: // Exit
                     return;
             }
         }
@@ -94,28 +89,28 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
         while(true) {
             selected = MenuSelect(suppliersCommands);
             switch (selected) {
-                case 1:
+                case 1: // New supplier
                     AddNewSupplier();
                     break;
-                case 2:
+                case 2: // Edit supplier
                     EditSupplier();
                     break;
-                case 3:
+                case 3: // Remove supplier
                     RemoveSupplier();
                     break;
-                case 4:
+                case 4: // Add contract
                     AddContract();
                     break;
-                case 5:
+                case 5: // View supplier
                     ViewSupplier();
                     break;
-                case 6:
+                case 6: // View products
                     ViewSuppliersProducts();
                     break;
-                case 7:
+                case 7: // View manufacturers
                     ViewSuppliersManufacturers();
                     break;
-                case 8:
+                case 8: // Back
                     return;
             }
         }
@@ -125,13 +120,13 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
         while(true) {
             selected = MenuSelect(ordersCommands);
             switch (selected) {
-                case 1:
+                case 1: // New order
                     CreateNewOrder();
                     break;
-                case 2:
+                case 2: // View Order
                     ViewOrder();
                     break;
-                case 3:
+                case 3: // Back
                     return;
             }
         }
@@ -177,11 +172,11 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
         while(true) {
             selected = MenuSelect(supplierSearch);
             switch (selected) {
-                case 1:
+                case 1: // By id
                     break;
-                case 2:
+                case 2: // By name
                     break;
-                case 3:
+                case 3: // Back
                     return;
             }
         }
@@ -191,15 +186,13 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
         while(true) {
             selected = MenuSelect(orderSearch);
             switch (selected) {
-                case 1:
-                    CreateNewOrder();
+                case 1: // By id
                     break;
-                case 2:
+                case 2: // By employee
                     break;
-                case 3:
-
+                case 3: // By supplier
                     break;
-                case 4:
+                case 4: // Back
                     return;
             }
         }
@@ -219,9 +212,7 @@ public class ConsoleInterfaceImplementation implements ConsoleInterface {
     }
 
     private int displayMenu(String message, String[] arr){
-        if(message.isEmpty())
-            message = "Please choose one of the following:";
-        System.out.println(message);
+        System.out.println(message.isEmpty() ? "Please choose one of the following:" : message);
         for (int i = 0; i < arr.length; i++)
             System.out.printf("%d. %s\n", i + 1, arr[i]);
         return parseInt(readLine());
