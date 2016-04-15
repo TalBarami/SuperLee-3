@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
+import java.sql.*;
 
 
 public class DatabaseImplementation implements Database {
@@ -24,6 +25,7 @@ public class DatabaseImplementation implements Database {
 
      private void openConnection(){
          try{
+             System.out.println("blab");
              Class.forName("org.sqlite.JDBC");
              dbConnection = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB.db");
              dbConnection.setAutoCommit(false);
@@ -37,10 +39,12 @@ public class DatabaseImplementation implements Database {
      }
 
     private void closeConnection(){
+        if (dbResult==null || dbStatement==null || dbConnection==null)
+            return;
         try{
             dbResult.close();
             dbStatement.close();
-            dbResult.close();
+            dbConnection.close();
         }
         catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -72,16 +76,20 @@ public class DatabaseImplementation implements Database {
         Contract contract;
         try{
             openConnection();
-            String query="SELECT * FROM Employees WHERE ID="+id+";";
-            ResultSet rs=dbStatement.executeQuery(query);
-            while(rs.next()){
-                name=rs.getString("name");
-                bankAccount=rs.getString("bankAccount");
-                pm=getPaymentMethodByID(rs.getInt("paymentMethod"));
+            String query="SELECT * FROM Suppliers WHERE ID="+id+";";
+            System.out.println(query);
+            dbResult=dbStatement.executeQuery(query);
+            System.out.println("2");
+            while(dbResult.next()){
+                System.out.println("1");
+                name=dbResult.getString("name");
+                bankAccount=dbResult.getString("bankAccount");
+                pm=getPaymentMethodByID(dbResult.getInt("paymentMethod"));
                 contract=getContractBySupplierID(id);
                 contacts=getContactsBySupplierID(id);
                 Supplier supplier=new Supplier(id,name,bankAccount,pm,contacts);
                 supplier.setContract(contract);
+                System.out.println(supplier.toString());
                 suppliers.add(supplier);
             }
         }
@@ -102,7 +110,7 @@ public class DatabaseImplementation implements Database {
         Contract contract=null;
         try{
             openConnection();
-            String query="SELECT suuplierID,price  FROM SuppliersProductsPrices WHERE supplierID="+id+";";
+            String query="SELECT supplierID,price  FROM SuppliersProductsPrices WHERE supplierID="+id+";";
             ResultSet rs=dbStatement.executeQuery(query);
             while(rs.next()){
                 products=getProductsWithPricesBySupplierID(id);
@@ -275,7 +283,7 @@ public class DatabaseImplementation implements Database {
         List<Order> ans=new ArrayList<>();
         Employee emp;
         Supplier supp;
-        Date date;
+        /*Date date;*/
         boolean arrived;
         double totalPrice;
         HashMap<Product,Integer> products;
@@ -359,16 +367,24 @@ public class DatabaseImplementation implements Database {
         boolean answer=false;
         try{
             openConnection();
-            String query="SELECT COUNT(*) as result FROM Employees WHERE userName="+username+" and password="+password+";";
-            ResultSet rs=dbStatement.executeQuery(query);
-            if(rs.getInt("result")==1)
+            System.out.println("here1");
+            String query="SELECT COUNT(*) as result FROM Employees WHERE userName=\""+username+"\" and password=\""+password+"\";";
+            System.out.println(query);
+            dbResult=dbStatement.executeQuery(query);
+            System.out.println("here2");
+
+            if(dbResult.getInt("result")==1){
+                System.out.println(dbResult.getInt("result")+"");
                 answer=true;
+            }
         }
         catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
+        System.out.println("here6");
         closeConnection();
+        System.out.println("here4");
         return answer;
     }
 }

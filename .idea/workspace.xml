@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/ConsoleMenuImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/ConsoleMenuImplementation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperLeeDB.db" afterPath="$PROJECT_DIR$/SuperLeeDB.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Contract.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Contract.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" afterPath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/Contract.java" afterPath="$PROJECT_DIR$/src/Entities/Contract.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" afterPath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/Supplier.java" afterPath="$PROJECT_DIR$/src/Entities/Supplier.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Program.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11722913">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
@@ -74,45 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="e#356#357#0" expanded="false" />
-                <element signature="e#381#382#0" expanded="false" />
-                <element signature="e#417#418#0" expanded="false" />
-                <element signature="e#445#446#0" expanded="false" />
-                <element signature="e#480#481#0" expanded="false" />
-                <element signature="e#511#512#0" expanded="false" />
-                <element signature="e#559#560#0" expanded="false" />
-                <element signature="e#599#600#0" expanded="false" />
-                <element signature="e#634#635#0" expanded="false" />
-                <element signature="e#665#666#0" expanded="false" />
-                <element signature="e#713#714#0" expanded="false" />
-                <element signature="e#753#754#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Supplier.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -133,55 +100,58 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49466193">
+              <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#739#740#0" expanded="false" />
-                <element signature="e#764#765#0" expanded="false" />
-                <element signature="e#799#800#0" expanded="false" />
-                <element signature="e#827#828#0" expanded="false" />
-                <element signature="e#864#865#0" expanded="false" />
-                <element signature="e#895#896#0" expanded="false" />
-                <element signature="e#945#946#0" expanded="false" />
-                <element signature="e#985#986#0" expanded="false" />
-                <element signature="e#1022#1023#0" expanded="false" />
-                <element signature="e#1053#1054#0" expanded="false" />
-                <element signature="e#1103#1104#0" expanded="false" />
-                <element signature="e#1143#1144#0" expanded="false" />
-                <element signature="e#1172#1173#0" expanded="false" />
-                <element signature="e#1199#1200#0" expanded="false" />
-                <element signature="e#1237#1238#0" expanded="false" />
-                <element signature="e#1269#1270#0" expanded="false" />
-                <element signature="e#1303#1304#0" expanded="false" />
-                <element signature="e#1333#1334#0" expanded="false" />
-                <element signature="e#1380#1381#0" expanded="false" />
-                <element signature="e#1418#1419#0" expanded="false" />
-                <element signature="e#1455#1456#0" expanded="false" />
-                <element signature="e#1488#1489#0" expanded="false" />
-                <element signature="e#1540#1541#0" expanded="false" />
-                <element signature="e#1584#1585#0" expanded="false" />
-                <element signature="e#1635#1636#0" expanded="false" />
-                <element signature="e#1663#1664#0" expanded="false" />
-                <element signature="e#1724#1725#0" expanded="false" />
-                <element signature="e#1758#1759#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#11567#11568#0" expanded="true" />
+                <element signature="e#11594#11595#0" expanded="true" />
+                <element signature="e#11674#11675#0" expanded="true" />
+                <element signature="e#11701#11702#0" expanded="true" />
+                <marker date="1460726163601" expanded="true" signature="1992:2025" placeholder="SELECT * FRO... Employees" />
+                <marker date="1460726163601" expanded="true" signature="3318:3389" placeholder="SELECT suupl... SuppliersProductsPrices" />
+                <marker date="1460726163601" expanded="true" signature="4330:4399" placeholder="SELECT produ... SuppliersProductsPrices" />
+                <marker date="1460726163601" expanded="true" signature="4970:5019" placeholder="SELECT name,... Products" />
+                <marker date="1460726163601" expanded="true" signature="5594:5634" placeholder="SELECT name Manufacturers" />
+                <marker date="1460726163601" expanded="true" signature="6165:6281" placeholder="SELECT metho... Contracts" />
+                <marker date="1460726163601" expanded="true" signature="7195:7311" placeholder="SELECT metho... PaymentMethods" />
+                <marker date="1460726163601" expanded="true" signature="8265:8323" placeholder="SELECT name,... SuupliersContacts" />
+                <marker date="1460726163601" expanded="true" signature="9282:9313" placeholder="SELECT * FRO... Orders" />
+                <marker date="1460726163601" expanded="true" signature="10309:10358" placeholder="SELECT userN... Employees" />
+                <marker date="1460726163601" expanded="true" signature="10998:11058" placeholder="SELECT produ... ProductsInOrders" />
+                <marker date="1460726163601" expanded="true" signature="11930:12016" placeholder="SELECT COUNT... Employees" />
+                <marker date="1460726163601" expanded="true" signature="11930:12029" placeholder="SELECT COUNT... Employees" />
+                <marker date="1460726163601" expanded="true" signature="11930:12032" placeholder="SELECT COUNT... Employees" />
+                <marker date="1460726163601" expanded="true" signature="11930:12033" placeholder="SELECT COUNT... Employees" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+      <file leaf-file-name="ConsoleMenuImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#8454#8455#0" expanded="false" />
-                <element signature="e#8481#8482#0" expanded="false" />
-                <element signature="e#11214#11215#0" expanded="false" />
-                <element signature="e#11241#11242#0" expanded="false" />
-                <element signature="e#11321#11322#0" expanded="false" />
-                <element signature="e#11348#11349#0" expanded="false" />
-              </folding>
+              <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SuppliersMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -249,19 +219,19 @@
         <option value="$PROJECT_DIR$/src/Program.java" />
         <option value="$PROJECT_DIR$/src/Application/ConsoleInterfaceImplementation.java" />
         <option value="$PROJECT_DIR$/src/Application/Database.java" />
-        <option value="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
-        <option value="$PROJECT_DIR$/src/Entities/Supplier.java" />
         <option value="$PROJECT_DIR$/src/Entities/Order.java" />
         <option value="$PROJECT_DIR$/src/Application/SuppliersInterface.java" />
         <option value="$PROJECT_DIR$/src/Application/ConsoleMenu.java" />
-        <option value="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
         <option value="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
         <option value="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" />
         <option value="$PROJECT_DIR$/src/Application/Utils.java" />
         <option value="$PROJECT_DIR$/src/Program.java" />
+        <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
+        <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
+        <option value="$PROJECT_DIR$/src/Entities/Supplier.java" />
+        <option value="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
         <option value="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
-        <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
-        <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
+        <option value="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
       </list>
     </option>
   </component>
@@ -308,8 +278,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -381,16 +349,19 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sqlite-jdbc-3.8.11.2.jar!/" />
   </component>
   <component name="RunManager" selected="Application.Program">
     <configuration default="false" name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -496,6 +467,133 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -510,6 +608,16 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -575,6 +683,9 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -588,24 +699,18 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -664,6 +769,21 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.Program" />
     </list>
@@ -687,6 +807,7 @@
       <workItem from="1460487259929" duration="7583000" />
       <workItem from="1460719199599" duration="455000" />
       <workItem from="1460720588365" duration="51000" />
+      <workItem from="1460723937145" duration="2260000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -740,25 +861,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15531000" />
+    <option name="totallyTimeSpent" value="17791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1404073" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32694477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32677597" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32807216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31038252" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16505896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16458334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17447917" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -767,8 +887,9 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17484343" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1404073" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1014" y="348" width="742" height="401" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -832,37 +953,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#739#740#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#864#865#0" expanded="false" />
-            <element signature="e#895#896#0" expanded="false" />
-            <element signature="e#945#946#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1053#1054#0" expanded="false" />
-            <element signature="e#1103#1104#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1199#1200#0" expanded="false" />
-            <element signature="e#1237#1238#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1380#1381#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1488#1489#0" expanded="false" />
-            <element signature="e#1540#1541#0" expanded="false" />
-            <element signature="e#1584#1585#0" expanded="false" />
-            <element signature="e#1635#1636#0" expanded="false" />
-            <element signature="e#1663#1664#0" expanded="false" />
-            <element signature="e#1724#1725#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -878,20 +969,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#356#357#0" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#599#600#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-            <element signature="e#753#754#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -945,37 +1023,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#739#740#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#864#865#0" expanded="false" />
-            <element signature="e#895#896#0" expanded="false" />
-            <element signature="e#945#946#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1053#1054#0" expanded="false" />
-            <element signature="e#1103#1104#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1199#1200#0" expanded="false" />
-            <element signature="e#1237#1238#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1380#1381#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1488#1489#0" expanded="false" />
-            <element signature="e#1540#1541#0" expanded="false" />
-            <element signature="e#1584#1585#0" expanded="false" />
-            <element signature="e#1635#1636#0" expanded="false" />
-            <element signature="e#1663#1664#0" expanded="false" />
-            <element signature="e#1724#1725#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -991,20 +1039,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#356#357#0" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#599#600#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-            <element signature="e#753#754#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,37 +1093,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#739#740#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#864#865#0" expanded="false" />
-            <element signature="e#895#896#0" expanded="false" />
-            <element signature="e#945#946#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1053#1054#0" expanded="false" />
-            <element signature="e#1103#1104#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1199#1200#0" expanded="false" />
-            <element signature="e#1237#1238#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1380#1381#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1488#1489#0" expanded="false" />
-            <element signature="e#1540#1541#0" expanded="false" />
-            <element signature="e#1584#1585#0" expanded="false" />
-            <element signature="e#1635#1636#0" expanded="false" />
-            <element signature="e#1663#1664#0" expanded="false" />
-            <element signature="e#1724#1725#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,20 +1109,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="21" />
-          <folding>
-            <element signature="e#356#357#0" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#599#600#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-            <element signature="e#753#754#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,20 +1148,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#356#357#0" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#599#600#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-            <element signature="e#753#754#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,13 +1178,26 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#8454#8455#0" expanded="false" />
-            <element signature="e#8481#8482#0" expanded="false" />
-            <element signature="e#11214#11215#0" expanded="false" />
-            <element signature="e#11241#11242#0" expanded="false" />
-            <element signature="e#11321#11322#0" expanded="false" />
-            <element signature="e#11348#11349#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#11567#11568#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11674#11675#0" expanded="true" />
+            <element signature="e#11701#11702#0" expanded="true" />
+            <marker date="1460726163601" expanded="true" signature="1992:2025" placeholder="SELECT * FRO... Employees" />
+            <marker date="1460726163601" expanded="true" signature="3318:3389" placeholder="SELECT suupl... SuppliersProductsPrices" />
+            <marker date="1460726163601" expanded="true" signature="4330:4399" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460726163601" expanded="true" signature="4970:5019" placeholder="SELECT name,... Products" />
+            <marker date="1460726163601" expanded="true" signature="5594:5634" placeholder="SELECT name Manufacturers" />
+            <marker date="1460726163601" expanded="true" signature="6165:6281" placeholder="SELECT metho... Contracts" />
+            <marker date="1460726163601" expanded="true" signature="7195:7311" placeholder="SELECT metho... PaymentMethods" />
+            <marker date="1460726163601" expanded="true" signature="8265:8323" placeholder="SELECT name,... SuupliersContacts" />
+            <marker date="1460726163601" expanded="true" signature="9282:9313" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460726163601" expanded="true" signature="10309:10358" placeholder="SELECT userN... Employees" />
+            <marker date="1460726163601" expanded="true" signature="10998:11058" placeholder="SELECT produ... ProductsInOrders" />
+            <marker date="1460726163601" expanded="true" signature="11930:12016" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460726163601" expanded="true" signature="11930:12029" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460726163601" expanded="true" signature="11930:12032" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460726163601" expanded="true" signature="11930:12033" placeholder="SELECT COUNT... Employees" />
           </folding>
         </state>
       </provider>
@@ -1240,13 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="51" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1255,52 +1240,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding>
-            <element signature="e#254#255#0" expanded="false" />
-            <element signature="e#294#295#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="15" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#739#740#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#864#865#0" expanded="false" />
-            <element signature="e#895#896#0" expanded="false" />
-            <element signature="e#945#946#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1053#1054#0" expanded="false" />
-            <element signature="e#1103#1104#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1199#1200#0" expanded="false" />
-            <element signature="e#1237#1238#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1380#1381#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1488#1489#0" expanded="false" />
-            <element signature="e#1540#1541#0" expanded="false" />
-            <element signature="e#1584#1585#0" expanded="false" />
-            <element signature="e#1635#1636#0" expanded="false" />
-            <element signature="e#1663#1664#0" expanded="false" />
-            <element signature="e#1724#1725#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,40 +1257,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#8454#8455#0" expanded="false" />
-            <element signature="e#8481#8482#0" expanded="false" />
-            <element signature="e#11214#11215#0" expanded="false" />
-            <element signature="e#11241#11242#0" expanded="false" />
-            <element signature="e#11321#11322#0" expanded="false" />
-            <element signature="e#11348#11349#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#356#357#0" expanded="false" />
-            <element signature="e#381#382#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
-            <element signature="e#445#446#0" expanded="false" />
-            <element signature="e#480#481#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#559#560#0" expanded="false" />
-            <element signature="e#599#600#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#713#714#0" expanded="false" />
-            <element signature="e#753#754#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,37 +1269,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#739#740#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#864#865#0" expanded="false" />
-            <element signature="e#895#896#0" expanded="false" />
-            <element signature="e#945#946#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-            <element signature="e#1053#1054#0" expanded="false" />
-            <element signature="e#1103#1104#0" expanded="false" />
-            <element signature="e#1143#1144#0" expanded="false" />
-            <element signature="e#1172#1173#0" expanded="false" />
-            <element signature="e#1199#1200#0" expanded="false" />
-            <element signature="e#1237#1238#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1333#1334#0" expanded="false" />
-            <element signature="e#1380#1381#0" expanded="false" />
-            <element signature="e#1418#1419#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1488#1489#0" expanded="false" />
-            <element signature="e#1540#1541#0" expanded="false" />
-            <element signature="e#1584#1585#0" expanded="false" />
-            <element signature="e#1635#1636#0" expanded="false" />
-            <element signature="e#1663#1664#0" expanded="false" />
-            <element signature="e#1724#1725#0" expanded="false" />
-            <element signature="e#1758#1759#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1400,14 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1432,9 +1309,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11722913">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49466193">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#11567#11568#0" expanded="true" />
+            <element signature="e#11594#11595#0" expanded="true" />
+            <element signature="e#11674#11675#0" expanded="true" />
+            <element signature="e#11701#11702#0" expanded="true" />
+            <marker date="1460726163601" expanded="true" signature="1992:2025" placeholder="SELECT * FRO... Employees" />
+            <marker date="1460726163601" expanded="true" signature="3318:3389" placeholder="SELECT suupl... SuppliersProductsPrices" />
+            <marker date="1460726163601" expanded="true" signature="4330:4399" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460726163601" expanded="true" signature="4970:5019" placeholder="SELECT name,... Products" />
+            <marker date="1460726163601" expanded="true" signature="5594:5634" placeholder="SELECT name Manufacturers" />
+            <marker date="1460726163601" expanded="true" signature="6165:6281" placeholder="SELECT metho... Contracts" />
+            <marker date="1460726163601" expanded="true" signature="7195:7311" placeholder="SELECT metho... PaymentMethods" />
+            <marker date="1460726163601" expanded="true" signature="8265:8323" placeholder="SELECT name,... SuupliersContacts" />
+            <marker date="1460726163601" expanded="true" signature="9282:9313" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460726163601" expanded="true" signature="10309:10358" placeholder="SELECT userN... Employees" />
+            <marker date="1460726163601" expanded="true" signature="10998:11058" placeholder="SELECT produ... ProductsInOrders" />
+            <marker date="1460726163601" expanded="true" signature="11930:12016" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460726163601" expanded="true" signature="11930:12029" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460726163601" expanded="true" signature="11930:12032" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460726163601" expanded="true" signature="11930:12033" placeholder="SELECT COUNT... Employees" />
+          </folding>
         </state>
       </provider>
     </entry>

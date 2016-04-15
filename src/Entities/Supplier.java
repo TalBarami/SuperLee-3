@@ -26,6 +26,16 @@ public class Supplier {
         return id;
     }
 
+    @Override
+    public String toString() {
+        return "Supplier{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", bankAccount='" + bankAccount + '\'' +
+                ", paymentMethod=" + paymentMethod +
+                '}';
+    }
+
     public void setId(String id) {
         this.id = id;
     }

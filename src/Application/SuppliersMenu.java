@@ -127,6 +127,8 @@ public class SuppliersMenu {
             }
             if(suppliers == null || suppliers.isEmpty())
                 System.out.println("There were no suppliers matching this search.");
+            else
+                return suppliers;
         }
     }
 
