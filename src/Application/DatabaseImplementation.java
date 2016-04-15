@@ -3,15 +3,12 @@ package Application;
 import Entities.*;
 import javafx.util.Pair;
 
-<<<<<<< HEAD
 import java.util.List;
-=======
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
->>>>>>> refs/remotes/origin/Working-with-SQL
 
 
 public class DatabaseImplementation implements Database {
@@ -68,9 +65,6 @@ public class DatabaseImplementation implements Database {
 
     @Override
     public List<Supplier> FindSupplierByID(String id) {
-<<<<<<< HEAD
-        return null;
-=======
         List<Supplier> suppliers=new ArrayList<>();
         String name,bankAccount;
         PaymentMethod pm;
@@ -134,7 +128,7 @@ public class DatabaseImplementation implements Database {
             String query="SELECT productID,price FROM SuppliersProductsPrices WHERE suuplierID="+id+";";
             ResultSet rs=dbStatement.executeQuery(query);
             while(rs.next()){
-                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),new Integer(rs.getInt("price")));
+                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("price"));
             }
         }
         catch ( Exception e ) {
@@ -146,7 +140,6 @@ public class DatabaseImplementation implements Database {
     }
 
     private Product getProductByID(String id){
-        String name,manufacturer;
         Product ans=null;
         try{
             openConnection();
@@ -257,7 +250,6 @@ public class DatabaseImplementation implements Database {
         }
         closeConnection();
         return contacts;
->>>>>>> refs/remotes/origin/Working-with-SQL
     }
 
     @Override
@@ -279,9 +271,6 @@ public class DatabaseImplementation implements Database {
 
     @Override
     public List<Order> FindOrderByID(String id) {
-<<<<<<< HEAD
-        return null;
-=======
         List<Order> ans=new ArrayList<>();
         Employee emp;
         Supplier supp;
@@ -330,7 +319,6 @@ public class DatabaseImplementation implements Database {
         }
         closeConnection();
         return ans;
->>>>>>> refs/remotes/origin/Working-with-SQL
     }
 
 
@@ -341,7 +329,7 @@ public class DatabaseImplementation implements Database {
             String query="SELECT productID,amount FROM ProductsInOrders WHERE orderID="+id+";";
             ResultSet rs=dbStatement.executeQuery(query);
             while(rs.next()){
-                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),new Integer(rs.getInt("amount")));
+                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("amount"));
             }
         }
         catch ( Exception e ) {
