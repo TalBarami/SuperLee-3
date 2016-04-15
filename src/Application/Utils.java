@@ -7,8 +7,6 @@ import java.io.InputStreamReader;
 public class Utils {
     private static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 
-
-
     public static int MenuSelect(String message, String[] arr){
         int selected = displayMenu(message, arr);
         while(selected < 1 || selected > arr.length) {
