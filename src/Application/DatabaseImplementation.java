@@ -358,7 +358,7 @@ public class DatabaseImplementation implements Database {
         boolean answer=false;
         try{
             openConnection();
-            String query="SELECT COUNT(*) as result FROM Employees WHERE userName=\""+username+"\" and password=\""+password+"\";";
+            String query="SELECT COUNT(*) as result FROM Employees WHERE userName="+username+" and password="+password+";";
             ResultSet rs=dbStatement.executeQuery(query);
             if(rs.getInt("result")==1)
                 answer=true;
