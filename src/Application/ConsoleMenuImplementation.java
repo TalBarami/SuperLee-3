@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 public class ConsoleMenuImplementation implements ConsoleMenu {
     private static final int MAX_ATTEMPTS = 3;
 
-    private BufferedReader buffer;
     private Database database;
     private SuppliersMenu suppliersMenu;
     private OrdersMenu ordersMenu;
@@ -22,7 +21,6 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         this.database = database;
         suppliersMenu = new SuppliersMenu(database);
         ordersMenu = new OrdersMenu(database);
-        buffer = new BufferedReader(new InputStreamReader(System.in));
         RunStore();
     }
 
