@@ -72,7 +72,7 @@ public class DatabaseImplementation implements Database {
         Contract contract;
         try{
             openConnection();
-            String query="SELECT * FROM Employees WHERE ID=\""+id+"\";";
+            String query="SELECT * FROM Employees WHERE ID="+id+";";
             ResultSet rs=dbStatement.executeQuery(query);
             while(rs.next()){
                 name=rs.getString("name");
@@ -102,7 +102,7 @@ public class DatabaseImplementation implements Database {
         Contract contract=null;
         try{
             openConnection();
-            String query="SELECT suuplierID,price  FROM SuppliersProductsPrices WHERE suuplierID="+id+";";
+            String query="SELECT suuplierID,price  FROM SuppliersProductsPrices WHERE supplierID="+id+";";
             ResultSet rs=dbStatement.executeQuery(query);
             while(rs.next()){
                 products=getProductsWithPricesBySupplierID(id);
@@ -125,7 +125,7 @@ public class DatabaseImplementation implements Database {
         HashMap<Product,Integer> ans=new HashMap<>();
         try{
             openConnection();
-            String query="SELECT productID,price FROM SuppliersProductsPrices WHERE suuplierID="+id+";";
+            String query="SELECT productID,price FROM SuppliersProductsPrices WHERE supplierID="+id+";";
             ResultSet rs=dbStatement.executeQuery(query);
             while(rs.next()){
                 ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("price"));
