@@ -40,19 +40,18 @@ public class DatabaseImplementation implements Database {
         }
     }
 
-
     @Override
-    public void AddSupplier() {
+    public void AddSupplier(Supplier supplier){
 
     }
 
     @Override
-    public void EditSupplier() {
+    public void EditSupplier(Supplier oldSupplier, Supplier newSupplier){
 
     }
 
     @Override
-    public void RemoveSupplier() {
+    public void RemoveSupplier(Supplier supplier){
 
     }
 
