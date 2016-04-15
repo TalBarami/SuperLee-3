@@ -126,6 +126,7 @@ public class DatabaseImplementation implements Database {
         try{
             openConnection();
             String query="SELECT productID,price FROM SuppliersProductsPrices WHERE supplierID="+id+";";
+
             ResultSet rs=dbStatement.executeQuery(query);
             while(rs.next()){
                 ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("price"));
