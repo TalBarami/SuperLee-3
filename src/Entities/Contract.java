@@ -2,6 +2,10 @@ package Entities;
 
 import javafx.util.Pair;
 
+<<<<<<< HEAD
+=======
+import java.net.Inet4Address;
+>>>>>>> refs/remotes/origin/Working-with-SQL
 import java.util.HashMap;
 
 
@@ -11,6 +15,10 @@ public class Contract {
     private Pair<Integer, Integer> discountLimits;
     private double discount;
     private HashMap<Product,Integer> products;
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/Working-with-SQL
 
     @Override
     public String toString() {
@@ -22,12 +30,20 @@ public class Contract {
                 '}';
     }
 
+<<<<<<< HEAD
     public Contract(DeliveryMethod deliveryMethod, int deliveryTime, Pair<Integer, Integer> discountLimits, double discount, HashMap<Product, Integer> products) {
+=======
+    public Contract(DeliveryMethod deliveryMethod, int deliveryTime, Pair<Integer, Integer> discountLimits, double discount, HashMap<Product,Integer> products) {
+>>>>>>> refs/remotes/origin/Working-with-SQL
         this.deliveryMethod = deliveryMethod;
         this.deliveryTime = deliveryTime;
         this.discountLimits = discountLimits;
         this.discount = discount;
+<<<<<<< HEAD
         this.products = products;
+=======
+        this.products=products;
+>>>>>>> refs/remotes/origin/Working-with-SQL
     }
 
     public DeliveryMethod getDeliveryMethod() {
@@ -62,11 +78,19 @@ public class Contract {
         this.discount = discount;
     }
 
+<<<<<<< HEAD
     public HashMap<Product, Integer> getProducts(){
         return products;
     }
 
     public void setProducts(HashMap<Product, Integer> products){
+=======
+    public HashMap<Product, Integer> getProducts() {
+        return products;
+    }
+
+    public void setProducts(HashMap<Product, Integer> products) {
+>>>>>>> refs/remotes/origin/Working-with-SQL
         this.products = products;
     }
 }
