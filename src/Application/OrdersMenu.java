@@ -13,12 +13,6 @@ public class OrdersMenu {
             "View order",
             "Back"
     };
-    /*private static final String orderSearch[] = {
-            "By order ID",
-            "By employee ID",
-            "By supplier ID",
-            "Back"
-    };*/
 
     public OrdersMenu(ConsoleMenuImplementation consoleMenu, Database database){
         this.consoleMenu=consoleMenu;
@@ -53,29 +47,4 @@ public class OrdersMenu {
             System.out.printf("%s\n\n",o.toString());
         }
     }
-
-    /*public List<Order> searchOrder(){
-        List<Order> orders = null;
-        while(true) {
-            selected = Utils.MenuSelect("How would you like to search?",orderSearch);
-            switch (selected) {
-                case 1: // By id
-                    System.out.println("Please enter order ID:");
-                    orders = database.FindOrderByID(Utils.readLine());
-                    break;
-                case 2: // By employee
-                    System.out.println("Please enter employee ID:");
-                    orders = database.FindOrdersByEmployee(Utils.readLine());
-                    break;
-                case 3: // By supplier
-                    System.out.println("Please enter supplier ID:");
-                    orders = database.FindOrdersBySupplier(Utils.readLine());
-                    break;
-                case 4: // Back
-                    return null;
-            }
-            if(orders == null || orders.isEmpty())
-                System.out.println("There were no orders matching this search.");
-        }
-    }*/
 }

@@ -46,4 +46,9 @@ public class Utils {
         }
         return retValue;
     }
+
+    public static void clearConsole(){
+        for(int clear = 0; clear < 1000; clear++)
+            System.out.println("\n") ;
+    }
 }

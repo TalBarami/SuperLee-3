@@ -73,7 +73,7 @@ public class SuppliersMenu {
     }
 
     private void removeSupplier(){
-        // TODO
+        database.RemoveSupplier(consoleMenu.getSupplier());
     }
 
     private void addContract(){

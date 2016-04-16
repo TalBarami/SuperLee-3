@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="Added:&#10;- addSupplier&#10;- editSupplier">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperLeeDB.db" afterPath="$PROJECT_DIR$/SuperLeeDB.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/ConsoleMenuImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/ConsoleMenuImplementation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Database.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Database.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/PaymentMethod.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/PaymentMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" afterPath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Database.java" afterPath="$PROJECT_DIR$/src/Application/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" afterPath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/OrdersMenu.java" afterPath="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Utils.java" afterPath="$PROJECT_DIR$/src/Application/Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/PaymentMethod.java" afterPath="$PROJECT_DIR$/src/Entities/PaymentMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/Supplier.java" afterPath="$PROJECT_DIR$/src/Entities/Supplier.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,30 +47,40 @@
       <file leaf-file-name="SuppliersMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-37.25">
-              <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.527778">
+              <caret line="79" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1865#1866#0" expanded="true" />
                 <element signature="e#1919#1920#0" expanded="true" />
-                <element signature="e#3725#3726#0" expanded="true" />
-                <element signature="e#3768#3769#0" expanded="true" />
-                <element signature="method#createSupplier#1;class#SuppliersMenu#0" expanded="false" />
+                <element signature="e#2341#2342#0" expanded="true" />
+                <element signature="e#2407#2408#0" expanded="true" />
                 <element signature="method#selectPaymentMethods#0;class#SuppliersMenu#0" expanded="false" />
-                <element signature="method#selectContacts#0;class#SuppliersMenu#0" expanded="false" />
-                <element signature="e#7084#7085#0" expanded="true" />
-                <element signature="e#7127#7128#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/Database.java">
+      <file leaf-file-name="Contract.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="43" />
-              <folding />
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,11 +89,8 @@
         <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="49" />
-              <folding>
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-              </folding>
+              <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="105" column="15" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="15" />
+              <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,24 +107,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+      <file leaf-file-name="PaymentMethod.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.15575221">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
-                <marker date="1460744795718" expanded="true" signature="1631:1665" placeholder=" SELECT statement (SUPPLIERS)" />
-                <marker date="1460744795718" expanded="true" signature="2880:2952" placeholder=" SELECT statement (SUPPLIERSPRODUCTSPRICES)" />
-                <marker date="1460744795718" expanded="true" signature="4210:4280" placeholder=" SELECT statement (SUPPLIERSPRODUCTSPRICES)" />
-                <marker date="1460744795718" expanded="true" signature="5166:5216" placeholder=" SELECT statement (PRODUCTS)" />
-                <marker date="1460744795718" expanded="true" signature="6106:6147" placeholder=" SELECT statement (MANUFACTURERS)" />
-                <marker date="1460744795718" expanded="true" signature="6991:7108" placeholder=" SELECT statement (CONTRACTS, DELIVERYMETHODS)" />
-                <marker date="1460744795718" expanded="true" signature="8334:8451" placeholder=" SELECT statement (PAYMENTMETHODS, SUPPLIERS)" />
-                <marker date="1460744795718" expanded="true" signature="9718:9777" placeholder=" SELECT statement (SUUPLIERSCONTACTS)" />
-                <marker date="1460744795718" expanded="true" signature="11052:11084" placeholder=" SELECT statement (ORDERS)" />
-                <marker date="1460744795718" expanded="true" signature="12367:12417" placeholder=" SELECT statement (EMPLOYEES)" />
-                <marker date="1460744795718" expanded="true" signature="13370:13431" placeholder=" SELECT statement (PRODUCTSINORDERS)" />
-                <marker date="1460744795718" expanded="true" signature="14713:14785" placeholder=" SELECT statement (EMPLOYEES)" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -190,15 +175,15 @@
         <option value="$PROJECT_DIR$/src/Program.java" />
         <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
         <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
-        <option value="$PROJECT_DIR$/src/Entities/PaymentMethod.java" />
         <option value="$PROJECT_DIR$/src/Entities/Supplier.java" />
         <option value="$PROJECT_DIR$/src/Application/Database.java" />
         <option value="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
         <option value="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
-        <option value="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
         <option value="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" />
         <option value="$PROJECT_DIR$/src/Application/Utils.java" />
+        <option value="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
         <option value="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
+        <option value="$PROJECT_DIR$/src/Entities/PaymentMethod.java" />
       </list>
     </option>
   </component>
@@ -245,7 +230,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -318,6 +302,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -680,7 +665,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460723817677</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added:&#10;- addSupplier&#10;- editSupplier">
+      <created>1460749560801</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1460749560801</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -693,18 +684,16 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1404073" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32694477" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32581738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1014" y="348" width="742" height="401" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32807216" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16505896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -715,7 +704,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17484343" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1014" y="348" width="742" height="401" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1032,18 +1023,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2244898">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1072,16 +1058,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1129,39 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29662523">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#271#295#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="15" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33570158">
-          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1170,39 +1113,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="49" />
-          <folding>
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-37.25">
-          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1919#1920#0" expanded="true" />
-            <element signature="e#3725#3726#0" expanded="true" />
-            <element signature="e#3768#3769#0" expanded="true" />
-            <element signature="method#createSupplier#1;class#SuppliersMenu#0" expanded="false" />
-            <element signature="method#selectPaymentMethods#0;class#SuppliersMenu#0" expanded="false" />
-            <element signature="method#selectContacts#0;class#SuppliersMenu#0" expanded="false" />
-            <element signature="e#7084#7085#0" expanded="true" />
-            <element signature="e#7127#7128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
+        <state vertical-scroll-proportion="0.0">
           <caret line="153" column="16" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
           <folding>
             <marker date="1460744795718" expanded="true" signature="1631:1665" placeholder=" SELECT statement (SUPPLIERS)" />
@@ -1217,6 +1130,77 @@
             <marker date="1460744795718" expanded="true" signature="12367:12417" placeholder=" SELECT statement (EMPLOYEES)" />
             <marker date="1460744795718" expanded="true" signature="13370:13431" placeholder=" SELECT statement (PRODUCTSINORDERS)" />
             <marker date="1460744795718" expanded="true" signature="14713:14785" placeholder=" SELECT statement (EMPLOYEES)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.051461987">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.527778">
+          <caret line="79" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1865#1866#0" expanded="true" />
+            <element signature="e#1919#1920#0" expanded="true" />
+            <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2407#2408#0" expanded="true" />
+            <element signature="method#selectPaymentMethods#0;class#SuppliersMenu#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15575221">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
