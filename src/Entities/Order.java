@@ -2,6 +2,7 @@ package Entities;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Tal on 10/04/2016.
@@ -13,8 +14,26 @@ public class Order {
     private Date date;
     private boolean arrived;
     private double totalPrice;
-    private HashMap<Product, Integer> order;
+    private Map<Product, Integer> order;
 
+    @Override
+    public String toString() {
+        return "===== Order Details =====\n" +
+                " Order ID  : '" + id + '\'' +
+                "\n Employee ID: " + employee.getId() +
+                "\n Supplier : " + supplier.getName() +
+                "\n Date : " + date.toString() +
+                "\n Arrived : " + arrived +
+                "\n Total Price : " + totalPrice +
+                "\n Products in order : \n" + productsInOrderToString();
+    }
+    private String productsInOrderToString(){
+        String toString="";
+        for(Product product : order.keySet()){
+            toString+="\t\tProduct : "+product.getName() + "\tAmount : " + order.get(product) +".\n";
+        }
+        return toString;
+    }
     public Order(String id, Employee employee, Supplier supplier, Date date, boolean arrived, double totalPrice, HashMap<Product, Integer> order) {
         this.id = id;
         this.employee = employee;
@@ -73,7 +92,7 @@ public class Order {
         this.totalPrice = totalPrice;
     }
 
-    public HashMap<Product, Integer> getOrder() {
+    public Map<Product, Integer> getOrder() {
         return order;
     }
 

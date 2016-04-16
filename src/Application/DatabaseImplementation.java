@@ -2,21 +2,19 @@ package Application;
 
 import Entities.*;
 import javafx.util.Pair;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.sql.*;
 import java.util.*;
 
-
-
 public class DatabaseImplementation implements Database {
     private Connection dbConnection;
 
-     public DatabaseImplementation(){
-         dbConnection=null;
+    public DatabaseImplementation(){
+        dbConnection=null;
      }
-
-     private void openConnection(){
+    private void openConnection(){
          try{
              Class.forName("org.sqlite.JDBC");
              dbConnection = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB.db");
@@ -27,7 +25,6 @@ public class DatabaseImplementation implements Database {
              System.exit(0);
          }
      }
-
     private void closeConnection(){
         if (dbConnection==null)
             return;
@@ -39,25 +36,51 @@ public class DatabaseImplementation implements Database {
             System.exit(0);
         }
     }
+    public Employee checkCredentials(String username, String password) {
+        Employee connectedUser=null;
+        PreparedStatement ps=null;
+        ResultSet dbResult=null;
+        try{
+            openConnection();
+            String query="SELECT COUNT(*) as result FROM Employees WHERE userName=? and password=?";
+            ps=dbConnection.prepareStatement(query);
+            ps.setString(1,username);
+            ps.setString(2,password);
+            dbResult=ps.executeQuery();
 
-    @Override
+            if(dbResult.getInt("result")==1){
+                connectedUser=getEmployeeByUserName(username);
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+                dbResult.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+            return connectedUser;
+        }
+    }
+
+    /** Suppliers managamemnt **/
     public void AddSupplier(Supplier supplier){
 
     }
-
-    @Override
     public void EditSupplier(Supplier oldSupplier, Supplier newSupplier){
 
     }
-
-    @Override
     public void RemoveSupplier(Supplier supplier){
 
     }
-
-    @Override
     public List<Supplier> FindSupplierByID(String id) {
-        List<Supplier> suppliers=new ArrayList<>();
+        return FindSupplier("ID",id);
+        /*List<Supplier> suppliers=new ArrayList<>();
         String name,bankAccount;
         PaymentMethod pm;
         HashMap<String,String> contacts;
@@ -86,7 +109,118 @@ public class DatabaseImplementation implements Database {
             System.exit(0);
         }
         closeConnection();
-        return suppliers;
+        return suppliers;*/
+    }
+    public List<Supplier> FindSuppliersByName(String suppName) {
+        return FindSupplier("name",suppName);
+        /*List<Supplier> suppliers=new ArrayList<>();
+        String name,bankAccount;
+        PaymentMethod pm;
+        HashMap<String,String> contacts;
+        Contract contract;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try{
+            openConnection();
+            String query="SELECT * FROM Suppliers WHERE name LIKE '%"+suppName+"%'";
+            ps=dbConnection.prepareStatement(query);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                name=rs.getString("name");
+                bankAccount=rs.getString("bankAccount");
+                pm=getPaymentMethodByID(rs.getInt("paymentMethod"));
+                contract=getContractBySupplierID(suppName);
+                contacts=getContactsBySupplierID(suppName);
+                Supplier supplier=new Supplier(name,name,bankAccount,pm,contacts);
+                supplier.setContract(contract);
+                suppliers.add(supplier);
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        closeConnection();
+        return suppliers;*/
+    }
+    private List<Supplier> FindSupplier(String idOrName,String pramater){
+        List<Supplier> suppliers=new ArrayList<>();
+        String name,bankAccount;
+        PaymentMethod pm;
+        HashMap<String,String> contacts;
+        Contract contract;
+        int id;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try{
+            openConnection();
+            String queryID="SELECT * FROM Suppliers WHERE ID=?";
+            String queryName="SELECT * FROM Suppliers WHERE name LIKE '%"+pramater+"%'";
+            if(idOrName.equals("ID")){
+                ps=dbConnection.prepareStatement(queryID);
+                id=Integer.parseInt(pramater);
+            }
+            else{
+                ps=dbConnection.prepareStatement(queryName);
+                id=getIdBySupplierName(pramater);
+
+            }
+            ps.setString(1,pramater);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                name=rs.getString("name");
+                bankAccount=rs.getString("bankAccount");
+                pm=getPaymentMethodByID(rs.getInt("paymentMethod"));
+
+                contract=getContractBySupplierID(String.valueOf(id));
+                contacts=getContactsBySupplierID(String.valueOf(id));
+                Supplier supplier=new Supplier(name,name,bankAccount,pm,contacts);
+                supplier.setContract(contract);
+                suppliers.add(supplier);
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+            return suppliers;
+        }
+    }
+    private int getIdBySupplierName(String suppName){
+        int id=0;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try{
+            openConnection();
+            String query="SELECT ID FROM Suppliers WHERE name=?";
+            ps.setString(1,suppName);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                id=rs.getInt("ID");
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+            return id;
+        }
     }
 
     private Contract getContractBySupplierID(String id){
@@ -129,7 +263,6 @@ public class DatabaseImplementation implements Database {
         }
 
     }
-
     private HashMap<Product,Integer> getProductsWithPricesBySupplierID(String id){
         HashMap<Product,Integer> ans=new HashMap<>();
         ResultSet rs=null;
@@ -159,7 +292,6 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
-
     private Product getProductByID(String id){
         Product ans=null;
         ResultSet rs=null;
@@ -189,7 +321,6 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
-
     private String getManufacturerByID(int id){
         String ans="";
         ResultSet rs=null;
@@ -219,7 +350,6 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
-
     private DeliveryMethod getDeliveryBySupplierID(int id){
         DeliveryMethod dm=null;
         PreparedStatement ps=null;
@@ -259,8 +389,6 @@ public class DatabaseImplementation implements Database {
             return dm;
         }
     }
-
-
     private PaymentMethod getPaymentMethodByID(int id){
         PaymentMethod method=null;
         ResultSet rs=null;
@@ -300,7 +428,6 @@ public class DatabaseImplementation implements Database {
             return method;
         }
     }
-
     private HashMap<String,String> getContactsBySupplierID(String id){
         HashMap<String,String> contacts=new HashMap<>();
         PreparedStatement ps=null;
@@ -331,29 +458,57 @@ public class DatabaseImplementation implements Database {
         }
     }
 
-    @Override
-    public List<Supplier> FindSuppliersByName(String name) {
-        return null;
-    }
 
-    @Override
+    /** Contract Management **/
     public void AddContract() {
 
     }
 
-    @Override
+    /** Order Managementm **/
     public void CreateOrder() {
 
     }
-
-
-
-    @Override
+    private HashMap<Product,Integer> getProductsAndAmountsInOrderByOrderID(int id){
+        HashMap<Product,Integer> ans=new HashMap<>();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try{
+            openConnection();
+            String query="SELECT productID,amount FROM ProductsInOrders WHERE orderID=?";
+            ps=dbConnection.prepareStatement(query);
+            ps.setInt(1,id);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("amount"));
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                rs.close();
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+            return ans;
+        }
+    }
+    public List<Order> FindOrdersByEmployee(String employeeID) {
+        return null;
+    }
+    public List<Order> FindOrdersBySupplier(String supplierID) {
+        return null;
+    }
     public List<Order> FindOrderByID(String id) {
+        System.out.println("asasd");
         List<Order> ans=new ArrayList<>();
         Employee emp;
         Supplier supp;
-        /*Date date;*/
+        Date date;
         boolean arrived;
         double totalPrice;
         HashMap<Product,Integer> products;
@@ -370,9 +525,39 @@ public class DatabaseImplementation implements Database {
                 supp=FindSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
                 arrived=rs.getBoolean("arrivalStatus");
                 totalPrice=rs.getDouble("totalPrice");
-                products=getProductsWithPricesBySupplierID(id);
-                Order order=new Order(id,emp,supp,null,arrived,totalPrice,products); // TODO: 4/12/2016 Check what to do with Dates !@#? 
+                products=getProductsInOrderByOrderID(id);
+                date=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(rs.getString("date"));
+                Order order=new Order(id,emp,supp,date,arrived,totalPrice,products);
                 ans.add(order);
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                rs.close();
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+            return ans;
+        }
+    }
+    private HashMap<Product,Integer> getProductsInOrderByOrderID(String id){
+        HashMap<Product,Integer> ans=new HashMap<>();
+        ResultSet rs=null;
+        PreparedStatement ps=null;
+        try{
+            openConnection();
+            String query="SELECT productID,amount FROM ProductsInOrders WHERE orderID=?";
+            ps=dbConnection.prepareStatement(query);
+            ps.setString(1,id);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("amount"));
             }
         }
         catch ( Exception e ) {
@@ -420,20 +605,18 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
-
-
-    private HashMap<Product,Integer> getProductsAndAmountsInOrderByOrderID(int id){
-        HashMap<Product,Integer> ans=new HashMap<>();
+    private Employee getEmployeeByUserName(String userName){
+        Employee ans=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
             openConnection();
-            String query="SELECT productID,amount FROM ProductsInOrders WHERE orderID=?";
+            String query="SELECT userName,password FROM Employees WHERE userName=?";
             ps=dbConnection.prepareStatement(query);
-            ps.setInt(1,id);
+            ps.setString(1,userName);
             rs=ps.executeQuery();
             while(rs.next()){
-                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("amount"));
+                ans=new Employee(String.valueOf(rs.getInt("ID")),userName,rs.getString("password"));
             }
         }
         catch ( Exception e ) {
@@ -449,49 +632,6 @@ public class DatabaseImplementation implements Database {
             }
             closeConnection();
             return ans;
-        }
-    }
-    @Override
-    public List<Order> FindOrdersByEmployee(String employeeID) {
-        return null;
-    }
-
-    @Override
-    public List<Order> FindOrdersBySupplier(String supplierID) {
-        return null;
-    }
-
-    @Override
-    public boolean checkCredentials(String username, String password) {
-        boolean answer=false;
-        PreparedStatement ps=null;
-        ResultSet dbResult=null;
-        try{
-            openConnection();
-            /*String query="SELECT COUNT(*) as result FROM Employees WHERE userName=\""+username+"\" and password=\""+password+"\";";*/
-            String query="SELECT COUNT(*) as result FROM Employees WHERE userName=? and password=?";
-            ps=dbConnection.prepareStatement(query);
-            ps.setString(1,username);
-            ps.setString(2,password);
-            dbResult=ps.executeQuery();
-
-            if(dbResult.getInt("result")==1){
-                answer=true;
-            }
-        }
-        catch ( Exception e ) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            System.exit(0);
-        }
-        finally {
-            try {
-                ps.close();
-                dbResult.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            closeConnection();
-            return answer;
         }
     }
 }

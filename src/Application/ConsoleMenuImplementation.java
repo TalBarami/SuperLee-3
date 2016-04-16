@@ -128,6 +128,8 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
             }
             if(orders == null || orders.isEmpty())
                 System.out.println("There were no orders matching this search.");
+            else
+                return orders;
         }
     }
 

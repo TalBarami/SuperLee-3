@@ -1,5 +1,6 @@
 package Application;
 
+import Entities.Employee;
 import Entities.Order;
 import Entities.Supplier;
 
@@ -19,5 +20,5 @@ public interface Database {
     List<Order> FindOrdersByEmployee(String employeeID);
     List<Order> FindOrdersBySupplier(String supplierID);
 
-    boolean checkCredentials(String username, String password);
+    Employee checkCredentials(String username, String password);
 }
