@@ -1,5 +1,6 @@
 package Application;
 
+import Entities.Employee;
 import Entities.Order;
 import Entities.Supplier;
 
@@ -12,6 +13,7 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
     private SuppliersMenu suppliersMenu;
     private OrdersMenu ordersMenu;
     private int selected;
+    private Employee connected;
 
     private static final String menuCommands[] = {
             "Manage suppliers.",
@@ -54,7 +56,7 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         System.out.println("Password:");
         String password = Utils.readLine();
 
-        if(database.checkCredentials(username,password))
+        if((connected = database.checkCredentials(username,password)) != null)
             System.out.println("You have successfully logged in to the system!");
         else{
             System.out.printf("Invalid user name or password. (%d attempts left)\n",attempts-1);
@@ -134,5 +136,9 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
     public Order getOrder(){
         List<Order> orders = searchOrder();
         return orders == null ? null : orders.get(0);
+    }
+
+    public Employee getConnected(){
+        return connected;
     }
 }

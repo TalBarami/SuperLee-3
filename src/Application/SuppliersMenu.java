@@ -62,22 +62,30 @@ public class SuppliersMenu {
 
     private void addNewSupplier(){
         database.AddSupplier(createSupplier());
+        System.out.println("Supplier added successfully!");
     }
 
     private void editSupplier(){
         System.out.println("Select supplier you would like to edit.");
         Supplier oldSupplier = consoleMenu.getSupplier();
         if(oldSupplier == null) {
-            System.out.println("No suppliers found. exiting.");
+            System.out.println("No suppliers found. terminating.");
             return;
         }
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier);
         database.EditSupplier(oldSupplier, newSupplier);
+        System.out.println("Supplier edited successfully!");
     }
 
     private void removeSupplier(){
+        Supplier supplier = consoleMenu.getSupplier();
+        if(supplier == null) {
+            System.out.println("No suppliers found. terminating.");
+            return;
+        }
         database.RemoveSupplier(consoleMenu.getSupplier());
+        System.out.println("Supplier removed successfully!");
     }
 
     private void addContract(){
@@ -92,6 +100,10 @@ public class SuppliersMenu {
 
         System.out.println("Please select which supplier you would like to add contract to:");
         supplier = consoleMenu.getSupplier();
+        if(supplier == null) {
+            System.out.println("No suppliers found. terminating.");
+            return;
+        }
         if(supplier.getContract() != null) {
             System.out.println("Please note that adding new contract will override the previous one. are you sure? y/n");
             while((input = Utils.readLine()).equals("y") || input.equals("n"))
@@ -113,6 +125,7 @@ public class SuppliersMenu {
 
         Contract contract = new Contract(deliveryMethod, deliveryTime, minDiscountLimit, maxDiscountLimit, discount, products);
         supplier.setContract(contract);
+        System.out.println("Contract added successfully!");
     }
 
     private void viewSupplier(){
@@ -129,10 +142,11 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
-        Map<Product,Integer> products = supplier.getProducts();
+        System.out.printf("Result for supplier: %s\n", supplier.getName());
+        Map<Product,Double> products = supplier.getProducts();
         System.out.println(products.size() == 1 ? "Product found:\n" : "Product found:\n");
         for (Product p : products.keySet()) {
-            System.out.printf("%s\nSold by %s for %d.\n\n", p, supplier.getName(), products.get(p));
+            System.out.printf("%s\nSold by %s for %f.\n\n", p, supplier.getName(), products.get(p));
         }
     }
 
@@ -140,6 +154,7 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
+        System.out.printf("Result for supplier: %s\n", supplier.getName());
         List<String> manufacturers = supplier.getManufacturers();
         System.out.println(manufacturers.size() == 1 ? "Manufacturer found:\n" : "Manufacturers found:\n");
         for (String manufacturer : manufacturers) {

@@ -1,5 +1,6 @@
 package Application;
 
+import Entities.Employee;
 import Entities.Order;
 import Entities.Product;
 import Entities.Supplier;
@@ -15,12 +16,14 @@ public interface Database {
     List<Supplier> FindSuppliersByName(String name);
     void AddContract();
 
-    void CreateOrder();
+    void CreateOrder(Order order);
+    void confirmOrder(Order order);
     List<Order> FindOrderByID(String id);
     List<Order> FindOrdersByEmployee(String employeeID);
     List<Order> FindOrdersBySupplier(String supplierID);
 
     Product findProductByID(String id);
 
-    boolean checkCredentials(String username, String password);
+
+    Employee checkCredentials(String username, String password);
 }
