@@ -1,9 +1,9 @@
 package Application;
 
-import Entities.PaymentMethod;
-import Entities.Product;
-import Entities.Supplier;
+import Entities.*;
+import javafx.util.Pair;
 
+import javax.rmi.CORBA.Util;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,6 +67,10 @@ public class SuppliersMenu {
     private void editSupplier(){
         System.out.println("Select supplier you would like to edit.");
         Supplier oldSupplier = consoleMenu.getSupplier();
+        if(oldSupplier == null) {
+            System.out.println("No suppliers found. exiting.");
+            return;
+        }
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier);
         database.EditSupplier(oldSupplier, newSupplier);
@@ -77,8 +81,38 @@ public class SuppliersMenu {
     }
 
     private void addContract(){
-        System.out.println("Select supplier you would like to edit.");
-        Supplier supplier = consoleMenu.getSupplier();
+        Supplier supplier;
+        DeliveryMethod deliveryMethod;
+        int deliveryTime;
+        int minDiscountLimit;
+        int maxDiscountLimit;
+        double discount;
+        Map<Product,Double> products;
+        String input;
+
+        System.out.println("Please select which supplier you would like to add contract to:");
+        supplier = consoleMenu.getSupplier();
+        if(supplier.getContract() != null) {
+            System.out.println("Please note that adding new contract will override the previous one. are you sure? y/n");
+            while((input = Utils.readLine()).equals("y") || input.equals("n"))
+                System.out.println("Invalid input.");
+            if(input.equals("n"))
+                return;
+        }
+
+        deliveryMethod = selectDeliveryMethod();
+        System.out.println("Please enter the delivery time (in days):");
+        deliveryTime = Utils.checkIntBounds(0);
+        System.out.println("Please enter the minimum amount for discount:");
+        minDiscountLimit = Utils.checkIntBounds(0);
+        System.out.println("Please enter the maximum amount for discount:");
+        maxDiscountLimit = Utils.checkIntBounds(minDiscountLimit);
+        System.out.println("Please enter the discount (in percentage):");
+        discount = Utils.checkDoubleBounds(0, 100);
+        products = selectProducts();
+
+        Contract contract = new Contract(deliveryMethod, deliveryTime, minDiscountLimit, maxDiscountLimit, discount, products);
+        supplier.setContract(contract);
     }
 
     private void viewSupplier(){
@@ -156,7 +190,7 @@ public class SuppliersMenu {
         PaymentMethod values[] = PaymentMethod.values();
         System.out.println("Please choose one of the following:");
         for (int i = 0; i < values.length; i++)
-            System.out.printf("%d. %s\n", i + 1, values[i]);
+            System.out.printf("%d. %s\n", i, values[i]);
         String input = Utils.readLine();
         if(input.isEmpty() && supplier != null)
             return supplier.getPaymentMethod();
@@ -165,7 +199,7 @@ public class SuppliersMenu {
         while(selected<1 || selected > values.length){
             System.out.println("Invalid input.");
             for (int i = 0; i < values.length; i++)
-                System.out.printf("%d. %s\n", i + 1, values[i]);
+                System.out.printf("%d. %s\n", i, values[i]);
             selected = Utils.parseInt(Utils.readLine());
         }
         return PaymentMethod.valueOf(selected);
@@ -193,9 +227,39 @@ public class SuppliersMenu {
         return contacts;
     }
 
-    private Map<String, String> selectContacts(){
-        return selectContacts(null);
+    private DeliveryMethod selectDeliveryMethod(){
+        DeliveryMethod values[] = DeliveryMethod.values();
+        System.out.println("Please choose one of the following:");
+        for (int i = 0; i < values.length; i++)
+            System.out.printf("%d. %s\n", i, values[i]);
+        selected = Utils.parseInt(Utils.readLine());
+        while(selected<1 || selected > values.length){
+            System.out.println("Invalid input.");
+            for (int i = 0; i < values.length; i++)
+                System.out.printf("%d. %s\n", i, values[i]);
+            selected = Utils.parseInt(Utils.readLine());
+        }
+        return DeliveryMethod.valueOf(selected);
+    }
+
+    private Map<Product, Double> selectProducts(){
+        Map<Product, Double> products = new HashMap<>();
+        Product product;
+        double price;
+        System.out.println("Add products. Leave the product id field blank when you are done.");
+        while(true){
+            System.out.println("Please enter product id:");
+            if((product = database.findProductByID(Utils.readLine())) == null) {
+                if(products.isEmpty())
+                    System.out.println("You must enter at least 1 product.");
+                else
+                    break;
+            }
+            System.out.println("Please enter price:");
+            price = Utils.checkDoubleBounds(0);
+            products.put(product, price);
+        }
+
+        return products;
     }
 }
-
-

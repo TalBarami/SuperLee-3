@@ -47,8 +47,35 @@ public class Utils {
         return retValue;
     }
 
-    public static void clearConsole(){
-        for(int clear = 0; clear < 1000; clear++)
-            System.out.println("\n") ;
+    public static double parseDouble(String s){
+        double retValue;
+        try{
+            retValue = Double.parseDouble(s);
+        }catch(NumberFormatException e){
+            retValue = -1;
+        }
+        return retValue;
+    }
+
+    public static int checkIntBounds(int min, int max){
+        int parameter;
+        while((parameter = parseInt(readLine())) < min || parameter > max)
+            System.out.println("Invalid input");
+        return parameter;
+    }
+
+    public static double checkDoubleBounds(int min, int max){
+        double parameter;
+        while((parameter = parseDouble(readLine())) < min || parameter > max)
+            System.out.println("Invalid input");
+        return parameter;
+    }
+
+    public static int checkIntBounds(int min){
+        return checkIntBounds(min, Integer.MAX_VALUE);
+    }
+
+    public static double checkDoubleBounds(int min){
+        return checkDoubleBounds(min, Integer.MAX_VALUE);
     }
 }

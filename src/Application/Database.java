@@ -1,6 +1,7 @@
 package Application;
 
 import Entities.Order;
+import Entities.Product;
 import Entities.Supplier;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public interface Database {
     List<Order> FindOrderByID(String id);
     List<Order> FindOrdersByEmployee(String employeeID);
     List<Order> FindOrdersBySupplier(String supplierID);
+
+    Product findProductByID(String id);
 
     boolean checkCredentials(String username, String password);
 }
