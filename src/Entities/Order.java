@@ -48,4 +48,7 @@ public class Order {
         this("", employee, supplier, null, false, totalPrice, order);
     }
 
+    public String getId() {
+        return id;
+    }
 }

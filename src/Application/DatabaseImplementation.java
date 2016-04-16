@@ -18,7 +18,7 @@ public class DatabaseImplementation implements Database {
          try{
              Class.forName("org.sqlite.JDBC");
              dbConnection = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB.db");
-             dbConnection.setAutoCommit(false);
+             dbConnection.setAutoCommit(true);
          }
          catch ( Exception e ) {
              System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -406,6 +406,27 @@ public class DatabaseImplementation implements Database {
     public void CreateOrder(Order order) {
     }
     public void confirmOrder(Order order) {
+        PreparedStatement ps=null;
+        try{
+            openConnection();
+            String query="UPDATE Orders set arrivalStatus=1 WHERE ID=?";
+            ps=dbConnection.prepareStatement(query);
+            ps.setInt(1,Integer.parseInt(order.getId()));
+            ps.executeUpdate();
+            //dbConnection.commit();
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
     }
     private Map<Product,Integer> getProductsAndAmountsInOrderByOrderID(int id){
         Map<Product,Integer> ans=new HashMap<>();
