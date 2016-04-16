@@ -49,8 +49,10 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
     }
 
     private void Login(int attempts){
-        if(attempts == 0)
+        if(attempts == 0) {
+            System.out.println("Terminating.");
             System.exit(0);
+        }
         System.out.println("User Name:");
         String username = Utils.readLine();
         System.out.println("Password:");
@@ -68,13 +70,13 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         while(true){
             selected = Utils.MenuSelect(menuCommands);
             switch(selected){
-                case 1: // Suppliers
+                case 1:
                     suppliersMenu.displaySuppliersMenu();
                     break;
-                case 2: // Orders
+                case 2:
                     ordersMenu.displayOrdersMenu();
                     break;
-                case 3: // Exit
+                case 3:
                     return;
             }
         }
@@ -85,15 +87,15 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         while(true) {
             selected = Utils.MenuSelect("How would you like to search?",supplierSearch);
             switch (selected) {
-                case 1: // By id
+                case 1:
                     System.out.println("Please enter supplier ID:");
                     suppliers = database.FindSupplierByID(Utils.readLine());
                     break;
-                case 2: // By name
+                case 2:
                     System.out.println("Please enter supplier name:");
                     suppliers = database.FindSuppliersByName(Utils.readLine());
                     break;
-                case 3: // Back
+                case 3:
                     return null;
             }
             if(suppliers == null || suppliers.isEmpty())
@@ -113,19 +115,19 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         while(true) {
             selected = Utils.MenuSelect("How would you like to search?",orderSearch);
             switch (selected) {
-                case 1: // By id
+                case 1:
                     System.out.println("Please enter order ID:");
                     orders = database.FindOrderByID(Utils.readLine());
                     break;
-                case 2: // By employee
+                case 2:
                     System.out.println("Please enter employee ID:");
                     orders = database.FindOrdersByEmployee(Utils.readLine());
                     break;
-                case 3: // By supplier
+                case 3:
                     System.out.println("Please enter supplier ID:");
                     orders = database.FindOrdersBySupplier(Utils.readLine());
                     break;
-                case 4: // Back
+                case 4:
                     return null;
             }
             if(orders == null || orders.isEmpty())

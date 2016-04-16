@@ -33,28 +33,28 @@ public class SuppliersMenu {
         while(true) {
             selected = Utils.MenuSelect(suppliersCommands);
             switch (selected) {
-                case 1: // New supplier
+                case 1:
                     addNewSupplier();
                     break;
-                case 2: // Edit supplier
+                case 2:
                     editSupplier();
                     break;
-                case 3: // Remove supplier
+                case 3:
                     removeSupplier();
                     break;
-                case 4: // Add contract
+                case 4:
                     addContract();
                     break;
-                case 5: // View supplier
+                case 5:
                     viewSupplier();
                     break;
-                case 6: // View products
+                case 6:
                     viewSuppliersProducts();
                     break;
-                case 7: // View manufacturers
+                case 7:
                     viewSuppliersManufacturers();
                     break;
-                case 8: // Back
+                case 8:
                     return;
             }
         }
@@ -68,10 +68,8 @@ public class SuppliersMenu {
     private void editSupplier(){
         System.out.println("Select supplier you would like to edit.");
         Supplier oldSupplier = consoleMenu.getSupplier();
-        if(oldSupplier == null) {
-            System.out.println("No suppliers found. terminating.");
+        if(oldSupplier == null)
             return;
-        }
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier);
         database.EditSupplier(oldSupplier, newSupplier);
@@ -80,10 +78,8 @@ public class SuppliersMenu {
 
     private void removeSupplier(){
         Supplier supplier = consoleMenu.getSupplier();
-        if(supplier == null) {
-            System.out.println("No suppliers found. terminating.");
+        if(supplier == null)
             return;
-        }
         database.RemoveSupplier(consoleMenu.getSupplier());
         System.out.println("Supplier removed successfully!");
     }
@@ -100,10 +96,8 @@ public class SuppliersMenu {
 
         System.out.println("Please select which supplier you would like to add contract to:");
         supplier = consoleMenu.getSupplier();
-        if(supplier == null) {
-            System.out.println("No suppliers found. terminating.");
+        if(supplier == null)
             return;
-        }
         if(supplier.getContract() != null) {
             System.out.println("Please note that adding new contract will override the previous one. are you sure? y/n");
             while((input = Utils.readLine()).equals("y") || input.equals("n"))
@@ -142,6 +136,10 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
+        if(supplier.getContract() == null) {
+            System.out.println("This supplier does not have a contract.");
+            return;
+        }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
         Map<Product,Double> products = supplier.getProducts();
         System.out.println(products.size() == 1 ? "Product found:\n" : "Product found:\n");
@@ -154,6 +152,10 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
+        if(supplier.getContract() == null) {
+            System.out.println("This supplier does not have a contract.");
+            return;
+        }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
         List<String> manufacturers = supplier.getManufacturers();
         System.out.println(manufacturers.size() == 1 ? "Manufacturer found:\n" : "Manufacturers found:\n");
@@ -178,6 +180,7 @@ public class SuppliersMenu {
             while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !database.FindSupplierByID(id).isEmpty())
                 System.out.println("Invalid id. please try again.");
         }else id = supplier.getId();
+
         System.out.println("Please enter supplier's name:");
         while((name = Utils.readLine()).isEmpty()) {
             if(supplier != null){
@@ -211,12 +214,13 @@ public class SuppliersMenu {
             return supplier.getPaymentMethod();
 
         selected = Utils.parseInt(input);
-        while(selected<1 || selected > values.length){
+        while(selected<0 || selected >= values.length){
             System.out.println("Invalid input.");
             for (int i = 0; i < values.length; i++)
                 System.out.printf("%d. %s\n", i, values[i]);
             selected = Utils.parseInt(Utils.readLine());
         }
+
         return PaymentMethod.valueOf(selected);
     }
 
@@ -248,7 +252,7 @@ public class SuppliersMenu {
         for (int i = 0; i < values.length; i++)
             System.out.printf("%d. %s\n", i, values[i]);
         selected = Utils.parseInt(Utils.readLine());
-        while(selected<1 || selected > values.length){
+        while(selected<0 || selected >= values.length){
             System.out.println("Invalid input.");
             for (int i = 0; i < values.length; i++)
                 System.out.printf("%d. %s\n", i, values[i]);

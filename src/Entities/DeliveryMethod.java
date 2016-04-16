@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum DeliveryMethod {
-    Weekly(1),
-    onDemand(2),
-    Self(3);
+    Weekly(0),
+    onDemand(1),
+    Self(2);
 
     private int number;
     private static Map<Integer, DeliveryMethod> map = new HashMap<>();
