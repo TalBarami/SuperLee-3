@@ -2,6 +2,8 @@ package Application;
 
 import Entities.*;
 import javafx.util.Pair;
+import org.sqlite.SQLiteConfig;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -10,14 +12,18 @@ import java.util.*;
 
 public class DatabaseImplementation implements Database {
     private Connection dbConnection;
+    private final String DB_URL = "jdbc:sqlite:SuperLeeDB.db";
+    private final String DRIVER = "org.sqlite.JDBC";
 
     public DatabaseImplementation(){
         dbConnection=null;
      }
     private void openConnection(){
          try{
-             Class.forName("org.sqlite.JDBC");
-             dbConnection = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB.db");
+             Class.forName(DRIVER);
+             SQLiteConfig config=new SQLiteConfig();
+             config.enforceForeignKeys(true);
+             dbConnection = DriverManager.getConnection(DB_URL,config.toProperties());
              dbConnection.setAutoCommit(true);
          }
          catch ( Exception e ) {
@@ -70,6 +76,39 @@ public class DatabaseImplementation implements Database {
 
     /** Suppliers managamemnt **/
     public void AddSupplier(Supplier supplier){
+        PreparedStatement ps=null;
+        try {
+            openConnection();
+            String query = "INSERT INTO Suppliers (ID, name, paymentMethod, bankAccount) VALUES (?,?,?,?)";
+            ps = dbConnection.prepareStatement(query);
+            ps.setInt(1, Integer.parseInt(supplier.getId()));
+            ps.setString(2, supplier.getName());
+            ps.setInt(3, supplier.getPaymentMethod().ordinal());
+            ps.setString(4, supplier.getBankAccount());
+            ps.executeUpdate();
+            for(String name : supplier.getContacts().keySet()){
+                query = "INSERT INTO SuppliersContacts (supplierID, name, phone) VALUES (?,?,?)";
+                ps = dbConnection.prepareStatement(query);
+                ps.setInt(1, Integer.parseInt(supplier.getId()));
+                ps.setString(2,name);
+                ps.setString(3,supplier.getContacts().get(name));
+                ps.executeUpdate();
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
+    }
+    private void AddContactsToSupplierByID(int id){
 
     }
     public void EditSupplier(Supplier oldSupplier, Supplier newSupplier){
@@ -398,7 +437,7 @@ public class DatabaseImplementation implements Database {
 
 
     /** Contract Management **/
-    public void AddContract() {
+        public void AddContract(Supplier supp) {
 
     }
 
@@ -413,7 +452,6 @@ public class DatabaseImplementation implements Database {
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,Integer.parseInt(order.getId()));
             ps.executeUpdate();
-            //dbConnection.commit();
         }
         catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );

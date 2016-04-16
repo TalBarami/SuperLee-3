@@ -1,9 +1,6 @@
 package Application;
 
-import Entities.Employee;
-import Entities.Order;
-import Entities.Product;
-import Entities.Supplier;
+import Entities.*;
 
 import java.util.List;
 
@@ -14,7 +11,7 @@ public interface Database {
     void RemoveSupplier(Supplier supplier);
     List<Supplier> FindSupplierByID(String id);
     List<Supplier> FindSuppliersByName(String name);
-    void AddContract();
+    void AddContract(Supplier supp);
 
     void CreateOrder(Order order);
     void confirmOrder(Order order);
