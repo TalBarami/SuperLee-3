@@ -81,10 +81,12 @@ public class Supplier {
     }
 
     public Map<Product,Double> getProducts(){
-        return contract.getProducts();
+        return contract == null? null : contract.getProducts();
     }
 
     public List<String> getManufacturers(){
+        if(contract == null)
+            return null;
         List<String> manufacturers = new ArrayList<>();
         String m;
         for(Product p : getProducts().keySet()){

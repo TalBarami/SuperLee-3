@@ -33,28 +33,28 @@ public class SuppliersMenu {
         while(true) {
             selected = Utils.MenuSelect(suppliersCommands);
             switch (selected) {
-                case 1: // New supplier
+                case 1:
                     addNewSupplier();
                     break;
-                case 2: // Edit supplier
+                case 2:
                     editSupplier();
                     break;
-                case 3: // Remove supplier
+                case 3:
                     removeSupplier();
                     break;
-                case 4: // Add contract
+                case 4:
                     addContract();
                     break;
-                case 5: // View supplier
+                case 5:
                     viewSupplier();
                     break;
-                case 6: // View products
+                case 6:
                     viewSuppliersProducts();
                     break;
-                case 7: // View manufacturers
+                case 7:
                     viewSuppliersManufacturers();
                     break;
-                case 8: // Back
+                case 8:
                     return;
             }
         }
@@ -142,6 +142,10 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
+        if(supplier.getContract() == null) {
+            System.out.println("This supplier does not have a contract.");
+            return;
+        }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
         Map<Product,Double> products = supplier.getProducts();
         System.out.println(products.size() == 1 ? "Product found:\n" : "Product found:\n");
@@ -154,6 +158,10 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
+        if(supplier.getContract() == null) {
+            System.out.println("This supplier does not have a contract.");
+            return;
+        }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
         List<String> manufacturers = supplier.getManufacturers();
         System.out.println(manufacturers.size() == 1 ? "Manufacturer found:\n" : "Manufacturers found:\n");
@@ -211,12 +219,13 @@ public class SuppliersMenu {
             return supplier.getPaymentMethod();
 
         selected = Utils.parseInt(input);
-        while(selected<1 || selected > values.length){
+        while(selected<0 || selected >= values.length){
             System.out.println("Invalid input.");
             for (int i = 0; i < values.length; i++)
                 System.out.printf("%d. %s\n", i, values[i]);
             selected = Utils.parseInt(Utils.readLine());
         }
+
         return PaymentMethod.valueOf(selected);
     }
 
@@ -248,7 +257,7 @@ public class SuppliersMenu {
         for (int i = 0; i < values.length; i++)
             System.out.printf("%d. %s\n", i, values[i]);
         selected = Utils.parseInt(Utils.readLine());
-        while(selected<1 || selected > values.length){
+        while(selected<0 || selected >= values.length){
             System.out.println("Invalid input.");
             for (int i = 0; i < values.length; i++)
                 System.out.printf("%d. %s\n", i, values[i]);

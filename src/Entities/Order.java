@@ -1,12 +1,9 @@
 package Entities;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Tal on 10/04/2016.
- */
+
 public class Order {
     private String id;
     private Employee employee;
@@ -50,5 +47,17 @@ public class Order {
 
     public String getId() {
         return id;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public boolean isArrived() {
+        return arrived;
     }
 }

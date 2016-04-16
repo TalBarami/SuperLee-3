@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum PaymentMethod {
-    Cash(1),
-    CreditCard(2),
-    Check(3);
+    Cash(0),
+    CreditCard(1),
+    Check(2);
 
     private int number;
     private static Map<Integer, PaymentMethod> map = new HashMap<>();

@@ -5,7 +5,6 @@ import Entities.Order;
 import Entities.Product;
 import Entities.Supplier;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +57,10 @@ public class OrdersMenu {
             System.out.println("No suppliers found. terminating.");
             return;
         }
+        if(supplier.getContract() == null){
+            System.out.println("This supplier does not have a contract");
+            return;
+        }
         items = selectItems();
         totalPrice = calculatePrice(supplier, items);
         Order order = new Order(employee, supplier, totalPrice, items);
@@ -70,6 +73,10 @@ public class OrdersMenu {
         Order order = consoleMenu.getOrder();
         if(order == null) {
             System.out.println("No orders found. terminating.");
+            return;
+        }
+        if(order.isArrived()){
+            System.out.println("This order already confirmed.");
             return;
         }
         database.confirmOrder(order);
