@@ -53,12 +53,10 @@ public class OrdersMenu {
 
         System.out.println("Please select the supplier you would like to order from:");
         supplier = consoleMenu.getSupplier();
-        if(supplier == null) {
-            System.out.println("No suppliers found. terminating.");
+        if(supplier == null)
             return;
-        }
         if(supplier.getContract() == null){
-            System.out.println("This supplier does not have a contract");
+            System.out.println("This supplier does not have a contract.");
             return;
         }
         items = selectItems();

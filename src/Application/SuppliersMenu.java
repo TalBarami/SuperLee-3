@@ -68,10 +68,8 @@ public class SuppliersMenu {
     private void editSupplier(){
         System.out.println("Select supplier you would like to edit.");
         Supplier oldSupplier = consoleMenu.getSupplier();
-        if(oldSupplier == null) {
-            System.out.println("No suppliers found. terminating.");
+        if(oldSupplier == null)
             return;
-        }
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier);
         database.EditSupplier(oldSupplier, newSupplier);
@@ -80,10 +78,8 @@ public class SuppliersMenu {
 
     private void removeSupplier(){
         Supplier supplier = consoleMenu.getSupplier();
-        if(supplier == null) {
-            System.out.println("No suppliers found. terminating.");
+        if(supplier == null)
             return;
-        }
         database.RemoveSupplier(consoleMenu.getSupplier());
         System.out.println("Supplier removed successfully!");
     }
@@ -100,10 +96,8 @@ public class SuppliersMenu {
 
         System.out.println("Please select which supplier you would like to add contract to:");
         supplier = consoleMenu.getSupplier();
-        if(supplier == null) {
-            System.out.println("No suppliers found. terminating.");
+        if(supplier == null)
             return;
-        }
         if(supplier.getContract() != null) {
             System.out.println("Please note that adding new contract will override the previous one. are you sure? y/n");
             while((input = Utils.readLine()).equals("y") || input.equals("n"))
@@ -186,6 +180,7 @@ public class SuppliersMenu {
             while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !database.FindSupplierByID(id).isEmpty())
                 System.out.println("Invalid id. please try again.");
         }else id = supplier.getId();
+
         System.out.println("Please enter supplier's name:");
         while((name = Utils.readLine()).isEmpty()) {
             if(supplier != null){

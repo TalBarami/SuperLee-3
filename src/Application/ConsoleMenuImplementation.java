@@ -49,8 +49,10 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
     }
 
     private void Login(int attempts){
-        if(attempts == 0)
+        if(attempts == 0) {
+            System.out.println("Terminating.");
             System.exit(0);
+        }
         System.out.println("User Name:");
         String username = Utils.readLine();
         System.out.println("Password:");
