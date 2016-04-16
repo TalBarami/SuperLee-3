@@ -72,7 +72,7 @@ public class SuppliersMenu {
             return;
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier);
-        database.EditSupplier(oldSupplier, newSupplier);
+        database.EditSupplier(newSupplier);
         System.out.println("Supplier edited successfully!");
     }
 
@@ -80,7 +80,7 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
-        database.RemoveSupplier(consoleMenu.getSupplier());
+        database.RemoveSupplier(supplier);
         System.out.println("Supplier removed successfully!");
     }
 

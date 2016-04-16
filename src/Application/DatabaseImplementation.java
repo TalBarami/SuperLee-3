@@ -108,14 +108,68 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
-    private void AddContactsToSupplierByID(int id){
+    public void EditSupplier(Supplier supplier) {
+        PreparedStatement ps=null;
+        System.out.println("entered");
+        try{
+            openConnection();
+            String query="UPDATE Suppliers set name=?, paymentMethod=?, bankAccount=? WHERE ID=?";
+            ps=dbConnection.prepareStatement(query);
+            ps.setString(1, supplier.getName());
+            ps.setInt(2, supplier.getPaymentMethod().ordinal());
+            ps.setString(3, supplier.getBankAccount());
+            ps.setInt(4, Integer.parseInt(supplier.getId()));
+            ps.executeUpdate();
 
-    }
-    public void EditSupplier(Supplier oldSupplier, Supplier newSupplier){
+            query = "DELETE from SuppliersContacts where supplierID=?";
+            ps = dbConnection.prepareStatement(query);
+            ps.setInt(1, Integer.parseInt(supplier.getId()));
+            ps.executeUpdate();
 
+            for(String name : supplier.getContacts().keySet()){
+                query = "INSERT INTO SuppliersContacts (supplierID, name, phone) VALUES (?,?,?)";
+                ps = dbConnection.prepareStatement(query);
+                ps.setInt(1, Integer.parseInt(supplier.getId()));
+                ps.setString(2,name);
+                ps.setString(3,supplier.getContacts().get(name));
+                ps.executeUpdate();
+            }
+
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
     }
     public void RemoveSupplier(Supplier supplier){
-
+        PreparedStatement ps=null;
+        try {
+            openConnection();
+            String query = "UPDATE Suppliers SET active=0 WHERE ID=?";
+            ps = dbConnection.prepareStatement(query);
+            ps.setInt(1, Integer.parseInt(supplier.getId()));
+            ps.executeUpdate();
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
     }
     public List<Supplier> FindSupplierByID(String id) {
         return FindSupplier("ID",id);
@@ -411,7 +465,7 @@ public class DatabaseImplementation implements Database {
         ResultSet rs=null;
         try{
             openConnection();
-            String query="SELECT name,phone FROM SuupliersContacts WHERE supplierID=?";
+            String query="SELECT name,phone FROM SuppliersContacts WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
             rs=ps.executeQuery();
@@ -443,6 +497,36 @@ public class DatabaseImplementation implements Database {
 
     /** Order Managementm **/
     public void CreateOrder(Order order) {
+        PreparedStatement ps=null;
+        try {
+            openConnection();
+            String query = "INSERT INTO Orders (totalPrice, employeeID, supplierID) VALUES (?,?,?)";
+            ps = dbConnection.prepareStatement(query);
+            ps.setDouble(1, order.getTotalPrice());
+            ps.setInt(2, Integer.parseInt(order.getSupplier().getId()));
+            ps.setInt(3, Integer.parseInt(order.getEmployee().getId()));
+            ps.executeUpdate();
+            for(Product product : order.getItems().keySet()){
+                query = "INSERT INTO ProductsInOrders (productID, orderID, amount) VALUES (?,?,?)";
+                ps = dbConnection.prepareStatement(query);
+                ps.setInt(1, Integer.parseInt(product.getId()));
+                ps.setInt(2, Integer.parseInt(order.getId()));
+                ps.setInt(3, order.getItems().get(product));
+                ps.executeUpdate();
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
     }
     public void confirmOrder(Order order) {
         PreparedStatement ps=null;

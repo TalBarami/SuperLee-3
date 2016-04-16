@@ -7,7 +7,7 @@ import java.util.List;
 public interface Database {
 
     void AddSupplier(Supplier supplier);
-    void EditSupplier(Supplier oldSupplier, Supplier newSupplier);
+    void EditSupplier(Supplier supplier);
     void RemoveSupplier(Supplier supplier);
     List<Supplier> FindSupplierByID(String id);
     List<Supplier> FindSuppliersByName(String name);

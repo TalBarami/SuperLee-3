@@ -11,7 +11,7 @@ public class Order {
     private Date date;
     private boolean arrived;
     private double totalPrice;
-    private Map<Product, Integer> order;
+    private Map<Product, Integer> items;
 
     @Override
     public String toString() {
@@ -26,8 +26,8 @@ public class Order {
     }
     private String productsInOrderToString(){
         String toString="";
-        for(Product product : order.keySet()){
-            toString+="\t\tProduct : "+product.getName() + "\tAmount : " + order.get(product) +".\n";
+        for(Product product : items.keySet()){
+            toString+="\t\tProduct : "+product.getName() + "\tAmount : " + items.get(product) +".\n";
         }
         return toString;
     }
@@ -38,7 +38,7 @@ public class Order {
         this.date = date;
         this.arrived = arrived;
         this.totalPrice = totalPrice;
-        this.order = order;
+        this.items = order;
     }
 
     public Order(Employee employee, Supplier supplier, double totalPrice,Map<Product, Integer> order) {
@@ -59,5 +59,13 @@ public class Order {
 
     public boolean isArrived() {
         return arrived;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public Map<Product, Integer> getItems() {
+        return items;
     }
 }
