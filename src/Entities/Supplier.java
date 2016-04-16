@@ -80,7 +80,7 @@ public class Supplier {
         this.contract = contract;
     }
 
-    public Map<Product,Integer> getProducts(){
+    public Map<Product,Double> getProducts(){
         return contract.getProducts();
     }
 

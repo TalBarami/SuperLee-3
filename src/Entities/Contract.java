@@ -1,30 +1,31 @@
 package Entities;
 
-import javafx.util.Pair;
-import java.util.HashMap;
+import java.util.Map;
 
 
 public class Contract {
     private DeliveryMethod deliveryMethod;
     private int deliveryTime;
-    private Pair<Integer, Integer> discountLimits;
+    private int minDiscountLimits;
+    private int maxDiscountLimits;
     private double discount;
-    private HashMap<Product,Integer> products;
+    private Map<Product,Double> products;
 
     @Override
     public String toString() {
         return "Contract{" +
                 "deliveryMethod=" + deliveryMethod +
                 ", deliveryTime=" + deliveryTime +
-                ", discountLimits=" + discountLimits +
+                ", discountLimits=" + minDiscountLimits + " , " + maxDiscountLimits +
                 ", discount=" + discount +
                 '}';
     }
 
-    public Contract(DeliveryMethod deliveryMethod, int deliveryTime, Pair<Integer, Integer> discountLimits, double discount, HashMap<Product,Integer> products) {
+    public Contract(DeliveryMethod deliveryMethod, int deliveryTime, int minDiscountLimits, int maxDiscountLimits, double discount, Map<Product,Double> products) {
         this.deliveryMethod = deliveryMethod;
         this.deliveryTime = deliveryTime;
-        this.discountLimits = discountLimits;
+        this.minDiscountLimits = minDiscountLimits;
+        this.maxDiscountLimits = maxDiscountLimits;
         this.discount = discount;
         this.products = products;
         this.products=products;
@@ -46,14 +47,6 @@ public class Contract {
         this.deliveryTime = deliveryTime;
     }
 
-    public Pair<Integer, Integer> getDiscountLimits() {
-        return discountLimits;
-    }
-
-    public void setDiscountLimits(Pair<Integer, Integer> discountLimits) {
-        this.discountLimits = discountLimits;
-    }
-
     public double getDiscount() {
         return discount;
     }
@@ -62,11 +55,11 @@ public class Contract {
         this.discount = discount;
     }
 
-    public HashMap<Product, Integer> getProducts(){
+    public Map<Product, Double> getProducts(){
         return products;
     }
 
-    public void setProducts(HashMap<Product, Integer> products) {
+    public void setProducts(Map<Product, Double> products) {
         this.products = products;
     }
 }

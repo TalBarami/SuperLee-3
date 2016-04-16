@@ -1,7 +1,14 @@
 package Application;
 
+import Entities.Employee;
 import Entities.Order;
+import Entities.Product;
+import Entities.Supplier;
+
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OrdersMenu {
     private  ConsoleMenuImplementation consoleMenu;
@@ -10,15 +17,10 @@ public class OrdersMenu {
 
     private static final String ordersCommands[] = {
             "Create new order",
+            "Confirm order",
             "View order",
             "Back"
     };
-    /*private static final String orderSearch[] = {
-            "By order ID",
-            "By employee ID",
-            "By supplier ID",
-            "Back"
-    };*/
 
     public OrdersMenu(ConsoleMenuImplementation consoleMenu, Database database){
         this.consoleMenu=consoleMenu;
@@ -29,19 +31,49 @@ public class OrdersMenu {
         while(true) {
             selected = Utils.MenuSelect(ordersCommands);
             switch (selected) {
-                case 1: // New order
+                case 1:
                     createNewOrder();
                     break;
-                case 2: // View Order
+                case 2:
+                    confirmOrder();
+                    break;
+                case 3:
                     viewOrder();
                     break;
-                case 3: // Back
+                case 4:
                     return;
             }
         }
     }
 
     private void createNewOrder(){
+        Employee employee = consoleMenu.getConnected();
+        Supplier supplier;
+        Map<Product, Integer> items;
+        double totalPrice;
+
+        System.out.println("Please select the supplier you would like to order from:");
+        supplier = consoleMenu.getSupplier();
+        if(supplier == null) {
+            System.out.println("No suppliers found. terminating.");
+            return;
+        }
+        items = selectItems();
+        totalPrice = calculatePrice(supplier, items);
+        //Order order = new Order("", employee, supplier, new Date(), false, totalPrice, items);
+        //database.CreateOrder(order);
+        System.out.println("Order created successfully!");
+    }
+
+    private void confirmOrder(){
+        System.out.println("Please select the order you would like to confirm:");
+        Order order = consoleMenu.getOrder();
+        if(order == null) {
+            System.out.println("No orders found. terminating.");
+            return;
+        }
+        database.confirmOrder(order);
+        System.out.println("Order confirmed successfully!");
     }
 
     private void viewOrder(){
@@ -54,28 +86,31 @@ public class OrdersMenu {
         }
     }
 
-    /*public List<Order> searchOrder(){
-        List<Order> orders = null;
-        while(true) {
-            selected = Utils.MenuSelect("How would you like to search?",orderSearch);
-            switch (selected) {
-                case 1: // By id
-                    System.out.println("Please enter order ID:");
-                    orders = database.FindOrderByID(Utils.readLine());
+    private Map<Product, Integer> selectItems(){
+        Map<Product, Integer> items = new HashMap<>();
+        Product product;
+        int amount;
+        System.out.println("Add products. Leave the product id field blank when you are done.");
+        while(true){
+            System.out.println("Please enter product id:");
+            if((product = database.findProductByID(Utils.readLine())) == null) {
+                if(items.isEmpty())
+                    System.out.println("You must enter at least 1 product.");
+                else
                     break;
-                case 2: // By employee
-                    System.out.println("Please enter employee ID:");
-                    orders = database.FindOrdersByEmployee(Utils.readLine());
-                    break;
-                case 3: // By supplier
-                    System.out.println("Please enter supplier ID:");
-                    orders = database.FindOrdersBySupplier(Utils.readLine());
-                    break;
-                case 4: // Back
-                    return null;
             }
-            if(orders == null || orders.isEmpty())
-                System.out.println("There were no orders matching this search.");
+            System.out.println("Please enter amount:");
+            amount = Utils.checkIntBounds(0);
+            items.put(product, amount);
         }
-    }*/
+        return items;
+    }
+
+    private double calculatePrice(Supplier supplier, Map<Product, Integer> items){
+        Map<Product, Double> prices = supplier.getProducts();
+        double totalPrice = 0;
+        for(Product p : items.keySet())
+            totalPrice += items.get(p) * prices.get(p);
+        return totalPrice;
+    }
 }
