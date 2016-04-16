@@ -77,7 +77,8 @@ public class SuppliersMenu {
     }
 
     private void addContract(){
-        // TODO
+        System.out.println("Select supplier you would like to edit.");
+        Supplier supplier = consoleMenu.getSupplier();
     }
 
     private void viewSupplier(){
