@@ -1,8 +1,8 @@
 package Entities;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Supplier {
@@ -10,10 +10,10 @@ public class Supplier {
     private String name;
     private String bankAccount;
     private PaymentMethod paymentMethod;
-    private HashMap<String, String> contacts;
+    private Map<String, String> contacts;
     private Contract contract;
 
-    public Supplier(String id, String name, String bankAccount, PaymentMethod paymentMethod, HashMap<String, String> contacts) {
+    public Supplier(String id, String name, String bankAccount, PaymentMethod paymentMethod, Map<String, String> contacts) {
         this.id = id;
         this.name = name;
         this.bankAccount = bankAccount;
@@ -64,11 +64,11 @@ public class Supplier {
         this.paymentMethod = paymentMethod;
     }
 
-    public HashMap<String, String> getContacts() {
+    public Map<String, String> getContacts() {
         return contacts;
     }
 
-    public void setContacts(HashMap<String, String> contacts) {
+    public void setContacts(Map<String, String> contacts) {
         this.contacts = contacts;
     }
 
@@ -80,7 +80,7 @@ public class Supplier {
         this.contract = contract;
     }
 
-    public HashMap<Product,Integer> getProducts(){
+    public Map<Product,Integer> getProducts(){
         return contract.getProducts();
     }
 

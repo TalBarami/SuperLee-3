@@ -20,7 +20,7 @@ public class Utils {
         return MenuSelect("", arr);
     }
 
-    public static int displayMenu(String message, String[] arr){
+    private static int displayMenu(String message, String[] arr){
         System.out.println(message.isEmpty() ? "Please choose one of the following:" : message);
         for (int i = 0; i < arr.length; i++)
             System.out.printf("%d. %s\n", i + 1, arr[i]);

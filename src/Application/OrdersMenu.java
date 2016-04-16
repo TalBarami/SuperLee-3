@@ -1,10 +1,10 @@
 package Application;
 
 import Entities.Order;
-
 import java.util.List;
 
 public class OrdersMenu {
+    private  ConsoleMenuImplementation consoleMenu;
     private Database database;
     private int selected;
 
@@ -13,26 +13,27 @@ public class OrdersMenu {
             "View order",
             "Back"
     };
-    private static final String orderSearch[] = {
+    /*private static final String orderSearch[] = {
             "By order ID",
             "By employee ID",
             "By supplier ID",
             "Back"
-    };
+    };*/
 
-    public OrdersMenu(Database database){
+    public OrdersMenu(ConsoleMenuImplementation consoleMenu, Database database){
+        this.consoleMenu=consoleMenu;
         this.database = database;
     }
 
-    public void DisplayOrdersMenu(){
+    public void displayOrdersMenu(){
         while(true) {
             selected = Utils.MenuSelect(ordersCommands);
             switch (selected) {
                 case 1: // New order
-                    CreateNewOrder();
+                    createNewOrder();
                     break;
                 case 2: // View Order
-                    ViewOrder();
+                    viewOrder();
                     break;
                 case 3: // Back
                     return;
@@ -40,12 +41,11 @@ public class OrdersMenu {
         }
     }
 
-    private void CreateNewOrder(){
-        // TODO
+    private void createNewOrder(){
     }
 
-    private void ViewOrder(){
-        List<Order> orders = SearchOrder();
+    private void viewOrder(){
+        List<Order> orders = consoleMenu.searchOrder();
         if(orders == null)
             return;
         System.out.println(orders.size() == 1 ? "Order found:\n" : "Orders found:\n");
@@ -54,7 +54,7 @@ public class OrdersMenu {
         }
     }
 
-    public List<Order> SearchOrder(){
+    /*public List<Order> searchOrder(){
         List<Order> orders = null;
         while(true) {
             selected = Utils.MenuSelect("How would you like to search?",orderSearch);
@@ -77,5 +77,5 @@ public class OrdersMenu {
             if(orders == null || orders.isEmpty())
                 System.out.println("There were no orders matching this search.");
         }
-    }
+    }*/
 }

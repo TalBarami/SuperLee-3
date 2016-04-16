@@ -1,7 +1,9 @@
 package Application;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import Entities.Order;
+import Entities.Supplier;
+
+import java.util.List;
 
 public class ConsoleMenuImplementation implements ConsoleMenu {
     private static final int MAX_ATTEMPTS = 3;
@@ -17,10 +19,23 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
             "Exit."
     };
 
+    private static final String supplierSearch[] = {
+            "By supplier ID",
+            "By supplier name",
+            "Back"
+    };
+
+    private static final String orderSearch[] = {
+            "By order ID",
+            "By employee ID",
+            "By supplier ID",
+            "Back"
+    };
+
     public ConsoleMenuImplementation(Database database){
         this.database = database;
-        suppliersMenu = new SuppliersMenu(database);
-        ordersMenu = new OrdersMenu(database);
+        suppliersMenu = new SuppliersMenu(this,database);
+        ordersMenu = new OrdersMenu(this,database);
         RunStore();
     }
 
@@ -52,14 +67,72 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
             selected = Utils.MenuSelect(menuCommands);
             switch(selected){
                 case 1: // Suppliers
-                    suppliersMenu.DisplaySuppliersMenu();
+                    suppliersMenu.displaySuppliersMenu();
                     break;
                 case 2: // Orders
-                    ordersMenu.DisplayOrdersMenu();
+                    ordersMenu.displayOrdersMenu();
                     break;
                 case 3: // Exit
                     return;
             }
         }
+    }
+
+    public List<Supplier> searchSupplier(){
+        List<Supplier> suppliers = null;
+        while(true) {
+            selected = Utils.MenuSelect("How would you like to search?",supplierSearch);
+            switch (selected) {
+                case 1: // By id
+                    System.out.println("Please enter supplier ID:");
+                    suppliers = database.FindSupplierByID(Utils.readLine());
+                    break;
+                case 2: // By name
+                    System.out.println("Please enter supplier name:");
+                    suppliers = database.FindSuppliersByName(Utils.readLine());
+                    break;
+                case 3: // Back
+                    return null;
+            }
+            if(suppliers == null || suppliers.isEmpty())
+                System.out.println("There were no suppliers matching this search.");
+            else
+                return suppliers;
+        }
+    }
+
+    public Supplier getSupplier(){
+        List<Supplier> suppliers = searchSupplier();
+        return suppliers == null ? null : suppliers.get(0);
+    }
+
+    public List<Order> searchOrder(){
+        List<Order> orders = null;
+        while(true) {
+            selected = Utils.MenuSelect("How would you like to search?",orderSearch);
+            switch (selected) {
+                case 1: // By id
+                    System.out.println("Please enter order ID:");
+                    orders = database.FindOrderByID(Utils.readLine());
+                    break;
+                case 2: // By employee
+                    System.out.println("Please enter employee ID:");
+                    orders = database.FindOrdersByEmployee(Utils.readLine());
+                    break;
+                case 3: // By supplier
+                    System.out.println("Please enter supplier ID:");
+                    orders = database.FindOrdersBySupplier(Utils.readLine());
+                    break;
+                case 4: // Back
+                    return null;
+            }
+            if(orders == null || orders.isEmpty())
+                System.out.println("There were no orders matching this search.");
+        }
+    }
+
+    public Order getOrder(){
+        List<Order> orders = searchOrder();
+        return orders == null ? null : orders.get(0);
     }
 }
