@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="Added:&#10;- addSupplier&#10;- editSupplier">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" />
+    <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/OrdersMenu.java" afterPath="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Utils.java" afterPath="$PROJECT_DIR$/src/Application/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/PaymentMethod.java" afterPath="$PROJECT_DIR$/src/Entities/PaymentMethod.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,23 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Contract.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Contract.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.5061947">
+              <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaymentMethod.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PaymentMethod.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15575221">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -671,7 +654,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460749560801</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add-edit-remove  branch.">
+      <created>1460797071667</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1460797071667</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -679,7 +668,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -730,7 +719,8 @@
     <MESSAGE value="Started implemnting integration functions with SQL" />
     <MESSAGE value="Trying to get things working..." />
     <MESSAGE value="Added:&#10;- addSupplier&#10;- editSupplier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added:&#10;- addSupplier&#10;- editSupplier" />
+    <MESSAGE value="add-edit-remove  branch." />
+    <option name="LAST_COMMIT_MESSAGE" value="add-edit-remove  branch." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1142,38 +1132,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1197,8 +1159,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15575221">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15575221">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5061947">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
