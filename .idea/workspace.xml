@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Database.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Database.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Contract.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Contract.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/DeliveryMethod.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/DeliveryMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/PaymentMethod.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/PaymentMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Database.java" afterPath="$PROJECT_DIR$/src/Application/Database.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" afterPath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/OrdersMenu.java" afterPath="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/Order.java" afterPath="$PROJECT_DIR$/src/Entities/Order.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,6 +35,34 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="SuppliersProductsPrices" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Suppliers" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -89,16 +107,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="26" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ConsoleMenuImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -117,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="95" column="50" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
+              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,11 +147,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entities/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37528345">
-              <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.5117139">
+              <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
               <folding>
                 <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#closeConnection#0;class#DatabaseImplementation#0" expanded="false" />
@@ -171,23 +189,50 @@
                 <element signature="method#getProductsInOrderByOrderID#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
-                <marker date="1460806142357" expanded="false" signature="1308:1380" placeholder="SELECT COUNT... Employees" />
-                <marker date="1460806142357" expanded="false" signature="2955:2989" placeholder="SELECT * FRO... Suppliers" />
-                <marker date="1460806142357" expanded="false" signature="3022:3078" placeholder="SELECT * FRO... Suppliers" />
-                <marker date="1460806142357" expanded="false" signature="4521:4558" placeholder="SELECT * FRO... Suppliers" />
-                <marker date="1460806142357" expanded="false" signature="5472:5544" placeholder="SELECT suppl... SuppliersProductsPrices" />
-                <marker date="1460806142357" expanded="false" signature="6796:6866" placeholder="SELECT produ... SuppliersProductsPrices" />
-                <marker date="1460806142357" expanded="false" signature="7753:7803" placeholder="SELECT name,... Products" />
-                <marker date="1460806142357" expanded="false" signature="8692:8733" placeholder="SELECT name Manufacturers" />
-                <marker date="1460806142357" expanded="false" signature="9576:9693" placeholder="SELECT metho... Contracts" />
-                <marker date="1460806142357" expanded="false" signature="10917:11034" placeholder="SELECT metho... PaymentMethods" />
-                <marker date="1460806142357" expanded="false" signature="12300:12359" placeholder="SELECT name,... SuupliersContacts" />
-                <marker date="1460806142357" expanded="false" signature="13493:13554" placeholder="SELECT produ... ProductsInOrders" />
-                <marker date="1460806142357" expanded="false" signature="14837:14869" placeholder="SELECT * FRO... Orders" />
-                <marker date="1460806142357" expanded="false" signature="16244:16305" placeholder="SELECT produ... SuppliersProductsPrices" />
-                <marker date="1460806142357" expanded="false" signature="17192:17242" placeholder="SELECT userN... Employees" />
-                <marker date="1460806142357" expanded="false" signature="18143:18202" placeholder="SELECT userN... Employees" />
+                <marker date="1460807643691" expanded="false" signature="1308:1380" placeholder="SELECT COUNT... Employees" />
+                <marker date="1460807643691" expanded="false" signature="2951:2985" placeholder="SELECT * FRO... Suppliers" />
+                <marker date="1460807643691" expanded="false" signature="3018:3074" placeholder="SELECT * FRO... Suppliers" />
+                <marker date="1460807643691" expanded="false" signature="4529:4566" placeholder="SELECT * FRO... Suppliers" />
+                <marker date="1460807643691" expanded="false" signature="5480:5552" placeholder="SELECT suppl... SuppliersProductsPrices" />
+                <marker date="1460807643691" expanded="false" signature="6804:6874" placeholder="SELECT produ... SuppliersProductsPrices" />
+                <marker date="1460807643691" expanded="false" signature="7761:7811" placeholder="SELECT name,... Products" />
+                <marker date="1460807643691" expanded="false" signature="8700:8741" placeholder="SELECT name Manufacturers" />
+                <marker date="1460807643691" expanded="false" signature="9584:9701" placeholder="SELECT metho... Contracts" />
+                <marker date="1460807643691" expanded="false" signature="10925:11042" placeholder="SELECT metho... PaymentMethods" />
+                <marker date="1460807643691" expanded="false" signature="12300:12359" placeholder="SELECT name,... SuupliersContacts" />
+                <marker date="1460807643691" expanded="false" signature="13483:13544" placeholder="SELECT produ... ProductsInOrders" />
+                <marker date="1460807643691" expanded="false" signature="14786:14818" placeholder="SELECT * FRO... Orders" />
+                <marker date="1460807643691" expanded="false" signature="16185:16246" placeholder="SELECT produ... SuppliersProductsPrices" />
+                <marker date="1460807643691" expanded="false" signature="17133:17183" placeholder="SELECT userN... Employees" />
+                <marker date="1460807643691" expanded="false" signature="18084:18143" placeholder="SELECT userN... Employees" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SuppliersProductsPrices" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/2db27f21/9cd8f1e9-2268-428d-bd77-f6ea5b465584/SuppliersProductsPrices">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,26 +242,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -283,9 +308,9 @@
         <option value="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" />
         <option value="dbtable:/2db27f21/6e381b6f-1687-46b2-a0a7-ac4508cfd2fa/ProductsInOrders" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9cd8f1e9-2268-428d-bd77-f6ea5b465584/console.sql" />
-        <option value="$PROJECT_DIR$/src/Entities/Order.java" />
         <option value="$PROJECT_DIR$/src/Application/Database.java" />
         <option value="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
+        <option value="$PROJECT_DIR$/src/Entities/Order.java" />
         <option value="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
         <option value="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
         <option value="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
@@ -882,7 +907,7 @@
       <workItem from="1460719199599" duration="455000" />
       <workItem from="1460720588365" duration="51000" />
       <workItem from="1460796638340" duration="7819000" />
-      <workItem from="1460804520295" duration="1621000" />
+      <workItem from="1460804520295" duration="3121000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -944,11 +969,17 @@
       <option name="project" value="LOCAL" />
       <updated>1460803947253</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Some database errors fix after merge">
+      <created>1460806166445</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1460806166445</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24971000" />
+    <option name="totallyTimeSpent" value="26471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -961,7 +992,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5398907" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07759563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1005,14 +1036,15 @@
     <MESSAGE value="Trying to get things working..." />
     <MESSAGE value="Added:&#10;- addSupplier&#10;- editSupplier" />
     <MESSAGE value="Added sql functionallity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added sql functionallity" />
+    <MESSAGE value="Some database errors fix after merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some database errors fix after merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
-          <line>520</line>
+          <line>517</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
@@ -1032,14 +1064,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1294,22 +1318,22 @@
             <element signature="method#getProductsInOrderByOrderID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1460806142357" expanded="false" signature="1308:1380" placeholder="SELECT COUNT... Employees" />
-            <marker date="1460806142357" expanded="false" signature="2955:2989" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460806142357" expanded="false" signature="3022:3078" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460806142357" expanded="false" signature="4521:4558" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460806142357" expanded="false" signature="5472:5544" placeholder="SELECT suppl... SuppliersProductsPrices" />
-            <marker date="1460806142357" expanded="false" signature="6796:6866" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1460806142357" expanded="false" signature="7753:7803" placeholder="SELECT name,... Products" />
-            <marker date="1460806142357" expanded="false" signature="8692:8733" placeholder="SELECT name Manufacturers" />
-            <marker date="1460806142357" expanded="false" signature="9576:9693" placeholder="SELECT metho... Contracts" />
-            <marker date="1460806142357" expanded="false" signature="10917:11034" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1460806142357" expanded="false" signature="12300:12359" placeholder="SELECT name,... SuupliersContacts" />
-            <marker date="1460806142357" expanded="false" signature="13493:13554" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1460806142357" expanded="false" signature="14837:14869" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460806142357" expanded="false" signature="16244:16305" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1460806142357" expanded="false" signature="17192:17242" placeholder="SELECT userN... Employees" />
-            <marker date="1460806142357" expanded="false" signature="18143:18202" placeholder="SELECT userN... Employees" />
+            <marker date="1460807643691" expanded="false" signature="1308:1380" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460807643691" expanded="false" signature="2951:2985" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460807643691" expanded="false" signature="3018:3074" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460807643691" expanded="false" signature="4529:4566" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460807643691" expanded="false" signature="5480:5552" placeholder="SELECT suppl... SuppliersProductsPrices" />
+            <marker date="1460807643691" expanded="false" signature="6804:6874" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460807643691" expanded="false" signature="7761:7811" placeholder="SELECT name,... Products" />
+            <marker date="1460807643691" expanded="false" signature="8700:8741" placeholder="SELECT name Manufacturers" />
+            <marker date="1460807643691" expanded="false" signature="9584:9701" placeholder="SELECT metho... Contracts" />
+            <marker date="1460807643691" expanded="false" signature="10925:11042" placeholder="SELECT metho... PaymentMethods" />
+            <marker date="1460807643691" expanded="false" signature="12300:12359" placeholder="SELECT name,... SuupliersContacts" />
+            <marker date="1460807643691" expanded="false" signature="13483:13544" placeholder="SELECT produ... ProductsInOrders" />
+            <marker date="1460807643691" expanded="false" signature="14786:14818" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460807643691" expanded="false" signature="16185:16246" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460807643691" expanded="false" signature="17133:17183" placeholder="SELECT userN... Employees" />
+            <marker date="1460807643691" expanded="false" signature="18084:18143" placeholder="SELECT userN... Employees" />
           </folding>
         </state>
       </provider>
@@ -1392,14 +1416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5895628">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/2db27f21/9cd8f1e9-2268-428d-bd77-f6ea5b465584/Suppliers">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1427,14 +1443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="18" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1443,41 +1451,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="42" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1978#1979#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="50" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1501,10 +1479,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/2db27f21/9cd8f1e9-2268-428d-bd77-f6ea5b465584/SuppliersProductsPrices">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="42" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#1978#1979#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37528345">
-          <caret line="81" column="37" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.5117139">
+          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding>
             <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#closeConnection#0;class#DatabaseImplementation#0" expanded="false" />
@@ -1532,22 +1571,22 @@
             <element signature="method#getProductsInOrderByOrderID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1460806142357" expanded="false" signature="1308:1380" placeholder="SELECT COUNT... Employees" />
-            <marker date="1460806142357" expanded="false" signature="2955:2989" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460806142357" expanded="false" signature="3022:3078" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460806142357" expanded="false" signature="4521:4558" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460806142357" expanded="false" signature="5472:5544" placeholder="SELECT suppl... SuppliersProductsPrices" />
-            <marker date="1460806142357" expanded="false" signature="6796:6866" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1460806142357" expanded="false" signature="7753:7803" placeholder="SELECT name,... Products" />
-            <marker date="1460806142357" expanded="false" signature="8692:8733" placeholder="SELECT name Manufacturers" />
-            <marker date="1460806142357" expanded="false" signature="9576:9693" placeholder="SELECT metho... Contracts" />
-            <marker date="1460806142357" expanded="false" signature="10917:11034" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1460806142357" expanded="false" signature="12300:12359" placeholder="SELECT name,... SuupliersContacts" />
-            <marker date="1460806142357" expanded="false" signature="13493:13554" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1460806142357" expanded="false" signature="14837:14869" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460806142357" expanded="false" signature="16244:16305" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1460806142357" expanded="false" signature="17192:17242" placeholder="SELECT userN... Employees" />
-            <marker date="1460806142357" expanded="false" signature="18143:18202" placeholder="SELECT userN... Employees" />
+            <marker date="1460807643691" expanded="false" signature="1308:1380" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460807643691" expanded="false" signature="2951:2985" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460807643691" expanded="false" signature="3018:3074" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460807643691" expanded="false" signature="4529:4566" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460807643691" expanded="false" signature="5480:5552" placeholder="SELECT suppl... SuppliersProductsPrices" />
+            <marker date="1460807643691" expanded="false" signature="6804:6874" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460807643691" expanded="false" signature="7761:7811" placeholder="SELECT name,... Products" />
+            <marker date="1460807643691" expanded="false" signature="8700:8741" placeholder="SELECT name Manufacturers" />
+            <marker date="1460807643691" expanded="false" signature="9584:9701" placeholder="SELECT metho... Contracts" />
+            <marker date="1460807643691" expanded="false" signature="10925:11042" placeholder="SELECT metho... PaymentMethods" />
+            <marker date="1460807643691" expanded="false" signature="12300:12359" placeholder="SELECT name,... SuupliersContacts" />
+            <marker date="1460807643691" expanded="false" signature="13483:13544" placeholder="SELECT produ... ProductsInOrders" />
+            <marker date="1460807643691" expanded="false" signature="14786:14818" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460807643691" expanded="false" signature="16185:16246" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460807643691" expanded="false" signature="17133:17183" placeholder="SELECT userN... Employees" />
+            <marker date="1460807643691" expanded="false" signature="18084:18143" placeholder="SELECT userN... Employees" />
           </folding>
         </state>
       </provider>

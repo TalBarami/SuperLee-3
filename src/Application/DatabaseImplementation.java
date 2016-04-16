@@ -88,7 +88,7 @@ public class DatabaseImplementation implements Database {
         List<Supplier> suppliers=new ArrayList<>();
         String name,bankAccount;
         PaymentMethod pm;
-        HashMap<String,String> contacts;
+        Map<String,String> contacts;
         Contract contract;
         int id;
         PreparedStatement ps=null;
@@ -106,12 +106,13 @@ public class DatabaseImplementation implements Database {
             }
             rs=ps.executeQuery();
             while(rs.next()){
+                id=rs.getInt("ID");
                 name=rs.getString("name");
                 bankAccount=rs.getString("bankAccount");
                 pm=getPaymentMethodByID(rs.getInt("paymentMethod"));
                 contract=getContractBySupplierID(name);
                 contacts=getContactsBySupplierID(name);
-                Supplier supplier=new Supplier(name,name,bankAccount,pm,contacts);
+                Supplier supplier=new Supplier(String.valueOf(id),name,bankAccount,pm,contacts);
                 supplier.setContract(contract);
                 suppliers.add(supplier);
             }
@@ -128,7 +129,6 @@ public class DatabaseImplementation implements Database {
                 e.printStackTrace();
             }
             closeConnection();
-            System.out.println("ok");
             return suppliers;
         }
     }
@@ -366,8 +366,8 @@ public class DatabaseImplementation implements Database {
             return method;
         }
     }
-    private HashMap<String,String> getContactsBySupplierID(String id){
-        HashMap<String,String> contacts=new HashMap<>();
+    private Map<String,String> getContactsBySupplierID(String id){
+        Map<String,String> contacts=new HashMap<>();
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
@@ -402,15 +402,13 @@ public class DatabaseImplementation implements Database {
 
     }
 
-
-
     /** Order Managementm **/
     public void CreateOrder(Order order) {
     }
     public void confirmOrder(Order order) {
     }
-    private HashMap<Product,Integer> getProductsAndAmountsInOrderByOrderID(int id){
-        HashMap<Product,Integer> ans=new HashMap<>();
+    private Map<Product,Integer> getProductsAndAmountsInOrderByOrderID(int id){
+        Map<Product,Integer> ans=new HashMap<>();
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
@@ -445,14 +443,13 @@ public class DatabaseImplementation implements Database {
         return null;
     }
     public List<Order> FindOrderByID(String id) {
-        System.out.println("asasd");
         List<Order> ans=new ArrayList<>();
         Employee emp;
         Supplier supp;
         Date date;
         boolean arrived;
         double totalPrice;
-        HashMap<Product,Integer> products;
+        Map<Product,Integer> products;
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
@@ -487,8 +484,8 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
-    private HashMap<Product,Integer> getProductsInOrderByOrderID(String id){
-        HashMap<Product,Integer> ans=new HashMap<>();
+    private Map<Product,Integer> getProductsInOrderByOrderID(String id){
+        Map<Product,Integer> ans=new HashMap<>();
         ResultSet rs=null;
         PreparedStatement ps=null;
         try{

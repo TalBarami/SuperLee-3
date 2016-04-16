@@ -60,8 +60,8 @@ public class OrdersMenu {
         }
         items = selectItems();
         totalPrice = calculatePrice(supplier, items);
-        //Order order = new Order("", employee, supplier, new Date(), false, totalPrice, items);
-        //database.CreateOrder(order);
+        Order order = new Order(employee, supplier, totalPrice, items);
+        database.CreateOrder(order);
         System.out.println("Order created successfully!");
     }
 
