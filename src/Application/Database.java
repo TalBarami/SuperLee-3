@@ -22,11 +22,8 @@ public interface Database {
     List<Order> FindOrdersByEmployee(String employeeID);
     List<Order> FindOrdersBySupplier(String supplierID);
 
-<<<<<<< HEAD
-=======
-    Product findProductByID(String id);
 
+    Product getProductByID(String id);
 
->>>>>>> refs/remotes/origin/add-edit-remove
     Employee checkCredentials(String username, String password);
 }

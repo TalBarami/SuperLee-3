@@ -264,7 +264,7 @@ public class SuppliersMenu {
         System.out.println("Add products. Leave the product id field blank when you are done.");
         while(true){
             System.out.println("Please enter product id:");
-            if((product = database.findProductByID(Utils.readLine())) == null) {
+            if((product = database.getProductByID(Utils.readLine())) == null) {
                 if(products.isEmpty())
                     System.out.println("You must enter at least 1 product.");
                 else
