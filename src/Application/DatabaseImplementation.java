@@ -8,7 +8,6 @@ import java.util.List;
 import java.sql.*;
 import java.util.*;
 
-
 public class DatabaseImplementation implements Database {
     private Connection dbConnection;
     private final String DB_URL = "jdbc:sqlite:SuperLeeDB.db";
@@ -41,7 +40,6 @@ public class DatabaseImplementation implements Database {
             System.exit(0);
         }
     }
-
 
     /** Suppliers managamemnt **/
     public void addSupplier(Supplier supplier){
@@ -487,7 +485,6 @@ public class DatabaseImplementation implements Database {
             return contacts;
         }
     }
-
 
     /** Contract Management **/
     public void addContract(Supplier supp) {
