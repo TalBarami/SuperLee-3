@@ -89,11 +89,11 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
             switch (selected) {
                 case 1:
                     System.out.println("Please enter supplier ID:");
-                    suppliers = database.FindSupplierByID(Utils.readLine());
+                    suppliers = database.findSupplierByID(Utils.readLine());
                     break;
                 case 2:
                     System.out.println("Please enter supplier name:");
-                    suppliers = database.FindSuppliersByName(Utils.readLine());
+                    suppliers = database.findSuppliersByName(Utils.readLine());
                     break;
                 case 3:
                     return null;
@@ -117,15 +117,15 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
             switch (selected) {
                 case 1:
                     System.out.println("Please enter order ID:");
-                    orders = database.FindOrderByID(Utils.readLine());
+                    orders = database.findOrderByID(Utils.readLine());
                     break;
                 case 2:
                     System.out.println("Please enter employee ID:");
-                    orders = database.FindOrdersByEmployee(Utils.readLine());
+                    orders = database.findOrdersByEmployee(Utils.readLine());
                     break;
                 case 3:
                     System.out.println("Please enter supplier ID:");
-                    orders = database.FindOrdersBySupplier(Utils.readLine());
+                    orders = database.findOrdersBySupplier(Utils.readLine());
                     break;
                 case 4:
                     return null;

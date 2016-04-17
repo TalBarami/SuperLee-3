@@ -6,19 +6,20 @@ import java.util.List;
 
 public interface Database {
 
-    void AddSupplier(Supplier supplier);
-    void EditSupplier(Supplier supplier);
-    void RemoveSupplier(Supplier supplier);
-    List<Supplier> FindSupplierByID(String id);
-    List<Supplier> FindSuppliersByName(String name);
+    void addSupplier(Supplier supplier);
+    void editSupplier(Supplier supplier);
+    void removeSupplier(Supplier supplier);
+    List<Supplier> findSupplierByID(String id);
+    List<Supplier> findSuppliersByName(String name);
 
-    void AddContract(Supplier supp);
+    void addContract(Supplier supp);
+    void editContract(Supplier supp);
 
-    void CreateOrder(Order order);
+    void createOrder(Order order);
     void confirmOrder(Order order);
-    List<Order> FindOrderByID(String id);
-    List<Order> FindOrdersByEmployee(String employeeID);
-    List<Order> FindOrdersBySupplier(String supplierID);
+    List<Order> findOrderByID(String id);
+    List<Order> findOrdersByEmployee(String employeeID);
+    List<Order> findOrdersBySupplier(String supplierID);
 
 
     Product getProductByID(String id);

@@ -43,7 +43,7 @@ public class DatabaseImplementation implements Database {
 
 
     /** Suppliers managamemnt **/
-    public void AddSupplier(Supplier supplier){
+    public void addSupplier(Supplier supplier){
         PreparedStatement ps=null;
         try {
             openConnection();
@@ -76,7 +76,7 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
-    public void EditSupplier(Supplier supplier) {
+    public void editSupplier(Supplier supplier) {
         PreparedStatement ps=null;
         try{
             openConnection();
@@ -101,7 +101,6 @@ public class DatabaseImplementation implements Database {
                 ps.setString(3,supplier.getContacts().get(name));
                 ps.executeUpdate();
             }
-
         }
         catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
@@ -116,7 +115,7 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
-    public void RemoveSupplier(Supplier supplier){
+    public void removeSupplier(Supplier supplier){
         PreparedStatement ps=null;
         try {
             openConnection();
@@ -138,10 +137,10 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
-    public List<Supplier> FindSupplierByID(String id) {
+    public List<Supplier> findSupplierByID(String id) {
         return FindSupplier("ID",id);
     }
-    public List<Supplier> FindSuppliersByName(String suppName) {
+    public List<Supplier> findSuppliersByName(String suppName) {
         return FindSupplier("name",suppName);
     }
     private List<Supplier> FindSupplier(String idOrName,String pramater){
@@ -170,8 +169,8 @@ public class DatabaseImplementation implements Database {
                 name=rs.getString("name");
                 bankAccount=rs.getString("bankAccount");
                 pm=getPaymentMethodByID(rs.getInt("paymentMethod"));
-                contract=getContractBySupplierID(name);
-                contacts=getContactsBySupplierID(name);
+                contract=getContractBySupplierID(String.valueOf(id));
+                contacts=getContactsBySupplierID(String.valueOf(id));
                 Supplier supplier=new Supplier(String.valueOf(id),name,bankAccount,pm,contacts);
                 supplier.setContract(contract);
                 suppliers.add(supplier);
@@ -232,7 +231,7 @@ public class DatabaseImplementation implements Database {
         ResultSet rs=null;
         try{
             openConnection();
-            String query="SELECT supplierID,price  FROM SuppliersProductsPrices WHERE supplierID=?";
+            String query="SELECT *  FROM Contracts WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
             rs=ps.executeQuery();
@@ -430,7 +429,7 @@ public class DatabaseImplementation implements Database {
 
 
     /** Contract Management **/
-    public void AddContract(Supplier supp) {
+    public void addContract(Supplier supp) {
         PreparedStatement ps=null;
         try {
             openConnection();
@@ -465,9 +464,50 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
+    public void editContract(Supplier supp) {
+        PreparedStatement ps=null;
+        try{
+            openConnection();
+            String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=?,minAmount=?,maxAmount=?,discount=? WHERE ID=?";
+            ps=dbConnection.prepareStatement(query);
+            ps.setInt(1,supp.getContract().getDeliveryMethod().ordinal());
+            ps.setInt(2,supp.getContract().getDeliveryTime());
+            ps.setInt(3,supp.getContract().getMinDiscountLimits());
+            ps.setInt(4,supp.getContract().getMaxDiscountLimits());
+            ps.setDouble(5,supp.getContract().getDiscount());
+            ps.setInt(6,Integer.parseInt(supp.getId()));
+            ps.executeUpdate();
+
+            query = "DELETE FROM SuppliersProductsPrices WHERE supplierID=?";
+            ps = dbConnection.prepareStatement(query);
+            ps.setInt(1, Integer.parseInt(supp.getId()));
+            ps.executeUpdate();
+
+            for(Product p : supp.getContract().getProducts().keySet()){
+                query = "INSERT INTO SuppliersProductsPrices (supplierID, productID, price) VALUES (?,?,?)";
+                ps = dbConnection.prepareStatement(query);
+                ps.setInt(1, Integer.parseInt(supp.getId()));
+                ps.setInt(2, Integer.parseInt(p.getId()));
+                ps.setDouble(3,supp.getContract().getProducts().get(p));
+                ps.executeUpdate();
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
+    }
 
     /** Order Managementm **/
-    public void CreateOrder(Order order) {
+    public void createOrder(Order order) {
         PreparedStatement ps=null;
         try {
             openConnection();
@@ -521,10 +561,10 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
-    public List<Order> FindOrdersByEmployee(String employeeID) {
+    public List<Order> findOrdersByEmployee(String employeeID) {
         return FindOrder("employeeID",employeeID);
     }
-    public List<Order> FindOrdersBySupplier(String supplierID) {
+    public List<Order> findOrdersBySupplier(String supplierID) {
         return FindOrder("supplierID",supplierID);
     }
     private List<Order> FindOrder(String findBy,String parameter){
@@ -547,7 +587,7 @@ public class DatabaseImplementation implements Database {
             while(rs.next()){
                 orderID=String.valueOf(rs.getInt("orderID"));
                 emp=getEmployeeById(rs.getInt("employeeID"));
-                supp=FindSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
+                supp= findSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
                 arrived=rs.getBoolean("arrivalStatus");
                 totalPrice=rs.getDouble("totalPrice");
                 products=getProductsInOrderByOrderID(orderID);
@@ -571,7 +611,7 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
-    public List<Order> FindOrderByID(String id) {
+    public List<Order> findOrderByID(String id) {
         List<Order> ans=new ArrayList<>();
         Employee emp;
         Supplier supp;
@@ -589,7 +629,7 @@ public class DatabaseImplementation implements Database {
             rs=ps.executeQuery();
             while(rs.next()){
                 emp=getEmployeeById(rs.getInt("employeeID"));
-                supp=FindSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
+                supp= findSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
                 arrived=rs.getBoolean("arrivalStatus");
                 totalPrice=rs.getDouble("totalPrice");
                 products=getProductsInOrderByOrderID(id);

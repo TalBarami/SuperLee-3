@@ -1,9 +1,7 @@
 package Application;
 
 import Entities.*;
-import javafx.util.Pair;
 
-import javax.rmi.CORBA.Util;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,7 +62,7 @@ public class SuppliersMenu {
     }
 
     private void addNewSupplier(){
-        database.AddSupplier(createSupplier());
+        database.addSupplier(createSupplier());
         System.out.println("Supplier added successfully!");
     }
 
@@ -75,7 +73,7 @@ public class SuppliersMenu {
             return;
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier);
-        database.EditSupplier(newSupplier);
+        database.editSupplier(newSupplier);
         System.out.println("Supplier edited successfully!");
     }
 
@@ -83,7 +81,7 @@ public class SuppliersMenu {
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
-        database.RemoveSupplier(supplier);
+        database.removeSupplier(supplier);
         System.out.println("Supplier removed successfully!");
     }
 
@@ -175,7 +173,7 @@ public class SuppliersMenu {
 
         if(supplier == null) {
             System.out.println("Please enter supplier id:");
-            while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !database.FindSupplierByID(id).isEmpty())
+            while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !database.findSupplierByID(id).isEmpty())
                 System.out.println("Invalid id. please try again.");
         }else id = supplier.getId();
 
@@ -220,11 +218,11 @@ public class SuppliersMenu {
         System.out.println("Please enter the minimum amount for discount:");
         minDiscountLimit = Utils.checkIntBounds(0);
         if(minDiscountLimit == -1)
-            minDiscountLimit = oldContract.getMinDiscountLimit();
+            minDiscountLimit = oldContract.getMinDiscountLimits();
         System.out.println("Please enter the maximum amount for discount:");
         maxDiscountLimit = Utils.checkIntBounds(minDiscountLimit);
         if(maxDiscountLimit == -1)
-            maxDiscountLimit = oldContract.getMaxDiscountLimit();
+            maxDiscountLimit = oldContract.getMaxDiscountLimits();
         System.out.println("Please enter the discount (in percentage):");
         discount = Utils.checkDoubleBounds(0, 100);
         if(discount == -1)
