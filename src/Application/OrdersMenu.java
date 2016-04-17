@@ -59,7 +59,8 @@ public class OrdersMenu {
             System.out.println("This supplier does not have a contract.");
             return;
         }
-        items = selectItems();
+        System.out.printf("Supplier chosen: %s",supplier);
+        items = selectItems(supplier);
         totalPrice = calculatePrice(supplier, items);
         Order order = new Order(employee, supplier, totalPrice, items);
         database.createOrder(order);
@@ -91,21 +92,33 @@ public class OrdersMenu {
         }
     }
 
-    private Map<Product, Integer> selectItems(){
+    private Map<Product, Integer> selectItems(Supplier supplier){
         Map<Product, Integer> items = new HashMap<>();
         Product product;
         int amount;
+        String input;
         System.out.println("Add products. Leave the product id field blank when you are done.");
         while(true){
             System.out.println("Please enter product id:");
-            if((product = database.getProductByID(Utils.readLine())) == null) {
-                if(items.isEmpty())
+            input = Utils.readLine();
+            if(input.isEmpty()){
+                if (items.isEmpty()) {
                     System.out.println("You must enter at least 1 product.");
-                else
+                    continue;
+                }else
                     break;
             }
+            if((product = database.getProductByID(input)) == null){
+                System.out.printf("Product id %s does not exists in the system.\n", input);
+                continue;
+            }
+            if(!supplier.getProducts().containsKey(product)){
+                System.out.printf("%s does not sell %s (id %s).\n",supplier.getName(),product.getName(), product.getId());
+                continue;
+            }
             System.out.println("Please enter amount:");
-            amount = Utils.checkIntBounds(0);
+            while((amount = Utils.checkIntBounds(0)) == -1)
+                System.out.println("Invalid input");
             items.put(product, amount);
         }
         return items;

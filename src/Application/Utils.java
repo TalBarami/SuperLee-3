@@ -3,27 +3,45 @@ package Application;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class Utils {
     private static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+    private static int selected;
 
-    public static int MenuSelect(String message, String[] arr){
-        int selected = displayMenu(message, arr);
-        while(selected < 1 || selected > arr.length) {
+    public static <T> int MenuSelect(String message, T[] arr){
+        while((selected = displayMenu(message, arr)) < 1 || selected > arr.length) {
             System.out.println("Invalid input.");
-            selected = displayMenu(message, arr);
         }
         return selected;
     }
 
-    public static int MenuSelect(String[] arr){
+    public static <T> int MenuSelect(T[] arr){
         return MenuSelect("", arr);
     }
 
-    private static int displayMenu(String message, String[] arr){
+    private static <T> int displayMenu(String message, T[] arr){
         System.out.println(message.isEmpty() ? "Please choose one of the following:" : message);
         for (int i = 0; i < arr.length; i++)
             System.out.printf("%d. %s\n", i + 1, arr[i]);
+        return parseInt(readLine());
+    }
+
+    public static <T> int MenuSelect(String message, List<T> list){
+        while((selected = displayMenu(message, list)) < 1 || selected > list.size()) {
+            System.out.println("Invalid input.");
+        }
+        return selected-1;
+    }
+
+    public static <T> int MenuSelect(List<T> list){
+        return MenuSelect("", list);
+    }
+
+    private static <T> int displayMenu(String message, List<T> list){
+        System.out.println(message.isEmpty() ? "Please choose one of the following:" : message);
+        for (int i = 0; i < list.size(); i++)
+            System.out.printf("%d. %s\n", i + 1, list.get(i));
         return parseInt(readLine());
     }
 
@@ -75,7 +93,7 @@ public class Utils {
         double value;
 
         while(!(input = readLine()).isEmpty()){
-            if((value = parseInt(input)) < min || value > max)
+            if((value = parseDouble(input)) < min || value > max)
                 System.out.println("Invalid input.");
             else
                 return value;
