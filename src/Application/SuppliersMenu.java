@@ -99,6 +99,7 @@ public class SuppliersMenu {
 
         Contract contract = createContract();
         supplier.setContract(contract);
+        database.addContract(supplier);
         System.out.println("Contract added successfully!");
     }
 
@@ -141,7 +142,7 @@ public class SuppliersMenu {
         Map<Product,Double> products = supplier.getProducts();
         System.out.println(products.size() == 1 ? "Product found:\n" : "Product found:\n");
         for (Product p : products.keySet()) {
-            System.out.printf("%s\nSold by %s for %f.\n\n", p, supplier.getName(), products.get(p));
+            System.out.printf("%s\nSold by %s for %f$.\n\n", p, supplier.getName(), products.get(p));
         }
     }
 
@@ -284,7 +285,7 @@ public class SuppliersMenu {
         String input = Utils.readLine();
         if(input.isEmpty() && contract != null)
             return contract.getDeliveryMethod();
-        selected = Utils.parseInt(Utils.readLine());
+        selected = Utils.parseInt(input);
         while(selected<0 || selected >= values.length){
             System.out.println("Invalid input.");
             for (int i = 0; i < values.length; i++)

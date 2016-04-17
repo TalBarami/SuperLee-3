@@ -11,6 +11,7 @@ public interface Database {
     void removeSupplier(Supplier supplier);
     List<Supplier> findSupplierByID(String id);
     List<Supplier> findSuppliersByName(String name);
+    void reactivateSupplier(Supplier supplier);
 
     void addContract(Supplier supp);
     void editContract(Supplier supp);
