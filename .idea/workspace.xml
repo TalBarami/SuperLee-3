@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperLeeDB.db" afterPath="$PROJECT_DIR$/SuperLeeDB.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Database.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Database.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" afterPath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Database.java" afterPath="$PROJECT_DIR$/src/Application/Database.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" afterPath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/OrdersMenu.java" afterPath="$PROJECT_DIR$/src/Application/OrdersMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,6 +54,20 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Suppliers" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -133,11 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="233" column="50" selection-start-line="233" selection-start-column="50" selection-end-line="233" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.20183486">
+              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
               <folding>
                 <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#closeConnection#0;class#DatabaseImplementation#0" expanded="false" />
@@ -145,9 +162,10 @@
                 <element signature="method#addSupplier#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#editSupplier#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#removeSupplier#0;class#DatabaseImplementation#0" expanded="false" />
-                <element signature="e#5004#5005#0" expanded="true" />
-                <element signature="e#5048#5049#0" expanded="true" />
+                <element signature="method#FindSupplier#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#getProductByID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getContractBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getProductsWithPricesBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#getManufacturerByID#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#getDeliveryBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#getPaymentMethodByID#0;class#DatabaseImplementation#0" expanded="false" />
@@ -165,48 +183,48 @@
                 <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
                 <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
-                <marker date="1460885795787" expanded="false" signature="1463:1540" placeholder="INSERT INTO Suppliers... " />
-                <marker date="1460885795787" expanded="false" signature="1951:2021" placeholder="INSERT INTO SuppliersContacts... " />
-                <marker date="1460885795787" expanded="false" signature="2820:2890" placeholder="UPDATE Suppl... " />
-                <marker date="1460885795787" expanded="false" signature="3232:3280" placeholder="DELETE from " />
-                <marker date="1460885795787" expanded="false" signature="3522:3592" placeholder="INSERT INTO SuppliersContacts... " />
-                <marker date="1460885795787" expanded="false" signature="4395:4415" placeholder="UPDATE Suppl... " />
-                <marker date="1460885795787" expanded="false" signature="4395:4433" placeholder="UPDATE Suppl... " />
-                <marker date="1460885795787" expanded="false" signature="4395:4435" placeholder="UPDATE Suppl... " />
-                <marker date="1460885795787" expanded="false" signature="5565:5599" placeholder="SELECT * FRO... Suppliers" />
-                <marker date="1460885795787" expanded="false" signature="5632:5688" placeholder="SELECT * FRO... Suppliers" />
-                <marker date="1460885795787" expanded="false" signature="7172:7222" placeholder="SELECT name,... Products" />
-                <marker date="1460885795787" expanded="true" signature="8253:8296" placeholder="SELECT suppl... SuppliersProductsPrices" />
-                <marker date="1460885795787" expanded="true" signature="9548:9618" placeholder="SELECT produ... SuppliersProductsPrices" />
-                <marker date="1460885795787" expanded="false" signature="10504:10545" placeholder="SELECT name Manufacturers" />
-                <marker date="1460885795787" expanded="false" signature="11388:11505" placeholder="SELECT metho... Contracts" />
-                <marker date="1460885795787" expanded="false" signature="12729:12846" placeholder="SELECT metho... PaymentMethods" />
-                <marker date="1460885795787" expanded="false" signature="14104:14163" placeholder="SELECT name,... SuupliersContacts" />
-                <marker date="1460885795787" expanded="false" signature="15009:15126" placeholder="INSERT INTO Contracts... " />
-                <marker date="1460885795787" expanded="false" signature="15712:15793" placeholder="INSERT INTO ProductsInOrders... " />
-                <marker date="1460885795787" expanded="true" signature="16625:16723" placeholder="UPDATE Suppl... " />
-                <marker date="1460885795787" expanded="true" signature="17226:17280" placeholder="DELETE from " />
-                <marker date="1460885795787" expanded="true" signature="17526:17607" placeholder="INSERT INTO SuppliersContacts... " />
-                <marker date="1460885795787" expanded="false" signature="18457:18527" placeholder="INSERT INTO Orders... " />
-                <marker date="1460885795787" expanded="false" signature="18902:18974" placeholder="INSERT INTO ProductsInOrders... " />
-                <marker date="1460885795787" expanded="false" signature="19786:19830" placeholder="UPDATE Order... " />
-                <marker date="1460885795787" expanded="false" signature="21003:21029" placeholder="SELECT * FRO... Orders" />
-                <marker date="1460885795787" expanded="false" signature="21003:21030" placeholder="SELECT * FRO... Orders" />
-                <marker date="1460885795787" expanded="false" signature="21003:21042" placeholder="SELECT * FRO... Orders" />
-                <marker date="1460885795787" expanded="false" signature="22628:22660" placeholder="SELECT * FRO... Orders" />
-                <marker date="1460885795787" expanded="false" signature="24028:24089" placeholder="SELECT produ... ProductsInOrders" />
-                <marker date="1460885795787" expanded="false" signature="25008:25058" placeholder="SELECT userN... Employees" />
-                <marker date="1460885795787" expanded="false" signature="25959:26018" placeholder="SELECT ID,us... Employees" />
-                <marker date="1460885795787" expanded="false" signature="26953:27025" placeholder="SELECT COUNT... Employees" />
+                <marker date="1460889827186" expanded="false" signature="1464:1541" placeholder="INSERT INTO Suppliers... " />
+                <marker date="1460889827186" expanded="false" signature="1952:2022" placeholder="INSERT INTO SuppliersContacts... " />
+                <marker date="1460889827186" expanded="false" signature="2877:2947" placeholder="UPDATE Suppl... " />
+                <marker date="1460889827186" expanded="false" signature="3289:3337" placeholder="DELETE from " />
+                <marker date="1460889827186" expanded="false" signature="3579:3649" placeholder="INSERT INTO SuppliersContacts... " />
+                <marker date="1460889827186" expanded="false" signature="4508:4528" placeholder="UPDATE Suppl... " />
+                <marker date="1460889827186" expanded="false" signature="4508:4546" placeholder="UPDATE Suppl... " />
+                <marker date="1460889827186" expanded="false" signature="4508:4548" placeholder="UPDATE Suppl... " />
+                <marker date="1460889827186" expanded="false" signature="5759:5793" placeholder="SELECT * FRO... Suppliers" />
+                <marker date="1460889827186" expanded="false" signature="5826:5883" placeholder="SELECT * FRO... Suppliers" />
+                <marker date="1460889827186" expanded="false" signature="7535:7585" placeholder="SELECT name,... Products" />
+                <marker date="1460889827186" expanded="false" signature="8728:8771" placeholder="SELECT suppl... SuppliersProductsPrices" />
+                <marker date="1460889827186" expanded="false" signature="10135:10205" placeholder="SELECT produ... SuppliersProductsPrices" />
+                <marker date="1460889827186" expanded="false" signature="11091:11132" placeholder="SELECT name Manufacturers" />
+                <marker date="1460889827186" expanded="false" signature="12087:12204" placeholder="SELECT metho... Contracts" />
+                <marker date="1460889827186" expanded="false" signature="13540:13584" placeholder="SELECT metho... PaymentMethods" />
+                <marker date="1460889827186" expanded="false" signature="14954:15013" placeholder="SELECT name,... SuupliersContacts" />
+                <marker date="1460889827186" expanded="false" signature="15971:16088" placeholder="INSERT INTO Contracts... " />
+                <marker date="1460889827186" expanded="false" signature="16674:16755" placeholder="INSERT INTO ProductsInOrders... " />
+                <marker date="1460889827186" expanded="false" signature="17643:17741" placeholder="UPDATE Suppl... " />
+                <marker date="1460889827186" expanded="false" signature="18244:18298" placeholder="DELETE from " />
+                <marker date="1460889827186" expanded="false" signature="18544:18625" placeholder="INSERT INTO SuppliersContacts... " />
+                <marker date="1460889827186" expanded="false" signature="19531:19601" placeholder="INSERT INTO Orders... " />
+                <marker date="1460889827186" expanded="false" signature="19976:20048" placeholder="INSERT INTO ProductsInOrders... " />
+                <marker date="1460889827186" expanded="false" signature="20916:20960" placeholder="UPDATE Order... " />
+                <marker date="1460889827186" expanded="false" signature="22189:22215" placeholder="SELECT * FRO... Orders" />
+                <marker date="1460889827186" expanded="false" signature="22189:22216" placeholder="SELECT * FRO... Orders" />
+                <marker date="1460889827186" expanded="false" signature="22189:22228" placeholder="SELECT * FRO... Orders" />
+                <marker date="1460889827186" expanded="false" signature="23926:23958" placeholder="SELECT * FRO... Orders" />
+                <marker date="1460889827186" expanded="false" signature="25438:25499" placeholder="SELECT produ... ProductsInOrders" />
+                <marker date="1460889827186" expanded="false" signature="26530:26580" placeholder="SELECT userN... Employees" />
+                <marker date="1460889827186" expanded="false" signature="27593:27652" placeholder="SELECT ID,us... Employees" />
+                <marker date="1460889827186" expanded="false" signature="28699:28771" placeholder="SELECT COUNT... Employees" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5228916">
+            <state vertical-scroll-proportion="0.0">
               <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -922,7 +940,7 @@
       <workItem from="1460804520295" duration="4098000" />
       <workItem from="1460808771204" duration="195000" />
       <workItem from="1460812860882" duration="2726000" />
-      <workItem from="1460880085066" duration="6053000" />
+      <workItem from="1460880085066" duration="9878000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -1044,28 +1062,44 @@
       <option name="project" value="LOCAL" />
       <updated>1460884404831</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Data base implementation almost done v2">
+      <created>1460886182745</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1460886182745</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36422000" />
+    <option name="totallyTimeSpent" value="40247000" />
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3145434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3136612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0568306" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13005464" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.275" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13802083" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1080,7 +1114,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1014" y="348" width="742" height="401" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546448" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1141,25 +1174,38 @@
     <MESSAGE value="commit message" />
     <MESSAGE value="Added: remove,edit" />
     <MESSAGE value="Data base implementation almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data base implementation almost done" />
+    <MESSAGE value="Data base implementation almost done v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data base implementation almost done v2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
-          <line>224</line>
+          <line>241</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
-          <line>400</line>
+          <line>433</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
+          <line>777</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
+          <line>551</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1423,9 +1469,10 @@
             <element signature="method#addSupplier#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#editSupplier#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#removeSupplier#0;class#DatabaseImplementation#0" expanded="false" />
-            <element signature="e#5004#5005#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
+            <element signature="method#FindSupplier#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getProductByID#0;class#DatabaseImplementation#0" expanded="false" />
+            <element signature="method#getContractBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
+            <element signature="method#getProductsWithPricesBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getManufacturerByID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getDeliveryBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getPaymentMethodByID#0;class#DatabaseImplementation#0" expanded="false" />
@@ -1443,39 +1490,39 @@
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1460885795787" expanded="false" signature="1463:1540" placeholder="INSERT INTO Suppliers... " />
-            <marker date="1460885795787" expanded="false" signature="1951:2021" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1460885795787" expanded="false" signature="2820:2890" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="3232:3280" placeholder="DELETE from " />
-            <marker date="1460885795787" expanded="false" signature="3522:3592" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1460885795787" expanded="false" signature="4395:4415" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="4395:4433" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="4395:4435" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="5565:5599" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460885795787" expanded="false" signature="5632:5688" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460885795787" expanded="false" signature="7172:7222" placeholder="SELECT name,... Products" />
-            <marker date="1460885795787" expanded="true" signature="8253:8296" placeholder="SELECT suppl... SuppliersProductsPrices" />
-            <marker date="1460885795787" expanded="true" signature="9548:9618" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1460885795787" expanded="false" signature="10504:10545" placeholder="SELECT name Manufacturers" />
-            <marker date="1460885795787" expanded="false" signature="11388:11505" placeholder="SELECT metho... Contracts" />
-            <marker date="1460885795787" expanded="false" signature="12729:12846" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1460885795787" expanded="false" signature="14104:14163" placeholder="SELECT name,... SuupliersContacts" />
-            <marker date="1460885795787" expanded="false" signature="15009:15126" placeholder="INSERT INTO Contracts... " />
-            <marker date="1460885795787" expanded="false" signature="15712:15793" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1460885795787" expanded="true" signature="16625:16723" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="true" signature="17226:17280" placeholder="DELETE from " />
-            <marker date="1460885795787" expanded="true" signature="17526:17607" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1460885795787" expanded="false" signature="18457:18527" placeholder="INSERT INTO Orders... " />
-            <marker date="1460885795787" expanded="false" signature="18902:18974" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1460885795787" expanded="false" signature="19786:19830" placeholder="UPDATE Order... " />
-            <marker date="1460885795787" expanded="false" signature="21003:21029" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="21003:21030" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="21003:21042" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="22628:22660" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="24028:24089" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1460885795787" expanded="false" signature="25008:25058" placeholder="SELECT userN... Employees" />
-            <marker date="1460885795787" expanded="false" signature="25959:26018" placeholder="SELECT ID,us... Employees" />
-            <marker date="1460885795787" expanded="false" signature="26953:27025" placeholder="SELECT COUNT... Employees" />
+            <marker date="1460889827186" expanded="false" signature="1464:1541" placeholder="INSERT INTO Suppliers... " />
+            <marker date="1460889827186" expanded="false" signature="1952:2022" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1460889827186" expanded="false" signature="2877:2947" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="3289:3337" placeholder="DELETE from " />
+            <marker date="1460889827186" expanded="false" signature="3579:3649" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1460889827186" expanded="false" signature="4508:4528" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="4508:4546" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="4508:4548" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="5759:5793" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460889827186" expanded="false" signature="5826:5883" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460889827186" expanded="false" signature="7535:7585" placeholder="SELECT name,... Products" />
+            <marker date="1460889827186" expanded="false" signature="8728:8771" placeholder="SELECT suppl... SuppliersProductsPrices" />
+            <marker date="1460889827186" expanded="false" signature="10135:10205" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460889827186" expanded="false" signature="11091:11132" placeholder="SELECT name Manufacturers" />
+            <marker date="1460889827186" expanded="false" signature="12087:12204" placeholder="SELECT metho... Contracts" />
+            <marker date="1460889827186" expanded="false" signature="13540:13584" placeholder="SELECT metho... PaymentMethods" />
+            <marker date="1460889827186" expanded="false" signature="14954:15013" placeholder="SELECT name,... SuupliersContacts" />
+            <marker date="1460889827186" expanded="false" signature="15971:16088" placeholder="INSERT INTO Contracts... " />
+            <marker date="1460889827186" expanded="false" signature="16674:16755" placeholder="INSERT INTO ProductsInOrders... " />
+            <marker date="1460889827186" expanded="false" signature="17643:17741" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="18244:18298" placeholder="DELETE from " />
+            <marker date="1460889827186" expanded="false" signature="18544:18625" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1460889827186" expanded="false" signature="19531:19601" placeholder="INSERT INTO Orders... " />
+            <marker date="1460889827186" expanded="false" signature="19976:20048" placeholder="INSERT INTO ProductsInOrders... " />
+            <marker date="1460889827186" expanded="false" signature="20916:20960" placeholder="UPDATE Order... " />
+            <marker date="1460889827186" expanded="false" signature="22189:22215" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="22189:22216" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="22189:22228" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="23926:23958" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="25438:25499" placeholder="SELECT produ... ProductsInOrders" />
+            <marker date="1460889827186" expanded="false" signature="26530:26580" placeholder="SELECT userN... Employees" />
+            <marker date="1460889827186" expanded="false" signature="27593:27652" placeholder="SELECT ID,us... Employees" />
+            <marker date="1460889827186" expanded="false" signature="28699:28771" placeholder="SELECT COUNT... Employees" />
           </folding>
         </state>
       </provider>
@@ -1600,17 +1647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getManufacturers#0;class#Supplier#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1673,10 +1709,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="233" column="50" selection-start-line="233" selection-start-column="50" selection-end-line="233" selection-end-column="50" />
+          <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getManufacturers#0;class#Supplier#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20183486">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
             <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#closeConnection#0;class#DatabaseImplementation#0" expanded="false" />
@@ -1684,9 +1741,10 @@
             <element signature="method#addSupplier#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#editSupplier#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#removeSupplier#0;class#DatabaseImplementation#0" expanded="false" />
-            <element signature="e#5004#5005#0" expanded="true" />
-            <element signature="e#5048#5049#0" expanded="true" />
+            <element signature="method#FindSupplier#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getProductByID#0;class#DatabaseImplementation#0" expanded="false" />
+            <element signature="method#getContractBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
+            <element signature="method#getProductsWithPricesBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getManufacturerByID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getDeliveryBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getPaymentMethodByID#0;class#DatabaseImplementation#0" expanded="false" />
@@ -1704,49 +1762,39 @@
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1460885795787" expanded="false" signature="1463:1540" placeholder="INSERT INTO Suppliers... " />
-            <marker date="1460885795787" expanded="false" signature="1951:2021" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1460885795787" expanded="false" signature="2820:2890" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="3232:3280" placeholder="DELETE from " />
-            <marker date="1460885795787" expanded="false" signature="3522:3592" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1460885795787" expanded="false" signature="4395:4415" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="4395:4433" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="4395:4435" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="false" signature="5565:5599" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460885795787" expanded="false" signature="5632:5688" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1460885795787" expanded="false" signature="7172:7222" placeholder="SELECT name,... Products" />
-            <marker date="1460885795787" expanded="true" signature="8253:8296" placeholder="SELECT suppl... SuppliersProductsPrices" />
-            <marker date="1460885795787" expanded="true" signature="9548:9618" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1460885795787" expanded="false" signature="10504:10545" placeholder="SELECT name Manufacturers" />
-            <marker date="1460885795787" expanded="false" signature="11388:11505" placeholder="SELECT metho... Contracts" />
-            <marker date="1460885795787" expanded="false" signature="12729:12846" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1460885795787" expanded="false" signature="14104:14163" placeholder="SELECT name,... SuupliersContacts" />
-            <marker date="1460885795787" expanded="false" signature="15009:15126" placeholder="INSERT INTO Contracts... " />
-            <marker date="1460885795787" expanded="false" signature="15712:15793" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1460885795787" expanded="true" signature="16625:16723" placeholder="UPDATE Suppl... " />
-            <marker date="1460885795787" expanded="true" signature="17226:17280" placeholder="DELETE from " />
-            <marker date="1460885795787" expanded="true" signature="17526:17607" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1460885795787" expanded="false" signature="18457:18527" placeholder="INSERT INTO Orders... " />
-            <marker date="1460885795787" expanded="false" signature="18902:18974" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1460885795787" expanded="false" signature="19786:19830" placeholder="UPDATE Order... " />
-            <marker date="1460885795787" expanded="false" signature="21003:21029" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="21003:21030" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="21003:21042" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="22628:22660" placeholder="SELECT * FRO... Orders" />
-            <marker date="1460885795787" expanded="false" signature="24028:24089" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1460885795787" expanded="false" signature="25008:25058" placeholder="SELECT userN... Employees" />
-            <marker date="1460885795787" expanded="false" signature="25959:26018" placeholder="SELECT ID,us... Employees" />
-            <marker date="1460885795787" expanded="false" signature="26953:27025" placeholder="SELECT COUNT... Employees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5228916">
-          <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1460889827186" expanded="false" signature="1464:1541" placeholder="INSERT INTO Suppliers... " />
+            <marker date="1460889827186" expanded="false" signature="1952:2022" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1460889827186" expanded="false" signature="2877:2947" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="3289:3337" placeholder="DELETE from " />
+            <marker date="1460889827186" expanded="false" signature="3579:3649" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1460889827186" expanded="false" signature="4508:4528" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="4508:4546" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="4508:4548" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="5759:5793" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460889827186" expanded="false" signature="5826:5883" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1460889827186" expanded="false" signature="7535:7585" placeholder="SELECT name,... Products" />
+            <marker date="1460889827186" expanded="false" signature="8728:8771" placeholder="SELECT suppl... SuppliersProductsPrices" />
+            <marker date="1460889827186" expanded="false" signature="10135:10205" placeholder="SELECT produ... SuppliersProductsPrices" />
+            <marker date="1460889827186" expanded="false" signature="11091:11132" placeholder="SELECT name Manufacturers" />
+            <marker date="1460889827186" expanded="false" signature="12087:12204" placeholder="SELECT metho... Contracts" />
+            <marker date="1460889827186" expanded="false" signature="13540:13584" placeholder="SELECT metho... PaymentMethods" />
+            <marker date="1460889827186" expanded="false" signature="14954:15013" placeholder="SELECT name,... SuupliersContacts" />
+            <marker date="1460889827186" expanded="false" signature="15971:16088" placeholder="INSERT INTO Contracts... " />
+            <marker date="1460889827186" expanded="false" signature="16674:16755" placeholder="INSERT INTO ProductsInOrders... " />
+            <marker date="1460889827186" expanded="false" signature="17643:17741" placeholder="UPDATE Suppl... " />
+            <marker date="1460889827186" expanded="false" signature="18244:18298" placeholder="DELETE from " />
+            <marker date="1460889827186" expanded="false" signature="18544:18625" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1460889827186" expanded="false" signature="19531:19601" placeholder="INSERT INTO Orders... " />
+            <marker date="1460889827186" expanded="false" signature="19976:20048" placeholder="INSERT INTO ProductsInOrders... " />
+            <marker date="1460889827186" expanded="false" signature="20916:20960" placeholder="UPDATE Order... " />
+            <marker date="1460889827186" expanded="false" signature="22189:22215" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="22189:22216" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="22189:22228" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="23926:23958" placeholder="SELECT * FRO... Orders" />
+            <marker date="1460889827186" expanded="false" signature="25438:25499" placeholder="SELECT produ... ProductsInOrders" />
+            <marker date="1460889827186" expanded="false" signature="26530:26580" placeholder="SELECT userN... Employees" />
+            <marker date="1460889827186" expanded="false" signature="27593:27652" placeholder="SELECT ID,us... Employees" />
+            <marker date="1460889827186" expanded="false" signature="28699:28771" placeholder="SELECT COUNT... Employees" />
           </folding>
         </state>
       </provider>

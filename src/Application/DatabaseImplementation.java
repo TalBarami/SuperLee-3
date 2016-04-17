@@ -8,6 +8,7 @@ import java.util.List;
 import java.sql.*;
 import java.util.*;
 
+
 public class DatabaseImplementation implements Database {
     private Connection dbConnection;
     private final String DB_URL = "jdbc:sqlite:SuperLeeDB.db";
@@ -69,7 +70,9 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -108,7 +111,9 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -130,7 +135,9 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -143,22 +150,23 @@ public class DatabaseImplementation implements Database {
     public List<Supplier> findSuppliersByName(String suppName) {
         return FindSupplier("name",suppName);
     }
-    private List<Supplier> FindSupplier(String idOrName,String pramater){
+    private List<Supplier> FindSupplier(String idOrName,String parameter){
         List<Supplier> suppliers=new ArrayList<>();
         String name,bankAccount;
         PaymentMethod pm;
         Map<String,String> contacts;
         Contract contract;
+        boolean active;
         int id;
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
             openConnection();
             String queryID="SELECT * FROM Suppliers WHERE ID=?";
-            String queryName="SELECT * FROM Suppliers WHERE name LIKE '%"+pramater+"%'";
+            String queryName="SELECT * FROM Suppliers WHERE name LIKE '%"+parameter+"%'";
             if(idOrName.equals("ID")){
                 ps=dbConnection.prepareStatement(queryID);
-                ps.setString(1,pramater);
+                ps.setString(1,parameter);
             }
             else{
                 ps=dbConnection.prepareStatement(queryName);
@@ -171,7 +179,8 @@ public class DatabaseImplementation implements Database {
                 pm=getPaymentMethodByID(rs.getInt("paymentMethod"));
                 contract=getContractBySupplierID(String.valueOf(id));
                 contacts=getContactsBySupplierID(String.valueOf(id));
-                Supplier supplier=new Supplier(String.valueOf(id),name,bankAccount,pm,contacts);
+                active=rs.getBoolean("active");
+                Supplier supplier=new Supplier(String.valueOf(id),name,bankAccount,pm,contacts,active);
                 supplier.setContract(contract);
                 suppliers.add(supplier);
             }
@@ -182,8 +191,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
-                rs.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -212,8 +225,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -251,8 +268,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -310,8 +331,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -349,8 +374,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -364,7 +393,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         try{
             openConnection();
-            String query="SELECT method  FROM PaymentMethods JOIN Suppliers ON PaymentMethods.ID = Suppliers.paymentMethod WHERE Suppliers.ID=?";
+            String query="SELECT method FROM PaymentMethods WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,id);
             rs=ps.executeQuery();
@@ -388,8 +417,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -417,8 +450,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -457,7 +494,9 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -498,7 +537,9 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -532,7 +573,9 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -554,7 +597,9 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -602,8 +647,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -644,8 +693,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -673,8 +726,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -704,8 +761,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -733,8 +794,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                rs.close();
-                ps.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -764,8 +829,12 @@ public class DatabaseImplementation implements Database {
         }
         finally {
             try {
-                ps.close();
-                dbResult.close();
+                if (dbResult != null) {
+                    dbResult.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
