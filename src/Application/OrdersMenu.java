@@ -1,9 +1,6 @@
 package Application;
 
-import Entities.Employee;
-import Entities.Order;
-import Entities.Product;
-import Entities.Supplier;
+import Entities.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -126,10 +123,16 @@ public class OrdersMenu {
 
     private double calculatePrice(Supplier supplier, Map<Product, Integer> items){
         Map<Product, Double> prices = supplier.getProducts();
+        Contract contract = supplier.getContract();
         double totalPrice = 0;
-        int totalAmount = items.size();
         for(Product p : items.keySet())
             totalPrice += items.get(p) * prices.get(p);
+        double discount = getDiscount(contract.getBaseDiscount(), contract.getMaxDiscount(), items.size(), contract.getMinDiscountLimit());
+        totalPrice *= discount;
         return totalPrice;
+    }
+
+    private double getDiscount(double baseDiscount, double maxDiscount, int amount, int minDiscountLimit){
+        return Math.min(maxDiscount,amount*baseDiscount/minDiscountLimit)/100;
     }
 }

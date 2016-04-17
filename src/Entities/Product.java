@@ -6,7 +6,7 @@ package Entities;
 public class Product {
     private String id;
     private String name;
-    private String manufacturer; // TODO: or maybe private Manufacturer?
+    private String manufacturer;
 
     public Product(String id, String name, String manufacturer) {
         this.id = id;
