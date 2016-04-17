@@ -150,6 +150,12 @@ public class DatabaseImplementation implements Database {
     public List<Supplier> findSuppliersByName(String suppName) {
         return FindSupplier("name",suppName);
     }
+
+    @Override
+    public void reactivateSupplier(Supplier supplier) {
+        return;
+    }
+
     private List<Supplier> FindSupplier(String idOrName,String parameter){
         List<Supplier> suppliers=new ArrayList<>();
         String name,bankAccount;
