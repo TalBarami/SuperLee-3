@@ -62,4 +62,12 @@ public class Contract {
     public void setProducts(Map<Product, Double> products) {
         this.products = products;
     }
+
+    public int getMinDiscountLimits() {
+        return minDiscountLimits;
+    }
+
+    public int getMaxDiscountLimits() {
+        return maxDiscountLimits;
+    }
 }
