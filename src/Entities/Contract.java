@@ -6,9 +6,9 @@ import java.util.Map;
 public class Contract {
     private DeliveryMethod deliveryMethod;
     private int deliveryTime;
-    private int minDiscountLimits;
-    private int maxDiscountLimits;
-    private double discount;
+    private int minDiscountLimit;
+    private double baseDiscount;
+    private double maxDiscount;
     private Map<Product,Double> products;
 
     @Override
@@ -16,17 +16,18 @@ public class Contract {
         return "Contract{" +
                 "deliveryMethod=" + deliveryMethod +
                 ", deliveryTime=" + deliveryTime +
-                ", discountLimits=" + minDiscountLimits + " , " + maxDiscountLimits +
-                ", discount=" + discount +
+                ", minDiscountLimit=" + minDiscountLimit +
+                ", baseDiscount=" + baseDiscount +
+                ", maxDiscount=" + maxDiscount +
                 '}';
     }
 
-    public Contract(DeliveryMethod deliveryMethod, int deliveryTime, int minDiscountLimits, int maxDiscountLimits, double discount, Map<Product,Double> products) {
+    public Contract(DeliveryMethod deliveryMethod, int deliveryTime, int minDiscountLimit, double baseDiscount, double maxDiscount, Map<Product,Double> products) {
         this.deliveryMethod = deliveryMethod;
         this.deliveryTime = deliveryTime;
-        this.minDiscountLimits = minDiscountLimits;
-        this.maxDiscountLimits = maxDiscountLimits;
-        this.discount = discount;
+        this.minDiscountLimit = minDiscountLimit;
+        this.baseDiscount = baseDiscount;
+        this.maxDiscount = maxDiscount;
         this.products = products;
         this.products=products;
     }
@@ -47,14 +48,6 @@ public class Contract {
         this.deliveryTime = deliveryTime;
     }
 
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
     public Map<Product, Double> getProducts(){
         return products;
     }
@@ -63,11 +56,27 @@ public class Contract {
         this.products = products;
     }
 
-    public int getMinDiscountLimits() {
-        return minDiscountLimits;
+    public int getMinDiscountLimit() {
+        return minDiscountLimit;
     }
 
-    public int getMaxDiscountLimits() {
-        return maxDiscountLimits;
+    public void setMinDiscountLimit(int minDiscountLimit) {
+        this.minDiscountLimit = minDiscountLimit;
+    }
+
+    public double getBaseDiscount() {
+        return baseDiscount;
+    }
+
+    public void setBaseDiscount(double baseDiscount) {
+        this.baseDiscount = baseDiscount;
+    }
+
+    public double getMaxDiscount() {
+        return maxDiscount;
+    }
+
+    public void setMaxDiscount(double maxDiscount) {
+        this.maxDiscount = maxDiscount;
     }
 }

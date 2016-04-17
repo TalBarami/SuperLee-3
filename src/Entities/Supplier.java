@@ -102,4 +102,8 @@ public class Supplier {
         }
         return manufacturers;
     }
+
+    public boolean isActive() {
+        return active;
+    }
 }

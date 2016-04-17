@@ -62,9 +62,24 @@ public class SuppliersMenu {
     }
 
     private void addNewSupplier(){
-        Supplier supplier = createSupplier();
-        database.addSupplier(supplier);
-        System.out.printf("%s added successfully!", supplier.getName());
+        String id;
+        Supplier supplier;
+        System.out.println("Please enter supplier id:");
+        while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !database.findSupplierByID(id).isEmpty())
+            System.out.println("Invalid id. please try again.");
+        if((supplier = database.findSupplierByID(id).get(0)) != null){
+            if(supplier.isActive()){
+                System.out.printf("%s (id: %s) already exists in the system.",supplier.getName(), supplier.getId());
+                return;
+            }else {
+                database.reactivateSupplier(supplier);
+                System.out.printf("%s reactivated successfully!", supplier.getName());
+            }
+        }else{
+            supplier = createSupplier(id);
+            database.addSupplier(supplier);
+            System.out.printf("%s added successfully!", supplier.getName());
+        }
     }
 
     private void editSupplier(){
@@ -73,7 +88,7 @@ public class SuppliersMenu {
         if(oldSupplier == null)
             return;
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
-        Supplier newSupplier = createSupplier(oldSupplier);
+        Supplier newSupplier = createSupplier(oldSupplier.getId(),oldSupplier);
         database.editSupplier(newSupplier);
         System.out.printf("%s edited successfully!", newSupplier.getName());
     }
@@ -162,22 +177,15 @@ public class SuppliersMenu {
         }
     }
 
-    private Supplier createSupplier(){
-        return createSupplier(null);
+    private Supplier createSupplier(String id){
+        return createSupplier(id, null);
     }
 
-    private Supplier createSupplier(Supplier supplier){
-        String id;
+    private Supplier createSupplier(String id, Supplier supplier){
         String name;
         String bankAccount;
         PaymentMethod paymentMethod;
         Map<String,String> contacts;
-
-        if(supplier == null) {
-            System.out.println("Please enter supplier id:");
-            while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !database.findSupplierByID(id).isEmpty())
-                System.out.println("Invalid id. please try again.");
-        }else id = supplier.getId();
 
         System.out.println("Please enter supplier's name:");
         while((name = Utils.readLine()).isEmpty()) {
@@ -208,8 +216,8 @@ public class SuppliersMenu {
         DeliveryMethod deliveryMethod;
         int deliveryTime;
         int minDiscountLimit;
-        int maxDiscountLimit;
-        double discount;
+        double baseDiscount;
+        double maxDiscount;
         Map<Product,Double> products;
 
         deliveryMethod = selectDeliveryMethod(oldContract);
@@ -220,18 +228,18 @@ public class SuppliersMenu {
         System.out.println("Please enter the minimum amount for discount:");
         minDiscountLimit = Utils.checkIntBounds(0);
         if(minDiscountLimit == -1)
-            minDiscountLimit = oldContract.getMinDiscountLimits();
-        System.out.println("Please enter the maximum amount for discount:");
-        maxDiscountLimit = Utils.checkIntBounds(minDiscountLimit);
-        if(maxDiscountLimit == -1)
-            maxDiscountLimit = oldContract.getMaxDiscountLimits();
-        System.out.println("Please enter the discount (in percentage):");
-        discount = Utils.checkDoubleBounds(0, 100);
-        if(discount == -1)
-            discount = oldContract.getDiscount();
+            minDiscountLimit = oldContract.getMinDiscountLimit();
+        System.out.println("Please enter the base amount for discount:");
+        baseDiscount = Utils.checkDoubleBounds(0, 100);
+        if(baseDiscount == -1)
+            baseDiscount = oldContract.getBaseDiscount();
+        System.out.println("Please enter the max amount for discount:");
+        maxDiscount = Utils.checkDoubleBounds(0, 100);
+        if(maxDiscount == -1)
+            maxDiscount = oldContract.getMaxDiscount();
         products = selectProducts(oldContract);
 
-        return new Contract(deliveryMethod, deliveryTime, minDiscountLimit, maxDiscountLimit, discount, products);
+        return new Contract(deliveryMethod, deliveryTime, minDiscountLimit, baseDiscount, maxDiscount, products);
     }
 
     private PaymentMethod selectPaymentMethods(Supplier supplier){

@@ -127,6 +127,7 @@ public class OrdersMenu {
     private double calculatePrice(Supplier supplier, Map<Product, Integer> items){
         Map<Product, Double> prices = supplier.getProducts();
         double totalPrice = 0;
+        int totalAmount = items.size();
         for(Product p : items.keySet())
             totalPrice += items.get(p) * prices.get(p);
         return totalPrice;
