@@ -58,17 +58,29 @@ public class Utils {
     }
 
     public static int checkIntBounds(int min, int max){
-        int parameter;
-        while((parameter = parseInt(readLine())) < min || parameter > max)
-            System.out.println("Invalid input");
-        return parameter;
+        String input;
+        int value;
+
+        while(!(input = readLine()).isEmpty()){
+            if((value = parseInt(input)) < min || value > max)
+                System.out.println("Invalid input.");
+            else
+                return value;
+        }
+        return -1;
     }
 
     public static double checkDoubleBounds(int min, int max){
-        double parameter;
-        while((parameter = parseDouble(readLine())) < min || parameter > max)
-            System.out.println("Invalid input");
-        return parameter;
+        String input;
+        double value;
+
+        while(!(input = readLine()).isEmpty()){
+            if((value = parseInt(input)) < min || value > max)
+                System.out.println("Invalid input.");
+            else
+                return value;
+        }
+        return -1;
     }
 
     public static int checkIntBounds(int min){

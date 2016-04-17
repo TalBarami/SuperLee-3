@@ -23,6 +23,7 @@ public class SuppliersMenu {
             "Edit supplier.",
             "Remove supplier",
             "Add supplier's contract.",
+            "Edit supplier's contract",
             "View supplier's information",
             "View supplier's products.",
             "View supplier's manufacturers.",
@@ -46,15 +47,17 @@ public class SuppliersMenu {
                     addContract();
                     break;
                 case 5:
+                    editContract();
+                case 6:
                     viewSupplier();
                     break;
-                case 6:
+                case 7:
                     viewSuppliersProducts();
                     break;
-                case 7:
+                case 8:
                     viewSuppliersManufacturers();
                     break;
-                case 8:
+                case 9:
                     return;
             }
         }
@@ -86,40 +89,35 @@ public class SuppliersMenu {
 
     private void addContract(){
         Supplier supplier;
-        DeliveryMethod deliveryMethod;
-        int deliveryTime;
-        int minDiscountLimit;
-        int maxDiscountLimit;
-        double discount;
-        Map<Product,Double> products;
-        String input;
-
         System.out.println("Please select which supplier you would like to add contract to:");
         supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
         if(supplier.getContract() != null) {
-            System.out.println("Please note that adding new contract will override the previous one. are you sure? y/n");
-            while((input = Utils.readLine()).equals("y") || input.equals("n"))
-                System.out.println("Invalid input.");
-            if(input.equals("n"))
-                return;
+            System.out.println("This supplier already has a contract.");
+            return;
         }
 
-        deliveryMethod = selectDeliveryMethod();
-        System.out.println("Please enter the delivery time (in days):");
-        deliveryTime = Utils.checkIntBounds(0);
-        System.out.println("Please enter the minimum amount for discount:");
-        minDiscountLimit = Utils.checkIntBounds(0);
-        System.out.println("Please enter the maximum amount for discount:");
-        maxDiscountLimit = Utils.checkIntBounds(minDiscountLimit);
-        System.out.println("Please enter the discount (in percentage):");
-        discount = Utils.checkDoubleBounds(0, 100);
-        products = selectProducts();
-
-        Contract contract = new Contract(deliveryMethod, deliveryTime, minDiscountLimit, maxDiscountLimit, discount, products);
+        Contract contract = createContract();
         supplier.setContract(contract);
         System.out.println("Contract added successfully!");
+    }
+
+    private void editContract(){
+        System.out.println("Select supplier with the contract you would like to edit.");
+        Supplier supplier = consoleMenu.getSupplier();
+        if(supplier == null)
+            return;
+        if(supplier.getContract() == null){
+            System.out.println("This supplier does not have a contract.");
+            return;
+        }
+        Contract oldContract = supplier.getContract();
+        System.out.printf("Contract found: %s\nPlease enter your new information.\n", oldContract);
+        Contract newContract = createContract(oldContract);
+        supplier.setContract(newContract);
+        database.editContract(supplier);
+        System.out.println("Contract edited successfully!");
     }
 
     private void viewSupplier(){
@@ -199,9 +197,42 @@ public class SuppliersMenu {
         }
         paymentMethod = selectPaymentMethods(supplier);
         contacts = selectContacts(supplier);
-        if(supplier != null && contacts.isEmpty())
-            contacts = supplier.getContacts();
         return new Supplier(id, name, bankAccount, paymentMethod, contacts);
+    }
+
+    private Contract createContract(){
+        return createContract(null);
+    }
+
+    private Contract createContract(Contract oldContract){
+        DeliveryMethod deliveryMethod;
+        int deliveryTime;
+        int minDiscountLimit;
+        int maxDiscountLimit;
+        double discount;
+        Map<Product,Double> products;
+
+        deliveryMethod = selectDeliveryMethod(oldContract);
+        System.out.println("Please enter the delivery time (in days):");
+        deliveryTime = Utils.checkIntBounds(0);
+        if(deliveryTime == -1)
+            deliveryTime = oldContract.getDeliveryTime();
+        System.out.println("Please enter the minimum amount for discount:");
+        minDiscountLimit = Utils.checkIntBounds(0);
+        if(minDiscountLimit == -1)
+            minDiscountLimit = oldContract.getMinDiscountLimit();
+        System.out.println("Please enter the maximum amount for discount:");
+        maxDiscountLimit = Utils.checkIntBounds(minDiscountLimit);
+        if(maxDiscountLimit == -1)
+            maxDiscountLimit = oldContract.getMaxDiscountLimit();
+        System.out.println("Please enter the discount (in percentage):");
+        discount = Utils.checkDoubleBounds(0, 100);
+        if(discount == -1)
+            discount = oldContract.getDiscount();
+        products = selectProducts(oldContract);
+
+        Contract contract = new Contract(deliveryMethod, deliveryTime, minDiscountLimit, maxDiscountLimit, discount, products);
+        return contract;
     }
 
     private PaymentMethod selectPaymentMethods(Supplier supplier){
@@ -243,14 +274,17 @@ public class SuppliersMenu {
             contacts.put(contactName, contactPhone);
         }
 
-        return contacts;
+        return contacts.isEmpty() ? supplier.getContacts() : contacts;
     }
 
-    private DeliveryMethod selectDeliveryMethod(){
+    private DeliveryMethod selectDeliveryMethod(Contract contract){
         DeliveryMethod values[] = DeliveryMethod.values();
         System.out.println("Please choose one of the following:");
         for (int i = 0; i < values.length; i++)
             System.out.printf("%d. %s\n", i, values[i]);
+        String input = Utils.readLine();
+        if(input.isEmpty() && contract != null)
+            return contract.getDeliveryMethod();
         selected = Utils.parseInt(Utils.readLine());
         while(selected<0 || selected >= values.length){
             System.out.println("Invalid input.");
@@ -261,7 +295,7 @@ public class SuppliersMenu {
         return DeliveryMethod.valueOf(selected);
     }
 
-    private Map<Product, Double> selectProducts(){
+    private Map<Product, Double> selectProducts(Contract contract){
         Map<Product, Double> products = new HashMap<>();
         Product product;
         double price;
@@ -269,7 +303,7 @@ public class SuppliersMenu {
         while(true){
             System.out.println("Please enter product id:");
             if((product = database.getProductByID(Utils.readLine())) == null) {
-                if(products.isEmpty())
+                if(products.isEmpty() && contract == null)
                     System.out.println("You must enter at least 1 product.");
                 else
                     break;
@@ -279,6 +313,6 @@ public class SuppliersMenu {
             products.put(product, price);
         }
 
-        return products;
+        return products.isEmpty() ? contract.getProducts() : products;
     }
 }
