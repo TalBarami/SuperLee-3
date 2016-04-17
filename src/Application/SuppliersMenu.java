@@ -62,8 +62,9 @@ public class SuppliersMenu {
     }
 
     private void addNewSupplier(){
-        database.addSupplier(createSupplier());
-        System.out.println("Supplier added successfully!");
+        Supplier supplier = createSupplier();
+        database.addSupplier(supplier);
+        System.out.printf("%s added successfully!", supplier.getName());
     }
 
     private void editSupplier(){
@@ -74,7 +75,7 @@ public class SuppliersMenu {
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier);
         database.editSupplier(newSupplier);
-        System.out.println("Supplier edited successfully!");
+        System.out.printf("%s edited successfully!", newSupplier.getName());
     }
 
     private void removeSupplier(){
@@ -82,7 +83,7 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         database.removeSupplier(supplier);
-        System.out.println("Supplier removed successfully!");
+        System.out.printf("%s removed successfully!", supplier.getName());
     }
 
     private void addContract(){
@@ -92,7 +93,7 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() != null) {
-            System.out.println("This supplier already has a contract.");
+            System.out.printf("%s does not have a contract.", supplier.getName());
             return;
         }
 
@@ -107,7 +108,7 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() == null){
-            System.out.println("This supplier does not have a contract.");
+            System.out.printf("%s does not have a contract.", supplier.getName());
             return;
         }
         Contract oldContract = supplier.getContract();
@@ -133,7 +134,7 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() == null) {
-            System.out.println("This supplier does not have a contract.");
+            System.out.printf("%s does not have a contract.", supplier.getName());
             return;
         }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
@@ -149,7 +150,7 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() == null) {
-            System.out.println("This supplier does not have a contract.");
+            System.out.printf("%s does not have a contract.", supplier.getName());
             return;
         }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
@@ -229,8 +230,7 @@ public class SuppliersMenu {
             discount = oldContract.getDiscount();
         products = selectProducts(oldContract);
 
-        Contract contract = new Contract(deliveryMethod, deliveryTime, minDiscountLimit, maxDiscountLimit, discount, products);
-        return contract;
+        return new Contract(deliveryMethod, deliveryTime, minDiscountLimit, maxDiscountLimit, discount, products);
     }
 
     private PaymentMethod selectPaymentMethods(Supplier supplier){
@@ -261,9 +261,10 @@ public class SuppliersMenu {
         while(true){
             System.out.println("Please enter name:");
             if((contactName = Utils.readLine()).isEmpty()) {
-                if(contacts.isEmpty() && supplier == null)
+                if(supplier == null && contacts.isEmpty()) {
                     System.out.println("You must enter at least 1 contact.");
-                else
+                    continue;
+                }else
                     break;
             }
             System.out.println("Please enter phone:");
@@ -297,17 +298,25 @@ public class SuppliersMenu {
         Map<Product, Double> products = new HashMap<>();
         Product product;
         double price;
+        String input;
         System.out.println("Add products. Leave the product id field blank when you are done.");
         while(true){
             System.out.println("Please enter product id:");
-            if((product = database.getProductByID(Utils.readLine())) == null) {
-                if(products.isEmpty() && contract == null)
-                    System.out.println("You must enter at least 1 product.");
-                else
+            input = Utils.readLine();
+            if(input.isEmpty()) {
+                if(contract == null && products.isEmpty()) {
+                    System.out.println("You must enter at least one product.");
+                    continue;
+                }else
                     break;
             }
+            if((product = database.getProductByID(input)) == null) {
+                System.out.println("There is no such product.");
+                continue;
+            }
             System.out.println("Please enter price:");
-            price = Utils.checkDoubleBounds(0);
+            while((price = Utils.checkDoubleBounds(0)) == -1)
+                System.out.println("Invalid input.");
             products.put(product, price);
         }
 

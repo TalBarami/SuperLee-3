@@ -107,7 +107,14 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
 
     public Supplier getSupplier(){
         List<Supplier> suppliers = searchSupplier();
-        return suppliers == null ? null : suppliers.get(0);
+        if(suppliers == null)
+            return null;
+        if(suppliers.size() == 1) {
+            System.out.printf("Supplier found: %s\n", suppliers.get(0));
+            return suppliers.get(0);
+        }
+        selected = Utils.MenuSelect("Suppliers found:", suppliers);
+        return suppliers.get(selected);
     }
 
     public List<Order> searchOrder(){
@@ -139,7 +146,14 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
 
     public Order getOrder(){
         List<Order> orders = searchOrder();
-        return orders == null ? null : orders.get(0);
+        if(orders == null)
+            return null;
+        if(orders.size() == 1) {
+            System.out.printf("Order found: %s\n", orders.get(0));
+            return orders.get(0);
+        }
+        selected = Utils.MenuSelect("Orders found:", orders);
+        return orders.get(selected-1);
     }
 
     public Employee getConnected(){
