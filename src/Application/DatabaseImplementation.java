@@ -150,12 +150,30 @@ public class DatabaseImplementation implements Database {
     public List<Supplier> findSuppliersByName(String suppName) {
         return FindSupplier("name",suppName);
     }
-
-    @Override
     public void reactivateSupplier(Supplier supplier) {
-        return;
+        PreparedStatement ps=null;
+        try{
+            openConnection();
+            String query="UPDATE Suppliers SET active='1' WHERE ID=?";
+            ps=dbConnection.prepareStatement(query);
+            ps.setInt(1, Integer.parseInt(supplier.getId()));
+            ps.executeUpdate();
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
     }
-
     private List<Supplier> FindSupplier(String idOrName,String parameter){
         List<Supplier> suppliers=new ArrayList<>();
         String name,bankAccount;
