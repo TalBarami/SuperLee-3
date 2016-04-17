@@ -491,14 +491,14 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         try {
             openConnection();
-            String query = "INSERT INTO Contracts (supplierID, deliveryMethod, deliveryTime, minAmount, maxAmount, discount) VALUES (?,?,?,?,?,?)";
+            String query = "INSERT INTO Contracts (supplierID, deliveryMethod, deliveryTime, minAmount, maxDiscount, baseDiscount) VALUES (?,?,?,?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1,Integer.parseInt(supp.getId()));
             ps.setInt(2,supp.getContract().getDeliveryMethod().ordinal());
             ps.setInt(3,supp.getContract().getDeliveryTime());
-            ps.setInt(4,supp.getContract().getMinDiscountLimits());
-            ps.setInt(5,supp.getContract().getMaxDiscountLimits());
-            ps.setDouble(6,supp.getContract().getDiscount());
+            ps.setInt(4,supp.getContract().getMinDiscountLimit());
+            ps.setDouble(5,supp.getContract().getMaxDiscount());
+            ps.setDouble(6,supp.getContract().getBaseDiscount());
             ps.executeUpdate();
             for(Product product : supp.getContract().getProducts().keySet()){
                 query = "INSERT INTO SuppliersProductsPrices (supplierID, productID, price) VALUES (?,?,?)";
@@ -528,13 +528,13 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         try{
             openConnection();
-            String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=?,minAmount=?,maxAmount=?,discount=? WHERE ID=?";
+            String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=?,minAmount=?,maxDiscount=?,baseDiscount=? WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,supp.getContract().getDeliveryMethod().ordinal());
             ps.setInt(2,supp.getContract().getDeliveryTime());
-            ps.setInt(3,supp.getContract().getMinDiscountLimits());
-            ps.setInt(4,supp.getContract().getMaxDiscountLimits());
-            ps.setDouble(5,supp.getContract().getDiscount());
+            ps.setInt(3,supp.getContract().getMinDiscountLimit());
+            ps.setDouble(4,supp.getContract().getMaxDiscount());
+            ps.setDouble(5,supp.getContract().getBaseDiscount());
             ps.setInt(6,Integer.parseInt(supp.getId()));
             ps.executeUpdate();
 

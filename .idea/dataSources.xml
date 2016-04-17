@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="940243340">
-    <data-source source="LOCAL" name="Sqlite (Xerial) - SuperLeeDB.db" uuid="f379d240-d94a-4aee-b74b-012840f94c69">
+  <component name="DataSourceManagerImpl" format="xml" hash="4120143572">
+    <data-source source="LOCAL" name="Sqlite (Xerial) - SuperLeeDB.db" uuid="99526ca4-1185-4ea1-b584-f9627a59cbea">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
