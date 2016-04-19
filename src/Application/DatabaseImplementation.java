@@ -10,8 +10,8 @@ import java.util.*;
 
 public class DatabaseImplementation implements Database {
     private Connection dbConnection;
-    private final String DB_URL = "jdbc:sqlite:SuperLeeDB.db";
-    private final String DRIVER = "org.sqlite.JDBC";
+    private static final String DB_URL = "jdbc:sqlite:SuperLeeDB.db";
+    private static final String DRIVER = "org.sqlite.JDBC";
 
     public DatabaseImplementation(){
         dbConnection=null;
@@ -262,8 +262,8 @@ public class DatabaseImplementation implements Database {
     }
     private Contract getContractBySupplierID(String id){
         DeliveryMethod dm;
-        int deliveryTime,min,max;
-        double discount;
+        int deliveryTime,minAmount;
+        double baseDiscount,maxDiscount;
         Map<Product,Double> products;
         Contract contract=null;
         PreparedStatement ps=null;
@@ -278,10 +278,10 @@ public class DatabaseImplementation implements Database {
                 products=getProductsWithPricesBySupplierID(id);
                 dm=getDeliveryBySupplierID(Integer.parseInt(id));
                 deliveryTime=rs.getInt("deliveryTime");
-                min=rs.getInt("minAmount");
-                max=rs.getInt("maxAmount");
-                discount=rs.getDouble("discount");
-                contract=new Contract(dm,deliveryTime,min,max,discount,products);
+                minAmount=rs.getInt("minAmount");
+                maxDiscount=rs.getInt("maxDiscount");
+                baseDiscount=rs.getDouble("baseDiscount");
+                contract=new Contract(dm,deliveryTime,minAmount,baseDiscount,maxDiscount,products);
             }
         }
         catch ( Exception e ) {

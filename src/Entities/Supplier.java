@@ -106,4 +106,22 @@ public class Supplier {
     public boolean isActive() {
         return active;
     }
+
+    public boolean sells(Product p){
+        if(contract == null)
+            throw new NullPointerException();
+        for(Product product : getProducts().keySet())
+            if(product.getId().equals(p.getId()))
+                return true;
+        return false;
+    }
+
+    public Double getPrice(Product p){
+        if(contract == null)
+            throw new NullPointerException();
+        for(Product product : getProducts().keySet())
+            if(product.getId().equals(p.getId()))
+                return getProducts().get(product);
+        throw new NullPointerException();
+    }
 }

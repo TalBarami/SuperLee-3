@@ -7,13 +7,11 @@ import java.util.List;
 import java.util.Map;
 
 public class SuppliersMenu {
-    private ConsoleMenuImplementation consoleMenu;
-    private Database database;
+    private ConsoleMenu consoleMenu;
     private int selected;
 
-    public SuppliersMenu(ConsoleMenuImplementation consoleMenu, Database database){
+    public SuppliersMenu(ConsoleMenu consoleMenu){
         this.consoleMenu = consoleMenu;
-        this.database = database;
     }
 
     private static final String suppliersCommands[] = {
@@ -63,22 +61,24 @@ public class SuppliersMenu {
 
     private void addNewSupplier(){
         String id;
+        List<Supplier> suppliers;
         Supplier supplier;
         System.out.println("Please enter supplier id:");
-        while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !database.findSupplierByID(id).isEmpty())
+        while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !consoleMenu.getDatabase().findSupplierByID(id).isEmpty())
             System.out.println("Invalid id. please try again.");
-        if((supplier = database.findSupplierByID(id).get(0)) != null){
+        if((suppliers = consoleMenu.getDatabase().findSupplierByID(id)).isEmpty()){
+            supplier = createSupplier(id);
+            consoleMenu.getDatabase().addSupplier(supplier);
+            System.out.printf("%s added successfully!\n", supplier.getName());
+        }else{
+            supplier = suppliers.get(0);
             if(supplier.isActive()){
-                System.out.printf("%s (id: %s) already exists in the system.",supplier.getName(), supplier.getId());
+                System.out.printf("%s (id: %s) already exists in the system.\n",supplier.getName(), supplier.getId());
                 return;
             }else {
-                database.reactivateSupplier(supplier);
-                System.out.printf("%s reactivated successfully!", supplier.getName());
+                consoleMenu.getDatabase().reactivateSupplier(supplier);
+                System.out.printf("%s reactivated successfully!\n", supplier.getName());
             }
-        }else{
-            supplier = createSupplier(id);
-            database.addSupplier(supplier);
-            System.out.printf("%s added successfully!", supplier.getName());
         }
     }
 
@@ -89,16 +89,16 @@ public class SuppliersMenu {
             return;
         System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier.getId(),oldSupplier);
-        database.editSupplier(newSupplier);
-        System.out.printf("%s edited successfully!", newSupplier.getName());
+        consoleMenu.getDatabase().editSupplier(newSupplier);
+        System.out.printf("%s edited successfully!\n", newSupplier.getName());
     }
 
     private void removeSupplier(){
         Supplier supplier = consoleMenu.getSupplier();
         if(supplier == null)
             return;
-        database.removeSupplier(supplier);
-        System.out.printf("%s removed successfully!", supplier.getName());
+        consoleMenu.getDatabase().removeSupplier(supplier);
+        System.out.printf("%s removed successfully!\n", supplier.getName());
     }
 
     private void addContract(){
@@ -108,13 +108,13 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() != null) {
-            System.out.printf("%s does not have a contract.", supplier.getName());
+            System.out.printf("%s already has a contract.\n", supplier.getName());
             return;
         }
 
         Contract contract = createContract();
         supplier.setContract(contract);
-        database.addContract(supplier);
+        consoleMenu.getDatabase().addContract(supplier);
         System.out.println("Contract added successfully!");
     }
 
@@ -124,14 +124,14 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() == null){
-            System.out.printf("%s does not have a contract.", supplier.getName());
+            System.out.printf("%s does not have a contract.\n", supplier.getName());
             return;
         }
         Contract oldContract = supplier.getContract();
         System.out.printf("Contract found: %s\nPlease enter your new information.\n", oldContract);
         Contract newContract = createContract(oldContract);
         supplier.setContract(newContract);
-        database.editContract(supplier);
+        consoleMenu.getDatabase().editContract(supplier);
         System.out.println("Contract edited successfully!");
     }
 
@@ -150,7 +150,7 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() == null) {
-            System.out.printf("%s does not have a contract.", supplier.getName());
+            System.out.printf("%s does not have a contract.\n", supplier.getName());
             return;
         }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
@@ -166,7 +166,7 @@ public class SuppliersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() == null) {
-            System.out.printf("%s does not have a contract.", supplier.getName());
+            System.out.printf("%s does not have a contract.\n", supplier.getName());
             return;
         }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
@@ -319,7 +319,7 @@ public class SuppliersMenu {
                 }else
                     break;
             }
-            if((product = database.getProductByID(input)) == null) {
+            if((product = consoleMenu.getDatabase().getProductByID(input)) == null) {
                 System.out.println("There is no such product.");
                 continue;
             }

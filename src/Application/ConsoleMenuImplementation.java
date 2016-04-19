@@ -10,10 +10,11 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
     private static final int MAX_ATTEMPTS = 3;
 
     private Database database;
+    private Employee connected;
+
     private SuppliersMenu suppliersMenu;
     private OrdersMenu ordersMenu;
     private int selected;
-    private Employee connected;
 
     private static final String menuCommands[] = {
             "Manage suppliers.",
@@ -36,8 +37,8 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
 
     public ConsoleMenuImplementation(Database database){
         this.database = database;
-        suppliersMenu = new SuppliersMenu(this,database);
-        ordersMenu = new OrdersMenu(this,database);
+        suppliersMenu = new SuppliersMenu(this);
+        ordersMenu = new OrdersMenu(this);
         RunStore();
     }
 
@@ -59,7 +60,7 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         String password = Utils.readLine();
 
         if((connected = database.checkCredentials(username,password)) != null)
-            System.out.println("You have successfully logged in to the system!");
+            System.out.println("You have successfully logged into the system!");
         else{
             System.out.printf("Invalid user name or password. (%d attempts left)\n",attempts-1);
             Login(attempts-1);
@@ -154,6 +155,10 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         }
         selected = Utils.MenuSelect("Orders found:", orders);
         return orders.get(selected-1);
+    }
+
+    public Database getDatabase() {
+        return database;
     }
 
     public Employee getConnected(){

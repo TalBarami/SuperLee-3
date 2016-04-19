@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class OrdersMenu {
-    private  ConsoleMenuImplementation consoleMenu;
-    private Database database;
+    private  ConsoleMenu consoleMenu;
     private int selected;
 
     private static final String ordersCommands[] = {
@@ -18,9 +17,8 @@ public class OrdersMenu {
             "Back"
     };
 
-    public OrdersMenu(ConsoleMenuImplementation consoleMenu, Database database){
+    public OrdersMenu(ConsoleMenu consoleMenu){
         this.consoleMenu=consoleMenu;
-        this.database = database;
     }
 
     public void displayOrdersMenu(){
@@ -53,14 +51,14 @@ public class OrdersMenu {
         if(supplier == null)
             return;
         if(supplier.getContract() == null){
-            System.out.println("This supplier does not have a contract.");
+            System.out.printf("%s does not have a contract.\n", supplier.getName());
             return;
         }
-        System.out.printf("Supplier chosen: %s",supplier);
+        System.out.printf("Supplier chosen: %s\n",supplier);
         items = selectItems(supplier);
         totalPrice = calculatePrice(supplier, items);
         Order order = new Order(employee, supplier, totalPrice, items);
-        database.createOrder(order);
+        consoleMenu.getDatabase().createOrder(order);
         System.out.println("Order created successfully!");
     }
 
@@ -75,7 +73,7 @@ public class OrdersMenu {
             System.out.println("This order already confirmed.");
             return;
         }
-        database.confirmOrder(order);
+        consoleMenu.getDatabase().confirmOrder(order);
         System.out.println("Order confirmed successfully!");
     }
 
@@ -105,11 +103,11 @@ public class OrdersMenu {
                 }else
                     break;
             }
-            if((product = database.getProductByID(input)) == null){
+            if((product = consoleMenu.getDatabase().getProductByID(input)) == null){
                 System.out.printf("Product id %s does not exists in the system.\n", input);
                 continue;
             }
-            if(!supplier.getProducts().containsKey(product)){
+            if(!supplier.sells(product)){
                 System.out.printf("%s does not sell %s (id %s).\n",supplier.getName(),product.getName(), product.getId());
                 continue;
             }
@@ -122,17 +120,16 @@ public class OrdersMenu {
     }
 
     private double calculatePrice(Supplier supplier, Map<Product, Integer> items){
-        Map<Product, Double> prices = supplier.getProducts();
         Contract contract = supplier.getContract();
         double totalPrice = 0;
         for(Product p : items.keySet())
-            totalPrice += items.get(p) * prices.get(p);
+            totalPrice += items.get(p) * supplier.getPrice(p);
         double discount = getDiscount(contract.getBaseDiscount(), contract.getMaxDiscount(), items.size(), contract.getMinDiscountLimit());
-        totalPrice *= discount;
+        totalPrice *= (1-discount);
         return totalPrice;
     }
 
     private double getDiscount(double baseDiscount, double maxDiscount, int amount, int minDiscountLimit){
-        return Math.min(maxDiscount,amount*baseDiscount/minDiscountLimit)/100;
+        return amount < minDiscountLimit ? 0 : Math.min(maxDiscount,amount*baseDiscount/minDiscountLimit)/100;
     }
 }
