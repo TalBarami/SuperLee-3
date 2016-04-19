@@ -54,7 +54,6 @@ public class OrdersMenu {
             System.out.printf("%s does not have a contract.\n", supplier.getName());
             return;
         }
-        System.out.printf("Supplier chosen: %s\n",supplier);
         items = selectItems(supplier);
         totalPrice = calculatePrice(supplier, items);
         Order order = new Order(employee, supplier, totalPrice, items);
@@ -66,15 +65,15 @@ public class OrdersMenu {
         System.out.println("Please select the order you would like to confirm:");
         Order order = consoleMenu.getOrder();
         if(order == null) {
-            System.out.println("No orders found. terminating.");
+            System.out.println("No orders found.");
             return;
         }
         if(order.isArrived()){
-            System.out.println("This order already confirmed.");
+            System.out.printf("Order %s is already confirmed.\n", order.getId());
             return;
         }
         consoleMenu.getDatabase().confirmOrder(order);
-        System.out.println("Order confirmed successfully!");
+        System.out.printf("Order %s confirmed successfully!\n", order.getId());
     }
 
     private void viewOrder(){
