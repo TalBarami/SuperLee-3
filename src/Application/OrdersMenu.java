@@ -121,14 +121,17 @@ public class OrdersMenu {
     private double calculatePrice(Supplier supplier, Map<Product, Integer> items){
         Contract contract = supplier.getContract();
         double totalPrice = 0;
-        for(Product p : items.keySet())
+        int totalAmount = 0;
+        for(Product p : items.keySet()) {
+            totalAmount += items.get(p);
             totalPrice += items.get(p) * supplier.getPrice(p);
-        double discount = getDiscount(contract.getBaseDiscount(), contract.getMaxDiscount(), items.size(), contract.getMinDiscountLimit());
+        }
+        double discount = getDiscount(contract.getBaseDiscount(), contract.getMaxDiscount(), totalAmount, contract.getMinDiscountLimit());
         totalPrice *= (1-discount);
         return totalPrice;
     }
 
-    private double getDiscount(double baseDiscount, double maxDiscount, int amount, int minDiscountLimit){
-        return amount < minDiscountLimit ? 0 : Math.min(maxDiscount,amount*baseDiscount/minDiscountLimit)/100;
+    private double getDiscount(double baseDiscount, double maxDiscount, int amount, int minDiscountLimit) {
+        return amount < minDiscountLimit ? 0 : Math.min(maxDiscount,((double)amount)*baseDiscount/((double)minDiscountLimit))/100;
     }
 }

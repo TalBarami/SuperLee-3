@@ -524,6 +524,8 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
+
+
     public void editContract(Supplier supp) {
         PreparedStatement ps=null;
         try{
@@ -576,14 +578,15 @@ public class DatabaseImplementation implements Database {
             String query = "INSERT INTO Orders (totalPrice, employeeID, supplierID) VALUES (?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setDouble(1, order.getTotalPrice());
-            ps.setInt(2, Integer.parseInt(order.getSupplier().getId()));
-            ps.setInt(3, Integer.parseInt(order.getEmployee().getId()));
+            ps.setInt(2, Integer.parseInt(order.getEmployee().getId()));
+            ps.setInt(3, Integer.parseInt(order.getSupplier().getId()));
             ps.executeUpdate();
+            int lastOrderID=getLastOrderID();
             for(Product product : order.getItems().keySet()){
                 query = "INSERT INTO ProductsInOrders (productID, orderID, amount) VALUES (?,?,?)";
                 ps = dbConnection.prepareStatement(query);
                 ps.setInt(1, Integer.parseInt(product.getId()));
-                ps.setInt(2, Integer.parseInt(order.getId()));
+                ps.setInt(2, lastOrderID);
                 ps.setInt(3, order.getItems().get(product));
                 ps.executeUpdate();
             }
@@ -601,6 +604,36 @@ public class DatabaseImplementation implements Database {
                 e.printStackTrace();
             }
             closeConnection();
+        }
+    }
+    private int getLastOrderID(){
+        int result=0;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try{
+            String query="SELECT MAX(ID) as max FROM Orders";
+            ps=dbConnection.prepareStatement(query);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                result=rs.getInt("max");
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return result;
         }
     }
     public void confirmOrder(Order order) {
