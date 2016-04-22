@@ -23,11 +23,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="ae7ddb8a-b8c6-4bc3-b249-6eef3451dad1">
-        <schema name="main" object-types="column, constraint, index, table, dataset trigger, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="ae7ddb8a-b8c6-4bc3-b249-6eef3451dad1">
@@ -265,11 +261,23 @@
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
           <content-type name="XHTML" enabled="true" />
+          <content-type name="CSS" enabled="true" />
           <content-type name="Java" enabled="true" />
           <content-type name="SQL" enabled="true" />
           <content-type name="PL/SQL" enabled="true" />
+          <content-type name="JPA QL" enabled="true" />
+          <content-type name="JavaScript" enabled="true" />
+          <content-type name="JSP" enabled="true" />
+          <content-type name="JSPx" enabled="true" />
           <content-type name="Groovy" enabled="true" />
+          <content-type name="FTL" enabled="true" />
+          <content-type name="TML" enabled="true" />
+          <content-type name="GSP" enabled="true" />
+          <content-type name="ASP" enabled="true" />
+          <content-type name="VTL" enabled="true" />
           <content-type name="AIDL" enabled="true" />
+          <content-type name="YAML" enabled="true" />
+          <content-type name="Flex" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>
       </qualified-text-editor>

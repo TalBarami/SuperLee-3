@@ -606,7 +606,7 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
-    private int getLastOrderID(){
+    public int getLastOrderID(){
         int result=0;
         PreparedStatement ps=null;
         ResultSet rs=null;
