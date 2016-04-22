@@ -16,19 +16,18 @@ public class Order {
     @Override
     public String toString() {
         return "===== Order Details =====\n" +
-                " Order ID  : '" + id + '\'' +
-                "\n Employee ID: " + employee.getId() +
-                "\n Supplier : " + supplier.getName() +
-                "\n Date : " + date.toString() +
-                "\n Arrived : " + arrived +
-                "\n Total Price : " + totalPrice +
-                "\n Products in order : \n" + productsInOrderToString();
+                "Order ID: " + id +
+                "\n\tEmployee ID:" + employee.getId() +
+                "\t\tSupplier: " + supplier.getName() +
+                "\n\tDate: " + date.toString() +
+                "\t\tStatus: " + (arrived ? "Arrived." : "Waiting for delivery.") +
+                "\n\tProducts in order:" + productsInOrderToString() +
+                "\n\tTotal Price : " + totalPrice;
     }
     private String productsInOrderToString(){
         String toString="";
-        for(Product product : items.keySet()){
-            toString+="\t\tProduct : "+product.getName() + "\tAmount : " + items.get(product) +".\n";
-        }
+        for(Product product : items.keySet())
+            toString+="\n\t\tProduct: "+product.getName() + "\tAmount: " + items.get(product);
         return toString;
     }
     public Order(String id, Employee employee, Supplier supplier, Date date, boolean arrived, double totalPrice,Map<Product, Integer> order) {

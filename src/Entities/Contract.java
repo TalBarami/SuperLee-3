@@ -13,13 +13,15 @@ public class Contract {
 
     @Override
     public String toString() {
-        return "Contract{" +
-                "deliveryMethod=" + deliveryMethod +
-                ", deliveryTime=" + deliveryTime +
-                ", minDiscountLimit=" + minDiscountLimit +
-                ", baseDiscount=" + baseDiscount +
-                ", maxDiscount=" + maxDiscount +
-                '}';
+        String result = "\n\tDelivery method: " + deliveryMethod +
+                        "\t\tDelivery time: " + deliveryTime +
+                        "\n\tMinimum amount for discount: " + minDiscountLimit +
+                        "\t\tBase discount: " + baseDiscount + "%" +
+                        "\t\tMaximum discount: " + maxDiscount + "%" +
+                        "\n\tProducts:";
+        for(Product p : products.keySet())
+            result+="\n\t\tID: " + p.getId() + "\tName: " + p.getName() + "\t\tPrice: " + products.get(p);
+        return result;
     }
 
     public Contract(DeliveryMethod deliveryMethod, int deliveryTime, int minDiscountLimit, double baseDiscount, double maxDiscount, Map<Product,Double> products) {

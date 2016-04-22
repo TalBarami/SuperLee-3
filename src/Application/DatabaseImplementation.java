@@ -530,7 +530,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         try{
             openConnection();
-            String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=?,minAmount=?,maxDiscount=?,baseDiscount=? WHERE ID=?";
+            String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=?,minAmount=?,maxDiscount=?,baseDiscount=? WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,supp.getContract().getDeliveryMethod().ordinal());
             ps.setInt(2,supp.getContract().getDeliveryTime());
@@ -684,7 +684,7 @@ public class DatabaseImplementation implements Database {
             ps.setInt(1,Integer.valueOf(parameter));
             rs=ps.executeQuery();
             while(rs.next()){
-                orderID=String.valueOf(rs.getInt("orderID"));
+                orderID=String.valueOf(rs.getInt("ID"));
                 emp=getEmployeeById(rs.getInt("employeeID"));
                 supp= findSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
                 arrived=rs.getBoolean("arrivalStatus");

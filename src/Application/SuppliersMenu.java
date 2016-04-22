@@ -44,6 +44,7 @@ public class SuppliersMenu {
                     break;
                 case 5:
                     editContract();
+                    break;
                 case 6:
                     viewSupplier();
                     break;
@@ -64,7 +65,7 @@ public class SuppliersMenu {
         List<Supplier> suppliers;
         Supplier supplier;
         System.out.println("Please enter supplier id:");
-        while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1 || !consoleMenu.getDatabase().findSupplierByID(id).isEmpty())
+        while ((id = Utils.readLine()).isEmpty() || Utils.parseInt(id) == -1)
             System.out.println("Invalid id. please try again.");
         if((suppliers = consoleMenu.getDatabase().findSupplierByID(id)).isEmpty()){
             supplier = createSupplier(id);
@@ -87,7 +88,7 @@ public class SuppliersMenu {
         Supplier oldSupplier = consoleMenu.getSupplier();
         if(oldSupplier == null)
             return;
-        System.out.printf("Supplier found: %s\nPlease enter your new information.\n", oldSupplier);
+        System.out.printf("Supplier found: %s\nPlease enter your new information.\nYou can leave the field blank if you do not want to change it.", oldSupplier);
         Supplier newSupplier = createSupplier(oldSupplier.getId(),oldSupplier);
         consoleMenu.getDatabase().editSupplier(newSupplier);
         System.out.printf("%s edited successfully!\n", newSupplier.getName());
@@ -128,7 +129,7 @@ public class SuppliersMenu {
             return;
         }
         Contract oldContract = supplier.getContract();
-        System.out.printf("Contract found: %s\nPlease enter your new information.\n", oldContract);
+        System.out.printf("Contract found:\n%s\nPlease enter your new information.\n", oldContract);
         Contract newContract = createContract(oldContract);
         supplier.setContract(newContract);
         consoleMenu.getDatabase().editContract(supplier);
@@ -139,9 +140,9 @@ public class SuppliersMenu {
         List<Supplier> suppliers = consoleMenu.searchSupplier();
         if(suppliers == null)
             return;
-        System.out.println(suppliers.size() == 1 ? "Supplier found:\n" : "Suppliers found:\n");
+        System.out.println(suppliers.size() == 1 ? "Supplier found:" : "Suppliers found:");
         for(Supplier s : suppliers){
-            System.out.printf("%s\n\n",s.toString());
+            System.out.printf("%s\n",s.toFullString());
         }
     }
 
@@ -155,9 +156,9 @@ public class SuppliersMenu {
         }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
         Map<Product,Double> products = supplier.getProducts();
-        System.out.println(products.size() == 1 ? "Product found:\n" : "Product found:\n");
+        System.out.println(products.size() == 1 ? "Product found:" : "Products found:");
         for (Product p : products.keySet()) {
-            System.out.printf("%s\nSold by %s for %f$.\n\n", p, supplier.getName(), products.get(p));
+            System.out.printf("%s\t\tPrice %.2f$.\n", p, products.get(p));
         }
     }
 
@@ -221,22 +222,41 @@ public class SuppliersMenu {
         Map<Product,Double> products;
 
         deliveryMethod = selectDeliveryMethod(oldContract);
-        System.out.println("Please enter the delivery time (in days):");
-        deliveryTime = Utils.checkIntBounds(0);
-        if(deliveryTime == -1)
-            deliveryTime = oldContract.getDeliveryTime();
-        System.out.println("Please enter the minimum amount for discount:");
-        minDiscountLimit = Utils.checkIntBounds(0);
-        if(minDiscountLimit == -1)
-            minDiscountLimit = oldContract.getMinDiscountLimit();
-        System.out.println("Please enter the base amount for discount:");
-        baseDiscount = Utils.checkDoubleBounds(0, 100);
-        if(baseDiscount == -1)
-            baseDiscount = oldContract.getBaseDiscount();
-        System.out.println("Please enter the max amount for discount:");
-        maxDiscount = Utils.checkDoubleBounds(0, 100);
-        if(maxDiscount == -1)
-            maxDiscount = oldContract.getMaxDiscount();
+        System.out.println(deliveryMethod == deliveryMethod.Weekly ? "Please enter the weekly delivery day:" : "Please enter the delivery time (in days):");
+        while((deliveryTime = deliveryMethod == DeliveryMethod.Weekly ? Utils.checkIntBounds(1,7) : Utils.checkIntBounds(0)) == -1) {
+            if(oldContract != null) {
+                deliveryTime = oldContract.getDeliveryTime();
+                break;
+            }
+        }
+        System.out.println("If the contract contains a discount agreement press 'y', else press any key to continue:");
+        if(Utils.readLine().toLowerCase().equals("y")){
+            System.out.println("Please enter the minimum amount for discount:");
+            while((minDiscountLimit = Utils.checkIntBounds(1)) == -1) {
+                if(oldContract != null) {
+                    minDiscountLimit = oldContract.getMinDiscountLimit();
+                    break;
+                }
+            }
+            System.out.println("Please enter the base amount for discount:");
+            while((baseDiscount = Utils.checkDoubleBounds(0, 100)) == -1) {
+                if(oldContract != null) {
+                    baseDiscount = oldContract.getBaseDiscount();
+                    break;
+                }
+            }
+            System.out.println("Please enter the max amount for discount:");
+            while((maxDiscount = Utils.checkDoubleBounds(0, 100)) == -1) {
+                if(oldContract != null) {
+                    maxDiscount = oldContract.getMaxDiscount();
+                    break;
+                }
+            }
+        }else{
+            minDiscountLimit = 1;
+            baseDiscount = 0;
+            maxDiscount = 0;
+        }
         products = selectProducts(oldContract);
 
         return new Contract(deliveryMethod, deliveryTime, minDiscountLimit, baseDiscount, maxDiscount, products);
@@ -323,6 +343,10 @@ public class SuppliersMenu {
                 System.out.println("There is no such product.");
                 continue;
             }
+            if(contains(products, product)){
+                System.out.println("You already added this product.");
+                continue;
+            }
             System.out.println("Please enter price:");
             while((price = Utils.checkDoubleBounds(0)) == -1)
                 System.out.println("Invalid input.");
@@ -330,5 +354,12 @@ public class SuppliersMenu {
         }
 
         return products.isEmpty() ? contract.getProducts() : products;
+    }
+
+    private boolean contains(Map<Product, Double> map, Product product){
+        for(Product p : map.keySet())
+            if(p.getId().equals(product.getId()))
+                return true;
+        return false;
     }
 }

@@ -32,14 +32,20 @@ public class Supplier {
         return id;
     }
 
+    public String toFullString() {
+        String result = "\tID: " + id +
+                        "\n\tName: " + name +
+                        "\t\tBank account: " + bankAccount +
+                        "\t\tPayment method: " + paymentMethod +
+                        "\n\tContacts: " + contactsToString()+
+                        "\n\t" + ((contract != null) ? "Contract:" + contract.toString() : name + " has no contract.");
+        return result;
+    }
+
     @Override
-    public String toString() {
-        return "Supplier{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", bankAccount='" + bankAccount + '\'' +
-                ", paymentMethod=" + paymentMethod +
-                '}';
+    public String toString(){
+        return  "\tID: " + id +
+                "\t\tName: " + name;
     }
 
     public void setId(String id) {
@@ -123,5 +129,12 @@ public class Supplier {
             if(product.getId().equals(p.getId()))
                 return getProducts().get(product);
         throw new NullPointerException();
+    }
+
+    private String contactsToString(){
+        String result = "";
+        for(String contact : contacts.keySet())
+            result += "\n\t\t" + contact + " - " + contacts.get(contact);
+        return result;
     }
 }
