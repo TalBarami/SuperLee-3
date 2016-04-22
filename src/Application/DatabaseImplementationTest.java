@@ -1,6 +1,7 @@
 package Application;
 
 import Entities.*;
+import com.sun.corba.se.spi.orbutil.fsm.Guard;
 import com.sun.javafx.collections.MappingChange;
 import org.junit.After;
 import org.junit.Assert;
@@ -40,7 +41,6 @@ public class DatabaseImplementationTest {
         Map<String,String> contacts=new HashMap<>();
         contacts.put("Meni","05435345");
         db.addSupplier(new Supplier("-1","bla bla","123123", PaymentMethod.Cash,contacts));
-        //System.out.println(db.findSupplierByID("-1").size());
         assertEquals(1,db.findSupplierByID("-1").size());
 
         openConnection();
@@ -86,7 +86,14 @@ public class DatabaseImplementationTest {
 
     @Test
     public void testFindSupplierByID() throws Exception {
-
+        assertEquals(0, db.findSupplierByID("-1").size());
+        Map<String,String> contacts=new HashMap<>();
+        contacts.put("Meni","05435345");
+        Supplier sup=new Supplier("-1","bla bla","123123", PaymentMethod.Cash,contacts);
+        db.addSupplier(sup);
+        assertEquals(1, db.findSupplierByID("-1").size());
+        System.out.println("entering query...");
+        executeUpdate("DELETE from Suppliers where ID=-1");
     }
 
     @Test // ok 6/10
@@ -120,12 +127,17 @@ public class DatabaseImplementationTest {
 
     @Test
     public void testGetProductByID() throws Exception {
-
+        ResultSet resultSet = executeQuery("SELECT name FROM Products WHERE ID=1");
+        assertTrue(resultSet.getString("name").equals(db.getProductByID("1").getName()));
+        closeConnection();
     }
 
     @Test
     public void testAddContract() throws Exception {
-
+        Map<Product, Double> products = new HashMap();
+        products.put(db.getProductByID("1"), 50.0);
+        Contract contract = new Contract(DeliveryMethod.onDemand, 2, 30, 1, 50, products);
+        // TODO
     }
 
     @Test
@@ -210,6 +222,26 @@ public class DatabaseImplementationTest {
     @Test
     public void testFindOrderByID() throws Exception {
 
+
+        int maxID = executeQuery("SELECT MAX(ID) as max FROM Orders").getInt("max");
+        assertEquals(0,(db.findOrderByID(String.valueOf(maxID+1))).size());
+        closeConnection();
+
+        Map<Product,Integer> products=new HashMap<>();
+        products.put(db.getProductByID("1"),2);
+        Order newOrder=new Order(new Employee("1","a","a"),db.findSupplierByID("1").get(0),123,products);
+        db.createOrder(newOrder);
+        assertEquals(1,(db.findOrderByID(String.valueOf(maxID+1))).size());
+
+        executeUpdate("DELETE from Orders where ID="+String.valueOf(maxID+1));
+
+        openConnection();// TODO: WTF.
+        String query="UPDATE sqlite_sequence SET seq=? WHERE name=?";
+        PreparedStatement ps=connection.prepareStatement(query);
+        ps.setInt(1,maxID);
+        ps.setString(2,"Orders");
+        ps.executeUpdate();
+        closeConnection();
     }
 
     @Test// ok 2/10
@@ -254,5 +286,19 @@ public class DatabaseImplementationTest {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
+    }
+    private int executeUpdate(String update) throws java.sql.SQLException{
+        openConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(update);
+        int updateValue = preparedStatement.executeUpdate();
+        closeConnection();
+        return updateValue;
+    }
+
+    private ResultSet executeQuery(String query) throws java.sql.SQLException{
+        openConnection();
+        PreparedStatement preparedStatement=connection.prepareStatement(query);
+        ResultSet resultSet=preparedStatement.executeQuery();
+        return resultSet;
     }
 }
