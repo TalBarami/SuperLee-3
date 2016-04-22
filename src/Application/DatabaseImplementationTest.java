@@ -1,8 +1,6 @@
 package Application;
 
-import Entities.Employee;
-import Entities.PaymentMethod;
-import Entities.Supplier;
+import Entities.*;
 import com.sun.javafx.collections.MappingChange;
 import org.junit.After;
 import org.junit.Assert;
@@ -59,7 +57,6 @@ public class DatabaseImplementationTest {
 
     @Test // ok 3/10
     public void testRemoveSupplier() throws Exception {
-
         Map<String,String> contacts=new HashMap<>();
         contacts.put("Meni","05435345");
         Supplier sup=new Supplier("-1","bla bla","123123", PaymentMethod.Cash,contacts);
@@ -92,9 +89,33 @@ public class DatabaseImplementationTest {
 
     }
 
-    @Test
+    @Test // ok 6/10
     public void testReactivateSupplier() throws Exception {
+        Map<String,String> contacts=new HashMap<>();
+        contacts.put("Meni","05435345");
+        Supplier sup=new Supplier("-1","bla bla","123123", PaymentMethod.Cash,contacts);
+        db.addSupplier(sup);
+        db.removeSupplier(sup);
 
+        openConnection();
+        String query="SELECT active FROM Suppliers WHERE ID=-1";
+        PreparedStatement ps=connection.prepareStatement(query);
+        ResultSet rs=ps.executeQuery();
+        assertFalse(rs.getBoolean("active"));
+        closeConnection();
+
+        db.reactivateSupplier(sup);
+
+        openConnection();
+        ps=connection.prepareStatement(query);
+        rs=ps.executeQuery();
+
+        assertTrue(rs.getBoolean("active"));
+
+        query = "DELETE from Suppliers where ID=-1";
+        ps = connection.prepareStatement(query);
+        ps.executeUpdate();
+        closeConnection();
     }
 
     @Test
@@ -112,14 +133,78 @@ public class DatabaseImplementationTest {
 
     }
 
-    @Test
+    @Test //ok test 4/10
     public void testCreateOrder() throws Exception {
+        openConnection();
+        String query="SELECT MAX(ID) as max FROM Orders";
+        PreparedStatement ps=connection.prepareStatement(query);
+        int maxOrderNumber=ps.executeQuery().getInt("max") ;
+        closeConnection();
 
+        assertEquals(0,(db.findOrderByID(String.valueOf(maxOrderNumber+1))).size());
+
+        Map<Product,Integer> products=new HashMap<>();
+        products.put(db.getProductByID("1"),2);
+        Order newOrder=new Order(new Employee("1","a","a"),db.findSupplierByID("1").get(0),123,products);
+        db.createOrder(newOrder);
+        assertEquals(1,(db.findOrderByID(String.valueOf(maxOrderNumber+1))).size());
+
+        openConnection();
+        query = "DELETE from Orders where ID=?";
+        ps=connection.prepareStatement(query);
+        ps.setInt(1,(maxOrderNumber+1));
+        ps.executeUpdate();
+        //Fixing the auto increment field
+        query="UPDATE sqlite_sequence SET seq=? WHERE name=?";
+        ps=connection.prepareStatement(query);
+        ps.setInt(1,maxOrderNumber);
+        ps.setString(2,"Orders");
+        ps.executeUpdate();
+        closeConnection();
     }
 
-    @Test
+    @Test //ok test 5/10
     public void testConfirmOrder() throws Exception {
+        openConnection();
+        String query="SELECT MAX(ID) as max FROM Orders";
+        PreparedStatement ps=connection.prepareStatement(query);
+        int maxOrderNumber=ps.executeQuery().getInt("max") ;
+        closeConnection();
+        // Adding new order, default arrival status =false
+        Map<Product,Integer> products=new HashMap<>();
+        products.put(db.getProductByID("1"),2);
+        Order newOrder=new Order(new Employee("1","a","a"),db.findSupplierByID("1").get(0),123,products);
+        db.createOrder(newOrder);
+        // Check that is arrival status is really false
+        openConnection();
+        query="SELECT arrivalStatus FROM Orders WHERE ID=?";
+        ps=connection.prepareStatement(query);
+        ps.setInt(1,maxOrderNumber+1);
+        assertFalse(ps.executeQuery().getBoolean("arrivalStatus"));
+        closeConnection();
 
+        db.confirmOrder((db.findOrderByID(String.valueOf(maxOrderNumber+1))).get(0));
+        // Check that is arrival status is really true
+        openConnection();
+        query="SELECT arrivalStatus FROM Orders WHERE ID=?";
+        ps=connection.prepareStatement(query);
+        ps.setInt(1,maxOrderNumber+1);
+        assertTrue(ps.executeQuery().getBoolean("arrivalStatus"));
+        closeConnection();
+
+
+        openConnection();
+        query = "DELETE from Orders where ID=?";
+        ps=connection.prepareStatement(query);
+        ps.setInt(1,(maxOrderNumber+1));
+        ps.executeUpdate();
+        //Fixing the auto increment field
+        query="UPDATE sqlite_sequence SET seq=? WHERE name=?";
+        ps=connection.prepareStatement(query);
+        ps.setInt(1,maxOrderNumber);
+        ps.setString(2,"Orders");
+        ps.executeUpdate();
+        closeConnection();
     }
 
     @Test
