@@ -221,8 +221,6 @@ public class DatabaseImplementationTest {
 
     @Test
     public void testFindOrderByID() throws Exception {
-
-
         int maxID = executeQuery("SELECT MAX(ID) as max FROM Orders").getInt("max");
         assertEquals(0,(db.findOrderByID(String.valueOf(maxID+1))).size());
         closeConnection();
@@ -234,14 +232,7 @@ public class DatabaseImplementationTest {
         assertEquals(1,(db.findOrderByID(String.valueOf(maxID+1))).size());
 
         executeUpdate("DELETE from Orders where ID="+String.valueOf(maxID+1));
-
-        openConnection();// TODO: WTF.
-        String query="UPDATE sqlite_sequence SET seq=? WHERE name=?";
-        PreparedStatement ps=connection.prepareStatement(query);
-        ps.setInt(1,maxID);
-        ps.setString(2,"Orders");
-        ps.executeUpdate();
-        closeConnection();
+        executeUpdate("UPDATE sqlite_sequence SET seq="+ maxID +" WHERE name=\"Orders\"");
     }
 
     @Test// ok 2/10
