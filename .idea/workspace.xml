@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Entities/ProductAgreement.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperLeeDB.db" afterPath="$PROJECT_DIR$/SuperLeeDB.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Utils.java" afterPath="$PROJECT_DIR$/src/Application/Utils.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +46,7 @@
       <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
@@ -59,9 +56,11 @@
       <file leaf-file-name="SuppliersMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-130">
+            <state vertical-scroll-proportion="0.0">
               <caret line="160" column="13" selection-start-line="160" selection-start-column="13" selection-end-line="160" selection-end-column="13" />
-              <folding />
+              <folding>
+                <marker date="1461596078305" expanded="true" signature="14069:14076" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,7 +68,7 @@
       <file leaf-file-name="ConsoleMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding />
             </state>
@@ -79,7 +78,7 @@
       <file leaf-file-name="ConsoleMenuImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1981">
+            <state vertical-scroll-proportion="0.0">
               <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
               <folding />
             </state>
@@ -89,8 +88,8 @@
       <file leaf-file-name="Contract.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.52380955">
+              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -99,7 +98,7 @@
       <file leaf-file-name="ProductAgreement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/ProductAgreement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
+            <state vertical-scroll-proportion="0.0">
               <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
               <folding />
             </state>
@@ -109,7 +108,7 @@
       <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="39" selection-end-column="27" />
               <folding />
             </state>
@@ -119,7 +118,7 @@
       <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state vertical-scroll-proportion="0.0">
               <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding />
             </state>
@@ -129,7 +128,7 @@
       <file leaf-file-name="Supplier.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="815">
+            <state vertical-scroll-proportion="0.0">
               <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="121" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,9 +141,11 @@
       <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+              <folding>
+                <element signature="e#3482#3483#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -219,8 +220,8 @@
         <option value="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
         <option value="$PROJECT_DIR$/src/Application/Utils.java" />
         <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
-        <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
         <option value="$PROJECT_DIR$/src/Entities/ProductAgreement.java" />
+        <option value="$PROJECT_DIR$/src/Entities/Contract.java" />
       </list>
     </option>
   </component>
@@ -267,7 +268,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,6 +338,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
@@ -490,21 +491,31 @@
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -514,15 +525,27 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -692,12 +715,13 @@
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="false" />
       <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -862,7 +886,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -873,7 +896,6 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
-      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -900,9 +922,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -911,7 +931,6 @@
       <changelist id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="" />
       <created>1460279210107</created>
       <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
       <updated>1460279210107</updated>
       <workItem from="1460465214658" duration="7442000" />
       <workItem from="1460487259929" duration="7583000" />
@@ -928,207 +947,179 @@
       <workItem from="1461403728338" duration="135000" />
       <workItem from="1461403884422" duration="454000" />
       <workItem from="1461582708844" duration="7202000" />
+      <workItem from="1461596104142" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
       <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1460462268217</updated>
     </task>
     <task id="LOCAL-00002" summary="Added check credentials method in the interface.">
       <created>1460462927248</created>
       <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1460462927248</updated>
     </task>
     <task id="LOCAL-00003" summary="Added check credentials method in the interface.">
       <created>1460463000261</created>
       <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1460463000261</updated>
     </task>
     <task id="LOCAL-00004" summary="Added check credentials method in the interface.">
       <created>1460463005774</created>
       <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1460463005774</updated>
     </task>
     <task id="LOCAL-00005" summary="Started implemnting integration functions with SQL">
       <created>1460472588813</created>
       <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1460472588813</updated>
     </task>
     <task id="LOCAL-00006" summary="Started implemnting integration functions with SQL">
       <created>1460494675081</created>
       <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1460494675081</updated>
     </task>
     <task id="LOCAL-00007" summary="Started implemnting integration functions with SQL">
       <created>1460720606865</created>
       <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1460720606865</updated>
     </task>
     <task id="LOCAL-00008" summary="Started implemnting integration functions with SQL">
       <created>1460720637889</created>
       <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1460720637889</updated>
     </task>
     <task id="LOCAL-00009" summary="Trying to get things working...">
       <created>1460723817677</created>
       <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
       <updated>1460723817677</updated>
     </task>
     <task id="LOCAL-00010" summary="Added sql functionallity">
       <created>1460803947253</created>
       <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1460803947253</updated>
     </task>
     <task id="LOCAL-00011" summary="Some database errors fix after merge">
       <created>1460806166445</created>
       <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
       <updated>1460806166445</updated>
     </task>
     <task id="LOCAL-00012" summary="Some database errors fix">
       <created>1460807654890</created>
       <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
       <updated>1460807654890</updated>
     </task>
     <task id="LOCAL-00013" summary="Fixed some bugs within the console menu.">
       <created>1460811027291</created>
       <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
       <updated>1460811027291</updated>
     </task>
     <task id="LOCAL-00014" summary="Fixed some MOAR bugs within the console menu.">
       <created>1460811846714</created>
       <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
       <updated>1460811846714</updated>
     </task>
     <task id="LOCAL-00015" summary="commit message">
       <created>1460812198923</created>
       <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
       <updated>1460812198923</updated>
     </task>
     <task id="LOCAL-00016" summary="commit message">
       <created>1460812220416</created>
       <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
       <updated>1460812220416</updated>
     </task>
     <task id="LOCAL-00017" summary="commit message">
       <created>1460812282012</created>
       <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
       <updated>1460812282012</updated>
     </task>
     <task id="LOCAL-00018" summary="Added: remove,edit">
       <created>1460815575553</created>
       <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1460815575553</updated>
     </task>
     <task id="LOCAL-00019" summary="Data base implementation almost done">
       <created>1460884319944</created>
       <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
       <updated>1460884319944</updated>
     </task>
     <task id="LOCAL-00020" summary="Data base implementation almost done">
       <created>1460884404831</created>
       <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
       <updated>1460884404831</updated>
     </task>
     <task id="LOCAL-00021" summary="Data base implementation almost done v2">
       <created>1460886182745</created>
       <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
       <updated>1460886182745</updated>
     </task>
     <task id="LOCAL-00022" summary="Data base implementation almost done v3">
       <created>1460890344053</created>
       <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
       <updated>1460890344053</updated>
     </task>
     <task id="LOCAL-00023" summary="Data base implementation almost done v4">
       <created>1460893819979</created>
       <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
       <updated>1460893819979</updated>
     </task>
     <task id="LOCAL-00024" summary="Added :&#10;- Reactivate existing supplier whihc was rmoved previously">
       <created>1460895045389</created>
       <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
       <updated>1460895045389</updated>
     </task>
     <task id="LOCAL-00025" summary="Added :&#10;- Reactivate existing supplier whihc was rmoved previously">
       <created>1460896842574</created>
       <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
       <updated>1460896842574</updated>
     </task>
     <task id="LOCAL-00026" summary="Fixed :&#10;Database implemetation according to changes in CONTRACT table">
       <created>1460897184163</created>
       <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
       <updated>1460897184163</updated>
     </task>
     <task id="LOCAL-00027" summary="Fixing bugs and JUnit testing.">
       <created>1461360581548</created>
       <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
       <option name="project" value="LOCAL" />
       <updated>1461360581548</updated>
     </task>
     <task id="LOCAL-00028" summary="MORE Fixing bugs and JUnit testing.">
       <created>1461404257919</created>
       <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
       <updated>1461404257919</updated>
     </task>
     <task id="LOCAL-00029" summary="JUnit - DONE.">
       <created>1461583728415</created>
       <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
       <updated>1461583728415</updated>
     </task>
@@ -1168,7 +1159,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68303000" />
+    <option name="totallyTimeSpent" value="68602000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1181,35 +1172,35 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3125683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.241535" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18347639" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17167382" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17135416" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23278688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23278688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="true" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20118026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3125683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1085" y="536" width="742" height="401" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.241535" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546448" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1331,23 +1322,52 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="121" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getManufacturers#0;class#Supplier#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding>
+            <element signature="e#3482#3483#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
           <folding />
         </state>
@@ -1355,7 +1375,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1366,7 +1386,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="21" />
           <folding />
         </state>
@@ -1374,21 +1394,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/DeliveryMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding />
         </state>
@@ -1396,14 +1416,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SuperLee.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
@@ -1411,21 +1431,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SuperLee.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
           <folding>
             <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
@@ -1457,44 +1477,13 @@
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1461356818522" expanded="true" signature="1476:1553" placeholder="INSERT INTO Suppliers... " />
-            <marker date="1461356818522" expanded="true" signature="1964:2034" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461356818522" expanded="true" signature="2889:2959" placeholder="UPDATE Suppl... " />
-            <marker date="1461356818522" expanded="true" signature="3301:3349" placeholder="DELETE from " />
-            <marker date="1461356818522" expanded="true" signature="3591:3661" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461356818522" expanded="true" signature="4520:4560" placeholder="UPDATE Suppl... " />
-            <marker date="1461356818522" expanded="true" signature="5508:5550" placeholder="UPDATE Suppl... " />
-            <marker date="1461356818522" expanded="true" signature="6542:6576" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461356818522" expanded="true" signature="6609:6666" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461356818522" expanded="true" signature="8318:8368" placeholder="SELECT name,... Products" />
-            <marker date="1461356818522" expanded="true" signature="9529:9572" placeholder="SELECT * FRO... Contracts" />
-            <marker date="1461356818522" expanded="true" signature="10978:11048" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1461356818522" expanded="true" signature="11934:11975" placeholder="SELECT name Manufacturers" />
-            <marker date="1461356818522" expanded="true" signature="12930:13047" placeholder="SELECT metho... Contracts" />
-            <marker date="1461356818522" expanded="true" signature="14383:14427" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1461356818522" expanded="true" signature="15797:15856" placeholder="SELECT name,... SuppliersContacts" />
-            <marker date="1461356818522" expanded="true" signature="16813:16936" placeholder="INSERT INTO Contracts... " />
-            <marker date="1461356818522" expanded="true" signature="17522:17603" placeholder="INSERT INTO SuppliersProductsPrices... " />
-            <marker date="1461356818522" expanded="true" signature="18493:18605" placeholder="UPDATE Contr... " />
-            <marker date="1461356818522" expanded="true" signature="19108:19162" placeholder="DELETE FROM " />
-            <marker date="1461356818522" expanded="true" signature="19408:19489" placeholder="INSERT INTO SuppliersProductsPrices... " />
-            <marker date="1461356818522" expanded="true" signature="20395:20465" placeholder="INSERT INTO Orders... " />
-            <marker date="1461356818522" expanded="true" signature="20886:20958" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1461356818522" expanded="true" signature="21814:21847" placeholder="SELECT MAX(I... " />
-            <marker date="1461356818522" expanded="true" signature="22669:22713" placeholder="UPDATE Order... " />
-            <marker date="1461356818522" expanded="true" signature="23942:23981" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461356818522" expanded="true" signature="25674:25706" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461356818522" expanded="true" signature="27186:27247" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1461356818522" expanded="true" signature="28278:28328" placeholder="SELECT userN... Employees" />
-            <marker date="1461356818522" expanded="true" signature="29341:29400" placeholder="SELECT ID,us... Employees" />
-            <marker date="1461356818522" expanded="true" signature="30447:30519" placeholder="SELECT COUNT... Employees" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <caret line="12" column="53" selection-start-line="11" selection-start-column="26" selection-end-line="12" selection-end-column="53" />
         </state>
@@ -1502,14 +1491,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1520,7 +1509,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="15" selection-end-column="44" />
           <folding />
         </state>
@@ -1528,49 +1517,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/DeliveryMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/sqlite-jdbc-3.8.11.2.jar!/org/sqlite/jdbc3/JDBC3PreparedStatement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
@@ -1578,14 +1567,14 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/sqlite-jdbc-3.8.11.2.jar!/org/sqlite/core/CoreStatement.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/sqlite-jdbc-3.8.11.2.jar!/org/sqlite/JDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
         </state>
       </provider>
@@ -1599,19 +1588,10 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/util/HashSet.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/util/Collections.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/lang/ClassLoader.java" />
-    <entry file="dbDummy://dbtable:/2db27f21/99526ca4-1185-4ea1-b584-f9627a59cbea/Orders" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/99526ca4-1185-4ea1-b584-f9627a59cbea/console.sql" />
-    <entry file="dbDummy://dbtable:/2db27f21/99526ca4-1185-4ea1-b584-f9627a59cbea/sqlite_sequence" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
+        <state vertical-scroll-proportion="0.0">
           <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding>
             <element signature="docComment;class#DatabaseImplementationTest#0" expanded="false" />
@@ -1619,29 +1599,13 @@
             <element signature="method#tearDown#0;class#DatabaseImplementationTest#0" expanded="false" />
             <element signature="method#openConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
             <element signature="method#closeConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
-            <marker date="1461583172554" expanded="true" signature="1216:1249" placeholder="DELETE from " />
-            <marker date="1461583172554" expanded="true" signature="2291:2331" placeholder="SELECT activ... Suppliers" />
-            <marker date="1461583172554" expanded="true" signature="2714:2747" placeholder="DELETE from " />
-            <marker date="1461583172554" expanded="true" signature="3738:3778" placeholder="SELECT activ... Suppliers" />
-            <marker date="1461583172554" expanded="true" signature="4164:4197" placeholder="DELETE from " />
-            <marker date="1461583172554" expanded="true" signature="4696:4729" placeholder="SELECT MAX(I... " />
-            <marker date="1461583172554" expanded="true" signature="5344:5373" placeholder="DELETE from " />
-            <marker date="1461583172554" expanded="true" signature="5549:5594" placeholder="UPDATE sqlit... " />
-            <marker date="1461583172554" expanded="true" signature="5889:5922" placeholder="SELECT MAX(I... " />
-            <marker date="1461583172554" expanded="true" signature="6477:6520" placeholder="SELECT arriv... Orders" />
-            <marker date="1461583172554" expanded="true" signature="6887:6930" placeholder="SELECT arriv... Orders" />
-            <marker date="1461583172554" expanded="true" signature="7158:7186" placeholder="DELETE from " />
-            <marker date="1461583172554" expanded="true" signature="7158:7187" placeholder="DELETE from " />
-            <marker date="1461583172554" expanded="true" signature="7363:7408" placeholder="UPDATE sqlit... " />
-            <marker date="1461583172554" expanded="true" signature="8520:8602" placeholder="INSERT INTO Employees... " />
-            <marker date="1461583172554" expanded="true" signature="8834:8869" placeholder="DELETE from " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state vertical-scroll-proportion="0.0">
           <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
           <folding>
             <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
@@ -1673,44 +1637,13 @@
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1461356818522" expanded="true" signature="1476:1553" placeholder="INSERT INTO Suppliers... " />
-            <marker date="1461356818522" expanded="true" signature="1964:2034" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461356818522" expanded="true" signature="2889:2959" placeholder="UPDATE Suppl... " />
-            <marker date="1461356818522" expanded="true" signature="3301:3349" placeholder="DELETE from " />
-            <marker date="1461356818522" expanded="true" signature="3591:3661" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461356818522" expanded="true" signature="4520:4560" placeholder="UPDATE Suppl... " />
-            <marker date="1461356818522" expanded="true" signature="5508:5550" placeholder="UPDATE Suppl... " />
-            <marker date="1461356818522" expanded="true" signature="6542:6576" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461356818522" expanded="true" signature="6609:6666" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461356818522" expanded="true" signature="8318:8368" placeholder="SELECT name,... Products" />
-            <marker date="1461356818522" expanded="true" signature="9529:9572" placeholder="SELECT * FRO... Contracts" />
-            <marker date="1461356818522" expanded="true" signature="10978:11048" placeholder="SELECT produ... SuppliersProductsPrices" />
-            <marker date="1461356818522" expanded="true" signature="11934:11975" placeholder="SELECT name Manufacturers" />
-            <marker date="1461356818522" expanded="true" signature="12930:13047" placeholder="SELECT metho... Contracts" />
-            <marker date="1461356818522" expanded="true" signature="14383:14427" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1461356818522" expanded="true" signature="15797:15856" placeholder="SELECT name,... SuppliersContacts" />
-            <marker date="1461356818522" expanded="true" signature="16813:16936" placeholder="INSERT INTO Contracts... " />
-            <marker date="1461356818522" expanded="true" signature="17522:17603" placeholder="INSERT INTO SuppliersProductsPrices... " />
-            <marker date="1461356818522" expanded="true" signature="18493:18605" placeholder="UPDATE Contr... " />
-            <marker date="1461356818522" expanded="true" signature="19108:19162" placeholder="DELETE FROM " />
-            <marker date="1461356818522" expanded="true" signature="19408:19489" placeholder="INSERT INTO SuppliersProductsPrices... " />
-            <marker date="1461356818522" expanded="true" signature="20395:20465" placeholder="INSERT INTO Orders... " />
-            <marker date="1461356818522" expanded="true" signature="20886:20958" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1461356818522" expanded="true" signature="21814:21847" placeholder="SELECT MAX(I... " />
-            <marker date="1461356818522" expanded="true" signature="22669:22713" placeholder="UPDATE Order... " />
-            <marker date="1461356818522" expanded="true" signature="23942:23981" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461356818522" expanded="true" signature="25674:25706" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461356818522" expanded="true" signature="27186:27247" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1461356818522" expanded="true" signature="28278:28328" placeholder="SELECT userN... Employees" />
-            <marker date="1461356818522" expanded="true" signature="29341:29400" placeholder="SELECT ID,us... Employees" />
-            <marker date="1461356818522" expanded="true" signature="30447:30519" placeholder="SELECT COUNT... Employees" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Program.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
@@ -1718,7 +1651,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="39" selection-end-column="27" />
           <folding />
         </state>
@@ -1726,7 +1659,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding />
         </state>
@@ -1734,7 +1667,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1981">
+        <state vertical-scroll-proportion="0.0">
           <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
           <folding />
         </state>
@@ -1742,7 +1675,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
+        <state vertical-scroll-proportion="0.0">
           <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="121" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1753,7 +1686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state vertical-scroll-proportion="0.0">
           <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding />
         </state>
@@ -1761,23 +1694,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="e#3482#3483#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
+        <state vertical-scroll-proportion="0.0">
           <caret line="160" column="13" selection-start-line="160" selection-start-column="13" selection-end-line="160" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1461596078305" expanded="true" signature="14069:14076" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/ProductAgreement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
+        <state vertical-scroll-proportion="0.0">
           <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
           <folding />
         </state>
@@ -1785,8 +1722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.52380955">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
         </state>
       </provider>
