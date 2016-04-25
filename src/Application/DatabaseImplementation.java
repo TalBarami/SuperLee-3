@@ -262,9 +262,8 @@ public class DatabaseImplementation implements Database {
     }
     private Contract getContractBySupplierID(String id){
         DeliveryMethod dm;
-        int deliveryTime,minAmount;
-        double baseDiscount,maxDiscount;
-        Map<Product,Double> products;
+        int deliveryTime;
+        Map<Product,ProductAgreement> productsAgreements;
         Contract contract=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
@@ -275,13 +274,10 @@ public class DatabaseImplementation implements Database {
             ps.setString(1,id);
             rs=ps.executeQuery();
             while(rs.next()){
-                products=getProductsWithPricesBySupplierID(id);
+                productsAgreements=getProductsWithAgreementsBySupplierID(id);
                 dm=getDeliveryBySupplierID(Integer.parseInt(id));
                 deliveryTime=rs.getInt("deliveryTime");
-                minAmount=rs.getInt("minAmount");
-                maxDiscount=rs.getInt("maxDiscount");
-                baseDiscount=rs.getDouble("baseDiscount");
-                contract=new Contract(dm,deliveryTime,minAmount,baseDiscount,maxDiscount,products);
+                contract=new Contract(dm,deliveryTime,productsAgreements);
             }
         }
         catch ( Exception e ) {
@@ -304,18 +300,24 @@ public class DatabaseImplementation implements Database {
         }
 
     }
-    private Map<Product,Double> getProductsWithPricesBySupplierID(String id){
-        Map<Product,Double> ans=new HashMap<>();
+    private Map<Product,ProductAgreement> getProductsWithAgreementsBySupplierID(String id){
+        Map<Product,ProductAgreement> ans=new HashMap<>();
         ResultSet rs=null;
         PreparedStatement ps=null;
+        int minAmount;
+        double baseDiscount,maxDiscount,price;
         try{
             openConnection();
-            String query="SELECT productID,price FROM SuppliersProductsPrices WHERE supplierID=?";
+            String query="SELECT * FROM SuppliersProductAgreements WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
             rs=ps.executeQuery();
             while(rs.next()){
-                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getDouble("price"));
+                minAmount=rs.getInt("minAmount");
+                baseDiscount=rs.getDouble("baseDiscount");
+                maxDiscount=rs.getDouble("maxDiscount");
+                price=rs.getDouble("price");
+                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),new ProductAgreement(price,minAmount,baseDiscount,maxDiscount));
             }
         }
         catch ( Exception e ) {
@@ -491,21 +493,21 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         try {
             openConnection();
-            String query = "INSERT INTO Contracts (supplierID, deliveryMethod, deliveryTime, minAmount, maxDiscount, baseDiscount) VALUES (?,?,?,?,?,?)";
+            String query = "INSERT INTO Contracts (supplierID, deliveryMethod, deliveryTime) VALUES (?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1,Integer.parseInt(supp.getId()));
             ps.setInt(2,supp.getContract().getDeliveryMethod().ordinal());
             ps.setInt(3,supp.getContract().getDeliveryTime());
-            ps.setInt(4,supp.getContract().getMinDiscountLimit());
-            ps.setDouble(5,supp.getContract().getMaxDiscount());
-            ps.setDouble(6,supp.getContract().getBaseDiscount());
             ps.executeUpdate();
             for(Product product : supp.getContract().getProducts().keySet()){
-                query = "INSERT INTO SuppliersProductsPrices (supplierID, productID, price) VALUES (?,?,?)";
+                query = "INSERT INTO SuppliersProductAgreements (supplierID, productID, price,minAmount,baseDiscount,maxDiscount) VALUES (?,?,?,?,?,?)";
                 ps = dbConnection.prepareStatement(query);
                 ps.setInt(1, Integer.parseInt(supp.getId()));
                 ps.setInt(2, Integer.parseInt(product.getId()));
-                ps.setDouble(3, supp.getContract().getProducts().get(product));
+                ps.setDouble(3, supp.getContract().getProducts().get(product).getPrice());
+                ps.setInt(4, supp.getContract().getProducts().get(product).getMinAmount());
+                ps.setDouble(5, supp.getContract().getProducts().get(product).getBaseDiscount());
+                ps.setDouble(6, supp.getContract().getProducts().get(product).getMaxDiscount());
                 ps.executeUpdate();
             }
         }
@@ -524,33 +526,31 @@ public class DatabaseImplementation implements Database {
             closeConnection();
         }
     }
-
-
     public void editContract(Supplier supp) {
         PreparedStatement ps=null;
         try{
             openConnection();
-            String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=?,minAmount=?,maxDiscount=?,baseDiscount=? WHERE supplierID=?";
+            String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=? WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,supp.getContract().getDeliveryMethod().ordinal());
             ps.setInt(2,supp.getContract().getDeliveryTime());
-            ps.setInt(3,supp.getContract().getMinDiscountLimit());
-            ps.setDouble(4,supp.getContract().getMaxDiscount());
-            ps.setDouble(5,supp.getContract().getBaseDiscount());
-            ps.setInt(6,Integer.parseInt(supp.getId()));
+            ps.setInt(3,Integer.parseInt(supp.getId()));
             ps.executeUpdate();
 
-            query = "DELETE FROM SuppliersProductsPrices WHERE supplierID=?";
+            query = "DELETE FROM SuppliersProductAgreements WHERE supplierID=?";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(supp.getId()));
             ps.executeUpdate();
 
-            for(Product p : supp.getContract().getProducts().keySet()){
-                query = "INSERT INTO SuppliersProductsPrices (supplierID, productID, price) VALUES (?,?,?)";
+            for(Product product : supp.getContract().getProducts().keySet()){
+                query = "INSERT INTO SuppliersProductAgreements (supplierID, productID, price,minAmount,baseDiscount,maxDiscount) VALUES (?,?,?,?,?,?)";
                 ps = dbConnection.prepareStatement(query);
                 ps.setInt(1, Integer.parseInt(supp.getId()));
-                ps.setInt(2, Integer.parseInt(p.getId()));
-                ps.setDouble(3,supp.getContract().getProducts().get(p));
+                ps.setInt(2, Integer.parseInt(product.getId()));
+                ps.setDouble(3, supp.getContract().getProducts().get(product).getPrice());
+                ps.setInt(4, supp.getContract().getProducts().get(product).getMinAmount());
+                ps.setDouble(5, supp.getContract().getProducts().get(product).getBaseDiscount());
+                ps.setDouble(6, supp.getContract().getProducts().get(product).getMaxDiscount());
                 ps.executeUpdate();
             }
         }

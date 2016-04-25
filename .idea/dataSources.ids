@@ -8,9 +8,6 @@
       <column name="supplierID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="deliveryMethod" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="deliveryTime" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="minAmount" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="maxDiscount" sqlType="DOUBLE" precision="0" scale="-1" nullable="false" jdbcType="6"/>
-      <column name="baseDiscount" sqlType="DOUBLE" precision="0" scale="-1" nullable="false" jdbcType="6"/>
       <primary-key columns="supplierid"/>
       <foreign-key name="#FAKE_Contracts_1" columns="deliveryMethod" ref-table="DeliveryMethods" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="1" deferrability="1"/>
       <foreign-key name="#FAKE_Contracts_2" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
@@ -78,13 +75,16 @@
       <primary-key columns="supplierid,name,phone"/>
       <foreign-key name="#FAKE_SuppliersContacts_1" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
     </table>
-    <table name="SuppliersProductsPrices" schema="" catalog="" type="TABLE">
+    <table name="SuppliersProductAgreements" schema="" catalog="" type="TABLE">
       <column name="supplierID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="productID" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
       <column name="price" sqlType="DOUBLE" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="minAmount" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="baseDiscount" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="maxDiscount" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
       <primary-key columns="supplierid,productid"/>
-      <foreign-key name="#FAKE_SuppliersProductsPrices_1" columns="productID" ref-table="Products" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="1" deferrability="1"/>
-      <foreign-key name="#FAKE_SuppliersProductsPrices_2" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_SuppliersProductAgreements_1" columns="productID" ref-table="Products" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="1" deferrability="1"/>
+      <foreign-key name="#FAKE_SuppliersProductAgreements_2" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
     </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
       <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
