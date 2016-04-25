@@ -1,9 +1,12 @@
 package Application;
 
+import Entities.Product;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Map;
 
 public class Utils {
     private static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
@@ -107,5 +110,12 @@ public class Utils {
 
     public static double checkDoubleBounds(int min){
         return checkDoubleBounds(min, Integer.MAX_VALUE);
+    }
+
+    public static boolean contains(Map<Product, Double> map, Product product){
+        for(Product p : map.keySet())
+            if(p.getId().equals(product.getId()))
+                return true;
+        return false;
     }
 }

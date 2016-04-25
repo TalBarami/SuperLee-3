@@ -172,7 +172,7 @@ public class SuppliersMenu {
         }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
         List<String> manufacturers = supplier.getManufacturers();
-        System.out.println(manufacturers.size() == 1 ? "Manufacturer found:\n" : "Manufacturers found:\n");
+        System.out.println(manufacturers.size() == 1 ? "Manufacturer found:" : "Manufacturers found:");
         for (String manufacturer : manufacturers) {
             System.out.printf("%s\n", manufacturer);
         }
@@ -343,7 +343,7 @@ public class SuppliersMenu {
                 System.out.println("There is no such product.");
                 continue;
             }
-            if(contains(products, product)){
+            if(Utils.contains(products, product)){
                 System.out.println("You already added this product.");
                 continue;
             }
@@ -354,12 +354,5 @@ public class SuppliersMenu {
         }
 
         return products.isEmpty() ? contract.getProducts() : products;
-    }
-
-    private boolean contains(Map<Product, Double> map, Product product){
-        for(Product p : map.keySet())
-            if(p.getId().equals(product.getId()))
-                return true;
-        return false;
     }
 }
