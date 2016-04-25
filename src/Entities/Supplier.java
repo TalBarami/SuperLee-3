@@ -64,24 +64,12 @@ public class Supplier {
         return bankAccount;
     }
 
-    public void setBankAccount(String bankAccount) {
-        this.bankAccount = bankAccount;
-    }
-
     public PaymentMethod getPaymentMethod() {
         return paymentMethod;
     }
 
-    public void setPaymentMethod(PaymentMethod paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
-
     public Map<String, String> getContacts() {
         return contacts;
-    }
-
-    public void setContacts(Map<String, String> contacts) {
-        this.contacts = contacts;
     }
 
     public Contract getContract() {
@@ -92,7 +80,7 @@ public class Supplier {
         this.contract = contract;
     }
 
-    public Map<Product,Double> getProducts(){
+    public Map<Product,ProductAgreement> getProducts(){
         return contract == null? null : contract.getProducts();
     }
 
@@ -127,7 +115,7 @@ public class Supplier {
             throw new NullPointerException();
         for(Product product : getProducts().keySet())
             if(product.getId().equals(p.getId()))
-                return getProducts().get(product);
+                return getProducts().get(product).getPrice();
         throw new NullPointerException();
     }
 

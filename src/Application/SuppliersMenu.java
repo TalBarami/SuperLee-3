@@ -323,10 +323,13 @@ public class SuppliersMenu {
         return DeliveryMethod.valueOf(selected);
     }
 
-    private Map<Product, Double> selectProducts(Contract contract){
-        Map<Product, Double> products = new HashMap<>();
+    private Map<Product, ProductAgreement> selectProducts(Contract contract){
+        Map<Product, ProductAgreement> products = new HashMap<>();
         Product product;
         double price;
+        int minAmount;
+        double baseDiscount;
+        double maxDiscount;
         String input;
         System.out.println("Add products. Leave the product id field blank when you are done.");
         while(true){
@@ -350,6 +353,7 @@ public class SuppliersMenu {
             System.out.println("Please enter price:");
             while((price = Utils.checkDoubleBounds(0)) == -1)
                 System.out.println("Invalid input.");
+            // TODO!!!!
             products.put(product, price);
         }
 
