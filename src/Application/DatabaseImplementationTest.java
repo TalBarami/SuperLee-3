@@ -35,7 +35,7 @@ public class DatabaseImplementationTest {
 
     }
 
-    @Test // ok 1/10
+    @Test
     public void testAddSupplier() throws Exception {
         assertEquals(0,db.findSupplierByID("-1").size());
         Map<String,String> contacts=new HashMap<>();
@@ -52,10 +52,19 @@ public class DatabaseImplementationTest {
 
     @Test
     public void testEditSupplier() throws Exception {
+        Map<String,String> contacts=new HashMap<>();
+        contacts.put("Meni","05435345");
+        db.addSupplier(new Supplier("-1","ADDED_SUPPLIER","123123", PaymentMethod.Cash,contacts));
+        Supplier s = db.findSupplierByID("-1").get(0);
+        assertEquals("ADDED_SUPPLIER",s.getName());
+        s.setName("EDITED_SUPPLIER");
+        db.editSupplier(s);
+        assertEquals("EDITED_SUPPLIER", db.findSupplierByID("-1").get(0).getName());
 
+        executeUpdate("DELETE from Suppliers where ID=-1");
     }
 
-    @Test // ok 3/10
+    @Test
     public void testRemoveSupplier() throws Exception {
         Map<String,String> contacts=new HashMap<>();
         contacts.put("Meni","05435345");
@@ -96,7 +105,7 @@ public class DatabaseImplementationTest {
         executeUpdate("DELETE from Suppliers where ID=-1");
     }
 
-    @Test // ok 6/10
+    @Test
     public void testReactivateSupplier() throws Exception {
         Map<String,String> contacts=new HashMap<>();
         contacts.put("Meni","05435345");
@@ -133,19 +142,6 @@ public class DatabaseImplementationTest {
     }
 
     @Test
-    public void testAddContract() throws Exception {
-        Map<Product, Double> products = new HashMap();
-        products.put(db.getProductByID("1"), 50.0);
-        Contract contract = new Contract(DeliveryMethod.onDemand, 2, 30, 1, 50, products);
-        // TODO
-    }
-
-    @Test
-    public void testEditContract() throws Exception {
-
-    }
-
-    @Test //ok test 4/10
     public void testCreateOrder() throws Exception {
         openConnection();
         String query="SELECT MAX(ID) as max FROM Orders";
@@ -175,7 +171,7 @@ public class DatabaseImplementationTest {
         closeConnection();
     }
 
-    @Test //ok test 5/10
+    @Test
     public void testConfirmOrder() throws Exception {
         openConnection();
         String query="SELECT MAX(ID) as max FROM Orders";
@@ -235,7 +231,7 @@ public class DatabaseImplementationTest {
         executeUpdate("UPDATE sqlite_sequence SET seq="+ maxID +" WHERE name=\"Orders\"");
     }
 
-    @Test// ok 2/10
+    @Test
     public void testCheckCredentials() throws Exception {
         assertNull(db.checkCredentials("Hacker","423423"));
         openConnection();

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
+    <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="JUnit - final">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperLeeDB.db" afterPath="$PROJECT_DIR$/SuperLeeDB.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementationTest.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementationTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java" afterPath="$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java" />
     </list>
@@ -33,6 +35,10 @@
       <PATH_ELEMENT>
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
   </component>
@@ -85,30 +91,30 @@
       <file leaf-file-name="DatabaseImplementationTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1078">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="2618">
+              <caret line="141" column="5" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
               <folding>
                 <element signature="docComment;class#DatabaseImplementationTest#0" expanded="false" />
                 <element signature="method#setUp#0;class#DatabaseImplementationTest#0" expanded="false" />
                 <element signature="method#tearDown#0;class#DatabaseImplementationTest#0" expanded="false" />
                 <element signature="method#openConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
                 <element signature="method#closeConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
-                <marker date="1461404145261" expanded="true" signature="1227:1260" placeholder="DELETE from " />
-                <marker date="1461404145261" expanded="true" signature="1802:1842" placeholder="SELECT activ... Suppliers" />
-                <marker date="1461404145261" expanded="true" signature="2225:2258" placeholder="DELETE from " />
-                <marker date="1461404145261" expanded="true" signature="3260:3300" placeholder="SELECT activ... Suppliers" />
-                <marker date="1461404145261" expanded="true" signature="3686:3719" placeholder="DELETE from " />
-                <marker date="1461404145261" expanded="true" signature="4589:4622" placeholder="SELECT MAX(I... " />
-                <marker date="1461404145261" expanded="true" signature="5237:5266" placeholder="DELETE from " />
-                <marker date="1461404145261" expanded="true" signature="5442:5487" placeholder="UPDATE sqlit... " />
-                <marker date="1461404145261" expanded="true" signature="5797:5830" placeholder="SELECT MAX(I... " />
-                <marker date="1461404145261" expanded="true" signature="6385:6428" placeholder="SELECT arriv... Orders" />
-                <marker date="1461404145261" expanded="true" signature="6795:6838" placeholder="SELECT arriv... Orders" />
-                <marker date="1461404145261" expanded="true" signature="7066:7094" placeholder="DELETE from " />
-                <marker date="1461404145261" expanded="true" signature="7066:7095" placeholder="DELETE from " />
-                <marker date="1461404145261" expanded="true" signature="7271:7316" placeholder="UPDATE sqlit... " />
-                <marker date="1461404145261" expanded="true" signature="8438:8520" placeholder="INSERT INTO Employees... " />
-                <marker date="1461404145261" expanded="true" signature="8752:8787" placeholder="DELETE from " />
+                <marker date="1461583172554" expanded="true" signature="1216:1249" placeholder="DELETE from " />
+                <marker date="1461583172554" expanded="true" signature="2291:2331" placeholder="SELECT activ... Suppliers" />
+                <marker date="1461583172554" expanded="true" signature="2714:2747" placeholder="DELETE from " />
+                <marker date="1461583172554" expanded="true" signature="3738:3778" placeholder="SELECT activ... Suppliers" />
+                <marker date="1461583172554" expanded="true" signature="4164:4197" placeholder="DELETE from " />
+                <marker date="1461583172554" expanded="true" signature="4696:4729" placeholder="SELECT MAX(I... " />
+                <marker date="1461583172554" expanded="true" signature="5344:5373" placeholder="DELETE from " />
+                <marker date="1461583172554" expanded="true" signature="5549:5594" placeholder="UPDATE sqlit... " />
+                <marker date="1461583172554" expanded="true" signature="5889:5922" placeholder="SELECT MAX(I... " />
+                <marker date="1461583172554" expanded="true" signature="6477:6520" placeholder="SELECT arriv... Orders" />
+                <marker date="1461583172554" expanded="true" signature="6887:6930" placeholder="SELECT arriv... Orders" />
+                <marker date="1461583172554" expanded="true" signature="7158:7186" placeholder="DELETE from " />
+                <marker date="1461583172554" expanded="true" signature="7158:7187" placeholder="DELETE from " />
+                <marker date="1461583172554" expanded="true" signature="7363:7408" placeholder="UPDATE sqlit... " />
+                <marker date="1461583172554" expanded="true" signature="8520:8602" placeholder="INSERT INTO Employees... " />
+                <marker date="1461583172554" expanded="true" signature="8834:8869" placeholder="DELETE from " />
               </folding>
             </state>
           </provider>
@@ -241,8 +247,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,7 +318,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,6 +332,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/SuperLeeDB.db" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -335,33 +342,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DatabaseImplementationTest.testFindOrderByID">
-    <configuration default="false" name="DatabaseImplementationTest.testReactivateSupplier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="SuperLee" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Application" />
-      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
-      <option name="METHOD_NAME" value="testReactivateSupplier" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.DatabaseImplementationTest">
     <configuration default="false" name="DatabaseImplementationTest.testFindSupplierByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -375,32 +356,6 @@
       <option name="PACKAGE_NAME" value="Application" />
       <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
       <option name="METHOD_NAME" value="testFindSupplierByID" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DatabaseImplementationTest.testAddSupplier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="SuperLee" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Application" />
-      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
-      <option name="METHOD_NAME" value="testAddSupplier" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -454,6 +409,58 @@
       <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
       <option name="METHOD_NAME" value="testGetProductByID" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DatabaseImplementationTest.testEditSupplier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="SuperLee" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Application" />
+      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
+      <option name="METHOD_NAME" value="testEditSupplier" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="DatabaseImplementationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="SuperLee" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Application" />
+      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -868,19 +875,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testReactivateSupplier" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindSupplierByID" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testAddSupplier" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindOrderByID" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testGetProductByID" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindSupplierByID" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindOrderByID" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testGetProductByID" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testEditSupplier" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindOrderByID" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testGetProductByID" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindSupplierByID" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testAddSupplier" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testReactivateSupplier" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testEditSupplier" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindOrderByID" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testGetProductByID" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DatabaseImplementationTest.testFindSupplierByID" />
       </list>
     </recent_temporary>
   </component>
@@ -910,7 +917,8 @@
       <workItem from="1461332288368" duration="5884000" />
       <workItem from="1461356998299" duration="3585000" />
       <workItem from="1461403728338" duration="135000" />
-      <workItem from="1461403884422" duration="344000" />
+      <workItem from="1461403884422" duration="454000" />
+      <workItem from="1461582708844" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -1101,15 +1109,22 @@
       <option name="project" value="LOCAL" />
       <updated>1461360581548</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="MORE Fixing bugs and JUnit testing.">
+      <created>1461404257919</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1461404257919</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DatabaseImplementationTest_testFindOrderByID - 2016.04.23 at 00h 28m 52s.xml">
-      <configuration name="DatabaseImplementationTest.testFindOrderByID" configurationId="JUnit" />
+    <history-entry file="DatabaseImplementationTest - 2016.04.25 at 14h 28m 30s.xml">
+      <configuration name="DatabaseImplementationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DatabaseImplementationTest_testFindOrderByID - 2016.04.23 at 12h 33m 07s.xml">
-      <configuration name="DatabaseImplementationTest.testFindOrderByID" configurationId="JUnit" />
+    <history-entry file="DatabaseImplementationTest_testEditSupplier - 2016.04.25 at 14h 17m 22s.xml">
+      <configuration name="DatabaseImplementationTest.testEditSupplier" configurationId="JUnit" />
     </history-entry>
     <history-entry file="DatabaseImplementationTest_testFindOrderByID - 2016.04.23 at 12h 33m 53s.xml">
       <configuration name="DatabaseImplementationTest.testFindOrderByID" configurationId="JUnit" />
@@ -1137,7 +1152,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60991000" />
+    <option name="totallyTimeSpent" value="61701000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1160,12 +1175,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24040632" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24040632" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18347639" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17167382" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17167382" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1247,7 +1262,8 @@
     <MESSAGE value="Added :&#10;- Reactivate existing supplier whihc was rmoved previously" />
     <MESSAGE value="Fixed :&#10;Database implemetation according to changes in CONTRACT table" />
     <MESSAGE value="Fixing bugs and JUnit testing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing bugs and JUnit testing." />
+    <MESSAGE value="MORE Fixing bugs and JUnit testing." />
+    <option name="LAST_COMMIT_MESSAGE" value="MORE Fixing bugs and JUnit testing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1298,14 +1314,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1660,32 +1668,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1078">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="2618">
+          <caret line="141" column="5" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
           <folding>
             <element signature="docComment;class#DatabaseImplementationTest#0" expanded="false" />
             <element signature="method#setUp#0;class#DatabaseImplementationTest#0" expanded="false" />
             <element signature="method#tearDown#0;class#DatabaseImplementationTest#0" expanded="false" />
             <element signature="method#openConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
             <element signature="method#closeConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
-            <marker date="1461404145261" expanded="true" signature="1227:1260" placeholder="DELETE from " />
-            <marker date="1461404145261" expanded="true" signature="1802:1842" placeholder="SELECT activ... Suppliers" />
-            <marker date="1461404145261" expanded="true" signature="2225:2258" placeholder="DELETE from " />
-            <marker date="1461404145261" expanded="true" signature="3260:3300" placeholder="SELECT activ... Suppliers" />
-            <marker date="1461404145261" expanded="true" signature="3686:3719" placeholder="DELETE from " />
-            <marker date="1461404145261" expanded="true" signature="4589:4622" placeholder="SELECT MAX(I... " />
-            <marker date="1461404145261" expanded="true" signature="5237:5266" placeholder="DELETE from " />
-            <marker date="1461404145261" expanded="true" signature="5442:5487" placeholder="UPDATE sqlit... " />
-            <marker date="1461404145261" expanded="true" signature="5797:5830" placeholder="SELECT MAX(I... " />
-            <marker date="1461404145261" expanded="true" signature="6385:6428" placeholder="SELECT arriv... Orders" />
-            <marker date="1461404145261" expanded="true" signature="6795:6838" placeholder="SELECT arriv... Orders" />
-            <marker date="1461404145261" expanded="true" signature="7066:7094" placeholder="DELETE from " />
-            <marker date="1461404145261" expanded="true" signature="7066:7095" placeholder="DELETE from " />
-            <marker date="1461404145261" expanded="true" signature="7271:7316" placeholder="UPDATE sqlit... " />
-            <marker date="1461404145261" expanded="true" signature="8438:8520" placeholder="INSERT INTO Employees... " />
-            <marker date="1461404145261" expanded="true" signature="8752:8787" placeholder="DELETE from " />
+            <marker date="1461583172554" expanded="true" signature="1216:1249" placeholder="DELETE from " />
+            <marker date="1461583172554" expanded="true" signature="2291:2331" placeholder="SELECT activ... Suppliers" />
+            <marker date="1461583172554" expanded="true" signature="2714:2747" placeholder="DELETE from " />
+            <marker date="1461583172554" expanded="true" signature="3738:3778" placeholder="SELECT activ... Suppliers" />
+            <marker date="1461583172554" expanded="true" signature="4164:4197" placeholder="DELETE from " />
+            <marker date="1461583172554" expanded="true" signature="4696:4729" placeholder="SELECT MAX(I... " />
+            <marker date="1461583172554" expanded="true" signature="5344:5373" placeholder="DELETE from " />
+            <marker date="1461583172554" expanded="true" signature="5549:5594" placeholder="UPDATE sqlit... " />
+            <marker date="1461583172554" expanded="true" signature="5889:5922" placeholder="SELECT MAX(I... " />
+            <marker date="1461583172554" expanded="true" signature="6477:6520" placeholder="SELECT arriv... Orders" />
+            <marker date="1461583172554" expanded="true" signature="6887:6930" placeholder="SELECT arriv... Orders" />
+            <marker date="1461583172554" expanded="true" signature="7158:7186" placeholder="DELETE from " />
+            <marker date="1461583172554" expanded="true" signature="7158:7187" placeholder="DELETE from " />
+            <marker date="1461583172554" expanded="true" signature="7363:7408" placeholder="UPDATE sqlit... " />
+            <marker date="1461583172554" expanded="true" signature="8520:8602" placeholder="INSERT INTO Employees... " />
+            <marker date="1461583172554" expanded="true" signature="8834:8869" placeholder="DELETE from " />
           </folding>
         </state>
       </provider>
