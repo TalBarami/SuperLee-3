@@ -91,4 +91,132 @@
       <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
     </table>
   </data-source>
+  <data-source name="Sqlite (Xerial) - SuperLeeDB_INT.db" uuid="335260d8-421f-4a40-9c4e-50ee2779861c">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="Contracts" schema="" catalog="" type="TABLE">
+      <column name="supplierID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="deliveryMethod" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="deliveryTime" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="supplierid"/>
+      <foreign-key name="#FAKE_Contracts_1" columns="deliveryMethod" ref-table="DeliveryMethods" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="1" deferrability="1"/>
+      <foreign-key name="#FAKE_Contracts_2" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="DeliveryMethods" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="method" sqlType="TEXT (15)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="Employees" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="userName" sqlType="TEXT (20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="TEXT (10)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="Manufacturers" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="TEXT (25)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="Orders" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="date" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="arrivalStatus" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="totalPrice" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="employeeID" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="supplierID" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_Orders_1" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Orders_2" columns="employeeID" ref-table="Employees" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="PaymentMethods" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="method" sqlType="TEXT (20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="ProductsInOrders" schema="" catalog="" type="TABLE">
+      <column name="productID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="orderID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="amount" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="productid,orderid"/>
+      <foreign-key name="#FAKE_ProductsInOrders_1" columns="orderID" ref-table="Orders" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_ProductsInOrders_2" columns="productID" ref-table="product" ref-schema="" ref-catalog="" ref-columns="product_id" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="Suppliers" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="TEXT (15)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="paymentMethod" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="bankAccount" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="active" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4" def="MQ=="/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_Suppliers_1" columns="paymentMethod" ref-table="PaymentMethods" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="1" deferrability="1"/>
+    </table>
+    <table name="SuppliersContacts" schema="" catalog="" type="TABLE">
+      <column name="supplierID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="TEXT (10)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="TEXT (10)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="supplierid,name,phone"/>
+      <foreign-key name="#FAKE_SuppliersContacts_1" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="SuppliersProductAgreements" schema="" catalog="" type="TABLE">
+      <column name="supplierID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="productID" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="price" sqlType="DOUBLE" precision="0" scale="-1" nullable="false" jdbcType="6"/>
+      <column name="minAmount" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="baseDiscount" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="maxDiscount" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <primary-key columns="supplierid,productid"/>
+      <foreign-key name="#FAKE_SuppliersProductAgreements_1" columns="productID" ref-table="product" ref-schema="" ref-catalog="" ref-columns="product_id" update-rule="0" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_SuppliersProductAgreements_2" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="category" schema="" catalog="" type="TABLE">
+      <column name="cat_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="parent_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="level" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="cat_id"/>
+      <foreign-key name="#FAKE_category_1" columns="parent_id" ref-table="category" ref-schema="" ref-catalog="" ref-columns="cat_id" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="product" schema="" catalog="" type="TABLE">
+      <column name="product_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="manufacture" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="min_amount" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="main_cat_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="sub_cat_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="ssub_cat_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="product_id"/>
+      <foreign-key name="#FAKE_product_1" columns="ssub_cat_id" ref-table="category" ref-schema="" ref-catalog="" ref-columns="cat_id" update-rule="0" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_product_2" columns="sub_cat_id" ref-table="category" ref-schema="" ref-catalog="" ref-columns="cat_id" update-rule="0" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_product_3" columns="main_cat_id" ref-table="category" ref-schema="" ref-catalog="" ref-columns="cat_id" update-rule="0" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_product_4" columns="manufacture" ref-table="Manufacturers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="product_stock" schema="" catalog="" type="TABLE">
+      <column name="product_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="date_of_exp" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="amount" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="is_valid" sqlType="BOOLEAN" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="product_id,date_of_exp"/>
+      <foreign-key name="#FAKE_product_stock_1" columns="product_id" ref-table="product" ref-schema="" ref-catalog="" ref-columns="product_id" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="stock_ticket_items" schema="" catalog="" type="TABLE">
+      <column name="ticket_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="product_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="date_of_exp" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="amount" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="ticket_id,product_id,date_of_exp"/>
+      <foreign-key name="#FAKE_stock_ticket_items_1" columns="product_id,date_of_exp" ref-table="product_stock" ref-schema="" ref-catalog="" ref-columns="product_id,date_of_exp" update-rule="0" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_stock_ticket_items_2" columns="ticket_id" ref-table="stock_tickets" ref-schema="" ref-catalog="" ref-columns="ticket_id" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="stock_tickets" schema="" catalog="" type="TABLE">
+      <column name="ticket_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="ticket_id"/>
+    </table>
+  </data-source>
 </component>
