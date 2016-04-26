@@ -1,5 +1,7 @@
 package Inventory.screens;
 
+import Inventory.program.SQLiteConnector;
+
 public class MainScreen {
 
 	public static void  mainScreen() {
@@ -8,7 +10,7 @@ public class MainScreen {
 		System.out.println("2. Product stock");
 		System.out.println("3. Categories");
 		System.out.println("4. Reports");
-		System.out.println("5. Exit");
+		System.out.println("5. Back");
 		
 		int result = Inventory.program.Util.readIntFromUser(1, 5);
 			
@@ -26,7 +28,7 @@ public class MainScreen {
 			ReportsScreeen.mainScreen();
 			break;
 		case 5:
-			System.exit(0);
+			SQLiteConnector.getInstance().CloseConnection();
 			break;
 		}
 	}

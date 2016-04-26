@@ -46,7 +46,8 @@ public class Supplier {
     @Override
     public String toString(){
         return  "\tID: " + id +
-                "\t\tName: " + name;
+                "\t\tName: " + name +
+                ((contract != null) ? "\t\tDelivery method:" + contract.getDeliveryMethod() : name + " has no contract.");
     }
 
     public void setId(String id) {

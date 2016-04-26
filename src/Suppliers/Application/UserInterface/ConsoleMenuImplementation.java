@@ -5,15 +5,13 @@ import Suppliers.Application.Utils;
 import Suppliers.Entities.Employee;
 import Suppliers.Entities.Order;
 import Suppliers.Entities.Supplier;
+import Store.Store;
 
 import java.util.List;
 
 public class ConsoleMenuImplementation implements ConsoleMenu {
-    private static final int MAX_ATTEMPTS = 3;
-
     private Database database;
     private Employee connected;
-
     private SuppliersMenu suppliersMenu;
     private OrdersMenu ordersMenu;
     private int selected;
@@ -21,7 +19,7 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
     private static final String menuCommands[] = {
             "Manage suppliers.",
             "Manage orders.",
-            "Exit."
+            "Back."
     };
 
     private static final String supplierSearch[] = {
@@ -41,32 +39,10 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
         this.database = database;
         suppliersMenu = new SuppliersMenu(this);
         ordersMenu = new OrdersMenu(this);
-        RunStore();
     }
 
     public void RunStore(){
-        System.out.println("Welcome to 'Super-Lee', please log-in to continue.");
-        Login(MAX_ATTEMPTS);
         MainMenu();
-        System.exit(0);
-    }
-
-    private void Login(int attempts){
-        if(attempts == 0) {
-            System.out.println("Terminating.");
-            System.exit(0);
-        }
-        System.out.println("User Name:");
-        String username = Utils.readLine();
-        System.out.println("Password:");
-        String password = Utils.readLine();
-
-        if((connected = database.checkCredentials(username,password)) != null)
-            System.out.println("You have successfully logged into the system!");
-        else{
-            System.out.printf("Invalid user name or password. (%d attempts left)\n",attempts-1);
-            Login(attempts-1);
-        }
     }
 
     private void MainMenu(){
@@ -165,5 +141,9 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
 
     public Employee getConnected(){
         return connected;
+    }
+
+    public void setConnected(Employee employee){
+        connected = employee;
     }
 }

@@ -12,6 +12,7 @@ public interface ConsoleMenu {
 
     Database getDatabase();
     Employee getConnected();
+    void setConnected(Employee employee);
 
     Supplier getSupplier();
     Order getOrder();

@@ -3,15 +3,15 @@ package Inventory.entities;
 public class ProductCatalog {
 	private int _id;
 	private String _name;
-	private String _manufacture;
+	private int _manufacture;
 	private int _minimal_amount;
 	private Category _main_cat;
 	private Category _sub_cat;
 	private Category _ssub_cat;
-	
-	public ProductCatalog(int _id, String _name, String _manufacture,
-			int _minimal_amount, Category _main_cat, Category _sub_cat,
-			Category _ssub_cat) {
+
+	public ProductCatalog(int _id, String _name, int _manufacture,
+						  int _minimal_amount, Category _main_cat, Category _sub_cat,
+						  Category _ssub_cat) {
 		this._id = _id;
 		this._name = _name;
 		this._manufacture = _manufacture;
@@ -29,7 +29,7 @@ public class ProductCatalog {
 		return _name;
 	}
 
-	public String get_manufacture() {
+	public int get_manufacture() {
 		return _manufacture;
 	}
 

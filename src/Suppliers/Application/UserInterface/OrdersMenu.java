@@ -13,7 +13,9 @@ public class OrdersMenu {
 
     private static final String ordersCommands[] = {
             "Create new order",
+            "Create restock order",
             "Confirm order",
+            "Update weekly order",
             "View order",
             "Back"
     };
@@ -30,12 +32,18 @@ public class OrdersMenu {
                     createNewOrder();
                     break;
                 case 2:
-                    confirmOrder();
+                    createRestockOrder();
                     break;
                 case 3:
-                    viewOrder();
+                    confirmOrder();
                     break;
                 case 4:
+                    updateWeeklyOrder();
+                    break;
+                case 5:
+                    viewOrder();
+                    break;
+                case 6:
                     return;
             }
         }
@@ -61,6 +69,10 @@ public class OrdersMenu {
         consoleMenu.getDatabase().createOrder(order);
         System.out.println("Order created successfully!");
     }
+    
+    private void createRestockOrder(){
+        // TODO: 26/04/2016
+    }
 
     private void confirmOrder(){
         System.out.println("Please select the order you would like to confirm:");
@@ -75,6 +87,10 @@ public class OrdersMenu {
         }
         consoleMenu.getDatabase().confirmOrder(order);
         System.out.printf("Order %s confirmed successfully!\n", order.getId());
+    }
+    
+    private void updateWeeklyOrder(){
+        // TODO: 26/04/2016
     }
 
     private void viewOrder(){
@@ -121,21 +137,14 @@ public class OrdersMenu {
 
     private double calculatePrice(Supplier supplier, Map<Product, Integer> items){
         double totalPrice = 0;
-        int amount;
-        double discount;
-        double discountedPrice;
-        ProductAgreement agreement;
-        for(Product p : items.keySet()) {
-            agreement = supplier.getAgreement(p);
-            amount = items.get(p);
-            discount = getDiscount(agreement.getBaseDiscount(), agreement.getMaxDiscount(), amount, agreement.getMinAmount());
-            discountedPrice = (1-discount) * agreement.getPrice() * amount;
-            totalPrice += discountedPrice;
-        }
+        for(Product p : items.keySet())
+            totalPrice += getDiscountedPrice(supplier.getAgreement(p), p, items.get(p));
         return totalPrice;
     }
 
-    private double getDiscount(double baseDiscount, double maxDiscount, int amount, int minDiscountLimit) {
-        return amount < minDiscountLimit ? 0 : Math.min(maxDiscount,((double)amount)*baseDiscount/((double)minDiscountLimit))/100;
+    private double getDiscountedPrice(ProductAgreement agreement, Product item, int amount){
+        double discount = amount < agreement.getMinAmount() ? 0 :
+                Math.min(agreement.getMaxDiscount(),amount*agreement.getBaseDiscount()/agreement.getMinAmount())/100;
+        return (1-discount) * agreement.getPrice() * amount;
     }
 }
