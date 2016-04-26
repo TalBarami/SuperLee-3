@@ -2,17 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/DatabaseImplementation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/OrdersMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/SuppliersMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Application/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Contract.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Contract.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Employee.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Employee.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Order.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Product.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Product.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" afterPath="$PROJECT_DIR$/out/production/SuperLee/Entities/Supplier.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/ConsoleMenu.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Database.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/OrdersMenu.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Utils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Contract.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/DeliveryMethod.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Employee.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Order.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/PaymentMethod.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Product.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/ProductAgreement.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entities/Supplier.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/ConsoleMenu.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenuImplementation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/Database.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/Database/Database.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementation.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementationTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/OrdersMenu.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Application/Utils.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/Utils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/Contract.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/Contract.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/DeliveryMethod.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/DeliveryMethod.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/Employee.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/Employee.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/Order.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/Order.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/PaymentMethod.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/PaymentMethod.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/Product.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/Product.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/ProductAgreement.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/ProductAgreement.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Entities/Supplier.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/Supplier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Program.java" afterPath="$PROJECT_DIR$/src/Program.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,10 +64,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -52,103 +72,177 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SuppliersMenu.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
+      <file leaf-file-name="SuppliersMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4576">
-              <caret line="216" column="25" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+            <state relative-caret-position="-22">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
-                <element signature="e#256#257#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
+                <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#closeConnection#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="docComment;method#addSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#addSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#editSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#removeSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#reactivateSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#FindSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getProductByID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getContractBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getProductsWithAgreementsBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getManufacturerByID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getDeliveryBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getPaymentMethodByID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getContactsBySupplierID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="docComment;method#addContract#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#addContract#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#editContract#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="docComment;method#createOrder#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#createOrder#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getLastOrderID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#confirmOrder#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#FindOrder#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#findOrderByID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getProductsInOrderByOrderID#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="docComment;method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
+                <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductAgreement.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/ProductAgreement.java">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+            <state relative-caret-position="88">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseImplementationTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding>
-                <element signature="e#649#650#0" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
+                <element signature="docComment;class#DatabaseImplementationTest#0" expanded="false" />
+                <element signature="method#setUp#0;class#DatabaseImplementationTest#0" expanded="false" />
+                <element signature="method#tearDown#0;class#DatabaseImplementationTest#0" expanded="false" />
+                <element signature="method#openConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
+                <element signature="method#closeConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
+                <marker date="1461662277719" expanded="true" signature="1124:1157" placeholder="DELETE from " />
+                <marker date="1461662277719" expanded="true" signature="2199:2239" placeholder="SELECT activ... Suppliers" />
+                <marker date="1461662277719" expanded="true" signature="2622:2655" placeholder="DELETE from " />
+                <marker date="1461662277719" expanded="true" signature="3646:3686" placeholder="SELECT activ... Suppliers" />
+                <marker date="1461662277719" expanded="true" signature="4072:4105" placeholder="DELETE from " />
+                <marker date="1461662277719" expanded="true" signature="4604:4637" placeholder="SELECT MAX(I... " />
+                <marker date="1461662277719" expanded="true" signature="5252:5281" placeholder="DELETE from " />
+                <marker date="1461662277719" expanded="true" signature="5457:5502" placeholder="UPDATE sqlit... " />
+                <marker date="1461662277719" expanded="true" signature="5797:5830" placeholder="SELECT MAX(I... " />
+                <marker date="1461662277719" expanded="true" signature="6385:6428" placeholder="SELECT arriv... Orders" />
+                <marker date="1461662277719" expanded="true" signature="6795:6838" placeholder="SELECT arriv... Orders" />
+                <marker date="1461662277719" expanded="true" signature="7066:7095" placeholder="DELETE from " />
+                <marker date="1461662277719" expanded="true" signature="7271:7316" placeholder="UPDATE sqlit... " />
+                <marker date="1461662277719" expanded="true" signature="8428:8510" placeholder="INSERT INTO Employees... " />
+                <marker date="1461662277719" expanded="true" signature="8742:8777" placeholder="DELETE from " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Contract.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
+      <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Program.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="16" column="92" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="92" />
+            <state relative-caret-position="66">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsoleMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsoleMenuImplementation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenuImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Supplier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Supplier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="792">
               <caret line="42" column="111" selection-start-line="42" selection-start-column="111" selection-end-line="42" selection-end-column="111" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#988#989#0" expanded="false" />
+                <element signature="e#1013#1014#0" expanded="false" />
+                <element signature="e#1557#1558#0" expanded="false" />
+                <element signature="e#1585#1586#0" expanded="false" />
+                <element signature="e#1616#1617#0" expanded="false" />
+                <element signature="e#1643#1644#0" expanded="false" />
+                <element signature="e#1683#1684#0" expanded="false" />
+                <element signature="e#1715#1716#0" expanded="false" />
+                <element signature="e#1753#1754#0" expanded="false" />
+                <element signature="e#1787#1788#0" expanded="false" />
+                <element signature="e#1834#1835#0" expanded="false" />
+                <element signature="e#1870#1871#0" expanded="false" />
+                <element signature="e#1918#1919#0" expanded="false" />
+                <element signature="e#1949#1950#0" expanded="false" />
+                <element signature="e#1986#1987#0" expanded="false" />
+                <element signature="e#2017#2018#0" expanded="false" />
+                <element signature="e#2067#2068#0" expanded="false" />
+                <element signature="e#2107#2108#0" expanded="false" />
+                <element signature="e#2164#2165#0" expanded="false" />
+                <element signature="e#2234#2235#0" expanded="false" />
                 <element signature="method#getManufacturers#0;class#Supplier#0" expanded="false" />
-                <element signature="e#2884#2885#0" expanded="true" />
-                <element signature="e#2938#2939#0" expanded="true" />
-                <element signature="e#3480#3481#0" expanded="true" />
-                <element signature="e#3533#3534#0" expanded="true" />
+                <element signature="e#2653#2654#0" expanded="false" />
+                <element signature="e#2682#2683#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+            <state relative-caret-position="1320">
+              <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-              <folding>
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
-                <element signature="e#1028#1029#0" expanded="true" />
-                <element signature="e#1081#1082#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding>
-                <element signature="e#2294#2295#0" expanded="true" />
-                <element signature="e#2347#2348#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -225,6 +319,9 @@
         <option value="$PROJECT_DIR$/src/Application/Utils.java" />
         <option value="$PROJECT_DIR$/src/Entities/Supplier.java" />
         <option value="$PROJECT_DIR$/src/Application/SuppliersMenu.java" />
+        <option value="$PROJECT_DIR$/src/Suppliers/Application/SuppliersMenu.java" />
+        <option value="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" />
+        <option value="$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementationTest.java" />
       </list>
     </option>
   </component>
@@ -271,7 +368,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,7 +383,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SuperLee" />
+              <option name="myItemId" value="SuperLee-2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,7 +393,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SuperLee" />
+              <option name="myItemId" value="SuperLee-2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -310,11 +407,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SuperLee" />
+              <option name="myItemId" value="SuperLee-2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Suppliers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -328,7 +429,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SuperLee" />
+              <option name="myItemId" value="SuperLee-2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -336,14 +437,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Suppliers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SuperLee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SuperLee-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Suppliers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserInterface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SuperLee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SuperLee-2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Suppliers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,15 +527,15 @@
     <configuration default="false" name="DatabaseImplementationTest.testFindOrderByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Application.*" />
+          <option name="PATTERN" value="Suppliers.Application.UserInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="SuperLee" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Application" />
-      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
+      <option name="PACKAGE_NAME" value="Suppliers.Application.Database" />
+      <option name="MAIN_CLASS_NAME" value="Suppliers.Application.Database.DatabaseImplementationTest" />
       <option name="METHOD_NAME" value="testFindOrderByID" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -396,15 +553,15 @@
     <configuration default="false" name="DatabaseImplementationTest.testGetProductByID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Application.*" />
+          <option name="PATTERN" value="Suppliers.Application.UserInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="SuperLee" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Application" />
-      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
+      <option name="PACKAGE_NAME" value="Suppliers.Application.Database" />
+      <option name="MAIN_CLASS_NAME" value="Suppliers.Application.Database.DatabaseImplementationTest" />
       <option name="METHOD_NAME" value="testGetProductByID" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -422,15 +579,15 @@
     <configuration default="false" name="DatabaseImplementationTest.testEditSupplier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Application.*" />
+          <option name="PATTERN" value="Suppliers.Application.UserInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="SuperLee" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Application" />
-      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
+      <option name="PACKAGE_NAME" value="Suppliers.Application.Database" />
+      <option name="MAIN_CLASS_NAME" value="Suppliers.Application.Database.DatabaseImplementationTest" />
       <option name="METHOD_NAME" value="testEditSupplier" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -448,15 +605,15 @@
     <configuration default="false" name="DatabaseImplementationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Application.*" />
+          <option name="PATTERN" value="Suppliers.Application.UserInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="SuperLee" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Application" />
-      <option name="MAIN_CLASS_NAME" value="Application.DatabaseImplementationTest" />
+      <option name="PACKAGE_NAME" value="Suppliers.Application.Database" />
+      <option name="MAIN_CLASS_NAME" value="Suppliers.Application.Database.DatabaseImplementationTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -936,6 +1093,7 @@
       <workItem from="1461596789434" duration="874000" />
       <workItem from="1461597696029" duration="3893000" />
       <workItem from="1461656486146" duration="4767000" />
+      <workItem from="1461661677459" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -1190,7 +1348,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78165000" />
+    <option name="totallyTimeSpent" value="78820000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1207,33 +1365,33 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3115124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1085" y="536" width="742" height="401" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42437923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20171674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21190988" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23278688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23278688" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="true" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20118026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3115124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="1085" y="536" width="742" height="401" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42437923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546448" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1308,25 +1466,25 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
+          <url>file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java</url>
           <line>457</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
+          <url>file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java</url>
           <line>831</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
+          <url>file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java</url>
           <line>19</line>
           <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java</url>
+          <url>file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java</url>
           <line>151</line>
           <properties />
           <option name="timeStamp" value="22" />
@@ -1348,14 +1506,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1373,7 +1527,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
@@ -1407,42 +1561,11 @@
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1461656472123" expanded="true" signature="1476:1553" placeholder="INSERT INTO Suppliers... " />
-            <marker date="1461656472123" expanded="true" signature="1964:2034" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461656472123" expanded="true" signature="2889:2959" placeholder="UPDATE Suppl... " />
-            <marker date="1461656472123" expanded="true" signature="3301:3349" placeholder="DELETE from " />
-            <marker date="1461656472123" expanded="true" signature="3591:3661" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461656472123" expanded="true" signature="4520:4560" placeholder="UPDATE Suppl... " />
-            <marker date="1461656472123" expanded="true" signature="5508:5550" placeholder="UPDATE Suppl... " />
-            <marker date="1461656472123" expanded="true" signature="6542:6576" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461656472123" expanded="true" signature="6609:6666" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461656472123" expanded="true" signature="8318:8368" placeholder="SELECT name,... Products" />
-            <marker date="1461656472123" expanded="true" signature="9498:9541" placeholder="SELECT * FRO... Contracts" />
-            <marker date="1461656472123" expanded="true" signature="10867:10926" placeholder="SELECT * FRO... SuppliersProductAgreements" />
-            <marker date="1461656472123" expanded="true" signature="12064:12105" placeholder="SELECT name Manufacturers" />
-            <marker date="1461656472123" expanded="true" signature="13060:13177" placeholder="SELECT metho... Contracts" />
-            <marker date="1461656472123" expanded="true" signature="14513:14557" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1461656472123" expanded="true" signature="15927:15986" placeholder="SELECT name,... SuppliersContacts" />
-            <marker date="1461656472123" expanded="true" signature="16943:17022" placeholder="INSERT INTO Contracts... " />
-            <marker date="1461656472123" expanded="true" signature="17410:17535" placeholder="INSERT INTO SuppliersProductAgreements... " />
-            <marker date="1461656472123" expanded="true" signature="18721:18792" placeholder="UPDATE Contr... " />
-            <marker date="1461656472123" expanded="true" signature="19097:19154" placeholder="DELETE FROM " />
-            <marker date="1461656472123" expanded="true" signature="19406:19531" placeholder="INSERT INTO SuppliersProductAgreements... " />
-            <marker date="1461656472123" expanded="true" signature="20748:20818" placeholder="INSERT INTO Orders... " />
-            <marker date="1461656472123" expanded="true" signature="21239:21311" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1461656472123" expanded="true" signature="22167:22200" placeholder="SELECT MAX(I... " />
-            <marker date="1461656472123" expanded="true" signature="23022:23066" placeholder="UPDATE Order... " />
-            <marker date="1461656472123" expanded="true" signature="24295:24334" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461656472123" expanded="true" signature="26027:26059" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461656472123" expanded="true" signature="27539:27600" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1461656472123" expanded="true" signature="28631:28681" placeholder="SELECT userN... Employees" />
-            <marker date="1461656472123" expanded="true" signature="29694:29753" placeholder="SELECT ID,us... Employees" />
-            <marker date="1461656472123" expanded="true" signature="30800:30872" placeholder="SELECT COUNT... Employees" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Contract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
@@ -1450,35 +1573,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#988#989#0" expanded="false" />
+            <element signature="e#1013#1014#0" expanded="false" />
+            <element signature="e#1557#1558#0" expanded="false" />
+            <element signature="e#1585#1586#0" expanded="false" />
+            <element signature="e#1616#1617#0" expanded="false" />
+            <element signature="e#1643#1644#0" expanded="false" />
+            <element signature="e#1683#1684#0" expanded="false" />
+            <element signature="e#1715#1716#0" expanded="false" />
+            <element signature="e#1753#1754#0" expanded="false" />
+            <element signature="e#1787#1788#0" expanded="false" />
+            <element signature="e#1834#1835#0" expanded="false" />
+            <element signature="e#1870#1871#0" expanded="false" />
+            <element signature="e#1918#1919#0" expanded="false" />
+            <element signature="e#1949#1950#0" expanded="false" />
+            <element signature="e#1986#1987#0" expanded="false" />
+            <element signature="e#2017#2018#0" expanded="false" />
+            <element signature="e#2067#2068#0" expanded="false" />
+            <element signature="e#2107#2108#0" expanded="false" />
+            <element signature="e#2164#2165#0" expanded="false" />
+            <element signature="e#2234#2235#0" expanded="false" />
             <element signature="method#getManufacturers#0;class#Supplier#0" expanded="false" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#2938#2939#0" expanded="true" />
-            <element signature="e#3480#3481#0" expanded="true" />
-            <element signature="e#3533#3534#0" expanded="true" />
+            <element signature="e#2653#2654#0" expanded="false" />
+            <element signature="e#2682#2683#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="15" selection-end-column="44" />
           <folding>
-            <element signature="e#2294#2295#0" expanded="true" />
-            <element signature="e#2347#2348#0" expanded="true" />
+            <element signature="e#2304#2305#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1521,23 +1661,7 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/util/Collections.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/lang/ClassLoader.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/99526ca4-1185-4ea1-b584-f9627a59cbea/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/PaymentMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
@@ -1545,40 +1669,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/ConsoleMenuImplementation.java">
+    <entry file="dbDummy://dbtable:/2db27f21/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/SuppliersProductAgreements" />
+    <entry file="dbDummy://dbtable:/2db27f21/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/sqlite_sequence" />
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3366">
-          <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+        <state relative-caret-position="440">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/DeliveryMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementationTest.java">
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Products" />
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/DeliveryMethods" />
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Orders" />
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/ProductsInOrders" />
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/SuppliersContacts" />
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Suppliers" />
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/sqlite_sequence" />
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/ProductAgreement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3608">
-          <caret line="186" column="25" selection-start-line="186" selection-start-column="25" selection-end-line="186" selection-end-column="25" />
+        <state relative-caret-position="572">
+          <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
           <folding>
-            <element signature="docComment;class#DatabaseImplementationTest#0" expanded="false" />
-            <element signature="method#setUp#0;class#DatabaseImplementationTest#0" expanded="false" />
-            <element signature="method#tearDown#0;class#DatabaseImplementationTest#0" expanded="false" />
-            <element signature="method#openConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Database.java">
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/SuppliersProductAgreements" />
+    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Contracts" />
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Contract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="352">
+          <caret line="16" column="92" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/DatabaseImplementation.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="1430">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#2304#2305#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding>
+            <element signature="e#323#324#0" expanded="false" />
+            <element signature="e#348#349#0" expanded="false" />
+            <element signature="e#384#385#0" expanded="false" />
+            <element signature="e#412#413#0" expanded="false" />
+            <element signature="e#443#444#0" expanded="false" />
+            <element signature="e#470#471#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="42" column="111" selection-start-line="42" selection-start-column="111" selection-end-line="42" selection-end-column="111" />
+          <folding>
+            <element signature="e#988#989#0" expanded="false" />
+            <element signature="e#1013#1014#0" expanded="false" />
+            <element signature="e#1557#1558#0" expanded="false" />
+            <element signature="e#1585#1586#0" expanded="false" />
+            <element signature="e#1616#1617#0" expanded="false" />
+            <element signature="e#1643#1644#0" expanded="false" />
+            <element signature="e#1683#1684#0" expanded="false" />
+            <element signature="e#1715#1716#0" expanded="false" />
+            <element signature="e#1753#1754#0" expanded="false" />
+            <element signature="e#1787#1788#0" expanded="false" />
+            <element signature="e#1834#1835#0" expanded="false" />
+            <element signature="e#1870#1871#0" expanded="false" />
+            <element signature="e#1918#1919#0" expanded="false" />
+            <element signature="e#1949#1950#0" expanded="false" />
+            <element signature="e#1986#1987#0" expanded="false" />
+            <element signature="e#2017#2018#0" expanded="false" />
+            <element signature="e#2067#2068#0" expanded="false" />
+            <element signature="e#2107#2108#0" expanded="false" />
+            <element signature="e#2164#2165#0" expanded="false" />
+            <element signature="e#2234#2235#0" expanded="false" />
+            <element signature="method#getManufacturers#0;class#Supplier#0" expanded="false" />
+            <element signature="e#2653#2654#0" expanded="false" />
+            <element signature="e#2682#2683#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="method#openConnection#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#closeConnection#0;class#DatabaseImplementation#0" expanded="false" />
@@ -1609,261 +1814,84 @@
             <element signature="method#getEmployeeById#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#getEmployeeByUserName#0;class#DatabaseImplementation#0" expanded="false" />
             <element signature="method#checkCredentials#0;class#DatabaseImplementation#0" expanded="false" />
-            <marker date="1461656472123" expanded="true" signature="1476:1553" placeholder="INSERT INTO Suppliers... " />
-            <marker date="1461656472123" expanded="true" signature="1964:2034" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461656472123" expanded="true" signature="2889:2959" placeholder="UPDATE Suppl... " />
-            <marker date="1461656472123" expanded="true" signature="3301:3349" placeholder="DELETE from " />
-            <marker date="1461656472123" expanded="true" signature="3591:3661" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1461656472123" expanded="true" signature="4520:4560" placeholder="UPDATE Suppl... " />
-            <marker date="1461656472123" expanded="true" signature="5508:5550" placeholder="UPDATE Suppl... " />
-            <marker date="1461656472123" expanded="true" signature="6542:6576" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461656472123" expanded="true" signature="6609:6666" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1461656472123" expanded="true" signature="8318:8368" placeholder="SELECT name,... Products" />
-            <marker date="1461656472123" expanded="true" signature="9498:9541" placeholder="SELECT * FRO... Contracts" />
-            <marker date="1461656472123" expanded="true" signature="10867:10926" placeholder="SELECT * FRO... SuppliersProductAgreements" />
-            <marker date="1461656472123" expanded="true" signature="12064:12105" placeholder="SELECT name Manufacturers" />
-            <marker date="1461656472123" expanded="true" signature="13060:13177" placeholder="SELECT metho... Contracts" />
-            <marker date="1461656472123" expanded="true" signature="14513:14557" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1461656472123" expanded="true" signature="15927:15986" placeholder="SELECT name,... SuppliersContacts" />
-            <marker date="1461656472123" expanded="true" signature="16943:17022" placeholder="INSERT INTO Contracts... " />
-            <marker date="1461656472123" expanded="true" signature="17410:17535" placeholder="INSERT INTO SuppliersProductAgreements... " />
-            <marker date="1461656472123" expanded="true" signature="18721:18792" placeholder="UPDATE Contr... " />
-            <marker date="1461656472123" expanded="true" signature="19097:19154" placeholder="DELETE FROM " />
-            <marker date="1461656472123" expanded="true" signature="19406:19531" placeholder="INSERT INTO SuppliersProductAgreements... " />
-            <marker date="1461656472123" expanded="true" signature="20748:20818" placeholder="INSERT INTO Orders... " />
-            <marker date="1461656472123" expanded="true" signature="21239:21311" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1461656472123" expanded="true" signature="22167:22200" placeholder="SELECT MAX(I... " />
-            <marker date="1461656472123" expanded="true" signature="23022:23066" placeholder="UPDATE Order... " />
-            <marker date="1461656472123" expanded="true" signature="24295:24334" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461656472123" expanded="true" signature="26027:26059" placeholder="SELECT * FRO... Orders" />
-            <marker date="1461656472123" expanded="true" signature="27539:27600" placeholder="SELECT produ... ProductsInOrders" />
-            <marker date="1461656472123" expanded="true" signature="28631:28681" placeholder="SELECT userN... Employees" />
-            <marker date="1461656472123" expanded="true" signature="29694:29753" placeholder="SELECT ID,us... Employees" />
-            <marker date="1461656472123" expanded="true" signature="30800:30872" placeholder="SELECT COUNT... Employees" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/2db27f21/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/SuppliersProductAgreements" />
-    <entry file="dbDummy://dbtable:/2db27f21/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/sqlite_sequence" />
-    <entry file="file://$PROJECT_DIR$/src/Entities/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/DeliveryMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Products">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/DeliveryMethods">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Orders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/ProductsInOrders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/SuppliersContacts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Suppliers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/sqlite_sequence">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/ProductAgreement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
-          <folding>
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/SuppliersProductAgreements">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/bed661c7/cdff9c3c-70f1-41ec-a869-8bfec5a2d48d/Contracts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Contract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="16" column="92" selection-start-line="16" selection-start-column="92" selection-end-line="16" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="e#2294#2295#0" expanded="true" />
-            <element signature="e#2347#2348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1081#1082#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/OrdersMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+        <state relative-caret-position="110">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#DatabaseImplementationTest#0" expanded="false" />
+            <element signature="method#setUp#0;class#DatabaseImplementationTest#0" expanded="false" />
+            <element signature="method#tearDown#0;class#DatabaseImplementationTest#0" expanded="false" />
+            <element signature="method#openConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
+            <element signature="method#closeConnection#0;class#DatabaseImplementationTest#0" expanded="false" />
+            <marker date="1461662277719" expanded="true" signature="1124:1157" placeholder="DELETE from " />
+            <marker date="1461662277719" expanded="true" signature="2199:2239" placeholder="SELECT activ... Suppliers" />
+            <marker date="1461662277719" expanded="true" signature="2622:2655" placeholder="DELETE from " />
+            <marker date="1461662277719" expanded="true" signature="3646:3686" placeholder="SELECT activ... Suppliers" />
+            <marker date="1461662277719" expanded="true" signature="4072:4105" placeholder="DELETE from " />
+            <marker date="1461662277719" expanded="true" signature="4604:4637" placeholder="SELECT MAX(I... " />
+            <marker date="1461662277719" expanded="true" signature="5252:5281" placeholder="DELETE from " />
+            <marker date="1461662277719" expanded="true" signature="5457:5502" placeholder="UPDATE sqlit... " />
+            <marker date="1461662277719" expanded="true" signature="5797:5830" placeholder="SELECT MAX(I... " />
+            <marker date="1461662277719" expanded="true" signature="6385:6428" placeholder="SELECT arriv... Orders" />
+            <marker date="1461662277719" expanded="true" signature="6795:6838" placeholder="SELECT arriv... Orders" />
+            <marker date="1461662277719" expanded="true" signature="7066:7095" placeholder="DELETE from " />
+            <marker date="1461662277719" expanded="true" signature="7271:7316" placeholder="UPDATE sqlit... " />
+            <marker date="1461662277719" expanded="true" signature="8428:8510" placeholder="INSERT INTO Employees... " />
+            <marker date="1461662277719" expanded="true" signature="8742:8777" placeholder="DELETE from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Supplier.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="42" column="111" selection-start-line="42" selection-start-column="111" selection-end-line="42" selection-end-column="111" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getManufacturers#0;class#Supplier#0" expanded="false" />
-            <element signature="e#2884#2885#0" expanded="true" />
-            <element signature="e#2938#2939#0" expanded="true" />
-            <element signature="e#3480#3481#0" expanded="true" />
-            <element signature="e#3533#3534#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="88">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Application/SuppliersMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4576">
-          <caret line="216" column="25" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
-          <folding>
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="88">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenuImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

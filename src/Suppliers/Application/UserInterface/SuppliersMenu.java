@@ -1,6 +1,7 @@
-package Application;
+package Suppliers.Application.UserInterface;
 
-import Entities.*;
+import Suppliers.Application.Utils;
+import Suppliers.Entities.*;
 
 import java.util.HashMap;
 import java.util.List;

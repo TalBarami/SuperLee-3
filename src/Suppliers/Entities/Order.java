@@ -1,4 +1,4 @@
-package Entities;
+package Suppliers.Entities;
 
 import java.util.Date;
 import java.util.Map;

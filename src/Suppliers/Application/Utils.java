@@ -1,6 +1,4 @@
-package Application;
-
-import Entities.Product;
+package Suppliers.Application;
 
 import java.io.BufferedReader;
 import java.io.IOException;

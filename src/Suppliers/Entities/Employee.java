@@ -1,4 +1,4 @@
-package Entities;
+package Suppliers.Entities;
 
 /**
  * Created by Tal on 10/04/2016.

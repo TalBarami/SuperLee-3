@@ -1,6 +1,6 @@
-package Application;
+package Suppliers.Application.Database;
 
-import Entities.*;
+import Suppliers.Entities.*;
 import org.sqlite.SQLiteConfig;
 import java.text.SimpleDateFormat;
 import java.util.Date;

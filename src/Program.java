@@ -1,6 +1,6 @@
-import Application.ConsoleMenu;
-import Application.ConsoleMenuImplementation;
-import Application.DatabaseImplementation;
+import Suppliers.Application.UserInterface.ConsoleMenu;
+import Suppliers.Application.UserInterface.ConsoleMenuImplementation;
+import Suppliers.Application.Database.DatabaseImplementation;
 
 
 public class Program {

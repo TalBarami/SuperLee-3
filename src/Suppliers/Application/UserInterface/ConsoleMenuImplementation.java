@@ -1,8 +1,10 @@
-package Application;
+package Suppliers.Application.UserInterface;
 
-import Entities.Employee;
-import Entities.Order;
-import Entities.Supplier;
+import Suppliers.Application.Database.Database;
+import Suppliers.Application.Utils;
+import Suppliers.Entities.Employee;
+import Suppliers.Entities.Order;
+import Suppliers.Entities.Supplier;
 
 import java.util.List;
 

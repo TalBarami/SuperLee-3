@@ -1,6 +1,6 @@
-package Application;
+package Suppliers.Application.Database;
 
-import Entities.*;
+import Suppliers.Entities.*;
 
 import java.util.List;
 

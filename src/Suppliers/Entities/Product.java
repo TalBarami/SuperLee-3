@@ -1,4 +1,4 @@
-package Entities;
+package Suppliers.Entities;
 
 public class Product {
     private String id;

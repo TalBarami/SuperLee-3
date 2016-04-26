@@ -1,6 +1,6 @@
-package Entities;
+package Suppliers.Entities;
 
-import Application.Utils;
+import Suppliers.Application.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

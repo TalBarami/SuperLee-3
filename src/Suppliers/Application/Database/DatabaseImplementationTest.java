@@ -1,10 +1,7 @@
-package Application;
+package Suppliers.Application.Database;
 
-import Entities.*;
-import com.sun.corba.se.spi.orbutil.fsm.Guard;
-import com.sun.javafx.collections.MappingChange;
+import Suppliers.Entities.*;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.sqlite.SQLiteConfig;
