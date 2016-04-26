@@ -215,9 +215,6 @@ public class SuppliersMenu {
     private Contract createContract(Contract oldContract){
         DeliveryMethod deliveryMethod;
         int deliveryTime;
-        int minDiscountLimit;
-        double baseDiscount;
-        double maxDiscount;
         Map<Product,ProductAgreement> products;
 
         deliveryMethod = selectDeliveryMethod(oldContract);
