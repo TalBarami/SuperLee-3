@@ -18,31 +18,24 @@ public class ProductAgreement {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public int getMinAmount() {
         return minAmount;
-    }
-
-    public void setMinAmount(int minAmount) {
-        this.minAmount = minAmount;
     }
 
     public double getBaseDiscount() {
         return baseDiscount;
     }
 
-    public void setBaseDiscount(double baseDiscount) {
-        this.baseDiscount = baseDiscount;
-    }
-
     public double getMaxDiscount() {
         return maxDiscount;
     }
 
-    public void setMaxDiscount(double maxDiscount) {
-        this.maxDiscount = maxDiscount;
+    @Override
+    public String toString(){
+        return maxDiscount == 0 ? "\tPrice: "+price+ "\n\t\t\tNo discount agreement." :
+                "\tPrice: "+price+
+                "\t\tMinimum amount for discount: "+minAmount+
+                "\n\t\t\tBase discount: "+baseDiscount+
+                "\t\tMaximum discount: "+maxDiscount;
     }
 }

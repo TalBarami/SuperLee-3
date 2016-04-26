@@ -1,8 +1,5 @@
 package Entities;
 
-/**
- * Created by Tal on 10/04/2016.
- */
 public class Product {
     private String id;
     private String name;
@@ -35,5 +32,21 @@ public class Product {
         return  "\tID: " + id +
                 "\t\tName: " + name +
                 "\t\tManufacturer: " + manufacturer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        return id != null ? id.equals(product.id) : product.id == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }

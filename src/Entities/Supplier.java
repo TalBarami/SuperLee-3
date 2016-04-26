@@ -1,5 +1,7 @@
 package Entities;
 
+import Application.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -33,13 +35,12 @@ public class Supplier {
     }
 
     public String toFullString() {
-        String result = "\tID: " + id +
-                        "\n\tName: " + name +
-                        "\t\tBank account: " + bankAccount +
-                        "\t\tPayment method: " + paymentMethod +
-                        "\n\tContacts: " + contactsToString()+
-                        "\n\t" + ((contract != null) ? "Contract:" + contract.toString() : name + " has no contract.");
-        return result;
+        return "\tID: " + id +
+                "\n\tName: " + name +
+                "\t\tBank account: " + bankAccount +
+                "\t\tPayment method: " + paymentMethod +
+                "\n\tContacts: " + contactsToString()+
+                "\n\t" + ((contract != null) ? "Contract:" + contract.toString() : name + " has no contract.");
     }
 
     @Override
@@ -104,19 +105,11 @@ public class Supplier {
     public boolean sells(Product p){
         if(contract == null)
             throw new NullPointerException();
-        for(Product product : getProducts().keySet())
-            if(product.getId().equals(p.getId()))
-                return true;
-        return false;
+        return Utils.contains(getProducts(), p);
     }
 
-    public Double getPrice(Product p){
-        if(contract == null)
-            throw new NullPointerException();
-        for(Product product : getProducts().keySet())
-            if(product.getId().equals(p.getId()))
-                return getProducts().get(product).getPrice();
-        throw new NullPointerException();
+    public ProductAgreement getAgreement(Product p){
+        return Utils.getItem(getProducts(), p);
     }
 
     private String contactsToString(){
@@ -124,5 +117,20 @@ public class Supplier {
         for(String contact : contacts.keySet())
             result += "\n\t\t" + contact + " - " + contacts.get(contact);
         return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Supplier supplier = (Supplier) o;
+
+        return id != null ? id.equals(supplier.id) : supplier.id == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }

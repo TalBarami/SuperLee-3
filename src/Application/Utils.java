@@ -112,10 +112,28 @@ public class Utils {
         return checkDoubleBounds(min, Integer.MAX_VALUE);
     }
 
-    public static boolean contains(Map<Product, Double> map, Product product){
-        for(Product p : map.keySet())
-            if(p.getId().equals(product.getId()))
+    public static <T,K> boolean contains(Map<T, K> map, T item){
+        for(T t : map.keySet())
+            if(t.equals(item))
                 return true;
         return false;
+    }
+
+    public static <T,K> K getItem(Map<T,K> map, T item){
+        for(T t : map.keySet()){
+            if(t.equals(item))
+                return map.get(t);
+        }
+        throw new NullPointerException();
+    }
+
+    public static <T> void displayEnum(String input, T[] arr){
+        selected = Utils.parseInt(input);
+        while(selected<0 || selected >= arr.length){
+            System.out.println("Invalid input.");
+            for (int i = 0; i < arr.length; i++)
+                System.out.printf("%d. %s\n", i, arr[i]);
+            selected = Utils.parseInt(Utils.readLine());
+        }
     }
 }

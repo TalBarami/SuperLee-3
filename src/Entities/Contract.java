@@ -14,7 +14,7 @@ public class Contract {
                         "\t\tDelivery time: " + deliveryTime +
                         "\n\tProducts:";
         for(Product p : products.keySet())
-            result+="\n\t\tID: " + p.getId() + "\tName: " + p.getName() + "\t\tPrice: " + products.get(p);
+            result+="\n\t\tID: " + p.getId() + "\tName: " + p.getName() + "\n\t\tInformation: " + products.get(p);
         return result;
     }
 
