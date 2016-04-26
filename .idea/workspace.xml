@@ -946,7 +946,7 @@
       <workItem from="1461596789434" duration="874000" />
       <workItem from="1461597696029" duration="3893000" />
       <workItem from="1461656486146" duration="4767000" />
-      <workItem from="1461661825553" duration="205000" />
+      <workItem from="1461661825553" duration="254000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -1146,7 +1146,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461662029851</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="new DB">
+      <created>1461662036033</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1461662036033</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1182,7 +1188,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78370000" />
+    <option name="totallyTimeSpent" value="78419000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
