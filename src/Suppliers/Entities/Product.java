@@ -1,3 +1,4 @@
+/*
 package Suppliers.Entities;
 
 public class Product {
@@ -42,7 +43,6 @@ public class Product {
         Product product = (Product) o;
 
         return id != null ? id.equals(product.id) : product.id == null;
-
     }
 
     @Override
@@ -50,3 +50,4 @@ public class Product {
         return id != null ? id.hashCode() : 0;
     }
 }
+*/

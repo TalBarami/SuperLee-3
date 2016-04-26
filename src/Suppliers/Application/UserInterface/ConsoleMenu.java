@@ -16,6 +16,7 @@ public interface ConsoleMenu {
 
     Supplier getSupplier();
     Order getOrder();
+    Order getWeeklyOrder();
     List<Supplier> searchSupplier();
     List<Order> searchOrder();
 }

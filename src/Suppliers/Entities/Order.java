@@ -1,5 +1,7 @@
 package Suppliers.Entities;
 
+import Inventory.entities.ProductCatalog;
+
 import java.util.Date;
 import java.util.Map;
 
@@ -11,12 +13,11 @@ public class Order {
     private Date date;
     private boolean arrived;
     private double totalPrice;
-    private Map<Product, Integer> items;
+    private Map<ProductCatalog, Integer> items;
 
     @Override
     public String toString() {
-        return "===== Order Details =====\n" +
-                "Order ID: " + id +
+        return "Order ID: " + id +
                 "\n\tEmployee ID:" + employee.getId() +
                 "\t\tSupplier: " + supplier.getName() +
                 "\n\tDate: " + date.toString() +
@@ -26,22 +27,23 @@ public class Order {
     }
     private String productsInOrderToString(){
         String toString="";
-        for(Product product : items.keySet())
-            toString+="\n\t\tProduct: "+product.getName() + "\tAmount: " + items.get(product);
+        for(ProductCatalog product : items.keySet())
+            toString+="\n\t\tProduct: "+product.get_name() + "\tAmount: " + items.get(product);
         return toString;
     }
-    public Order(String id, Employee employee, Supplier supplier, Date date, boolean arrived, double totalPrice,Map<Product, Integer> order) {
+
+    public Order(String id, Employee employee, Supplier supplier, Date date, boolean arrived, double totalPrice,Map<ProductCatalog, Integer> items) {
         this.id = id;
         this.employee = employee;
         this.supplier = supplier;
         this.date = date;
         this.arrived = arrived;
         this.totalPrice = totalPrice;
-        this.items = order;
+        this.items = items;
     }
 
-    public Order(Employee employee, Supplier supplier, double totalPrice,Map<Product, Integer> order) {
-        this("", employee, supplier, null, false, totalPrice, order);
+    public Order(Employee employee, Supplier supplier, double totalPrice,Map<ProductCatalog, Integer> items) {
+        this("", employee, supplier, null, false, totalPrice, items);
     }
 
     public String getId() {
@@ -56,7 +58,7 @@ public class Order {
         return employee;
     }
 
-    public boolean isArrived() {
+    public boolean arrived() {
         return arrived;
     }
 
@@ -64,8 +66,12 @@ public class Order {
         return totalPrice;
     }
 
-    public Map<Product, Integer> getItems() {
+    public Map<ProductCatalog, Integer> getItems() {
         return items;
+    }
+
+    public DeliveryMethod getDeliveryMethod(){
+        return supplier.getContract().getDeliveryMethod();
     }
 
     @Override

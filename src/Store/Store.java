@@ -1,6 +1,5 @@
 package Store;
 
-
 import Inventory.screens.MainScreen;
 import Suppliers.Application.Database.DatabaseImplementation;
 import Suppliers.Application.UserInterface.ConsoleMenu;
@@ -15,8 +14,8 @@ public class Store {
     private ConsoleMenu consoleMenu;
     private int selected;
     private static final String moduleSelect[] = {
-            "Manage suppliers.",
-            "Manage inventory.",
+            "Suppliers and Orders.",
+            "Inventory.",
             "Exit."
     };
     public Store(){

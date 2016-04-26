@@ -22,8 +22,10 @@ public interface Database {
     List<Order> findOrdersByEmployee(String employeeID);
     List<Order> findOrdersBySupplier(String supplierID);
 
+    void updateWeeklyOrder(Order order);
+    void cancelWeeklyOrder(Order order);
 
-    Product getProductByID(String id);
+    /*Product getProductByID(String id);*/
 
     Employee checkCredentials(String username, String password);
 }

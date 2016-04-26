@@ -1,5 +1,7 @@
 package Suppliers.Application.Database;
 
+import Inventory.dbHandlers.ProductHandler;
+import Inventory.entities.ProductCatalog;
 import Suppliers.Entities.*;
 import org.junit.After;
 import org.junit.Before;
@@ -130,14 +132,15 @@ public class DatabaseImplementationTest {
         ps.executeUpdate();
         closeConnection();
     }
-
+/*
     @Test
     public void testGetProductByID() throws Exception {
         ResultSet resultSet = executeQuery("SELECT name FROM Products WHERE ID=1");
-        assertTrue(resultSet.getString("name").equals(db.getProductByID("1").getName()));
+        //assertTrue(resultSet.getString("name").equals(ProductHandler.createProductCatalogByID(1).getName()));
+        assertTrue(resultSet.getString("name").equals(ProductHandler.createProductCatalogByID(1).get_name()));
         closeConnection();
     }
-
+*/
     @Test
     public void testCreateOrder() throws Exception {
         openConnection();
@@ -148,8 +151,8 @@ public class DatabaseImplementationTest {
 
         assertEquals(0,(db.findOrderByID(String.valueOf(maxOrderNumber+1))).size());
 
-        Map<Product,Integer> products=new HashMap<>();
-        products.put(db.getProductByID("1"),2);
+        Map<ProductCatalog,Integer> products=new HashMap<>();
+        products.put(ProductHandler.createProductCatalogByID(1),2);
         Order newOrder=new Order(new Employee("1","a","a"),db.findSupplierByID("1").get(0),123,products);
         db.createOrder(newOrder);
         assertEquals(1,(db.findOrderByID(String.valueOf(maxOrderNumber+1))).size());
@@ -176,8 +179,8 @@ public class DatabaseImplementationTest {
         int maxOrderNumber=ps.executeQuery().getInt("max") ;
         closeConnection();
         // Adding new order, default arrival status =false
-        Map<Product,Integer> products=new HashMap<>();
-        products.put(db.getProductByID("1"),2);
+        Map<ProductCatalog,Integer> products=new HashMap<>();
+        products.put(ProductHandler.createProductCatalogByID(1),2);
         Order newOrder=new Order(new Employee("1","a","a"),db.findSupplierByID("1").get(0),123,products);
         db.createOrder(newOrder);
         // Check that is arrival status is really false
@@ -218,8 +221,8 @@ public class DatabaseImplementationTest {
         assertEquals(0,(db.findOrderByID(String.valueOf(maxID+1))).size());
         closeConnection();
 
-        Map<Product,Integer> products=new HashMap<>();
-        products.put(db.getProductByID("1"),2);
+        Map<ProductCatalog,Integer> products=new HashMap<>();
+        products.put(ProductHandler.createProductCatalogByID(1),2);
         Order newOrder=new Order(new Employee("1","a","a"),db.findSupplierByID("1").get(0),123,products);
         db.createOrder(newOrder);
         assertEquals(1,(db.findOrderByID(String.valueOf(maxID+1))).size());

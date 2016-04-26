@@ -2,11 +2,12 @@ package Suppliers.Application.UserInterface;
 
 import Suppliers.Application.Database.Database;
 import Suppliers.Application.Utils;
+import Suppliers.Entities.DeliveryMethod;
 import Suppliers.Entities.Employee;
 import Suppliers.Entities.Order;
 import Suppliers.Entities.Supplier;
-import Store.Store;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConsoleMenuImplementation implements ConsoleMenu {
@@ -132,7 +133,25 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
             return orders.get(0);
         }
         selected = Utils.MenuSelect("Orders found:", orders);
-        return orders.get(selected-1);
+        return orders.get(selected);
+    }
+
+    public Order getWeeklyOrder(){
+        List<Order> orders = searchOrder();
+        List<Order> weeklyOrders = new ArrayList<>();
+        if(orders == null)
+            return null;
+        for(Order o : orders)
+            if(o.getDeliveryMethod().equals(DeliveryMethod.Weekly) && !o.arrived())
+                weeklyOrders.add(o);
+        if(weeklyOrders.isEmpty())
+            return null;
+        if(weeklyOrders.size() == 1) {
+            System.out.printf("Order found: %s\n", weeklyOrders.get(0));
+            return weeklyOrders.get(0);
+        }
+        selected = Utils.MenuSelect("Orders found:", weeklyOrders);
+        return weeklyOrders.get(selected);
     }
 
     public Database getDatabase() {

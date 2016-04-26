@@ -89,6 +89,41 @@ public class ProductHandler {
 		return result;
 	}
 
+	public static ProductCatalog createProductCatalogByID(int prod_id) {
+		ProductCatalog result = null;
+		Connection c = SQLiteConnector.getInstance().getConnection();
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		try {
+			stmt = c.createStatement();
+			rs = stmt.executeQuery("SELECT * FROM product WHERE product_id=" + prod_id + ";");
+
+			if (rs.next()) {
+				int productID = rs.getInt("product_id");
+				String name = rs.getString("name");
+				int manufactureID = rs.getInt("manufacture");
+				int minAmount = rs.getInt("min_amount");
+
+				int mainCatID = rs.getInt("main_cat_id");
+				int subCatID = rs.getInt("sub_cat_id");
+				int ssubCatID = rs.getInt("ssub_cat_id");
+
+				Category mainCat = CategoryHandler.checkIfCategoryExists(mainCatID, 1, null);
+				Category subCat = CategoryHandler.checkIfCategoryExists(subCatID, 2, mainCat);
+				Category ssubCat = CategoryHandler.checkIfCategoryExists(ssubCatID, 3, subCat);
+
+				result = new ProductCatalog(productID, name, manufactureID, minAmount, mainCat, subCat, ssubCat);
+			}
+
+			rs.close();
+			stmt.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	public static boolean checkIfManufactureExists(int manu_id) throws SQLException {
 		boolean result = false;
 		Connection c = SQLiteConnector.getInstance().getConnection();
@@ -116,7 +151,7 @@ public class ProductHandler {
 		ResultSet rs = null;
 
 		stmt = c.createStatement();
-		rs = stmt.executeQuery("SELECT * FROM Manufactures WHERE ID="+manu_id+";");
+		rs = stmt.executeQuery("SELECT * FROM Manufacturers WHERE ID="+manu_id+";");
 
 		if (rs.next()) {
 			ans = rs.getString("name");

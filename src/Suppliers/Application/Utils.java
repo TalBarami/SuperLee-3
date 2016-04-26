@@ -125,7 +125,7 @@ public class Utils {
         throw new NullPointerException();
     }
 
-    public static <T> void displayEnum(String input, T[] arr){
+    public static <T> int displayEnum(String input, T[] arr){
         selected = Utils.parseInt(input);
         while(selected<0 || selected >= arr.length){
             System.out.println("Invalid input.");
@@ -133,5 +133,6 @@ public class Utils {
                 System.out.printf("%d. %s\n", i, arr[i]);
             selected = Utils.parseInt(Utils.readLine());
         }
+        return selected;
     }
 }

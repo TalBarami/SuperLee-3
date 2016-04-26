@@ -1,8 +1,13 @@
 package Suppliers.Application.UserInterface;
 
+import Inventory.dbHandlers.ProductHandler;
+import Inventory.dbHandlers.ProductStockHandler;
+import Inventory.entities.ProductCatalog;
 import Suppliers.Application.Utils;
 import Suppliers.Entities.*;
+import com.sun.xml.internal.bind.v2.TODO;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +21,7 @@ public class OrdersMenu {
             "Create restock order",
             "Confirm order",
             "Update weekly order",
+            "Cancel weekly order",
             "View order",
             "Back"
     };
@@ -41,9 +47,12 @@ public class OrdersMenu {
                     updateWeeklyOrder();
                     break;
                 case 5:
-                    viewOrder();
+                    cancelWeeklyOrder();
                     break;
                 case 6:
+                    viewOrder();
+                    break;
+                case 7:
                     return;
             }
         }
@@ -52,7 +61,7 @@ public class OrdersMenu {
     private void createNewOrder(){
         Employee employee = consoleMenu.getConnected();
         Supplier supplier;
-        Map<Product, Integer> items;
+        Map<ProductCatalog, Integer> items;
         double totalPrice;
 
         System.out.println("Please select the supplier you would like to order from:");
@@ -69,9 +78,26 @@ public class OrdersMenu {
         consoleMenu.getDatabase().createOrder(order);
         System.out.println("Order created successfully!");
     }
-    
+
+    /**
+     *
+     *
+     * TO DO !!!
+     *
+     *
+     */
     private void createRestockOrder(){
-        // TODO: 26/04/2016
+        try {
+            Map<ProductCatalog,Integer> products= ProductStockHandler.GetAllAmountMissingOfProducts();
+            Map<Supplier,Map<ProductCatalog,Integer>> producctsFromSuppliers=new HashMap<Supplier, Map<ProductCatalog, Integer>>();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Supplier getBestSupplierByProduct(ProductCatalog prdouct,int amount){
+
     }
 
     private void confirmOrder(){
@@ -81,16 +107,38 @@ public class OrdersMenu {
             System.out.println("No orders found.");
             return;
         }
-        if(order.isArrived()){
+        if(order.arrived()){
             System.out.printf("Order %s is already confirmed.\n", order.getId());
             return;
         }
         consoleMenu.getDatabase().confirmOrder(order);
         System.out.printf("Order %s confirmed successfully!\n", order.getId());
+        if(order.getDeliveryMethod().equals(DeliveryMethod.Weekly)) {
+            consoleMenu.getDatabase().createOrder(order);
+            System.out.println("A new weekly order has been registered for the next week.");
+        }
     }
     
     private void updateWeeklyOrder(){
-        // TODO: 26/04/2016
+        Order oldOrder;
+        while((oldOrder = consoleMenu.getWeeklyOrder()) == null)
+            System.out.println("There were no orders matching this search.");
+
+        Employee employee = consoleMenu.getConnected();
+        Supplier supplier = oldOrder.getSupplier();
+        Map<ProductCatalog, Integer> items = selectItems(supplier);
+        double totalPrice = calculatePrice(supplier, items);
+        Order newOrder = new Order(oldOrder.getId(), employee, supplier, null, false, totalPrice, items);
+        consoleMenu.getDatabase().updateWeeklyOrder(newOrder);
+        System.out.printf("Order %s has been updated successfully!\n", newOrder.getId());
+    }
+
+    private void cancelWeeklyOrder(){
+        Order order;
+        while((order = consoleMenu.getWeeklyOrder()) == null)
+            System.out.println("There were no orders matching this search.");
+        consoleMenu.getDatabase().cancelWeeklyOrder(order);
+        System.out.printf("Order %s has been canceled successfully!\n", order.getId());
     }
 
     private void viewOrder(){
@@ -103,9 +151,9 @@ public class OrdersMenu {
         }
     }
 
-    private Map<Product, Integer> selectItems(Supplier supplier){
-        Map<Product, Integer> items = new HashMap<>();
-        Product product;
+    private Map<ProductCatalog, Integer> selectItems(Supplier supplier){
+        Map<ProductCatalog, Integer> items = new HashMap<>();
+        ProductCatalog product;
         int amount;
         String input;
         System.out.println("Add products. Leave the product id field blank when you are done.");
@@ -119,12 +167,12 @@ public class OrdersMenu {
                 }else
                     break;
             }
-            if((product = consoleMenu.getDatabase().getProductByID(input)) == null){
+            if((product = ProductHandler.createProductCatalogByID(Utils.parseInt(input))) == null){
                 System.out.printf("Product id %s does not exists in the system.\n", input);
                 continue;
             }
             if(!supplier.sells(product)){
-                System.out.printf("%s does not sell %s (id %s).\n",supplier.getName(),product.getName(), product.getId());
+                System.out.printf("%s does not sell %s (id %s).\n",supplier.getName(),product.get_name(), product.get_id());
                 continue;
             }
             System.out.println("Please enter amount:");
@@ -135,14 +183,14 @@ public class OrdersMenu {
         return items;
     }
 
-    private double calculatePrice(Supplier supplier, Map<Product, Integer> items){
+    private double calculatePrice(Supplier supplier, Map<ProductCatalog, Integer> items){
         double totalPrice = 0;
-        for(Product p : items.keySet())
-            totalPrice += getDiscountedPrice(supplier.getAgreement(p), p, items.get(p));
+        for(ProductCatalog p : items.keySet())
+            totalPrice += getDiscountedPrice(supplier.getAgreement(p), items.get(p));
         return totalPrice;
     }
 
-    private double getDiscountedPrice(ProductAgreement agreement, Product item, int amount){
+    private double getDiscountedPrice(ProductAgreement agreement, int amount){
         double discount = amount < agreement.getMinAmount() ? 0 :
                 Math.min(agreement.getMaxDiscount(),amount*agreement.getBaseDiscount()/agreement.getMinAmount())/100;
         return (1-discount) * agreement.getPrice() * amount;

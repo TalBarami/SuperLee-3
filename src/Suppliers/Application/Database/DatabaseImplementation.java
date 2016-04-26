@@ -1,5 +1,7 @@
 package Suppliers.Application.Database;
 
+import Inventory.dbHandlers.ProductHandler;
+import Inventory.entities.ProductCatalog;
 import Suppliers.Entities.*;
 import org.sqlite.SQLiteConfig;
 import java.text.SimpleDateFormat;
@@ -10,7 +12,7 @@ import java.util.*;
 
 public class DatabaseImplementation implements Database {
     private Connection dbConnection;
-    private static final String DB_URL = "jdbc:sqlite:SuperLeeDB.db";
+    private static final String DB_URL = "jdbc:sqlite:SuperLeeDB_INT.db";
     private static final String DRIVER = "org.sqlite.JDBC";
 
     public DatabaseImplementation(){
@@ -226,8 +228,41 @@ public class DatabaseImplementation implements Database {
             return suppliers;
         }
     }
-
-    public Product getProductByID(String id){
+    public List<Supplier> findSuppliersByProductID(int id){
+        List<Supplier> ans=new ArrayList<>();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try{
+            openConnection();
+            String queryID="SELECT supplierID FROM SuppliersProductAgreements WHERE productID=?";
+            ps=dbConnection.prepareStatement(queryID);
+            ps.setInt(1,id);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                int supplierID=rs.getInt("supplierID");
+                ans.add(findSupplierByID(String.valueOf(supplierID)).get(0));
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+            return ans;
+        }
+    }
+    /*public Product getProductByID(String id){
         Product ans=null;
         ResultSet rs=null;
         PreparedStatement ps=null;
@@ -259,11 +294,11 @@ public class DatabaseImplementation implements Database {
             closeConnection();
             return ans;
         }
-    }
+    }*/
     private Contract getContractBySupplierID(String id){
         DeliveryMethod dm;
         int deliveryTime;
-        Map<Product,ProductAgreement> productsAgreements;
+        Map<ProductCatalog,ProductAgreement> productsAgreements;
         Contract contract=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
@@ -300,8 +335,8 @@ public class DatabaseImplementation implements Database {
         }
 
     }
-    private Map<Product,ProductAgreement> getProductsWithAgreementsBySupplierID(String id){
-        Map<Product,ProductAgreement> ans=new HashMap<>();
+    private Map<ProductCatalog,ProductAgreement> getProductsWithAgreementsBySupplierID(String id){
+        Map<ProductCatalog,ProductAgreement> ans=new HashMap<>();
         ResultSet rs=null;
         PreparedStatement ps=null;
         int minAmount;
@@ -317,7 +352,7 @@ public class DatabaseImplementation implements Database {
                 baseDiscount=rs.getDouble("baseDiscount");
                 maxDiscount=rs.getDouble("maxDiscount");
                 price=rs.getDouble("price");
-                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),new ProductAgreement(price,minAmount,baseDiscount,maxDiscount));
+                ans.put(ProductHandler.createProductCatalogByID(rs.getInt("productID")),new ProductAgreement(price,minAmount,baseDiscount,maxDiscount));
             }
         }
         catch ( Exception e ) {
@@ -335,6 +370,7 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
+    /*
     private String getManufacturerByID(int id){
         String ans="";
         ResultSet rs=null;
@@ -367,7 +403,7 @@ public class DatabaseImplementation implements Database {
             closeConnection();
             return ans;
         }
-    }
+    }*/
     private DeliveryMethod getDeliveryBySupplierID(int id){
         DeliveryMethod dm=null;
         PreparedStatement ps=null;
@@ -499,11 +535,11 @@ public class DatabaseImplementation implements Database {
             ps.setInt(2,supp.getContract().getDeliveryMethod().ordinal());
             ps.setInt(3,supp.getContract().getDeliveryTime());
             ps.executeUpdate();
-            for(Product product : supp.getContract().getProducts().keySet()){
+            for(ProductCatalog product : supp.getContract().getProducts().keySet()){
                 query = "INSERT INTO SuppliersProductAgreements (supplierID, productID, price,minAmount,baseDiscount,maxDiscount) VALUES (?,?,?,?,?,?)";
                 ps = dbConnection.prepareStatement(query);
                 ps.setInt(1, Integer.parseInt(supp.getId()));
-                ps.setInt(2, Integer.parseInt(product.getId()));
+                ps.setInt(2, product.get_id());
                 ps.setDouble(3, supp.getContract().getProducts().get(product).getPrice());
                 ps.setInt(4, supp.getContract().getProducts().get(product).getMinAmount());
                 ps.setDouble(5, supp.getContract().getProducts().get(product).getBaseDiscount());
@@ -542,11 +578,11 @@ public class DatabaseImplementation implements Database {
             ps.setInt(1, Integer.parseInt(supp.getId()));
             ps.executeUpdate();
 
-            for(Product product : supp.getContract().getProducts().keySet()){
+            for(ProductCatalog product : supp.getContract().getProducts().keySet()){
                 query = "INSERT INTO SuppliersProductAgreements (supplierID, productID, price,minAmount,baseDiscount,maxDiscount) VALUES (?,?,?,?,?,?)";
                 ps = dbConnection.prepareStatement(query);
                 ps.setInt(1, Integer.parseInt(supp.getId()));
-                ps.setInt(2, Integer.parseInt(product.getId()));
+                ps.setInt(2, product.get_id());
                 ps.setDouble(3, supp.getContract().getProducts().get(product).getPrice());
                 ps.setInt(4, supp.getContract().getProducts().get(product).getMinAmount());
                 ps.setDouble(5, supp.getContract().getProducts().get(product).getBaseDiscount());
@@ -582,10 +618,10 @@ public class DatabaseImplementation implements Database {
             ps.setInt(3, Integer.parseInt(order.getSupplier().getId()));
             ps.executeUpdate();
             int lastOrderID=getLastOrderID();
-            for(Product product : order.getItems().keySet()){
+            for(ProductCatalog product : order.getItems().keySet()){
                 query = "INSERT INTO ProductsInOrders (productID, orderID, amount) VALUES (?,?,?)";
                 ps = dbConnection.prepareStatement(query);
-                ps.setInt(1, Integer.parseInt(product.getId()));
+                ps.setInt(1,product.get_id());
                 ps.setInt(2, lastOrderID);
                 ps.setInt(3, order.getItems().get(product));
                 ps.executeUpdate();
@@ -674,14 +710,15 @@ public class DatabaseImplementation implements Database {
         Date date;
         boolean arrived;
         double totalPrice;
-        Map<Product,Integer> products;
+        Map<ProductCatalog,Integer> products;
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
             openConnection();
             String query="SELECT * FROM Orders WHERE "+findBy+"=?";
             ps=dbConnection.prepareStatement(query);
-            ps.setInt(1,Integer.valueOf(parameter));
+            //ps.setInt(1,Integer.valueOf(parameter));
+            ps.setString(1, parameter);
             rs=ps.executeQuery();
             while(rs.next()){
                 orderID=String.valueOf(rs.getInt("ID"));
@@ -714,6 +751,63 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
+    public void updateWeeklyOrder(Order order) {
+        PreparedStatement ps=null;
+        try{
+            openConnection();
+            String query = "DELETE from ProductsInOrders where orderID=?";
+            ps = dbConnection.prepareStatement(query);
+            ps.setInt(1, Integer.parseInt(order.getId()));
+            ps.executeUpdate();
+
+            for(ProductCatalog product : order.getItems().keySet()){
+                query = "INSERT INTO ProductsInOrders (productID, orderID, amount) VALUES (?,?,?)";
+                ps = dbConnection.prepareStatement(query);
+                ps.setInt(1, product.get_id());
+                ps.setInt(2, Integer.parseInt(order.getId()));
+                ps.setInt(3, order.getItems().get(product));
+                ps.executeUpdate();
+            }
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
+    }
+    public void cancelWeeklyOrder(Order order) {
+        PreparedStatement ps=null;
+        try{
+            openConnection();
+            String query = "DELETE from Orders where ID=?";
+            ps = dbConnection.prepareStatement(query);
+            ps.setInt(1, Integer.parseInt(order.getId()));
+            ps.executeUpdate();
+        }
+        catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            closeConnection();
+        }
+    }
     public List<Order> findOrderByID(String id) {
         List<Order> ans=new ArrayList<>();
         Employee emp;
@@ -721,7 +815,7 @@ public class DatabaseImplementation implements Database {
         Date date;
         boolean arrived;
         double totalPrice;
-        Map<Product,Integer> products;
+        Map<ProductCatalog,Integer> products;
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
@@ -760,8 +854,8 @@ public class DatabaseImplementation implements Database {
             return ans;
         }
     }
-    private Map<Product,Integer> getProductsInOrderByOrderID(String id){
-        Map<Product,Integer> ans=new HashMap<>();
+    private Map<ProductCatalog,Integer> getProductsInOrderByOrderID(String id){
+        Map<ProductCatalog,Integer> ans=new HashMap<>();
         ResultSet rs=null;
         PreparedStatement ps=null;
         try{
@@ -771,7 +865,7 @@ public class DatabaseImplementation implements Database {
             ps.setString(1,id);
             rs=ps.executeQuery();
             while(rs.next()){
-                ans.put(getProductByID(String.valueOf(rs.getInt("productID"))),rs.getInt("amount"));
+                ans.put(ProductHandler.createProductCatalogByID(rs.getInt("productID")),rs.getInt("amount"));
             }
         }
         catch ( Exception e ) {

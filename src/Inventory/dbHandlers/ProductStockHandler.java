@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import Inventory.entities.ProductCatalog;
 import Inventory.program.SQLiteConnector;
 import Inventory.entities.ProductStock;
 
@@ -150,17 +151,17 @@ public class ProductStockHandler {
 		return rs;
 	}
 
-	public static Map<Integer, Integer> GetAllAmountMissingOfProducts() throws SQLException
+	public static Map<ProductCatalog, Integer> GetAllAmountMissingOfProducts() throws SQLException
 	{
 		ResultSet rs = GetAllMinimalAmountProducts();
-		Map<Integer, Integer> missingProducts = new HashMap<Integer, Integer>();
+		Map<ProductCatalog, Integer> missingProducts = new HashMap<ProductCatalog, Integer>();
 		while(rs.next())
 		{
 			int id = rs.getInt("product_id");
 			int min_amount = rs.getInt("min_amount");
 			int sumAmount = getSumAmountByProductId(id);
 			//we decided that in every order we would like to get twice from the required amount
-			missingProducts.put(id, (min_amount - sumAmount) * 2);
+			missingProducts.put(ProductHandler.createProductCatalogByID(id), (min_amount - sumAmount) * 2);
 		}
 		return missingProducts;
 	}

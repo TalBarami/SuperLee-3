@@ -1,5 +1,7 @@
 package Suppliers.Application.UserInterface;
 
+import Inventory.dbHandlers.ProductHandler;
+import Inventory.entities.ProductCatalog;
 import Suppliers.Application.Utils;
 import Suppliers.Entities.*;
 
@@ -155,9 +157,9 @@ public class SuppliersMenu {
             return;
         }
         System.out.printf("Result for supplier: %s\n", supplier.getName());
-        Map<Product,ProductAgreement> products = supplier.getProducts();
+        Map<ProductCatalog,ProductAgreement> products = supplier.getProducts();
         System.out.println(products.size() == 1 ? "Product found:" : "Products found:");
-        for (Product p : products.keySet()) {
+        for (ProductCatalog p : products.keySet()) {
             System.out.printf("%s\t\tInformation: %s.\n", p, products.get(p));
         }
     }
@@ -216,7 +218,7 @@ public class SuppliersMenu {
     private Contract createContract(Contract oldContract){
         DeliveryMethod deliveryMethod;
         int deliveryTime;
-        Map<Product,ProductAgreement> products;
+        Map<ProductCatalog,ProductAgreement> products;
 
         deliveryMethod = selectDeliveryMethod(oldContract);
         System.out.println(deliveryMethod.equals(deliveryMethod.Weekly) ? "Please enter the weekly delivery day:" : "Please enter the delivery time (in days):");
@@ -238,7 +240,7 @@ public class SuppliersMenu {
         String input = Utils.readLine();
         if(input.isEmpty() && supplier != null)
             return supplier.getPaymentMethod();
-        Utils.displayEnum(input, values);
+        selected = Utils.displayEnum(input, values);
         return PaymentMethod.valueOf(selected);
     }
 
@@ -273,13 +275,13 @@ public class SuppliersMenu {
         String input = Utils.readLine();
         if(input.isEmpty() && contract != null)
             return contract.getDeliveryMethod();
-        Utils.displayEnum(input, values);
+        selected = Utils.displayEnum(input, values);
         return DeliveryMethod.valueOf(selected);
     }
 
-    private Map<Product, ProductAgreement> selectProducts(Contract contract){
-        Map<Product, ProductAgreement> products = new HashMap<>();
-        Product product;
+    private Map<ProductCatalog, ProductAgreement> selectProducts(Contract contract){
+        Map<ProductCatalog, ProductAgreement> products = new HashMap<>();
+        ProductCatalog product;
         ProductAgreement agreement;
         double price;
         int minAmount;
@@ -297,7 +299,7 @@ public class SuppliersMenu {
                 }else
                     break;
             }
-            if((product = consoleMenu.getDatabase().getProductByID(input)) == null) {
+            if((product = ProductHandler.createProductCatalogByID(Utils.parseInt(input))) == null) {
                 System.out.println("There is no such product.");
                 continue;
             }
@@ -313,10 +315,10 @@ public class SuppliersMenu {
                 System.out.println("Please enter the minimum amount for discount:");
                 while((minAmount = Utils.checkIntBounds(1)) == -1)
                     System.out.println("Invalid input.");
-                System.out.println("Please enter the base amount for discount:");
+                System.out.println("Please enter the base discount:");
                 while((baseDiscount = Utils.checkDoubleBounds(1, 100)) == -1)
                     System.out.println("Invalid input.");
-                System.out.println("Please enter the max amount for discount:");
+                System.out.println("Please enter the maximum discount:");
                 while((maxDiscount = Utils.checkDoubleBounds(1, 100)) == -1)
                     System.out.println("Invalid input.");
             }else{

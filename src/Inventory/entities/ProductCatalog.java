@@ -1,5 +1,9 @@
 package Inventory.entities;
 
+import Inventory.dbHandlers.ProductHandler;
+
+import java.sql.SQLException;
+
 public class ProductCatalog {
 	private int _id;
 	private String _name;
@@ -29,8 +33,15 @@ public class ProductCatalog {
 		return _name;
 	}
 
-	public int get_manufacture() {
-		return _manufacture;
+	public String get_manufacture() {
+		String result = "";
+		try{
+			result = ProductHandler.getManufactureNameByID(_manufacture);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 
 	public int get_minimal_amount() {
@@ -47,6 +58,29 @@ public class ProductCatalog {
 
 	public Category get_ssub_cat() {
 		return _ssub_cat;
+	}
+
+	@Override
+	public String toString() {
+		String ans="";
+		try {
+			ans=  "\tID: " + _id +
+                    "\t\tName: " + _name +
+                    "\t\tManufacturer: " + ProductHandler.getManufactureNameByID(_manufacture);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return ans;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		ProductCatalog that = (ProductCatalog) o;
+
+		return _id == that._id;
 	}
 
 }

@@ -1,5 +1,6 @@
 package Suppliers.Entities;
 
+import Inventory.entities.ProductCatalog;
 import Suppliers.Application.Utils;
 
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class Supplier {
     public String toString(){
         return  "\tID: " + id +
                 "\t\tName: " + name +
-                ((contract != null) ? "\t\tDelivery method:" + contract.getDeliveryMethod() : name + " has no contract.");
+                "\n\t" + ((contract != null) ? "Delivery method:" + contract.getDeliveryMethod() : name + " has no contract.");
     }
 
     public void setId(String id) {
@@ -82,7 +83,7 @@ public class Supplier {
         this.contract = contract;
     }
 
-    public Map<Product,ProductAgreement> getProducts(){
+    public Map<ProductCatalog,ProductAgreement> getProducts(){
         return contract == null? null : contract.getProducts();
     }
 
@@ -91,8 +92,8 @@ public class Supplier {
             return null;
         List<String> manufacturers = new ArrayList<>();
         String m;
-        for(Product p : getProducts().keySet()){
-            m = p.getManufacturer();
+        for(ProductCatalog p : getProducts().keySet()){
+            m = p.get_manufacture();
             if(!manufacturers.contains(m))
                 manufacturers.add(m);
         }
@@ -103,13 +104,13 @@ public class Supplier {
         return active;
     }
 
-    public boolean sells(Product p){
+    public boolean sells(ProductCatalog p){
         if(contract == null)
             throw new NullPointerException();
         return Utils.contains(getProducts(), p);
     }
 
-    public ProductAgreement getAgreement(Product p){
+    public ProductAgreement getAgreement(ProductCatalog p){
         return Utils.getItem(getProducts(), p);
     }
 
