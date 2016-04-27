@@ -33,7 +33,7 @@ public class ProductCatalog {
 		return _name;
 	}
 
-	public String get_manufacture() {
+	public String get_manufacture_name() {
 		String result = "";
 		ProductHandler proHdr = new ProductHandler();
 		try{
@@ -43,6 +43,10 @@ public class ProductCatalog {
 		}
 
 		return result;
+	}
+
+	public int get_manufacture() {
+		return _manufacture;
 	}
 
 	public int get_minimal_amount() {

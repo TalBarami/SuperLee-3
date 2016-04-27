@@ -18,7 +18,7 @@ public class ProductHandler {
 
 	public void addProductCatalog(ProductCatalog product) throws SQLException {
 		String sql = "INSERT INTO product (name,manufacture,min_amount,main_cat_id,sub_cat_id,ssub_cat_id) " +
-				"VALUES ('"+product.get_name()+"', '"+product.get_manufacture()+"', "+product.get_minimal_amount()+", "+product.get_main_cat().get_id();
+				"VALUES ('"+product.get_name()+"', "+product.get_manufacture()+", "+product.get_minimal_amount()+", "+product.get_main_cat().get_id();
 
 		if (product.get_sub_cat() != null)
 			sql += ", " + product.get_sub_cat().get_id();
@@ -167,7 +167,7 @@ public class ProductHandler {
 	}
 
 	public void updateExistingProduct(ProductCatalog product) throws SQLException {
-		String sql = "UPDATE product SET name='"+product.get_name()+"', manufacture='"+product.get_manufacture()+"', min_amount="+product.get_minimal_amount()+", main_cat_id="+product.get_main_cat().get_id();
+		String sql = "UPDATE product SET name='"+product.get_name()+"', manufacture="+product.get_manufacture()+", min_amount="+product.get_minimal_amount()+", main_cat_id="+product.get_main_cat().get_id();
 
 		if (product.get_sub_cat() != null)
 			sql += ", sub_cat_id=" + product.get_sub_cat().get_id();

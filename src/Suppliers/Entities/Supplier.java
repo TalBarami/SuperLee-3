@@ -93,7 +93,7 @@ public class Supplier {
         List<String> manufacturers = new ArrayList<>();
         String m;
         for(ProductCatalog p : getProducts().keySet()){
-            m = p.get_manufacture();
+            m = p.get_manufacture_name();
             if(!manufacturers.contains(m))
                 manufacturers.add(m);
         }

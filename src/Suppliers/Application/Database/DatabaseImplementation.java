@@ -3,11 +3,13 @@ package Suppliers.Application.Database;
 import Inventory.dbHandlers.ProductHandler;
 import Inventory.dbHandlers.ProductStockHandler;
 import Inventory.entities.ProductCatalog;
+import Inventory.entities.ProductStock;
 import Store.SQLiteConnector;
 import Suppliers.Entities.*;
 import org.sqlite.SQLiteConfig;
 import org.sqlite.SQLiteConnection;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -668,6 +670,19 @@ public class DatabaseImplementation implements Database {
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,Integer.parseInt(order.getId()));
             ps.executeUpdate();
+
+            for(ProductCatalog productCatalog : order.getItems().keySet()){
+                int productID = productCatalog.get_id();
+                int amount = order.getItems().get(productCatalog);
+
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                Calendar cal = Calendar.getInstance();
+                cal.add(Calendar.MONTH, 1);
+                String currDate = dateFormat.format(cal.getTime());
+
+                ProductStock product = new ProductStock(productID, amount, currDate, true);
+                productStockHandler.addProductStock(product);
+            }
         }
         catch ( Exception e ) {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );

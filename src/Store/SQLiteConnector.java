@@ -52,6 +52,5 @@ public class SQLiteConnector {
 		
 	    stmt.executeUpdate(query);
 	    stmt.close();
-	    c.commit();
 	}
 }

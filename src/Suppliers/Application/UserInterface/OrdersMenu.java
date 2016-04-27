@@ -86,7 +86,7 @@ public class OrdersMenu {
         for(ProductCatalog product : products.keySet()){
             Supplier bestSupplier=getBestSupplierByProduct(product,products.get(product));
             if(bestSupplier == null){
-                System.out.printf("WARNING: There are no registered suppliers that can supply %s (id: %d) which is out of stock.", product.get_name(), product.get_id());
+                System.out.printf("WARNING: There are no registered suppliers that can supply %s (id: %d) which is out of stock.\n", product.get_name(), product.get_id());
             }else {
                 if (!productsFromSuppliers.containsKey(bestSupplier))
                     productsFromSuppliers.put(bestSupplier, new HashMap<>());
@@ -98,10 +98,15 @@ public class OrdersMenu {
         else {
             // Make orders
             Order newOrder;
+            String items;
             for (Supplier supp : productsFromSuppliers.keySet()) {
+                items = "";
                 newOrder = new Order(consoleMenu.getConnected(), supp, calculatePrice(supp, productsFromSuppliers.get(supp)), productsFromSuppliers.get(supp));
                 consoleMenu.getDatabase().createOrder(newOrder);
-                System.out.printf("%s received automatic re-stock order.\n", supp.getName());
+                for(ProductCatalog p : newOrder.getItems().keySet())
+                    items+=p.get_name()+", ";
+                items = items.substring(0, items.length()-2);
+                System.out.printf("%s received automatic re-stock order for %s.\n", supp.getName(), items);
             }
         }
     }
@@ -110,10 +115,10 @@ public class OrdersMenu {
         double minimalPrice= Double.MAX_VALUE,currentPrice=0;
         Supplier best=null;
         List<Supplier> suppliersByProduct=consoleMenu.getDatabase().findSuppliersByProductID(product.get_id());
-        for(Supplier sup:suppliersByProduct){
-            if((currentPrice=getDiscountedPrice(sup.getAgreement(product),amount))<minimalPrice){
+        for(Supplier supplier:suppliersByProduct){
+            if((currentPrice=getDiscountedPrice(supplier, product,amount))<minimalPrice){
                 minimalPrice=currentPrice;
-                best=sup;
+                best=supplier;
             }
         }
         return best;
@@ -208,11 +213,12 @@ public class OrdersMenu {
     private double calculatePrice(Supplier supplier, Map<ProductCatalog, Integer> items){
         double totalPrice = 0;
         for(ProductCatalog p : items.keySet())
-            totalPrice += getDiscountedPrice(supplier.getAgreement(p), items.get(p));
+            totalPrice += getDiscountedPrice(supplier, p, items.get(p));
         return totalPrice;
     }
 
-    private double getDiscountedPrice(ProductAgreement agreement, int amount){
+    private double getDiscountedPrice(Supplier supplier, ProductCatalog productCatalog, int amount){
+        ProductAgreement agreement = supplier.getAgreement(productCatalog);
         double discount = amount < agreement.getMinAmount() ? 0 :
                 Math.min(agreement.getMaxDiscount(),amount*agreement.getBaseDiscount()/agreement.getMinAmount())/100;
         return (1-discount) * agreement.getPrice() * amount;
