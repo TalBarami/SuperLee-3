@@ -12,6 +12,7 @@ public interface Database {
     List<Supplier> findSupplierByID(String id);
     List<Supplier> findSuppliersByName(String name);
     void reactivateSupplier(Supplier supplier);
+    public List<Supplier> findSuppliersByProductID(int id);
 
     void addContract(Supplier supp);
     void editContract(Supplier supp);

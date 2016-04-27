@@ -79,25 +79,40 @@ public class OrdersMenu {
         System.out.println("Order created successfully!");
     }
 
-    /**
-     *
-     *
-     * TO DO !!!
-     *
-     *
-     */
     private void createRestockOrder(){
-        try {
-            Map<ProductCatalog,Integer> products= ProductStockHandler.GetAllAmountMissingOfProducts();
-            Map<Supplier,Map<ProductCatalog,Integer>> producctsFromSuppliers=new HashMap<Supplier, Map<ProductCatalog, Integer>>();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+        Map<ProductCatalog,Integer> products = ProductStockHandler.GetAllAmountMissingOfProducts();
+        // String -representing the id of the supplier
+        Map<Supplier,Map<ProductCatalog,Integer>> producctsFromSuppliers=new HashMap<>();
+        for(ProductCatalog product : products.keySet()){
+            Supplier bestSupplier=getBestSupplierByProduct(product,products.get(product));
+            if(bestSupplier == null){
+                System.out.printf("WARNING: There are no registered suppliers that can supply %s (id: %d) which is out of stock.", product.get_name(), product.get_id());
+            }else {
+                if (!producctsFromSuppliers.containsKey(bestSupplier))
+                    producctsFromSuppliers.put(bestSupplier, new HashMap<>());
+                producctsFromSuppliers.get(bestSupplier).put(product, products.get(product));
+            }
+        }
+        // Make orders
+        Order newOrder;
+        for(Supplier supp : producctsFromSuppliers.keySet()){
+            newOrder=new Order(consoleMenu.getConnected(),supp,calculatePrice(supp,producctsFromSuppliers.get(supp)),producctsFromSuppliers.get(supp));
+            consoleMenu.getDatabase().createOrder(newOrder);
+            System.out.printf("%s received automatic re-stock order.\n",supp.getName());
         }
     }
 
-    private Supplier getBestSupplierByProduct(ProductCatalog prdouct,int amount){
-
+    private Supplier getBestSupplierByProduct(ProductCatalog product,int amount){
+        double minimalPrice= Double.MAX_VALUE,currentPrice=0;
+        Supplier best=null;
+        List<Supplier> suppliersByProduct=consoleMenu.getDatabase().findSuppliersByProductID(product.get_id());
+        for(Supplier sup:suppliersByProduct){
+            if((currentPrice=getDiscountedPrice(sup.getAgreement(product),amount))<minimalPrice){
+                minimalPrice=currentPrice;
+                best=sup;
+            }
+        }
+        return best;
     }
 
     private void confirmOrder(){
@@ -111,12 +126,15 @@ public class OrdersMenu {
             System.out.printf("Order %s is already confirmed.\n", order.getId());
             return;
         }
+        if(order.getDeliveryMethod().equals(DeliveryMethod.Weekly)) {
+            System.out.printf("Order %s is a weekly order, would you like to schedule a new delivery for the next week? (press y)", order.getId());
+            if(Utils.readLine().toLowerCase().equals("y")) {
+                consoleMenu.getDatabase().createOrder(order);
+                System.out.println("A new weekly order has been registered for the next week.");
+            }
+        }
         consoleMenu.getDatabase().confirmOrder(order);
         System.out.printf("Order %s confirmed successfully!\n", order.getId());
-        if(order.getDeliveryMethod().equals(DeliveryMethod.Weekly)) {
-            consoleMenu.getDatabase().createOrder(order);
-            System.out.println("A new weekly order has been registered for the next week.");
-        }
     }
     
     private void updateWeeklyOrder(){

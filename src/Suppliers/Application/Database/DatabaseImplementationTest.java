@@ -132,15 +132,7 @@ public class DatabaseImplementationTest {
         ps.executeUpdate();
         closeConnection();
     }
-/*
-    @Test
-    public void testGetProductByID() throws Exception {
-        ResultSet resultSet = executeQuery("SELECT name FROM Products WHERE ID=1");
-        //assertTrue(resultSet.getString("name").equals(ProductHandler.createProductCatalogByID(1).getName()));
-        assertTrue(resultSet.getString("name").equals(ProductHandler.createProductCatalogByID(1).get_name()));
-        closeConnection();
-    }
-*/
+
     @Test
     public void testCreateOrder() throws Exception {
         openConnection();

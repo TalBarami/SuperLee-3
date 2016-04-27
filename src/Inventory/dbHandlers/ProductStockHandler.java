@@ -151,19 +151,22 @@ public class ProductStockHandler {
 		return rs;
 	}
 
-	public static Map<ProductCatalog, Integer> GetAllAmountMissingOfProducts() throws SQLException
+	public static Map<ProductCatalog, Integer> GetAllAmountMissingOfProducts()
 	{
-		ResultSet rs = GetAllMinimalAmountProducts();
-		Map<ProductCatalog, Integer> missingProducts = new HashMap<ProductCatalog, Integer>();
-		while(rs.next())
-		{
-			int id = rs.getInt("product_id");
-			int min_amount = rs.getInt("min_amount");
-			int sumAmount = getSumAmountByProductId(id);
-			//we decided that in every order we would like to get twice from the required amount
-			missingProducts.put(ProductHandler.createProductCatalogByID(id), (min_amount - sumAmount) * 2);
+		try {
+			ResultSet rs = GetAllMinimalAmountProducts();
+			Map<ProductCatalog, Integer> missingProducts = new HashMap<ProductCatalog, Integer>();
+			while (rs.next()) {
+				int id = rs.getInt("product_id");
+				int min_amount = rs.getInt("min_amount");
+				int sumAmount = getSumAmountByProductId(id);
+				//we decided that in every order we would like to get twice from the required amount
+				missingProducts.put(ProductHandler.createProductCatalogByID(id), (min_amount - sumAmount) * 2);
+			}
+			return missingProducts;
+		}catch (SQLException e){
+			e.printStackTrace();
 		}
-		return missingProducts;
 	}
 
 	private static int getSumAmountByProductId(int id) throws SQLException {
