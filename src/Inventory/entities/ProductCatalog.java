@@ -35,8 +35,9 @@ public class ProductCatalog {
 
 	public String get_manufacture() {
 		String result = "";
+		ProductHandler proHdr = new ProductHandler();
 		try{
-			result = ProductHandler.getManufactureNameByID(_manufacture);
+			result = proHdr.getManufactureNameByID(_manufacture);
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
@@ -63,10 +64,11 @@ public class ProductCatalog {
 	@Override
 	public String toString() {
 		String ans="";
+		ProductHandler proHdr = new ProductHandler();
 		try {
 			ans=  "\tID: " + _id +
                     "\t\tName: " + _name +
-                    "\t\tManufacturer: " + ProductHandler.getManufactureNameByID(_manufacture);
+                    "\t\tManufacturer: " + proHdr.getManufactureNameByID(_manufacture);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

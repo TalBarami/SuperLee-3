@@ -1,9 +1,13 @@
 package Suppliers.Application.Database;
 
 import Inventory.dbHandlers.ProductHandler;
+import Inventory.dbHandlers.ProductStockHandler;
 import Inventory.entities.ProductCatalog;
+import Store.SQLiteConnector;
 import Suppliers.Entities.*;
 import org.sqlite.SQLiteConfig;
+import org.sqlite.SQLiteConnection;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -12,35 +16,19 @@ import java.util.*;
 
 public class DatabaseImplementation implements Database {
     private Connection dbConnection;
-    private static final String DB_URL = "jdbc:sqlite:SuperLeeDB_INT.db";
-    private static final String DRIVER = "org.sqlite.JDBC";
+    private ProductHandler productHandler;
+    private ProductStockHandler productStockHandler;
 
     public DatabaseImplementation(){
-        dbConnection=null;
+        dbConnection= SQLiteConnector.getInstance().getConnection();
+        productHandler = new ProductHandler();
+        productStockHandler = new ProductStockHandler();
      }
     private void openConnection(){
-         try{
-             Class.forName(DRIVER);
-             SQLiteConfig config=new SQLiteConfig();
-             config.enforceForeignKeys(true);
-             dbConnection = DriverManager.getConnection(DB_URL,config.toProperties());
-             dbConnection.setAutoCommit(true);
-         }
-         catch ( Exception e ) {
-             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-             System.exit(0);
-         }
+         return;
      }
     private void closeConnection(){
-        if (dbConnection==null)
-            return;
-        try{
-            dbConnection.close();
-        }
-        catch ( Exception e ) {
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            System.exit(0);
-        }
+        return;
     }
 
     /** Suppliers managamemnt **/
@@ -352,7 +340,7 @@ public class DatabaseImplementation implements Database {
                 baseDiscount=rs.getDouble("baseDiscount");
                 maxDiscount=rs.getDouble("maxDiscount");
                 price=rs.getDouble("price");
-                ans.put(ProductHandler.createProductCatalogByID(rs.getInt("productID")),new ProductAgreement(price,minAmount,baseDiscount,maxDiscount));
+                ans.put(productHandler.createProductCatalogByID(rs.getInt("productID")),new ProductAgreement(price,minAmount,baseDiscount,maxDiscount));
             }
         }
         catch ( Exception e ) {
@@ -865,7 +853,7 @@ public class DatabaseImplementation implements Database {
             ps.setString(1,id);
             rs=ps.executeQuery();
             while(rs.next()){
-                ans.put(ProductHandler.createProductCatalogByID(rs.getInt("productID")),rs.getInt("amount"));
+                ans.put(productHandler.createProductCatalogByID(rs.getInt("productID")),rs.getInt("amount"));
             }
         }
         catch ( Exception e ) {
@@ -989,5 +977,13 @@ public class DatabaseImplementation implements Database {
             closeConnection();
             return connectedUser;
         }
+    }
+
+    public ProductCatalog getProductByID(int id){
+        return productHandler.createProductCatalogByID(id);
+    }
+
+    public Map<ProductCatalog,Integer> getMissingProducts(){
+        return productStockHandler.GetAllAmountMissingOfProducts();
     }
 }

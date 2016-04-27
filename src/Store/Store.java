@@ -11,7 +11,9 @@ public class Store {
     private static final int MAX_LOGIN_ATTEMPTS = 3;
     private Employee connected;
 
-    private ConsoleMenu consoleMenu;
+    private ConsoleMenu suppliersConsoleMenu;
+    private MainScreen inventoryMainScreen;
+
     private int selected;
     private static final String moduleSelect[] = {
             "Suppliers and Orders.",
@@ -19,7 +21,8 @@ public class Store {
             "Exit."
     };
     public Store(){
-        this.consoleMenu=new ConsoleMenuImplementation(new DatabaseImplementation());
+        this.suppliersConsoleMenu = new ConsoleMenuImplementation(new DatabaseImplementation());
+        this.inventoryMainScreen = new MainScreen();
     }
 
     public void Run(){
@@ -39,9 +42,9 @@ public class Store {
         System.out.println("Password:");
         String password = Utils.readLine();
 
-        if((connected = consoleMenu.getDatabase().checkCredentials(username,password)) != null) {
+        if((connected = suppliersConsoleMenu.getDatabase().checkCredentials(username,password)) != null) {
             System.out.println("You have successfully logged into the system!");
-            consoleMenu.setConnected(connected);
+            suppliersConsoleMenu.setConnected(connected);
         } else{
             System.out.printf("Invalid user name or password. (%d attempts left)\n",attempts-1);
             Login(attempts-1);
@@ -53,12 +56,13 @@ public class Store {
             selected = Utils.MenuSelect(moduleSelect);
             switch(selected){
                 case 1:
-                    consoleMenu.RunStore();
+                    suppliersConsoleMenu.RunStore();
                     break;
                 case 2:
-                    MainScreen.mainScreen();
+                    inventoryMainScreen.mainScreen();
                     break;
                 case 3:
+                    SQLiteConnector.getInstance().CloseConnection();
                     return;
             }
         }

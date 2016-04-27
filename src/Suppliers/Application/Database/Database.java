@@ -1,8 +1,10 @@
 package Suppliers.Application.Database;
 
+import Inventory.entities.ProductCatalog;
 import Suppliers.Entities.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface Database {
 
@@ -26,7 +28,8 @@ public interface Database {
     void updateWeeklyOrder(Order order);
     void cancelWeeklyOrder(Order order);
 
-    /*Product getProductByID(String id);*/
+    ProductCatalog getProductByID(int id);
+    Map<ProductCatalog,Integer> getMissingProducts();
 
     Employee checkCredentials(String username, String password);
 }

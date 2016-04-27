@@ -299,7 +299,7 @@ public class SuppliersMenu {
                 }else
                     break;
             }
-            if((product = ProductHandler.createProductCatalogByID(Utils.parseInt(input))) == null) {
+            if((product = consoleMenu.getDatabase().getProductByID(Utils.parseInt(input))) == null) {
                 System.out.println("There is no such product.");
                 continue;
             }

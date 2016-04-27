@@ -1,8 +1,11 @@
-package Inventory.program;
-
-import java.sql.*;
+package Store;
 
 import org.sqlite.SQLiteConfig;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class SQLiteConnector {
 	private static SQLiteConnector instance = null;
@@ -15,7 +18,6 @@ public class SQLiteConnector {
 	          
 		      Class.forName("org.sqlite.JDBC");
 		      c = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB_INT.db", config.toProperties());
-//		      c = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\hod\\Desktop\\assignments\\����� ������\\DB\\superlee.db");
 		      c.setAutoCommit(true);
 		    } catch ( Exception e ) {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );

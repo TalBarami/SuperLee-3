@@ -5,18 +5,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 import Inventory.entities.ProductCatalog;
-import Inventory.program.SQLiteConnector;
 import Inventory.entities.ProductStock;
 
 public class ProductStockHandler {
-	private static void PrintResultSet(ResultSet rs) throws SQLException  {
+	private Store.SQLiteConnector connector;
+	private Connection c;
+	private ProductHandler proHdr;
+
+	public ProductStockHandler(){
+		connector = Store.SQLiteConnector.getInstance();
+		c = connector.getConnection();
+		proHdr = new ProductHandler();
+	}
+
+	private void PrintResultSet(ResultSet rs) throws SQLException  {
 		while (rs.next()) {
 			int productID = rs.getInt("product_id");
 			String date = rs.getString("date_of_exp");
@@ -31,7 +39,7 @@ public class ProductStockHandler {
 		rs.close();
 	}
 
-	private static void PrintResultSetWithName(ResultSet rs) throws SQLException  {
+	private void PrintResultSetWithName(ResultSet rs) throws SQLException  {
 		while (rs.next()) {
 			int productID = rs.getInt("product_id");
 			String date = rs.getString("date_of_exp");
@@ -50,9 +58,8 @@ public class ProductStockHandler {
 	}
 
 	//return 0 if there are no results
-	public static int printAllProductInStock(int prod_id) throws SQLException {
+	public int printAllProductInStock(int prod_id) throws SQLException {
 		int ans = 1;
-		Connection c = SQLiteConnector.getInstance().getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -70,9 +77,8 @@ public class ProductStockHandler {
 		return ans;
 	}
 
-	public static boolean checkIfProductStockExists(int prod_id, String date, int isValid, boolean checkIfValid) throws SQLException {
+	public boolean checkIfProductStockExists(int prod_id, String date, int isValid, boolean checkIfValid) throws SQLException {
 		boolean result = false;
-		Connection c = SQLiteConnector.getInstance().getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -92,28 +98,27 @@ public class ProductStockHandler {
 		return result;
 	}
 
-	public static void addProductStock(ProductStock product) throws SQLException {
+	public void addProductStock(ProductStock product) throws SQLException {
 		String sql = "INSERT INTO product_stock (product_id,date_of_exp,amount,is_valid) " +
 				"VALUES ("+product.get_product_id()+", '"+product.get_date_of_exp()+"', "+product.get_amount()+", 1);";
 
-		SQLiteConnector.getInstance().runUnreturnedQuery(sql);
+		connector.runUnreturnedQuery(sql);
 	}
 
-	public static void UpdateProductStock(ProductStock productStock) throws SQLException {
+	public void UpdateProductStock(ProductStock productStock) throws SQLException {
 		int is_valid = 0;
 
 		if (productStock.get_is_valid())
 			is_valid = 1;
 
 		String sql = "UPDATE product_stock SET amount="+productStock.get_amount()+", is_valid="+is_valid+" WHERE product_id="+productStock.get_product_id()+" AND date_of_exp='"+productStock.get_date_of_exp()+"';";
-		SQLiteConnector.getInstance().runUnreturnedQuery(sql);
+		connector.runUnreturnedQuery(sql);
 	}
 
 
-	public static boolean checkIfThereEnoughInStock(int id, String date, int amount) throws SQLException
+	public boolean checkIfThereEnoughInStock(int id, String date, int amount) throws SQLException
 	{
 		boolean result = false;
-		Connection c = SQLiteConnector.getInstance().getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -130,13 +135,12 @@ public class ProductStockHandler {
 		return result;
 	}
 
-	public static void printAllMinimalAmountProductStock() throws SQLException {
+	public void printAllMinimalAmountProductStock() throws SQLException {
 		ResultSet rs = GetAllMinimalAmountProducts();
-		ProductHandler.PrintResultSet(rs);
+		proHdr.PrintResultSet(rs);
 	}
 
-	public static ResultSet GetAllMinimalAmountProducts() throws SQLException {
-		Connection c = SQLiteConnector.getInstance().getConnection();
+	public ResultSet GetAllMinimalAmountProducts() throws SQLException {
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -151,7 +155,7 @@ public class ProductStockHandler {
 		return rs;
 	}
 
-	public static Map<ProductCatalog, Integer> GetAllAmountMissingOfProducts()
+	public Map<ProductCatalog, Integer> GetAllAmountMissingOfProducts()
 	{
 		try {
 			ResultSet rs = GetAllMinimalAmountProducts();
@@ -161,19 +165,18 @@ public class ProductStockHandler {
 				int min_amount = rs.getInt("min_amount");
 				int sumAmount = getSumAmountByProductId(id);
 				//we decided that in every order we would like to get twice from the required amount
-				missingProducts.put(ProductHandler.createProductCatalogByID(id), (min_amount - sumAmount) * 2);
+				missingProducts.put(proHdr.createProductCatalogByID(id), (min_amount - sumAmount) * 2);
 			}
 			return missingProducts;
 		}catch (SQLException e){
 			e.printStackTrace();
 		}
+		return null;
 	}
 
-	private static int getSumAmountByProductId(int id) throws SQLException {
-		Connection c = SQLiteConnector.getInstance().getConnection();
+	private int getSumAmountByProductId(int id) throws SQLException {
 		Statement stmt = null;
 		ResultSet rs = null;
-
 
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
@@ -188,19 +191,18 @@ public class ProductStockHandler {
 		return 0;
 	}
 
-	public static void updateProductStockAmount(int productID, int amount) throws SQLException {
+	public void updateProductStockAmount(int productID, int amount) throws SQLException {
 		String sql = "UPDATE product_stock SET amount=amount-" + amount + " WHERE product_id=" + productID + ";";
-		SQLiteConnector.getInstance().runUnreturnedQuery(sql);
+		connector.runUnreturnedQuery(sql);
 		// DeleteEmptyProductStock(productID);
 	}
 
-	public static void DeleteEmptyProductStock(int productID) throws SQLException {
+	public void DeleteEmptyProductStock(int productID) throws SQLException {
 		String sql = "DELETE FROM product_stock WHERE product_id="+productID+" AND amount=0;";
-		SQLiteConnector.getInstance().runUnreturnedQuery(sql);
+		connector.runUnreturnedQuery(sql);
 	}
 
-	public static void printAllProductInStockByCategory(int cat_id, int level) throws SQLException {
-		Connection c = SQLiteConnector.getInstance().getConnection();
+	public void printAllProductInStockByCategory(int cat_id, int level) throws SQLException {
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -223,8 +225,7 @@ public class ProductStockHandler {
 
 	}
 
-	public static void printAllNonValidProducts() throws SQLException {
-		Connection c = SQLiteConnector.getInstance().getConnection();
+	public void printAllNonValidProducts() throws SQLException {
 		Statement stmt = null;
 		ResultSet rs = null;
 
@@ -236,8 +237,7 @@ public class ProductStockHandler {
 
 	}
 
-	public static void printAllExpiredProducts() throws SQLException {
-		Connection c = SQLiteConnector.getInstance().getConnection();
+	public void printAllExpiredProducts() throws SQLException {
 		Statement stmt = null;
 		ResultSet rs = null;
 

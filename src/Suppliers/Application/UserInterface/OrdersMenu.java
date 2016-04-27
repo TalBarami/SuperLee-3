@@ -80,25 +80,29 @@ public class OrdersMenu {
     }
 
     private void createRestockOrder(){
-        Map<ProductCatalog,Integer> products = ProductStockHandler.GetAllAmountMissingOfProducts();
+        Map<ProductCatalog,Integer> products = consoleMenu.getDatabase().getMissingProducts();
         // String -representing the id of the supplier
-        Map<Supplier,Map<ProductCatalog,Integer>> producctsFromSuppliers=new HashMap<>();
+        Map<Supplier,Map<ProductCatalog,Integer>> productsFromSuppliers=new HashMap<>();
         for(ProductCatalog product : products.keySet()){
             Supplier bestSupplier=getBestSupplierByProduct(product,products.get(product));
             if(bestSupplier == null){
                 System.out.printf("WARNING: There are no registered suppliers that can supply %s (id: %d) which is out of stock.", product.get_name(), product.get_id());
             }else {
-                if (!producctsFromSuppliers.containsKey(bestSupplier))
-                    producctsFromSuppliers.put(bestSupplier, new HashMap<>());
-                producctsFromSuppliers.get(bestSupplier).put(product, products.get(product));
+                if (!productsFromSuppliers.containsKey(bestSupplier))
+                    productsFromSuppliers.put(bestSupplier, new HashMap<>());
+                productsFromSuppliers.get(bestSupplier).put(product, products.get(product));
             }
         }
-        // Make orders
-        Order newOrder;
-        for(Supplier supp : producctsFromSuppliers.keySet()){
-            newOrder=new Order(consoleMenu.getConnected(),supp,calculatePrice(supp,producctsFromSuppliers.get(supp)),producctsFromSuppliers.get(supp));
-            consoleMenu.getDatabase().createOrder(newOrder);
-            System.out.printf("%s received automatic re-stock order.\n",supp.getName());
+        if(productsFromSuppliers.isEmpty())
+            System.out.println("There were no products to order.");
+        else {
+            // Make orders
+            Order newOrder;
+            for (Supplier supp : productsFromSuppliers.keySet()) {
+                newOrder = new Order(consoleMenu.getConnected(), supp, calculatePrice(supp, productsFromSuppliers.get(supp)), productsFromSuppliers.get(supp));
+                consoleMenu.getDatabase().createOrder(newOrder);
+                System.out.printf("%s received automatic re-stock order.\n", supp.getName());
+            }
         }
     }
 
@@ -185,7 +189,7 @@ public class OrdersMenu {
                 }else
                     break;
             }
-            if((product = ProductHandler.createProductCatalogByID(Utils.parseInt(input))) == null){
+            if((product = consoleMenu.getDatabase().getProductByID(Utils.parseInt(input))) == null){
                 System.out.printf("Product id %s does not exists in the system.\n", input);
                 continue;
             }

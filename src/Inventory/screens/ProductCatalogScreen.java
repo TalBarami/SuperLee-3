@@ -9,8 +9,18 @@ import Inventory.entities.Category;
 import Inventory.entities.ProductCatalog;
 
 public class ProductCatalogScreen {
+	private MainScreen main;
+	private ProductHandler proHdr;
+	private CategoryHandler catHdr;
 
-	public static void mainScreen(){
+	public ProductCatalogScreen(MainScreen main)
+	{
+		this.main = main;
+		proHdr = new ProductHandler();
+		catHdr = new CategoryHandler();
+	}
+
+	public void mainScreen(){
 		System.out.println("Select desired action: ");
 		System.out.println("1. Add new product");
 		System.out.println("2. Update existing product");
@@ -30,32 +40,30 @@ public class ProductCatalogScreen {
 				deleteExistingProductScreen();
 				break;
 			case 4:
-				MainScreen.mainScreen();
+				main.mainScreen();
 				break;
 		}
 
 	}
 
-	private static void deleteExistingProductScreen() {
+	private void deleteExistingProductScreen() {
 
 		System.out.println("Please choose product id to update\nPress 0 to return to the previous screen");
 		int prod_id;
 		try {
-			ProductHandler.printAllProductCatalog();
+			proHdr.printAllProductCatalog();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		prod_id = Inventory.program.Util.readIntFromUser(0, -1);
 
 		try {
-			while (!(ProductHandler.checkIfProductExists(prod_id)) && prod_id!= 0) {
+			while (!(proHdr.checkIfProductExists(prod_id)) && prod_id!= 0) {
 				System.out.println("Invalid choice, please enter again");
 				prod_id = Inventory.program.Util.readIntFromUser(0, -1);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		if(prod_id == 0)
@@ -64,7 +72,7 @@ public class ProductCatalogScreen {
 			return;
 		}
 		try {
-			ProductHandler.deleteExistingProduct(prod_id);
+			proHdr.deleteExistingProduct(prod_id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,11 +82,11 @@ public class ProductCatalogScreen {
 
 	}
 
-	private static void updateExistingProductScreen() {
+	private void updateExistingProductScreen() {
 		System.out.println("Please choose product id to update\nPress 0 to return to the previous screen");
 		int prod_id;
 		try {
-			ProductHandler.printAllProductCatalog();
+			proHdr.printAllProductCatalog();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -87,7 +95,7 @@ public class ProductCatalogScreen {
 		prod_id = Inventory.program.Util.readIntFromUser(0, -1);
 
 		try {
-			while (!(ProductHandler.checkIfProductExists(prod_id)) && prod_id != 0) {
+			while (!(proHdr.checkIfProductExists(prod_id)) && prod_id != 0) {
 				System.out.println("Invalid product id, please enter again");
 				prod_id = Inventory.program.Util.readIntFromUser(0, -1);
 			}
@@ -104,7 +112,7 @@ public class ProductCatalogScreen {
 		ProductCatalog updatedProductCat = createProduct(prod_id);
 
 		try {
-			ProductHandler.updateExistingProduct(updatedProductCat);
+			proHdr.updateExistingProduct(updatedProductCat);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -114,7 +122,7 @@ public class ProductCatalogScreen {
 		mainScreen();
 	}
 
-	private static void addNewProductScreen() {
+	private void addNewProductScreen() {
 
 		// -1 so he know its a new product
 		ProductCatalog product = createProduct(-1);
@@ -123,7 +131,7 @@ public class ProductCatalogScreen {
 
 
 		try {
-			ProductHandler.addProductCatalog(product);
+			proHdr.addProductCatalog(product);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -133,7 +141,7 @@ public class ProductCatalogScreen {
 		mainScreen();
 	}
 
-	private static ProductCatalog createProduct(int product_id) {
+	private ProductCatalog createProduct(int product_id) {
 		Category mainCat = null;
 		Category subCat = null;
 		Category ssubCat = null;
@@ -145,7 +153,7 @@ public class ProductCatalogScreen {
 		name = Inventory.program.Util.readStringFromUser();
 
 		try {
-			ProductHandler.printAllManufactures();
+			proHdr.printAllManufactures();
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -155,7 +163,7 @@ public class ProductCatalogScreen {
 		manufacture_id = Inventory.program.Util.readIntFromUser(1, -1);
 
 		try {
-			while (!ProductHandler.checkIfManufactureExists(manufacture_id)) {
+			while (!proHdr.checkIfManufactureExists(manufacture_id)) {
 				System.out.println("Invalid choice, please choose again");
 				manufacture_id = Inventory.program.Util.readIntFromUser(1, -1);
 			}
@@ -169,7 +177,7 @@ public class ProductCatalogScreen {
 		System.out.println("Please choose main category id\n Press 0 to return to main screen");
 
 		try {
-			CategoryHandler.PrintAllMainCategories();
+			catHdr.PrintAllMainCategories();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -178,7 +186,7 @@ public class ProductCatalogScreen {
 		cat_id = Inventory.program.Util.readIntFromUser(0, -1);
 
 		try {
-			while ((mainCat=CategoryHandler.checkIfCategoryExists(cat_id, 1, null)) == null && cat_id !=0) {
+			while ((mainCat=catHdr.checkIfCategoryExists(cat_id, 1, null)) == null && cat_id !=0) {
 				System.out.println("Invalid id, please enter again");
 				cat_id = Inventory.program.Util.readIntFromUser(0, -1);
 			}
@@ -198,7 +206,7 @@ public class ProductCatalogScreen {
 
 		if (choice == 1) {
 			try {
-				CategoryHandler.PrintAllSubCategories(cat_id, 2);
+				catHdr.PrintAllSubCategories(cat_id, 2);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -209,7 +217,7 @@ public class ProductCatalogScreen {
 			cat_id = Inventory.program.Util.readIntFromUser(0, -1);
 
 			try {
-				while ((subCat=CategoryHandler.checkIfCategoryExists(cat_id, 2, mainCat)) == null && cat_id != 0) {
+				while ((subCat=catHdr.checkIfCategoryExists(cat_id, 2, mainCat)) == null && cat_id != 0) {
 					System.out.println("Invalid id, please enter again");
 					cat_id = Inventory.program.Util.readIntFromUser(0, -1);
 				}
@@ -229,7 +237,7 @@ public class ProductCatalogScreen {
 
 			if (choice == 1) {
 				try {
-					CategoryHandler.PrintAllSubCategories(cat_id, 3);
+					catHdr.PrintAllSubCategories(cat_id, 3);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -240,7 +248,7 @@ public class ProductCatalogScreen {
 				cat_id = Inventory.program.Util.readIntFromUser(0, -1);
 
 				try {
-					while ((ssubCat=CategoryHandler.checkIfCategoryExists(cat_id,3, subCat)) == null && cat_id != 0) {
+					while ((ssubCat=catHdr.checkIfCategoryExists(cat_id,3, subCat)) == null && cat_id != 0) {
 						System.out.println("Invalid id, please enter again");
 						cat_id = Inventory.program.Util.readIntFromUser(0, -1);
 					}
