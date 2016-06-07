@@ -17,8 +17,8 @@ public class ProductHandler {
 	}
 
 	public void addProductCatalog(ProductCatalog product) throws SQLException {
-		String sql = "INSERT INTO product (name,manufacture,min_amount,main_cat_id,sub_cat_id,ssub_cat_id) " +
-				"VALUES ('"+product.get_name()+"', "+product.get_manufacture()+", "+product.get_minimal_amount()+", "+product.get_main_cat().get_id();
+		String sql = "INSERT INTO product (name,manufacture,min_amount,weight,main_cat_id,sub_cat_id,ssub_cat_id) " +
+				"VALUES ('"+product.get_name()+"', "+product.get_manufacture()+", "+product.get_minimal_amount()+", " + product.get_weight() + ", " +product.get_main_cat().get_id();
 
 		if (product.get_sub_cat() != null)
 			sql += ", " + product.get_sub_cat().get_id();
@@ -109,6 +109,7 @@ public class ProductHandler {
 				String name = rs.getString("name");
 				int manufactureID = rs.getInt("manufacture");
 				int minAmount = rs.getInt("min_amount");
+				double weight = rs.getDouble("weight");
 
 				int mainCatID = rs.getInt("main_cat_id");
 				int subCatID = rs.getInt("sub_cat_id");
@@ -118,7 +119,7 @@ public class ProductHandler {
 				Category subCat = catHdr.checkIfCategoryExists(subCatID, 2, mainCat);
 				Category ssubCat = catHdr.checkIfCategoryExists(ssubCatID, 3, subCat);
 
-				result = new ProductCatalog(productID, name, manufactureID, minAmount, mainCat, subCat, ssubCat);
+				result = new ProductCatalog(productID, name, manufactureID, minAmount, weight, mainCat, subCat, ssubCat);
 			}
 
 			rs.close();

@@ -89,4 +89,11 @@ public class Order {
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
     }
+
+    public double calculateWeight(){
+        double sum = 0;
+        for(ProductCatalog p : items.keySet())
+            sum+=p.get_weight();
+        return sum;
+    }
 }

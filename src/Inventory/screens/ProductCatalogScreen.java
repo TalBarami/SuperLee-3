@@ -149,6 +149,7 @@ public class ProductCatalogScreen {
 		String name;
 		int manufacture_id;
 		int minAmount;
+		double weight;
 		System.out.println("Please enter product name");
 		name = Inventory.program.Util.readStringFromUser();
 
@@ -174,6 +175,10 @@ public class ProductCatalogScreen {
 
 		System.out.println("Please enter minimal amount");
 		minAmount = Inventory.program.Util.readIntFromUser(1, -1);
+		
+		System.out.println("Please enter product weight");
+		weight = Inventory.program.Util.readDoubleFromUser(0);
+		
 		System.out.println("Please choose main category id\n Press 0 to return to main screen");
 
 		try {
@@ -265,7 +270,7 @@ public class ProductCatalogScreen {
 			}
 		}
 
-		ProductCatalog product = new ProductCatalog(product_id, name, manufacture_id, minAmount, mainCat, subCat, ssubCat);
+		ProductCatalog product = new ProductCatalog(product_id, name, manufacture_id, minAmount, weight, mainCat, subCat, ssubCat);
 		return product;
 	}
 

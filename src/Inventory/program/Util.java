@@ -34,9 +34,43 @@ public class Util {
 			
 	}
 	
+	public static double readDoubleFromUser(double minBound)
+	{
+		double result = -1.0;
+		while(result == -1.0)
+		{
+			String input = reader.next();
+			while(!tryParseDouble(input)){
+				System.out.println("Your choice was invalid please choose again");
+				input = reader.next();
+			}
+			
+			result = Double.parseDouble(input);
+			
+			if(result >= minBound)
+				return result;
+			else{
+				System.out.println("Your choice was invalid please choose again");
+				result = -1.0;
+			}
+				
+		}
+		return result;
+			
+	}
+	
 	private static boolean tryParseInt(String value) {  
 	     try {  
 	         Integer.parseInt(value);  
+	         return true;  
+	      } catch (NumberFormatException e) {  
+	         return false;  
+	      }  
+	}
+	
+	private static boolean tryParseDouble(String value) {  
+	     try {  
+	         Double.parseDouble(value);  
 	         return true;  
 	      } catch (NumberFormatException e) {  
 	         return false;  

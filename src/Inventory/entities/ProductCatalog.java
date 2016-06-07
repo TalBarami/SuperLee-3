@@ -9,17 +9,19 @@ public class ProductCatalog {
 	private String _name;
 	private int _manufacture;
 	private int _minimal_amount;
+	private double _weight;
 	private Category _main_cat;
 	private Category _sub_cat;
 	private Category _ssub_cat;
 
 	public ProductCatalog(int _id, String _name, int _manufacture,
-						  int _minimal_amount, Category _main_cat, Category _sub_cat,
+						  int _minimal_amount, double _weight, Category _main_cat, Category _sub_cat,
 						  Category _ssub_cat) {
 		this._id = _id;
 		this._name = _name;
 		this._manufacture = _manufacture;
 		this._minimal_amount = _minimal_amount;
+		this._weight = _weight;
 		this._main_cat = _main_cat;
 		this._sub_cat = _sub_cat;
 		this._ssub_cat = _ssub_cat;
@@ -51,6 +53,10 @@ public class ProductCatalog {
 
 	public int get_minimal_amount() {
 		return _minimal_amount;
+	}
+	
+	public double get_weight() {
+		return _weight;
 	}
 
 	public Category get_main_cat() {

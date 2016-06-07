@@ -5,8 +5,6 @@ import Inventory.dbHandlers.ProductStockHandler;
 import Inventory.entities.ProductCatalog;
 import Suppliers.Application.Utils;
 import Suppliers.Entities.*;
-import com.sun.xml.internal.bind.v2.TODO;
-
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
