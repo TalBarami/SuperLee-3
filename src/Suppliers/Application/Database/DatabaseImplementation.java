@@ -26,24 +26,18 @@ public class DatabaseImplementation implements Database {
         productHandler = new ProductHandler();
         productStockHandler = new ProductStockHandler();
      }
-    private void openConnection(){
-         return;
-     }
-    private void closeConnection(){
-        return;
-    }
 
     /** Suppliers managamemnt **/
     public void addSupplier(Supplier supplier){
         PreparedStatement ps=null;
         try {
-            openConnection();
-            String query = "INSERT INTO Suppliers (ID, name, paymentMethod, bankAccount) VALUES (?,?,?,?)";
+            String query = "INSERT INTO Suppliers (ID, name, paymentMethod, bankAccount, address) VALUES (?,?,?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(supplier.getId()));
             ps.setString(2, supplier.getName());
             ps.setInt(3, supplier.getPaymentMethod().ordinal());
             ps.setString(4, supplier.getBankAccount());
+            ps.setString(5, supplier.getAddress());
             ps.executeUpdate();
             for(String name : supplier.getContacts().keySet()){
                 query = "INSERT INTO SuppliersContacts (supplierID, name, phone) VALUES (?,?,?)";
@@ -66,19 +60,21 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public void editSupplier(Supplier supplier) {
         PreparedStatement ps=null;
         try{
-            openConnection();
-            String query="UPDATE Suppliers set name=?, paymentMethod=?, bankAccount=? WHERE ID=?";
+            System.out.println("Entered!");
+            String query="UPDATE Suppliers set name=?, paymentMethod=?, bankAccount=?, address=? WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1, supplier.getName());
             ps.setInt(2, supplier.getPaymentMethod().ordinal());
             ps.setString(3, supplier.getBankAccount());
-            ps.setInt(4, Integer.parseInt(supplier.getId()));
+            ps.setInt(5, Integer.parseInt(supplier.getId()));
+            ps.setString(4, supplier.getAddress());
+            System.out.println("Right before execute!");
             ps.executeUpdate();
 
             query = "DELETE from SuppliersContacts where supplierID=?";
@@ -107,13 +103,13 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public void removeSupplier(Supplier supplier){
         PreparedStatement ps=null;
         try {
-            openConnection();
+            
             String query = "UPDATE Suppliers SET active=0 WHERE ID=?";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(supplier.getId()));
@@ -131,7 +127,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public List<Supplier> findSupplierByID(String id) {
@@ -143,7 +139,7 @@ public class DatabaseImplementation implements Database {
     public void reactivateSupplier(Supplier supplier) {
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query="UPDATE Suppliers SET active='1' WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(supplier.getId()));
@@ -161,12 +157,12 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     private List<Supplier> FindSupplier(String idOrName,String parameter){
         List<Supplier> suppliers=new ArrayList<>();
-        String name,bankAccount;
+        String name,bankAccount, address;
         PaymentMethod pm;
         Map<String,String> contacts;
         Contract contract;
@@ -175,7 +171,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String queryID="SELECT * FROM Suppliers WHERE ID=?";
             String queryName="SELECT * FROM Suppliers WHERE name LIKE '%"+parameter+"%'";
             if(idOrName.equals("ID")){
@@ -190,11 +186,12 @@ public class DatabaseImplementation implements Database {
                 id=rs.getInt("ID");
                 name=rs.getString("name");
                 bankAccount=rs.getString("bankAccount");
+                address=rs.getString("address");
                 pm=getPaymentMethodByID(rs.getInt("paymentMethod"));
                 contract=getContractBySupplierID(String.valueOf(id));
                 contacts=getContactsBySupplierID(String.valueOf(id));
                 active=rs.getBoolean("active");
-                Supplier supplier=new Supplier(String.valueOf(id),name,bankAccount,pm,contacts,active);
+                Supplier supplier=new Supplier(String.valueOf(id),name,bankAccount,pm,address,contacts,active);
                 supplier.setContract(contract);
                 suppliers.add(supplier);
             }
@@ -214,7 +211,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return suppliers;
         }
     }
@@ -223,7 +220,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String queryID="SELECT supplierID FROM SuppliersProductAgreements WHERE productID=?";
             ps=dbConnection.prepareStatement(queryID);
             ps.setInt(1,id);
@@ -248,7 +245,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }
@@ -257,7 +254,7 @@ public class DatabaseImplementation implements Database {
         ResultSet rs=null;
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query="SELECT name,manufactureID FROM Products WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
@@ -281,7 +278,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }*/
@@ -293,7 +290,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String query="SELECT *  FROM Contracts WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
@@ -320,7 +317,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return contract;
         }
 
@@ -332,7 +329,7 @@ public class DatabaseImplementation implements Database {
         int minAmount;
         double baseDiscount,maxDiscount,price;
         try{
-            openConnection();
+            
             String query="SELECT * FROM SuppliersProductAgreements WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
@@ -356,7 +353,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }
@@ -366,7 +363,7 @@ public class DatabaseImplementation implements Database {
         ResultSet rs=null;
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query="SELECT name FROM Manufacturers WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,id);
@@ -390,7 +387,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }*/
@@ -399,7 +396,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String query="SELECT method FROM Contracts JOIN DeliveryMethods ON Contracts.deliveryMethod = DeliveryMethods.ID WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,id);
@@ -433,7 +430,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return dm;
         }
     }
@@ -442,7 +439,7 @@ public class DatabaseImplementation implements Database {
         ResultSet rs=null;
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query="SELECT method FROM PaymentMethods WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,id);
@@ -476,7 +473,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return method;
         }
     }
@@ -485,7 +482,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String query="SELECT name,phone FROM SuppliersContacts WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
@@ -509,7 +506,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return contacts;
         }
     }
@@ -518,7 +515,7 @@ public class DatabaseImplementation implements Database {
     public void addContract(Supplier supp) {
         PreparedStatement ps=null;
         try {
-            openConnection();
+            
             String query = "INSERT INTO Contracts (supplierID, deliveryMethod, deliveryTime) VALUES (?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1,Integer.parseInt(supp.getId()));
@@ -549,13 +546,13 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public void editContract(Supplier supp) {
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query="UPDATE Contracts SET deliveryMethod=?,deliveryTime=? WHERE supplierID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,supp.getContract().getDeliveryMethod().ordinal());
@@ -592,7 +589,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
 
@@ -600,7 +597,7 @@ public class DatabaseImplementation implements Database {
     public void createOrder(Order order) {
         PreparedStatement ps=null;
         try {
-            openConnection();
+            
             String query = "INSERT INTO Orders (totalPrice, employeeID, supplierID) VALUES (?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setDouble(1, order.getTotalPrice());
@@ -629,7 +626,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public int getLastOrderID(){
@@ -665,7 +662,7 @@ public class DatabaseImplementation implements Database {
     public void confirmOrder(Order order) {
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query="UPDATE Orders set arrivalStatus=1 WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,Integer.parseInt(order.getId()));
@@ -696,7 +693,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public List<Order> findOrdersByEmployee(String employeeID) {
@@ -717,7 +714,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String query="SELECT * FROM Orders WHERE "+findBy+"=?";
             ps=dbConnection.prepareStatement(query);
             //ps.setInt(1,Integer.valueOf(parameter));
@@ -750,14 +747,14 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }
     public void updateWeeklyOrder(Order order) {
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query = "DELETE from ProductsInOrders where orderID=?";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(order.getId()));
@@ -784,13 +781,13 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public void cancelWeeklyOrder(Order order) {
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query = "DELETE from Orders where ID=?";
             ps = dbConnection.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(order.getId()));
@@ -808,7 +805,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
         }
     }
     public List<Order> findOrderByID(String id) {
@@ -822,7 +819,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String query="SELECT * FROM Orders WHERE  ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
@@ -853,7 +850,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }
@@ -862,7 +859,7 @@ public class DatabaseImplementation implements Database {
         ResultSet rs=null;
         PreparedStatement ps=null;
         try{
-            openConnection();
+            
             String query="SELECT productID,amount FROM ProductsInOrders WHERE orderID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,id);
@@ -886,7 +883,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }
@@ -897,7 +894,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String query="SELECT userName,password FROM Employees WHERE ID=?";
             ps=dbConnection.prepareStatement(query);
             ps.setInt(1,id);
@@ -921,7 +918,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }
@@ -930,7 +927,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet rs=null;
         try{
-            openConnection();
+            
             String query="SELECT ID,userName,password FROM Employees WHERE userName=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,userName);
@@ -954,7 +951,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return ans;
         }
     }
@@ -963,7 +960,7 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         ResultSet dbResult=null;
         try{
-            openConnection();
+            
             String query="SELECT COUNT(*) as result FROM Employees WHERE userName=? and password=?";
             ps=dbConnection.prepareStatement(query);
             ps.setString(1,username);
@@ -989,7 +986,7 @@ public class DatabaseImplementation implements Database {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            closeConnection();
+            
             return connectedUser;
         }
     }

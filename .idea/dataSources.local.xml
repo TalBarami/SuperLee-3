@@ -5,6 +5,5 @@
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
     </data-source>
-    <data-source name="Sqlite (Xerial) - SuperLeeDB_INT.db" uuid="335260d8-421f-4a40-9c4e-50ee2779861c" />
   </component>
 </project>

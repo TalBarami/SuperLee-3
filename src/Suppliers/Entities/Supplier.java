@@ -13,22 +13,24 @@ public class Supplier {
     private String name;
     private String bankAccount;
     private PaymentMethod paymentMethod;
+    private String address;
     private Map<String, String> contacts;
     private Contract contract;
     private boolean active;
 
-    public Supplier(String id, String name, String bankAccount, PaymentMethod paymentMethod, Map<String, String> contacts, boolean active) {
+    public Supplier(String id, String name, String bankAccount, PaymentMethod paymentMethod, String address, Map<String, String> contacts, boolean active) {
         this.id = id;
         this.name = name;
         this.bankAccount = bankAccount;
         this.paymentMethod = paymentMethod;
+        this.address = address;
         this.contacts = contacts;
         this.contract = null;
         this.active = active;
     }
 
-    public Supplier(String id, String name, String bankAccount, PaymentMethod paymentMethod, Map<String, String> contacts) {
-        this(id, name, bankAccount, paymentMethod, contacts, true);
+    public Supplier(String id, String name, String bankAccount, PaymentMethod paymentMethod, String address, Map<String, String> contacts) {
+        this(id, name, bankAccount, paymentMethod, address, contacts, true);
     }
 
     public String getId() {
@@ -69,6 +71,10 @@ public class Supplier {
 
     public PaymentMethod getPaymentMethod() {
         return paymentMethod;
+    }
+
+    public String getAddress(){
+        return address;
     }
 
     public Map<String, String> getContacts() {

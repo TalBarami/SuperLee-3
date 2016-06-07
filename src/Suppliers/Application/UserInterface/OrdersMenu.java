@@ -73,8 +73,16 @@ public class OrdersMenu {
         items = selectItems(supplier);
         totalPrice = calculatePrice(supplier, items);
         Order order = new Order(employee, supplier, totalPrice, items);
-        consoleMenu.getDatabase().createOrder(order);
-        System.out.println("Order created successfully!");
+        /*if(supplier.getContract().getDeliveryMethod() == DeliveryMethod.Self){
+            if(TransportHandler.getInstance().addTransport(order)){
+                consoleMenu.getDatabase().createOrder(order);
+                System.out.println("Order created successfully!\n" +
+                        "Transport is scheduled.");
+            }
+            else
+                System.out.println("There are no available transports in the next 7 days.");
+
+        }*/consoleMenu.getDatabase().createOrder(order);//TODO: Remove.
     }
 
     private void createRestockOrder(){

@@ -17,7 +17,7 @@ public class SQLiteConnector {
 	          config.enforceForeignKeys(true);
 	          
 		      Class.forName("org.sqlite.JDBC");
-		      c = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB_INT.db", config.toProperties());
+		      c = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB.db", config.toProperties());
 		      c.setAutoCommit(true);
 		    } catch ( Exception e ) {
 		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );

@@ -188,6 +188,7 @@ public class SuppliersMenu {
         String name;
         String bankAccount;
         PaymentMethod paymentMethod;
+        String address;
         Map<String,String> contacts;
 
         System.out.println("Please enter supplier's name:");
@@ -207,8 +208,16 @@ public class SuppliersMenu {
             System.out.println("Invalid bank account. please try again.");
         }
         paymentMethod = selectPaymentMethods(supplier);
+        System.out.println("Please enter supplier's address:");
+        while((address = Utils.readLine()).isEmpty()) {
+            if(supplier != null){
+                bankAccount = supplier.getAddress();
+                break;
+            }
+            System.out.println("Invalid address. please try again.");
+        }
         contacts = selectContacts(supplier);
-        return new Supplier(id, name, bankAccount, paymentMethod, contacts);
+        return new Supplier(id, name, bankAccount, paymentMethod, address, contacts);
     }
 
     private Contract createContract(){
