@@ -11,10 +11,10 @@ public enum PaymentMethod {
     private int number;
     private static Map<Integer, PaymentMethod> map = new HashMap<>();
 
-    static{
-            for(PaymentMethod paymentMethod : PaymentMethod.values()){
-                map.put(paymentMethod.number, paymentMethod);
-            }
+    static {
+        for (PaymentMethod paymentMethod : PaymentMethod.values()) {
+            map.put(paymentMethod.number, paymentMethod);
+        }
     }
 
     PaymentMethod(final int number){this.number = number;}
