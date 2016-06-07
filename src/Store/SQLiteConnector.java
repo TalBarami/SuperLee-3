@@ -1,28 +1,17 @@
 package Store;
-
-import org.sqlite.SQLiteConfig;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
+
+import org.sqlite.SQLiteConfig;
 
 public class SQLiteConnector {
+	private Connection c;
 	private static SQLiteConnector instance = null;
-	private Connection c = null;
 	
 	private SQLiteConnector() {
-	    try {
-	    	  SQLiteConfig config = new SQLiteConfig();  
-	          config.enforceForeignKeys(true);
-	          
-		      Class.forName("org.sqlite.JDBC");
-		      c = DriverManager.getConnection("jdbc:sqlite:SuperLeeDB.db", config.toProperties());
-		      c.setAutoCommit(true);
-		    } catch ( Exception e ) {
-		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-		      System.exit(0);
-		    }
+		c = null;
+		startConnection();
 	}
 	
 	public static SQLiteConnector getInstance() {
@@ -30,27 +19,31 @@ public class SQLiteConnector {
 			instance = new SQLiteConnector();
 		return instance;
 	}
-	
-	public Connection getConnection() {
-		return c;
-	}
-	
-	public void CloseConnection() {
+
+	public void startConnection(){
 		try {
-			c.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Class.forName("org.sqlite.JDBC");
+			SQLiteConfig config = new SQLiteConfig();
+			config.enforceForeignKeys(true);
+			c = DriverManager.getConnection(
+					"jdbc:sqlite:SuperLeeDB.db",
+					config.toProperties());
+		}
+		catch (Exception e) {
+			System.err.println(e.getClass().getName() + ": " + e.getMessage());
+			System.exit(0);
 		}
 	}
 	
-	public void runUnreturnedQuery(String query) throws SQLException {
-		Connection c = SQLiteConnector.getInstance().getConnection();
-		Statement stmt = null;
-		
-		stmt = c.createStatement();
-		
-	    stmt.executeUpdate(query);
-	    stmt.close();
+	public void endConnection(){
+		try {
+			c.close();
+		} catch (SQLException e) {
+			System.exit(0);
+		}
+	}
+	
+	public Connection getConnection(){
+		return c;
 	}
 }
