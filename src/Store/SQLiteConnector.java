@@ -28,6 +28,7 @@ public class SQLiteConnector {
 			c = DriverManager.getConnection(
 					"jdbc:sqlite:SuperLeeDB.db",
 					config.toProperties());
+			c.setAutoCommit(true);
 		}
 		catch (Exception e) {
 			System.err.println(e.getClass().getName() + ": " + e.getMessage());
