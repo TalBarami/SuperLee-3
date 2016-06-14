@@ -3,7 +3,6 @@ package Suppliers.Application.UserInterface;
 import Suppliers.Application.Database.Database;
 import Suppliers.Application.Utils;
 import Suppliers.Entities.DeliveryMethod;
-import Suppliers.Entities.Employee;
 import Suppliers.Entities.Order;
 import Suppliers.Entities.Supplier;
 
@@ -12,7 +11,6 @@ import java.util.List;
 
 public class ConsoleMenuImplementation implements ConsoleMenu {
     private Database database;
-    private Employee connected;
     private SuppliersMenu suppliersMenu;
     private OrdersMenu ordersMenu;
     private int selected;
@@ -156,13 +154,5 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
 
     public Database getDatabase() {
         return database;
-    }
-
-    public Employee getConnected(){
-        return connected;
-    }
-
-    public void setConnected(Employee employee){
-        connected = employee;
     }
 }

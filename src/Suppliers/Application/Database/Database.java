@@ -30,6 +30,4 @@ public interface Database {
 
     ProductCatalog getProductByID(int id);
     Map<ProductCatalog,Integer> getMissingProducts();
-
-    Employee checkCredentials(String username, String password);
 }

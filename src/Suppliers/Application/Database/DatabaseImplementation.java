@@ -1,5 +1,7 @@
 package Suppliers.Application.Database;
 
+import Employees_Transports.Backend.Employee;
+import Employees_Transports.DL.EmployeeHandler;
 import Inventory.dbHandlers.ProductHandler;
 import Inventory.dbHandlers.ProductStockHandler;
 import Inventory.entities.ProductCatalog;
@@ -601,7 +603,7 @@ public class DatabaseImplementation implements Database {
             String query = "INSERT INTO Orders (totalPrice, employeeID, supplierID) VALUES (?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setDouble(1, order.getTotalPrice());
-            ps.setInt(2, Integer.parseInt(order.getEmployee().getId()));
+            ps.setInt(2, Integer.parseInt(order.getEmployee().getID()));
             ps.setInt(3, Integer.parseInt(order.getSupplier().getId()));
             ps.executeUpdate();
             int lastOrderID=getLastOrderID();
@@ -722,7 +724,7 @@ public class DatabaseImplementation implements Database {
             rs=ps.executeQuery();
             while(rs.next()){
                 orderID=String.valueOf(rs.getInt("ID"));
-                emp=getEmployeeById(rs.getInt("employeeID"));
+                emp= EmployeeHandler.getInstance().getEmployeeByID(rs.getString("employeeID")); // TODO - CHECK!
                 supp= findSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
                 arrived=rs.getBoolean("arrivalStatus");
                 totalPrice=rs.getDouble("totalPrice");
@@ -825,7 +827,7 @@ public class DatabaseImplementation implements Database {
             ps.setString(1,id);
             rs=ps.executeQuery();
             while(rs.next()){
-                emp=getEmployeeById(rs.getInt("employeeID"));
+                emp=EmployeeHandler.getInstance().getEmployeeByID(rs.getString("employeeID")); // TODO - CHECK!
                 supp= findSupplierByID(String.valueOf(rs.getString("supplierID"))).get(0);
                 arrived=rs.getBoolean("arrivalStatus");
                 totalPrice=rs.getDouble("totalPrice");
@@ -889,7 +891,7 @@ public class DatabaseImplementation implements Database {
     }
 
     /** Employee management **/
-    private Employee getEmployeeById(int id){
+    /*private Employee getEmployeeById(int id){
         Employee ans=null;
         PreparedStatement ps=null;
         ResultSet rs=null;
@@ -989,7 +991,7 @@ public class DatabaseImplementation implements Database {
             
             return connectedUser;
         }
-    }
+    }*/
 
     public ProductCatalog getProductByID(int id){
         return productHandler.createProductCatalogByID(id);

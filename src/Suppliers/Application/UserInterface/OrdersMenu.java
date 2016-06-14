@@ -1,11 +1,11 @@
 package Suppliers.Application.UserInterface;
 
-import Inventory.dbHandlers.ProductHandler;
-import Inventory.dbHandlers.ProductStockHandler;
+import Employees_Transports.Backend.Employee;
+import Employees_Transports.DL.EmployeeHandler;
+import Employees_Transports.DL.TransportHandler;
 import Inventory.entities.ProductCatalog;
 import Suppliers.Application.Utils;
 import Suppliers.Entities.*;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,10 +57,15 @@ public class OrdersMenu {
     }
 
     private void createNewOrder(){
-        Employee employee = consoleMenu.getConnected();
+        Employee employee;
         Supplier supplier;
         Map<ProductCatalog, Integer> items;
         double totalPrice;
+
+        System.out.println("Please enter your ID:");
+        while((employee = EmployeeHandler.getInstance().getEmployeeByID(Utils.readLine())) == null){
+            System.out.println("Invalid name. please try again.");
+        }
 
         System.out.println("Please select the supplier you would like to order from:");
         supplier = consoleMenu.getSupplier();
@@ -73,7 +78,7 @@ public class OrdersMenu {
         items = selectItems(supplier);
         totalPrice = calculatePrice(supplier, items);
         Order order = new Order(employee, supplier, totalPrice, items);
-        /*if(supplier.getContract().getDeliveryMethod() == DeliveryMethod.Self){
+        if(supplier.getContract().getDeliveryMethod() == DeliveryMethod.Self){
             if(TransportHandler.getInstance().addTransport(order)){
                 consoleMenu.getDatabase().createOrder(order);
                 System.out.println("Order created successfully!\n" +
@@ -82,10 +87,16 @@ public class OrdersMenu {
             else
                 System.out.println("There are no available transports in the next 7 days.");
 
-        }*/consoleMenu.getDatabase().createOrder(order);//TODO: Remove.
+        }
     }
 
     private void createRestockOrder(){
+        Employee employee;
+        System.out.println("Please enter your ID:");
+        while((employee = EmployeeHandler.getInstance().getEmployeeByID(Utils.readLine())) == null){
+            System.out.println("Invalid name. please try again.");
+        }
+
         Map<ProductCatalog,Integer> products = consoleMenu.getDatabase().getMissingProducts();
         // String -representing the id of the supplier
         Map<Supplier,Map<ProductCatalog,Integer>> productsFromSuppliers=new HashMap<>();
@@ -107,7 +118,7 @@ public class OrdersMenu {
             String items;
             for (Supplier supp : productsFromSuppliers.keySet()) {
                 items = "";
-                newOrder = new Order(consoleMenu.getConnected(), supp, calculatePrice(supp, productsFromSuppliers.get(supp)), productsFromSuppliers.get(supp));
+                newOrder = new Order(employee, supp, calculatePrice(supp, productsFromSuppliers.get(supp)), productsFromSuppliers.get(supp));
                 consoleMenu.getDatabase().createOrder(newOrder);
                 for(ProductCatalog p : newOrder.getItems().keySet())
                     items+=p.get_name()+", ";
@@ -157,7 +168,7 @@ public class OrdersMenu {
         while((oldOrder = consoleMenu.getWeeklyOrder()) == null)
             System.out.println("There were no orders matching this search.");
 
-        Employee employee = consoleMenu.getConnected();
+        Employee employee = oldOrder.getEmployee();
         Supplier supplier = oldOrder.getSupplier();
         Map<ProductCatalog, Integer> items = selectItems(supplier);
         double totalPrice = calculatePrice(supplier, items);

@@ -2,6 +2,7 @@ package Store;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.sqlite.SQLiteConfig;
 
@@ -43,7 +44,17 @@ public class SQLiteConnector {
 			System.exit(0);
 		}
 	}
-	
+
+	public void runUnreturnedQuery(String query) throws SQLException {
+		Connection c = SQLiteConnector.getInstance().getConnection();
+		Statement stmt = null;
+
+		stmt = c.createStatement();
+
+		stmt.executeUpdate(query);
+		stmt.close();
+	}
+
 	public Connection getConnection(){
 		return c;
 	}

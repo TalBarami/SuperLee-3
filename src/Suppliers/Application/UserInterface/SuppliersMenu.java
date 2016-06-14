@@ -211,7 +211,7 @@ public class SuppliersMenu {
         System.out.println("Please enter supplier's address:");
         while((address = Utils.readLine()).isEmpty()) {
             if(supplier != null){
-                bankAccount = supplier.getAddress();
+                address = supplier.getAddress();
                 break;
             }
             System.out.println("Invalid address. please try again.");

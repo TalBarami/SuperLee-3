@@ -1,6 +1,7 @@
 package Employees_Transports.DL;
 import Employees_Transports.Backend.*;
 import Store.SQLiteConnector;
+import Suppliers.Entities.Order;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -93,9 +94,10 @@ public class TransportHandler {
 		}
 	}
 	
-	//public boolean addTransport(Order o){
-		
-	//}
+	public boolean addTransport(Order o){
+		// TODO
+		return true;
+	}
 	
 	
 	
@@ -130,6 +132,18 @@ public class TransportHandler {
 		
 		return ans; 
 	} */
+
+/*	public boolean checkTransport(Order o){
+		int completed = o.get;
+		Date today=new Date();
+		long ltime=today.getTime()+completed*24*60*60*1000;
+		Date dayReady=new Date(ltime);
+		for(int i=0;i<7;i++){
+			long temp=dayReady.getTime()+i*24*60*60*1000;
+
+		}
+
+	}*/
 	
 	public boolean insertTransport(String date, String leaving_time, String truck_id, String driver_id, String source_address, ArrayList<Pair<String,String>> station_ordernum)
 	{

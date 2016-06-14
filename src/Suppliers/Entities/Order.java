@@ -1,5 +1,6 @@
 package Suppliers.Entities;
 
+import Employees_Transports.Backend.Employee;
 import Inventory.entities.ProductCatalog;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ public class Order {
     private Employee employee;
     private Supplier supplier;
     private Date date;
+    private int daysToBeCompleted;
     private boolean arrived;
     private double totalPrice;
     private Map<ProductCatalog, Integer> items;
@@ -18,7 +20,7 @@ public class Order {
     @Override
     public String toString() {
         return "Order ID: " + id +
-                "\n\tEmployee ID:" + employee.getId() +
+                "\n\tEmployee ID:" + employee.getID() +
                 "\t\tSupplier: " + supplier.getName() +
                 "\n\tDate: " + date.toString() +
                 "\t\tStatus: " + (arrived ? "Arrived." : "Waiting for delivery.") +
@@ -64,6 +66,14 @@ public class Order {
 
     public double getTotalPrice() {
         return totalPrice;
+    }
+
+    public int getDaysToBeCompleted(){
+        return daysToBeCompleted;
+    }
+
+    public void setDaysToBeCompleted(int dtbc){
+        this.daysToBeCompleted = dtbc;
     }
 
     public Map<ProductCatalog, Integer> getItems() {

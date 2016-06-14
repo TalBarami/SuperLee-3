@@ -39,9 +39,13 @@ public class EmployeeMenu {
 	}
 	public EmployeeMenu(BLManager bl){
 		this.bl = bl;
+	}
+
+	public void run(){
 		init();
 		mainMenu();
 	}
+
 	public void printList(LinkedList l){
 		for(int i=1;i<=l.size();i++){
 			System.out.println("\n"+i+") "+l.get(i-1));

@@ -1,38 +1,49 @@
 package Store;
 
+import Employees_Transports.BL.BLManager;
+import Employees_Transports.BL.BLManagerImpl;
+import Employees_Transports.PL.EmployeeMenu;
+import Employees_Transports.PL.TransportMenu;
 import Inventory.screens.MainScreen;
 import Suppliers.Application.Database.DatabaseImplementation;
 import Suppliers.Application.UserInterface.ConsoleMenu;
 import Suppliers.Application.UserInterface.ConsoleMenuImplementation;
 import Suppliers.Application.Utils;
-import Suppliers.Entities.Employee;
 
 public class Store {
     private static final int MAX_LOGIN_ATTEMPTS = 3;
-    private Employee connected;
 
     private ConsoleMenu suppliersConsoleMenu;
     private MainScreen inventoryMainScreen;
+    private EmployeeMenu employeeMenu;
+    private TransportMenu transportMenu;
 
     private int selected;
+
+
     private static final String moduleSelect[] = {
             "Suppliers and Orders.",
             "Inventory.",
+            "Employees.",
+            "Transports.",
             "Exit."
     };
     public Store(){
         this.suppliersConsoleMenu = new ConsoleMenuImplementation(new DatabaseImplementation());
         this.inventoryMainScreen = new MainScreen();
+        BLManager bl = new BLManagerImpl();
+        this.employeeMenu = new EmployeeMenu(bl);
+        this.transportMenu = new TransportMenu(bl);
     }
 
     public void Run(){
         System.out.println("Welcome to 'Super-Lee', please log-in to continue.");
-        Login(MAX_LOGIN_ATTEMPTS);
+        //Login(MAX_LOGIN_ATTEMPTS);
         ModuleSelection();
     }
 
 
-    private void Login(int attempts){
+    /*private void Login(int attempts){
         if(attempts == 0) {
             System.out.println("Terminating.");
             System.exit(0);
@@ -49,7 +60,7 @@ public class Store {
             System.out.printf("Invalid user name or password. (%d attempts left)\n",attempts-1);
             Login(attempts-1);
         }
-    }
+    }*/
 
     private void ModuleSelection(){
         while(true){
@@ -62,7 +73,13 @@ public class Store {
                     inventoryMainScreen.mainScreen();
                     break;
                 case 3:
-                    SQLiteConnector.getInstance().CloseConnection();
+                    employeeMenu.run();
+                    break;
+                case 4:
+                    transportMenu.run();
+                    break;
+                case 5:
+                    SQLiteConnector.getInstance().endConnection();
                     return;
             }
         }

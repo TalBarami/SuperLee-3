@@ -15,11 +15,14 @@ public class TransportMenu {
 
 	public TransportMenu(BLManager bl){
 		this.bl=bl;
+	}
+
+	public void run(){
 		in=new BufferedReader(new InputStreamReader(System.in));
 		boolean b = false;
 		String input;
 		while(!b){
-			try { 
+			try {
 				System.out.print("Please enter password: ");
 				input=in.readLine();
 				if(input.equals("2016")){

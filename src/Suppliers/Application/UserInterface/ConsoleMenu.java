@@ -1,7 +1,6 @@
 package Suppliers.Application.UserInterface;
 
 import Suppliers.Application.Database.Database;
-import Suppliers.Entities.Employee;
 import Suppliers.Entities.Order;
 import Suppliers.Entities.Supplier;
 
@@ -11,8 +10,6 @@ public interface ConsoleMenu {
     void RunStore();
 
     Database getDatabase();
-    Employee getConnected();
-    void setConnected(Employee employee);
 
     Supplier getSupplier();
     Order getOrder();

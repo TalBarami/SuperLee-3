@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Sqlite (Xerial) - SuperLeeDB.db" uuid="cdff9c3c-70f1-41ec-a869-8bfec5a2d48d">
+  <data-source name="Sqlite (Xerial) - SuperLeeDB.db" uuid="0877e4f4-1e1a-4816-ac1a-a27784d71793">
     <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
@@ -17,11 +17,42 @@
       <column name="method" sqlType="TEXT (15)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
+    <table name="Driver" schema="" catalog="" type="TABLE">
+      <column name="driverId" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="licenseDeg" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="driverid"/>
+      <foreign-key name="#FAKE_Driver_1" columns="driverId" ref-table="Employees" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
     <table name="Employees" schema="" catalog="" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="userName" sqlType="TEXT (20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="TEXT (10)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="ID" sqlType="VARCHAR (9)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="First_Name" sqlType="VARCHAR (20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Last_Name" sqlType="VARCHAR (20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Bank_Account_Num" sqlType="VARCHAR (20)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="Salary" sqlType="NUMERIC (14, 0)" precision="0" scale="-1" nullable="true" jdbcType="6"/>
+      <column name="Employment_Date" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
+    </table>
+    <table name="Employees_In_Shifts" schema="" catalog="" type="TABLE">
+      <column name="Shift_Date" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Is_Morning" sqlType="INTEGER (1)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="EmployeeID" sqlType="VARCHAR (9)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Job" sqlType="VARCHAR (20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Station" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="shift_date,is_morning,employeeid,station"/>
+      <foreign-key name="#FAKE_Employees_In_Shifts_1" columns="Shift_Date,Is_Morning,EmployeeID,Station" ref-table="Shift_Priorities" ref-schema="" ref-catalog="" ref-columns="Shift_Date,Is_Morning,EmployeeID,Station" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Employees_In_Shifts_2" columns="EmployeeID,Job" ref-table="Jobs_For_Employees" ref-schema="" ref-catalog="" ref-columns="EmployeeID,Job" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="Jobs" schema="" catalog="" type="TABLE">
+      <column name="Name" sqlType="VARCHAR(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Requirements" sqlType="VARCHAR(40)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="name"/>
+    </table>
+    <table name="Jobs_For_Employees" schema="" catalog="" type="TABLE">
+      <column name="EmployeeID" sqlType="VARCHAR (9)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Job" sqlType="VARCHAR (20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="employeeid,job"/>
+      <foreign-key name="#FAKE_Jobs_For_Employees_1" columns="EmployeeID" ref-table="Employees" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Jobs_For_Employees_2" columns="Job" ref-table="Jobs" ref-schema="" ref-catalog="" ref-columns="Name" update-rule="0" delete-rule="0" deferrability="1"/>
     </table>
     <table name="Manufacturers" schema="" catalog="" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -30,6 +61,7 @@
     </table>
     <table name="Orders" schema="" catalog="" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="sourceAddress" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="date" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="arrivalStatus" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4" def="MA=="/>
       <column name="totalPrice" sqlType="DOUBLE" precision="0" scale="-1" nullable="true" jdbcType="6"/>
@@ -38,6 +70,7 @@
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_Orders_1" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
       <foreign-key name="#FAKE_Orders_2" columns="employeeID" ref-table="Employees" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Orders_3" columns="sourceAddress" ref-table="Station" ref-schema="" ref-catalog="" ref-columns="address" update-rule="0" delete-rule="0" deferrability="1"/>
     </table>
     <table name="PaymentMethods" schema="" catalog="" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -51,15 +84,39 @@
       <primary-key columns="productid,orderid"/>
       <foreign-key name="#FAKE_ProductsInOrders_1" columns="orderID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
     </table>
+    <table name="Shift_Priorities" schema="" catalog="" type="TABLE">
+      <column name="Shift_Date" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Is_Morning" sqlType="INTEGER (1)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="EmployeeID" sqlType="VARCHAR (9)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Station" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="shift_date,is_morning,employeeid,station"/>
+      <foreign-key name="#FAKE_Shift_Priorities_1" columns="Shift_Date,Is_Morning,Station" ref-table="Shifts" ref-schema="" ref-catalog="" ref-columns="Shift_Date,Is_Morning,Station" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="Shifts" schema="" catalog="" type="TABLE">
+      <column name="Shift_Date" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="Is_Morning" sqlType="INTEGER (1)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="Station" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="shift_date,is_morning,station"/>
+      <foreign-key name="#FAKE_Shifts_1" columns="Station" ref-table="Station" ref-schema="" ref-catalog="" ref-columns="address" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="Station" schema="" catalog="" type="TABLE">
+      <column name="address" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="phoneNum" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="contact" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="areasname" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="address),foreign key (areasname"/>
+      <foreign-key name="#FAKE_Station_1" columns="areasname" ref-table="area" ref-schema="" ref-catalog="" ref-columns="name" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
     <table name="Suppliers" schema="" catalog="" type="TABLE">
       <column name="ID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="TEXT (15)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="paymentMethod" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="bankAccount" sqlType="TEXT" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="address" sqlType="CHAR (64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="active" sqlType="BOOLEAN" precision="0" scale="-1" nullable="true" jdbcType="4" def="MQ=="/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_Suppliers_1" columns="paymentMethod" ref-table="PaymentMethods" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="1" deferrability="1"/>
+      <foreign-key name="#FAKE_Suppliers_1" columns="address" ref-table="Station" ref-schema="" ref-catalog="" ref-columns="address" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Suppliers_2" columns="paymentMethod" ref-table="PaymentMethods" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="1" deferrability="1"/>
     </table>
     <table name="SuppliersContacts" schema="" catalog="" type="TABLE">
       <column name="supplierID" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -78,6 +135,41 @@
       <primary-key columns="supplierid,productid"/>
       <foreign-key name="#FAKE_SuppliersProductAgreements_1" columns="productID" ref-table="product" ref-schema="" ref-catalog="" ref-columns="product_id" update-rule="0" delete-rule="3" deferrability="1"/>
       <foreign-key name="#FAKE_SuppliersProductAgreements_2" columns="supplierID" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="Track" schema="" catalog="" type="TABLE">
+      <column name="trackId" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="model" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="color" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="weightT" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="maxWeight" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="licenseDeg" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="trackid"/>
+    </table>
+    <table name="Transport" schema="" catalog="" type="TABLE">
+      <column name="Date" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="leavingTime" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="DriverdriverId" sqlType="VARCHAR (10)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="TracktrackId" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="sourceStation" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="date,leavingtime,tracktrackid"/>
+      <foreign-key name="#FAKE_Transport_1" columns="DriverdriverId" ref-table="Driver" ref-schema="" ref-catalog="" ref-columns="driverId" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Transport_2" columns="sourceStation" ref-table="Station" ref-schema="" ref-catalog="" ref-columns="address" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Transport_3" columns="TracktrackId" ref-table="Track" ref-schema="" ref-catalog="" ref-columns="trackId" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="Transport_Station" schema="" catalog="" type="TABLE">
+      <column name="TransportDate" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="TransportleavingTime" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="TransportTracktrackId" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="Stationaddress" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="orderNum" sqlType="INTEGER (10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="transportdate,transportleavingtime,transporttracktrackid,stationaddress"/>
+      <foreign-key name="#FAKE_Transport_Station_1" columns="TransportDate,TransportleavingTime,TransportTracktrackId" ref-table="Transport" ref-schema="" ref-catalog="" ref-columns="Date,leavingTime,TracktrackId" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_Transport_Station_2" columns="Stationaddress" ref-table="Station" ref-schema="" ref-catalog="" ref-columns="address" update-rule="0" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_Transport_Station_3" columns="orderNum" ref-table="Suppliers" ref-schema="" ref-catalog="" ref-columns="ID" update-rule="0" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="area" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="VARCHAR (255)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <primary-key columns="name"/>
     </table>
     <table name="category" schema="" catalog="" type="TABLE">
       <column name="cat_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>

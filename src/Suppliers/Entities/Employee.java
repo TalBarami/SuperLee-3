@@ -1,8 +1,11 @@
+/*
 package Suppliers.Entities;
 
+*/
 /**
  * Created by Tal on 10/04/2016.
- */
+ *//*
+
 public class Employee {
     private String id;
     private String username;
@@ -22,3 +25,4 @@ public class Employee {
         this.id = id;
     }
 }
+*/
