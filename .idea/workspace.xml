@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java" afterPath="$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java" afterPath="$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Suppliers/Entities/Order.java" afterPath="$PROJECT_DIR$/src/Suppliers/Entities/Order.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,35 +72,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TransportHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java">
+      <file leaf-file-name="ShiftHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-353">
-              <caret line="172" column="50" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
+            <state relative-caret-position="405">
+              <caret line="212" column="59" selection-start-line="212" selection-start-column="59" selection-end-line="212" selection-end-column="59" />
               <folding>
-                <element signature="e#2272#2283#0" expanded="true" />
-                <marker date="1465911294617" expanded="true" signature="889:999" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="1648:1793" placeholder="SELECT * FRO... Transport_Station" />
-                <marker date="1465911294617" expanded="true" signature="2362:2385" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="2362:2391" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="2362:2398" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="2362:2449" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="2362:2466" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="2362:2480" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="2362:2492" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="2362:2494" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="3110:3267" placeholder="SELECT * FRO... Transport_Station" />
-                <marker date="1465911294617" expanded="true" signature="3834:3857" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465911294617" expanded="true" signature="4475:4632" placeholder="SELECT * FRO... Transport_Station" />
-                <marker date="1465911294617" expanded="true" signature="5316:5469" placeholder="SELECT track... Track" />
-                <marker date="1465911294617" expanded="true" signature="6826:6960" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465911294617" expanded="true" signature="6826:7113" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465911294617" expanded="true" signature="6826:7128" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465911294617" expanded="true" signature="8543:8725" placeholder="INSERT INTO Transport... " />
-                <marker date="1465911294617" expanded="true" signature="9494:9749" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465911294617" expanded="true" signature="10543:10641" placeholder="delete from " />
-                <marker date="1465911294617" expanded="true" signature="11726:11864" placeholder="UPDATE Trans... " />
-                <marker date="1465911294617" expanded="true" signature="11898:12035" placeholder="UPDATE Trans... " />
+                <element signature="imports" expanded="true" />
+                <marker date="1465913556857" expanded="true" signature="831:851" placeholder="SELECT * FRO... Shifts" />
+                <marker date="1465913556857" expanded="true" signature="1411:1558" placeholder="DELETE from " />
+                <marker date="1465913556857" expanded="true" signature="1890:2007" placeholder="INSERT INTO Shifts... " />
+                <marker date="1465913556857" expanded="true" signature="2588:2608" placeholder="SELECT * FRO... Shifts" />
+                <marker date="1465913556857" expanded="true" signature="2979:3012" placeholder="SELECT * FRO... Employees_In_Shifts" />
+                <marker date="1465913556857" expanded="true" signature="4051:4071" placeholder="SELECT * FRO... Shifts" />
+                <marker date="1465913556857" expanded="true" signature="4439:4469" placeholder="SELECT * FRO... Shift_Priorities" />
+                <marker date="1465913556857" expanded="true" signature="5352:5489" placeholder="INSERT INTO Shift_Priorities... " />
+                <marker date="1465913556857" expanded="true" signature="6746:6897" placeholder="INSERT INTO Employees_In_Shifts... " />
+                <marker date="1465913556857" expanded="true" signature="7544:7725" placeholder="DELETE from " />
+                <marker date="1465913556857" expanded="true" signature="8082:8266" placeholder="DELETE from " />
+                <marker date="1465913556857" expanded="true" signature="8686:9281" placeholder="SELECT Shift... Shift_Priorities" />
+                <marker date="1465913556857" expanded="true" signature="9139:9272" placeholder="SELECT Emplo... Employees_In_Shifts" />
+                <marker date="1465913556857" expanded="true" signature="9747:10359" placeholder="SELECT DISTI... Shift_Priorities" />
+                <marker date="1465913556857" expanded="true" signature="10217:10350" placeholder="SELECT Emplo... Employees_In_Shifts" />
+                <marker date="1465913556857" expanded="true" signature="10837:11449" placeholder="SELECT Jobs_... Shift_Priorities" />
+                <marker date="1465913556857" expanded="true" signature="11307:11440" placeholder="SELECT Emplo... Employees_In_Shifts" />
+                <marker date="1465913556857" expanded="true" signature="11877:12077" placeholder="SELECT * FRO... Employees_In_Shifts" />
+                <marker date="1465913556857" expanded="true" signature="12621:12654" placeholder="SELECT * FRO... Employees_In_Shifts" />
+                <marker date="1465913556857" expanded="true" signature="13507:13537" placeholder="SELECT * FRO... Shift_Priorities" />
+                <marker date="1465913556857" expanded="true" signature="14285:14454" placeholder="Select * Fro... Employees_In_Shifts" />
+                <marker date="1465913556857" expanded="true" signature="15139:15289" placeholder="Select * Fro... Employees_In_Shifts" />
               </folding>
             </state>
           </provider>
@@ -112,7 +109,7 @@
       <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
+            <state relative-caret-position="12977">
               <caret line="812" column="36" selection-start-line="812" selection-start-column="23" selection-end-line="812" selection-end-column="36" />
               <folding>
                 <marker date="1465899212219" expanded="true" signature="1157:1245" placeholder="INSERT INTO Suppliers... " />
@@ -153,37 +150,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/EmployeeHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="145" column="80" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="80" />
-              <folding>
-                <marker date="1465311443373" expanded="true" signature="938:961" placeholder="SELECT * FRO... Employees" />
-                <marker date="1465311443373" expanded="true" signature="1345:1377" placeholder="SELECT * FRO... Jobs_For_Employees" />
-                <marker date="1465311443373" expanded="true" signature="2089:2132" placeholder="SELECT * FRO... Employees" />
-                <marker date="1465311443373" expanded="true" signature="2502:2554" placeholder="SELECT * FRO... Jobs_For_Employees" />
-                <marker date="1465311443373" expanded="true" signature="3062:3115" placeholder="SELECT * FRO... Employees" />
-                <marker date="1465311443373" expanded="true" signature="3506:3558" placeholder="SELECT * FRO... Employees" />
-                <marker date="1465311443373" expanded="true" signature="3938:4128" placeholder="INSERT INTO Employees... " />
-                <marker date="1465311443373" expanded="true" signature="4518:4586" placeholder="INSERT INTO Jobs_For_Employees... " />
-                <marker date="1465311443373" expanded="true" signature="5089:5152" placeholder="UPDATE Emplo... " />
-                <marker date="1465311443373" expanded="true" signature="5508:5570" placeholder="UPDATE Emplo... " />
-                <marker date="1465311443373" expanded="true" signature="5917:5975" placeholder="UPDATE Emplo... " />
-                <marker date="1465311443373" expanded="true" signature="6333:6401" placeholder="UPDATE Emplo... " />
-                <marker date="1465311443373" expanded="true" signature="6738:6788" placeholder="DELETE from " />
-                <marker date="1465311443373" expanded="true" signature="7069:7156" placeholder="DELETE from " />
-                <marker date="1465311443373" expanded="true" signature="7454:7529" placeholder="Select * Fro... Jobs_For_Employees" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1540">
-              <caret line="72" column="102" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="102" />
+            <state relative-caret-position="506">
+              <caret line="88" column="58" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -242,6 +213,40 @@
                 <marker date="1465311424651" expanded="true" signature="3885:3957" placeholder="UPDATE Stati... " />
                 <marker date="1465311424651" expanded="true" signature="3995:4066" placeholder="UPDATE Stati... " />
                 <marker date="1465311424651" expanded="true" signature="4103:4176" placeholder="UPDATE Stati... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransportHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-120">
+              <caret line="177" column="17" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
+              <folding>
+                <element signature="e#2272#2283#0" expanded="true" />
+                <marker date="1465913822581" expanded="true" signature="889:999" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="1648:1793" placeholder="SELECT * FRO... Transport_Station" />
+                <marker date="1465913822581" expanded="true" signature="2362:2385" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="2362:2391" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="2362:2398" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="2362:2449" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="2362:2466" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="2362:2480" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="2362:2492" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="2362:2494" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="3110:3267" placeholder="SELECT * FRO... Transport_Station" />
+                <marker date="1465913822581" expanded="true" signature="3834:3857" placeholder="SELECT * FRO... Transport" />
+                <marker date="1465913822581" expanded="true" signature="4475:4632" placeholder="SELECT * FRO... Transport_Station" />
+                <marker date="1465913822581" expanded="true" signature="5246:5399" placeholder="SELECT track... Track" />
+                <marker date="1465913822581" expanded="true" signature="6753:6887" placeholder="INSERT INTO Transport_Station... " />
+                <marker date="1465913822581" expanded="true" signature="6753:7040" placeholder="INSERT INTO Transport_Station... " />
+                <marker date="1465913822581" expanded="true" signature="6753:7055" placeholder="INSERT INTO Transport_Station... " />
+                <marker date="1465913822581" expanded="true" signature="8470:8652" placeholder="INSERT INTO Transport... " />
+                <marker date="1465913822581" expanded="true" signature="9421:9676" placeholder="INSERT INTO Transport_Station... " />
+                <marker date="1465913822581" expanded="true" signature="10470:10568" placeholder="delete from " />
+                <marker date="1465913822581" expanded="true" signature="11653:11791" placeholder="UPDATE Trans... " />
+                <marker date="1465913822581" expanded="true" signature="11825:11962" placeholder="UPDATE Trans... " />
               </folding>
             </state>
           </provider>
@@ -311,7 +316,6 @@
         <option value="$PROJECT_DIR$/src/Store/ConnectionHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/TruckHandler.java" />
-        <option value="$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/MessageHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/JobHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/EmployeeHandler.java" />
@@ -331,6 +335,7 @@
         <option value="$PROJECT_DIR$/src/Suppliers/Entities/Order.java" />
         <option value="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" />
         <option value="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" />
+        <option value="$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java" />
       </list>
     </option>
@@ -1098,7 +1103,7 @@
       <workItem from="1465161374622" duration="147000" />
       <workItem from="1465284493782" duration="13847000" />
       <workItem from="1465400226264" duration="220000" />
-      <workItem from="1465895799178" duration="15254000" />
+      <workItem from="1465895799178" duration="17781000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -1415,7 +1420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1465903866756</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Integration commit #2">
+      <created>1465911311933</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1465911311933</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1451,7 +1463,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146644000" />
+    <option name="totallyTimeSpent" value="149171000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1474,7 +1486,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36004514" sideWeight="0.50214595" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="462" y="605" width="742" height="401" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4153499" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29909706" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1509,7 +1521,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed some bugs within the console menu." />
     <MESSAGE value="Fixed some MOAR bugs within the console menu." />
     <MESSAGE value="commit message" />
     <MESSAGE value="Added: remove,edit" />
@@ -1534,7 +1545,8 @@
     <MESSAGE value="- SQLite connector added AND FIXED." />
     <MESSAGE value="Added new files because i forgot =(" />
     <MESSAGE value="Integration commit #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integration commit #1" />
+    <MESSAGE value="Integration commit #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integration commit #2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1593,13 +1605,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1812,8 +1817,8 @@
         <state relative-caret-position="440">
           <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
           <folding>
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1993,16 +1998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="72" column="102" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/Transport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -2011,9 +2006,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/EmployeeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="82" column="65" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="65" />
+          <folding>
+            <marker date="1465311443373" expanded="true" signature="938:961" placeholder="SELECT * FRO... Employees" />
+            <marker date="1465311443373" expanded="true" signature="1345:1377" placeholder="SELECT * FRO... Jobs_For_Employees" />
+            <marker date="1465311443373" expanded="true" signature="2089:2132" placeholder="SELECT * FRO... Employees" />
+            <marker date="1465311443373" expanded="true" signature="2502:2554" placeholder="SELECT * FRO... Jobs_For_Employees" />
+            <marker date="1465311443373" expanded="true" signature="3062:3115" placeholder="SELECT * FRO... Employees" />
+            <marker date="1465311443373" expanded="true" signature="3506:3558" placeholder="SELECT * FRO... Employees" />
+            <marker date="1465311443373" expanded="true" signature="3938:4128" placeholder="INSERT INTO Employees... " />
+            <marker date="1465311443373" expanded="true" signature="4518:4586" placeholder="INSERT INTO Jobs_For_Employees... " />
+            <marker date="1465311443373" expanded="true" signature="5089:5152" placeholder="UPDATE Emplo... " />
+            <marker date="1465311443373" expanded="true" signature="5508:5570" placeholder="UPDATE Emplo... " />
+            <marker date="1465311443373" expanded="true" signature="5917:5975" placeholder="UPDATE Emplo... " />
+            <marker date="1465311443373" expanded="true" signature="6333:6401" placeholder="UPDATE Emplo... " />
+            <marker date="1465311443373" expanded="true" signature="6738:6788" placeholder="DELETE from " />
+            <marker date="1465311443373" expanded="true" signature="7069:7156" placeholder="DELETE from " />
+            <marker date="1465311443373" expanded="true" signature="7454:7529" placeholder="Select * Fro... Jobs_For_Employees" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="212" column="59" selection-start-line="212" selection-start-column="59" selection-end-line="212" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1465913556857" expanded="true" signature="831:851" placeholder="SELECT * FRO... Shifts" />
+            <marker date="1465913556857" expanded="true" signature="1411:1558" placeholder="DELETE from " />
+            <marker date="1465913556857" expanded="true" signature="1890:2007" placeholder="INSERT INTO Shifts... " />
+            <marker date="1465913556857" expanded="true" signature="2588:2608" placeholder="SELECT * FRO... Shifts" />
+            <marker date="1465913556857" expanded="true" signature="2979:3012" placeholder="SELECT * FRO... Employees_In_Shifts" />
+            <marker date="1465913556857" expanded="true" signature="4051:4071" placeholder="SELECT * FRO... Shifts" />
+            <marker date="1465913556857" expanded="true" signature="4439:4469" placeholder="SELECT * FRO... Shift_Priorities" />
+            <marker date="1465913556857" expanded="true" signature="5352:5489" placeholder="INSERT INTO Shift_Priorities... " />
+            <marker date="1465913556857" expanded="true" signature="6746:6897" placeholder="INSERT INTO Employees_In_Shifts... " />
+            <marker date="1465913556857" expanded="true" signature="7544:7725" placeholder="DELETE from " />
+            <marker date="1465913556857" expanded="true" signature="8082:8266" placeholder="DELETE from " />
+            <marker date="1465913556857" expanded="true" signature="8686:9281" placeholder="SELECT Shift... Shift_Priorities" />
+            <marker date="1465913556857" expanded="true" signature="9139:9272" placeholder="SELECT Emplo... Employees_In_Shifts" />
+            <marker date="1465913556857" expanded="true" signature="9747:10359" placeholder="SELECT DISTI... Shift_Priorities" />
+            <marker date="1465913556857" expanded="true" signature="10217:10350" placeholder="SELECT Emplo... Employees_In_Shifts" />
+            <marker date="1465913556857" expanded="true" signature="10837:11449" placeholder="SELECT Jobs_... Shift_Priorities" />
+            <marker date="1465913556857" expanded="true" signature="11307:11440" placeholder="SELECT Emplo... Employees_In_Shifts" />
+            <marker date="1465913556857" expanded="true" signature="11877:12077" placeholder="SELECT * FRO... Employees_In_Shifts" />
+            <marker date="1465913556857" expanded="true" signature="12621:12654" placeholder="SELECT * FRO... Employees_In_Shifts" />
+            <marker date="1465913556857" expanded="true" signature="13507:13537" placeholder="SELECT * FRO... Shift_Priorities" />
+            <marker date="1465913556857" expanded="true" signature="14285:14454" placeholder="Select * Fro... Employees_In_Shifts" />
+            <marker date="1465913556857" expanded="true" signature="15139:15289" placeholder="Select * Fro... Employees_In_Shifts" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="88" column="58" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="12977">
           <caret line="812" column="36" selection-start-line="812" selection-start-column="23" selection-end-line="812" selection-end-column="36" />
           <folding>
             <marker date="1465899212219" expanded="true" signature="1157:1245" placeholder="INSERT INTO Suppliers... " />
@@ -2053,58 +2114,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/EmployeeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="145" column="80" selection-start-line="145" selection-start-column="21" selection-end-line="145" selection-end-column="80" />
-          <folding>
-            <marker date="1465311443373" expanded="true" signature="938:961" placeholder="SELECT * FRO... Employees" />
-            <marker date="1465311443373" expanded="true" signature="1345:1377" placeholder="SELECT * FRO... Jobs_For_Employees" />
-            <marker date="1465311443373" expanded="true" signature="2089:2132" placeholder="SELECT * FRO... Employees" />
-            <marker date="1465311443373" expanded="true" signature="2502:2554" placeholder="SELECT * FRO... Jobs_For_Employees" />
-            <marker date="1465311443373" expanded="true" signature="3062:3115" placeholder="SELECT * FRO... Employees" />
-            <marker date="1465311443373" expanded="true" signature="3506:3558" placeholder="SELECT * FRO... Employees" />
-            <marker date="1465311443373" expanded="true" signature="3938:4128" placeholder="INSERT INTO Employees... " />
-            <marker date="1465311443373" expanded="true" signature="4518:4586" placeholder="INSERT INTO Jobs_For_Employees... " />
-            <marker date="1465311443373" expanded="true" signature="5089:5152" placeholder="UPDATE Emplo... " />
-            <marker date="1465311443373" expanded="true" signature="5508:5570" placeholder="UPDATE Emplo... " />
-            <marker date="1465311443373" expanded="true" signature="5917:5975" placeholder="UPDATE Emplo... " />
-            <marker date="1465311443373" expanded="true" signature="6333:6401" placeholder="UPDATE Emplo... " />
-            <marker date="1465311443373" expanded="true" signature="6738:6788" placeholder="DELETE from " />
-            <marker date="1465311443373" expanded="true" signature="7069:7156" placeholder="DELETE from " />
-            <marker date="1465311443373" expanded="true" signature="7454:7529" placeholder="Select * Fro... Jobs_For_Employees" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="172" column="50" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="50" />
+        <state relative-caret-position="-120">
+          <caret line="177" column="17" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
           <folding>
             <element signature="e#2272#2283#0" expanded="true" />
-            <marker date="1465911294617" expanded="true" signature="889:999" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="1648:1793" placeholder="SELECT * FRO... Transport_Station" />
-            <marker date="1465911294617" expanded="true" signature="2362:2385" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="2362:2391" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="2362:2398" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="2362:2449" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="2362:2466" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="2362:2480" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="2362:2492" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="2362:2494" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="3110:3267" placeholder="SELECT * FRO... Transport_Station" />
-            <marker date="1465911294617" expanded="true" signature="3834:3857" placeholder="SELECT * FRO... Transport" />
-            <marker date="1465911294617" expanded="true" signature="4475:4632" placeholder="SELECT * FRO... Transport_Station" />
-            <marker date="1465911294617" expanded="true" signature="5316:5469" placeholder="SELECT track... Track" />
-            <marker date="1465911294617" expanded="true" signature="6826:6960" placeholder="INSERT INTO Transport_Station... " />
-            <marker date="1465911294617" expanded="true" signature="6826:7113" placeholder="INSERT INTO Transport_Station... " />
-            <marker date="1465911294617" expanded="true" signature="6826:7128" placeholder="INSERT INTO Transport_Station... " />
-            <marker date="1465911294617" expanded="true" signature="8543:8725" placeholder="INSERT INTO Transport... " />
-            <marker date="1465911294617" expanded="true" signature="9494:9749" placeholder="INSERT INTO Transport_Station... " />
-            <marker date="1465911294617" expanded="true" signature="10543:10641" placeholder="delete from " />
-            <marker date="1465911294617" expanded="true" signature="11726:11864" placeholder="UPDATE Trans... " />
-            <marker date="1465911294617" expanded="true" signature="11898:12035" placeholder="UPDATE Trans... " />
+            <marker date="1465913822581" expanded="true" signature="889:999" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="1648:1793" placeholder="SELECT * FRO... Transport_Station" />
+            <marker date="1465913822581" expanded="true" signature="2362:2385" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="2362:2391" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="2362:2398" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="2362:2449" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="2362:2466" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="2362:2480" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="2362:2492" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="2362:2494" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="3110:3267" placeholder="SELECT * FRO... Transport_Station" />
+            <marker date="1465913822581" expanded="true" signature="3834:3857" placeholder="SELECT * FRO... Transport" />
+            <marker date="1465913822581" expanded="true" signature="4475:4632" placeholder="SELECT * FRO... Transport_Station" />
+            <marker date="1465913822581" expanded="true" signature="5246:5399" placeholder="SELECT track... Track" />
+            <marker date="1465913822581" expanded="true" signature="6753:6887" placeholder="INSERT INTO Transport_Station... " />
+            <marker date="1465913822581" expanded="true" signature="6753:7040" placeholder="INSERT INTO Transport_Station... " />
+            <marker date="1465913822581" expanded="true" signature="6753:7055" placeholder="INSERT INTO Transport_Station... " />
+            <marker date="1465913822581" expanded="true" signature="8470:8652" placeholder="INSERT INTO Transport... " />
+            <marker date="1465913822581" expanded="true" signature="9421:9676" placeholder="INSERT INTO Transport_Station... " />
+            <marker date="1465913822581" expanded="true" signature="10470:10568" placeholder="delete from " />
+            <marker date="1465913822581" expanded="true" signature="11653:11791" placeholder="UPDATE Trans... " />
+            <marker date="1465913822581" expanded="true" signature="11825:11962" placeholder="UPDATE Trans... " />
           </folding>
         </state>
       </provider>

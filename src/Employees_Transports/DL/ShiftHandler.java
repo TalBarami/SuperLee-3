@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -189,7 +190,31 @@ public class ShiftHandler {
 	public boolean addShiftArrngement(Date date, boolean isMorning, String id, String job, String station){
 		Statement s = null;
 		int bool = 0;
+		int truck;
 		if(isMorning) bool=1;
+
+		if(job=="Driver")
+		{
+			truck = TransportHandler.getInstance().getAvailableTruck(new SimpleDateFormat("dd/MM/yyyy").format(date)+"",id);
+			if(truck==0)
+			{
+				System.out.print("No available trucks! Driver hasn't been added.");
+				return false;
+			}
+			else
+			{
+				String leavingTime="";
+				if(isMorning)
+					leavingTime="06:30";
+				else
+					leavingTime="18:30";
+				if(!TransportHandler.getInstance().insertTransport(new SimpleDateFormat("dd/MM/yyyy").format(date)+"",leavingTime, ""+truck, id, station, new ArrayList<Pair<String,String>>()))
+				{
+					System.out.print("Could not add driver.");
+					return false;
+				}
+			}
+		}
 		try {
 			s = c.createStatement();
 			s.executeUpdate("INSERT INTO Employees_In_Shifts "+

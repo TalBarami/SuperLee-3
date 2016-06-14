@@ -133,12 +133,7 @@ public class TransportHandler {
 			return null;
 		}
 	}
-	
-	public boolean addTransport(Order o){
-		// TODO
-		return true;
-	}
-	
+
 	
 	
 	public int getAvailableTruck(String date, String driverID){
@@ -159,10 +154,10 @@ public class TransportHandler {
 		}
 		return ans;
 	}
-	
 
 
-	public boolean checkTransport(Order o){
+
+	public boolean addTransport(Order o){
 		DatabaseImplementation dbimpl = new DatabaseImplementation();
 		int completed = o.getSupplier().getContract().getDeliveryTime();
 		Date today=new Date();
