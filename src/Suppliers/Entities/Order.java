@@ -12,10 +12,10 @@ public class Order {
     private Employee employee;
     private Supplier supplier;
     private Date date;
-    private int daysToBeCompleted;
     private boolean arrived;
     private double totalPrice;
     private Map<ProductCatalog, Integer> items;
+    private String sourceAddress;
 
     @Override
     public String toString() {
@@ -34,7 +34,7 @@ public class Order {
         return toString;
     }
 
-    public Order(String id, Employee employee, Supplier supplier, Date date, boolean arrived, double totalPrice,Map<ProductCatalog, Integer> items) {
+    public Order(String id, Employee employee, Supplier supplier, Date date, boolean arrived, double totalPrice,Map<ProductCatalog, Integer> items, String sourceAddress) {
         this.id = id;
         this.employee = employee;
         this.supplier = supplier;
@@ -42,10 +42,11 @@ public class Order {
         this.arrived = arrived;
         this.totalPrice = totalPrice;
         this.items = items;
+        this.sourceAddress = sourceAddress;
     }
 
-    public Order(Employee employee, Supplier supplier, double totalPrice,Map<ProductCatalog, Integer> items) {
-        this("", employee, supplier, null, false, totalPrice, items);
+    public Order(Employee employee, Supplier supplier, double totalPrice,Map<ProductCatalog, Integer> items, String sourceAddress) {
+        this("", employee, supplier, null, false, totalPrice, items, sourceAddress);
     }
 
     public String getId() {
@@ -68,20 +69,16 @@ public class Order {
         return totalPrice;
     }
 
-    public int getDaysToBeCompleted(){
-        return daysToBeCompleted;
-    }
-
-    public void setDaysToBeCompleted(int dtbc){
-        this.daysToBeCompleted = dtbc;
-    }
-
     public Map<ProductCatalog, Integer> getItems() {
         return items;
     }
 
     public DeliveryMethod getDeliveryMethod(){
         return supplier.getContract().getDeliveryMethod();
+    }
+
+    public String getSourceAddress(){
+        return sourceAddress;
     }
 
     @Override

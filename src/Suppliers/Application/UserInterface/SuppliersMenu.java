@@ -1,5 +1,6 @@
 package Suppliers.Application.UserInterface;
 
+import Employees_Transports.DL.StationHandler;
 import Inventory.dbHandlers.ProductHandler;
 import Inventory.entities.ProductCatalog;
 import Suppliers.Application.Utils;
@@ -209,7 +210,7 @@ public class SuppliersMenu {
         }
         paymentMethod = selectPaymentMethods(supplier);
         System.out.println("Please enter supplier's address:");
-        while((address = Utils.readLine()).isEmpty()) {
+        while((address = StationHandler.getInstance().getstation(Utils.readLine()).getAddress()) != null) {
             if(supplier != null){
                 address = supplier.getAddress();
                 break;

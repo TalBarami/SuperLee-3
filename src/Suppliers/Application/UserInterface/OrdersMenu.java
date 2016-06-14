@@ -2,6 +2,7 @@ package Suppliers.Application.UserInterface;
 
 import Employees_Transports.Backend.Employee;
 import Employees_Transports.DL.EmployeeHandler;
+import Employees_Transports.DL.StationHandler;
 import Employees_Transports.DL.TransportHandler;
 import Inventory.entities.ProductCatalog;
 import Suppliers.Application.Utils;
@@ -61,10 +62,16 @@ public class OrdersMenu {
         Supplier supplier;
         Map<ProductCatalog, Integer> items;
         double totalPrice;
+        String sourceAddress;
 
         System.out.println("Please enter your ID:");
         while((employee = EmployeeHandler.getInstance().getEmployeeByID(Utils.readLine())) == null){
             System.out.println("Invalid name. please try again.");
+        }
+
+        System.out.println("Please enter current address:");
+        while((sourceAddress = StationHandler.getInstance().getstation(Utils.readLine()).getAddress()) == null) {
+            System.out.println("Invalid address. please try again.");
         }
 
         System.out.println("Please select the supplier you would like to order from:");
@@ -77,7 +84,7 @@ public class OrdersMenu {
         }
         items = selectItems(supplier);
         totalPrice = calculatePrice(supplier, items);
-        Order order = new Order(employee, supplier, totalPrice, items);
+        Order order = new Order(employee, supplier, totalPrice, items, sourceAddress);
         if(supplier.getContract().getDeliveryMethod() == DeliveryMethod.Self){
             if(TransportHandler.getInstance().addTransport(order)){
                 consoleMenu.getDatabase().createOrder(order);
@@ -86,15 +93,19 @@ public class OrdersMenu {
             }
             else
                 System.out.println("There are no available transports in the next 7 days.");
-
         }
     }
 
     private void createRestockOrder(){
         Employee employee;
+        String sourceAddress;
         System.out.println("Please enter your ID:");
         while((employee = EmployeeHandler.getInstance().getEmployeeByID(Utils.readLine())) == null){
             System.out.println("Invalid name. please try again.");
+        }
+        System.out.println("Please enter current address:");
+        while((sourceAddress = StationHandler.getInstance().getstation(Utils.readLine()).getAddress()) == null) {
+            System.out.println("Invalid address. please try again.");
         }
 
         Map<ProductCatalog,Integer> products = consoleMenu.getDatabase().getMissingProducts();
@@ -118,7 +129,7 @@ public class OrdersMenu {
             String items;
             for (Supplier supp : productsFromSuppliers.keySet()) {
                 items = "";
-                newOrder = new Order(employee, supp, calculatePrice(supp, productsFromSuppliers.get(supp)), productsFromSuppliers.get(supp));
+                newOrder = new Order(employee, supp, calculatePrice(supp, productsFromSuppliers.get(supp)), productsFromSuppliers.get(supp), sourceAddress);
                 consoleMenu.getDatabase().createOrder(newOrder);
                 for(ProductCatalog p : newOrder.getItems().keySet())
                     items+=p.get_name()+", ";
@@ -129,7 +140,7 @@ public class OrdersMenu {
     }
 
     private Supplier getBestSupplierByProduct(ProductCatalog product,int amount){
-        double minimalPrice= Double.MAX_VALUE,currentPrice=0;
+        double minimalPrice=Double.MAX_VALUE, currentPrice;
         Supplier best=null;
         List<Supplier> suppliersByProduct=consoleMenu.getDatabase().findSuppliersByProductID(product.get_id());
         for(Supplier supplier:suppliersByProduct){
@@ -172,7 +183,7 @@ public class OrdersMenu {
         Supplier supplier = oldOrder.getSupplier();
         Map<ProductCatalog, Integer> items = selectItems(supplier);
         double totalPrice = calculatePrice(supplier, items);
-        Order newOrder = new Order(oldOrder.getId(), employee, supplier, null, false, totalPrice, items);
+        Order newOrder = new Order(oldOrder.getId(), employee, supplier, null, false, totalPrice, items, oldOrder.getSourceAddress());
         consoleMenu.getDatabase().updateWeeklyOrder(newOrder);
         System.out.printf("Order %s has been updated successfully!\n", newOrder.getId());
     }

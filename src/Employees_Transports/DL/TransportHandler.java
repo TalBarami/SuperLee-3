@@ -1,13 +1,16 @@
 package Employees_Transports.DL;
 import Employees_Transports.Backend.*;
 import Store.SQLiteConnector;
+import Suppliers.Application.Database.DatabaseImplementation;
 import Suppliers.Entities.Order;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TransportHandler {
 	private Connection c;
@@ -53,6 +56,43 @@ public class TransportHandler {
 			return ans;
 		}
 
+		catch (SQLException e) {
+			return null;
+		}
+	}
+
+	public ArrayList<Transport> getTransportsByDateAndStation(Date d, String station)
+	{
+		Statement stmt;
+		ArrayList<Transport> ans = new ArrayList<Transport>();
+		try{
+			stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM Transport where Date='"+(new SimpleDateFormat("dd/MM/yyyy").format(d))+"' " +
+					" and sourceStation='"+station+"'");
+			while(rs.next())
+			{
+				String leaving_time=rs.getString("leavingTime");
+				String dateans= rs.getString("Date");
+				int truck_id=rs.getInt("TracktrackId");
+				int driver_id=rs.getInt("DriverdriverId");
+				String source_address=rs.getString("sourceStation");
+				ArrayList<Pair<station, Integer>> temp = new ArrayList<Pair<station, Integer>>();
+				Transport tempt=new Transport(dateans, leaving_time, TruckHandler.getInstance().getruck(""+truck_id), DriverHandler.getInstance().getdriver(""+driver_id), StationHandler.getInstance().getstation(source_address),temp);
+				ResultSet rt = stmt.executeQuery("SELECT * FROM Transport_Station where TransportTracktrackId="+truck_id+" and TransportDate="+"'"+dateans+"'"+" and TransportleavingTime="+"'"+leaving_time+"'");
+				while(rt.next())
+				{
+					station temp1 = StationHandler.getInstance().getstation(rt.getString("Stationaddress"));
+					int orderNum= rt.getInt("orderNum");
+					tempt.addStop(new Pair<station, Integer>(temp1, orderNum));
+				}
+
+				ans.add(tempt);
+			}
+			rs.close();
+			stmt.close();
+			return ans;
+
+		}
 		catch (SQLException e) {
 			return null;
 		}
@@ -120,30 +160,58 @@ public class TransportHandler {
 		return ans;
 	}
 	
-/*	public Transport getRelevantTransport(Order o){
-		Statement s = null;
-		ResultSet rs = null;
-		Transport ans = null;
-		ArrayList<Transport> allTransports = getAllTransport();
-		for(int i=0;i<allTransports.size();i++){
-			if( )
-		}
-		
-		
-		return ans; 
-	} */
 
-/*	public boolean checkTransport(Order o){
-		int completed = o.get;
+
+	public boolean checkTransport(Order o){
+		DatabaseImplementation dbimpl = new DatabaseImplementation();
+		int completed = o.getSupplier().getContract().getDeliveryTime();
 		Date today=new Date();
-		long ltime=today.getTime()+completed*24*60*60*1000;
-		Date dayReady=new Date(ltime);
+		long temp=today.getTime()+completed*24*60*60*1000;
+		Date dayReady=new Date(temp);
 		for(int i=0;i<7;i++){
-			long temp=dayReady.getTime()+i*24*60*60*1000;
+			temp=dayReady.getTime()+i*24*60*60*1000;
+			Date possibleTransport = new Date(temp);
+			ArrayList<Transport> possibleTran = getTransportsByDateAndStation(possibleTransport, o.getSupplier().getAddress());
+			for(int j=0;j<possibleTran.size();j++)
+			{
+				Transport tran = possibleTran.get(j);
+				ArrayList<Pair<station, Integer>> all = tran.getStops_invation();
+				double currentWeight = 0;
+				double truckCap = (tran.getTruck_id()).max_weight;
+				for(int k=0; k< all.size();k++){
+					 currentWeight = currentWeight +(dbimpl.findOrderByID(""+all.get(k).getB()).get(0)).calculateWeight();
+				}
+				if(currentWeight+ o.calculateWeight() <= truckCap)
+				{
+					addOrderToTransport(tran, o);
+					return true;
+				}
+			}
 
 		}
+		return false;
+	}
 
-	}*/
+	public boolean addOrderToTransport(Transport t, Order o){
+		Statement stmt;
+			String sql2 ="";
+
+			try
+			{
+				stmt = c.createStatement();
+					sql2 = "INSERT INTO Transport_Station (TransportDate,TransportleavingTime,TransportTracktrackId,Stationaddress,orderNum) " +
+							"VALUES ('"+(new SimpleDateFormat("dd/MM/yyyy").format(t.getDate()))+"'"+",'"+t.getLeaving_time()+"',"+t.getTruck_id().id+","+"'"+o.getSupplier().getAddress()+"','"+o.getId()+"')";
+					stmt.executeUpdate(sql2);
+			}
+
+
+			catch (SQLException e)
+			{
+				System.out.println(e.getMessage());
+				return false;
+			}
+		return true;
+	}
 	
 	public boolean insertTransport(String date, String leaving_time, String truck_id, String driver_id, String source_address, ArrayList<Pair<String,String>> station_ordernum)
 	{

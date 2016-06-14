@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Sqlite (Xerial) - SuperLeeDB.db" uuid="cdff9c3c-70f1-41ec-a869-8bfec5a2d48d">
+    <data-source name="Sqlite (Xerial) - SuperLeeDB.db" uuid="0877e4f4-1e1a-4816-ac1a-a27784d71793">
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
     </data-source>
