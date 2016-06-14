@@ -1,5 +1,6 @@
 package Suppliers.Application.UserInterface;
 
+import Employees_Transports.Backend.station;
 import Employees_Transports.DL.StationHandler;
 import Inventory.dbHandlers.ProductHandler;
 import Inventory.entities.ProductCatalog;
@@ -189,7 +190,7 @@ public class SuppliersMenu {
         String name;
         String bankAccount;
         PaymentMethod paymentMethod;
-        String address;
+        station address;
         Map<String,String> contacts;
 
         System.out.println("Please enter supplier's name:");
@@ -210,15 +211,15 @@ public class SuppliersMenu {
         }
         paymentMethod = selectPaymentMethods(supplier);
         System.out.println("Please enter supplier's address:");
-        while((address = StationHandler.getInstance().getstation(Utils.readLine()).getAddress()) != null) {
+        while((address = StationHandler.getInstance().getstation(Utils.readLine())) == null) {
             if(supplier != null){
-                address = supplier.getAddress();
+                address = StationHandler.getInstance().getstation(supplier.getAddress());
                 break;
             }
             System.out.println("Invalid address. please try again.");
         }
         contacts = selectContacts(supplier);
-        return new Supplier(id, name, bankAccount, paymentMethod, address, contacts);
+        return new Supplier(id, name, bankAccount, paymentMethod, address.getAddress(), contacts);
     }
 
     private Contract createContract(){

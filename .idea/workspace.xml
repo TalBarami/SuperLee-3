@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4f9d496-dfff-44e6-8a64-ec89f548ff4d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperLeeDB.db" afterPath="$PROJECT_DIR$/SuperLeeDB.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java" afterPath="$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" afterPath="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" />
     </list>
     <ignored path="SuperLee.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,6 +35,10 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="Sqlite (Xerial) - SuperLeeDB.db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -39,88 +47,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ShiftHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java">
+      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4400">
-              <caret line="212" column="59" selection-start-line="212" selection-start-column="59" selection-end-line="212" selection-end-column="59" />
+            <state relative-caret-position="487">
+              <caret line="407" column="34" selection-start-line="407" selection-start-column="34" selection-end-line="407" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1465913556857" expanded="true" signature="831:851" placeholder="SELECT * FRO... Shifts" />
-                <marker date="1465913556857" expanded="true" signature="1411:1558" placeholder="DELETE from " />
-                <marker date="1465913556857" expanded="true" signature="1890:2007" placeholder="INSERT INTO Shifts... " />
-                <marker date="1465913556857" expanded="true" signature="2588:2608" placeholder="SELECT * FRO... Shifts" />
-                <marker date="1465913556857" expanded="true" signature="2979:3012" placeholder="SELECT * FRO... Employees_In_Shifts" />
-                <marker date="1465913556857" expanded="true" signature="4051:4071" placeholder="SELECT * FRO... Shifts" />
-                <marker date="1465913556857" expanded="true" signature="4439:4469" placeholder="SELECT * FRO... Shift_Priorities" />
-                <marker date="1465913556857" expanded="true" signature="5352:5489" placeholder="INSERT INTO Shift_Priorities... " />
-                <marker date="1465913556857" expanded="true" signature="6746:6897" placeholder="INSERT INTO Employees_In_Shifts... " />
-                <marker date="1465913556857" expanded="true" signature="7544:7725" placeholder="DELETE from " />
-                <marker date="1465913556857" expanded="true" signature="8082:8266" placeholder="DELETE from " />
-                <marker date="1465913556857" expanded="true" signature="8686:9281" placeholder="SELECT Shift... Shift_Priorities" />
-                <marker date="1465913556857" expanded="true" signature="9139:9272" placeholder="SELECT Emplo... Employees_In_Shifts" />
-                <marker date="1465913556857" expanded="true" signature="9747:10359" placeholder="SELECT DISTI... Shift_Priorities" />
-                <marker date="1465913556857" expanded="true" signature="10217:10350" placeholder="SELECT Emplo... Employees_In_Shifts" />
-                <marker date="1465913556857" expanded="true" signature="10837:11449" placeholder="SELECT Jobs_... Shift_Priorities" />
-                <marker date="1465913556857" expanded="true" signature="11307:11440" placeholder="SELECT Emplo... Employees_In_Shifts" />
-                <marker date="1465913556857" expanded="true" signature="11877:12077" placeholder="SELECT * FRO... Employees_In_Shifts" />
-                <marker date="1465913556857" expanded="true" signature="12621:12654" placeholder="SELECT * FRO... Employees_In_Shifts" />
-                <marker date="1465913556857" expanded="true" signature="13507:13537" placeholder="SELECT * FRO... Shift_Priorities" />
-                <marker date="1465913556857" expanded="true" signature="14285:14454" placeholder="Select * Fro... Employees_In_Shifts" />
-                <marker date="1465913556857" expanded="true" signature="15139:15289" placeholder="Select * Fro... Employees_In_Shifts" />
+                <element signature="method#reactivateSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+                <marker date="1465919139435" expanded="true" signature="1087:1175" placeholder="INSERT INTO Suppliers... " />
+                <marker date="1465919139435" expanded="true" signature="1638:1708" placeholder="INSERT INTO SuppliersContacts... " />
+                <marker date="1465919139435" expanded="true" signature="2547:2628" placeholder="UPDATE Suppl... " />
+                <marker date="1465919139435" expanded="true" signature="3079:3127" placeholder="DELETE from " />
+                <marker date="1465919139435" expanded="true" signature="3369:3439" placeholder="INSERT INTO SuppliersContacts... " />
+                <marker date="1465919139435" expanded="true" signature="4239:4279" placeholder="UPDATE Suppl... " />
+                <marker date="1465919139435" expanded="true" signature="5168:5210" placeholder="UPDATE Suppl... " />
+                <marker date="1465919139435" expanded="true" signature="6152:6186" placeholder="SELECT * FRO... Suppliers" />
+                <marker date="1465919139435" expanded="true" signature="6219:6276" placeholder="SELECT * FRO... Suppliers" />
+                <marker date="1465919139435" expanded="true" signature="7961:8028" placeholder="SELECT suppl... SuppliersProductAgreements" />
+                <marker date="1465919139435" expanded="true" signature="10130:10173" placeholder="SELECT * FRO... Contracts" />
+                <marker date="1465919139435" expanded="true" signature="11454:11513" placeholder="SELECT * FRO... SuppliersProductAgreements" />
+                <marker date="1465919139435" expanded="true" signature="13547:13664" placeholder="SELECT metho... Contracts" />
+                <marker date="1465919139435" expanded="true" signature="14931:14975" placeholder="SELECT metho... PaymentMethods" />
+                <marker date="1465919139435" expanded="true" signature="16286:16345" placeholder="SELECT name,... SuppliersContacts" />
+                <marker date="1465919139435" expanded="true" signature="17243:17322" placeholder="INSERT INTO Contracts... " />
+                <marker date="1465919139435" expanded="true" signature="17717:17842" placeholder="INSERT INTO SuppliersProductAgreements... " />
+                <marker date="1465919139435" expanded="true" signature="18952:19023" placeholder="UPDATE Contr... " />
+                <marker date="1465919139435" expanded="true" signature="19328:19385" placeholder="DELETE FROM " />
+                <marker date="1465919139435" expanded="true" signature="19644:19769" placeholder="INSERT INTO SuppliersProductAgreements... " />
+                <marker date="1465919139435" expanded="true" signature="20910:20980" placeholder="INSERT INTO Orders... " />
+                <marker date="1465919139435" expanded="true" signature="21408:21480" placeholder="INSERT INTO ProductsInOrders... " />
+                <marker date="1465919139435" expanded="true" signature="22288:22321" placeholder="SELECT MAX(I... " />
+                <marker date="1465919139435" expanded="true" signature="23114:23158" placeholder="UPDATE Order... " />
+                <marker date="1465919139435" expanded="true" signature="24963:25002" placeholder="SELECT * FRO... Orders" />
+                <marker date="1465919139435" expanded="true" signature="26593:26637" placeholder="DELETE from " />
+                <marker date="1465919139435" expanded="true" signature="26881:26953" placeholder="INSERT INTO ProductsInOrders... " />
+                <marker date="1465919139435" expanded="true" signature="27752:27781" placeholder="DELETE from " />
+                <marker date="1465919139435" expanded="true" signature="28706:28738" placeholder="SELECT * FRO... Orders" />
+                <marker date="1465919139435" expanded="true" signature="30311:30372" placeholder="SELECT produ... ProductsInOrders" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseImplementation.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="1005" column="1" selection-start-line="1005" selection-start-column="1" selection-end-line="1005" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4943#4944#0" expanded="true" />
-                <element signature="e#4987#4988#0" expanded="true" />
-                <element signature="e#5052#5053#0" expanded="true" />
-                <element signature="e#5104#5105#0" expanded="true" />
-                <element signature="e#24449#24450#0" expanded="true" />
-                <element signature="e#24506#24507#0" expanded="true" />
-                <element signature="e#24571#24572#0" expanded="true" />
-                <element signature="e#24628#24629#0" expanded="true" />
-                <element signature="e#34423#34424#0" expanded="true" />
-                <element signature="e#34489#34490#0" expanded="true" />
-                <marker date="1465914653761" expanded="true" signature="1156:1244" placeholder="INSERT INTO Suppliers... " />
-                <marker date="1465914653761" expanded="true" signature="1707:1777" placeholder="INSERT INTO SuppliersContacts... " />
-                <marker date="1465914653761" expanded="true" signature="2616:2697" placeholder="UPDATE Suppl... " />
-                <marker date="1465914653761" expanded="true" signature="3148:3196" placeholder="DELETE from " />
-                <marker date="1465914653761" expanded="true" signature="3438:3508" placeholder="INSERT INTO SuppliersContacts... " />
-                <marker date="1465914653761" expanded="true" signature="4308:4348" placeholder="UPDATE Suppl... " />
-                <marker date="1465914653761" expanded="true" signature="5237:5279" placeholder="UPDATE Suppl... " />
-                <marker date="1465914653761" expanded="true" signature="6221:6255" placeholder="SELECT * FRO... Suppliers" />
-                <marker date="1465914653761" expanded="true" signature="6288:6345" placeholder="SELECT * FRO... Suppliers" />
-                <marker date="1465914653761" expanded="true" signature="8030:8097" placeholder="SELECT suppl... SuppliersProductAgreements" />
-                <marker date="1465914653761" expanded="true" signature="10199:10242" placeholder="SELECT * FRO... Contracts" />
-                <marker date="1465914653761" expanded="true" signature="11523:11582" placeholder="SELECT * FRO... SuppliersProductAgreements" />
-                <marker date="1465914653761" expanded="true" signature="13616:13733" placeholder="SELECT metho... Contracts" />
-                <marker date="1465914653761" expanded="true" signature="15010:15054" placeholder="SELECT metho... PaymentMethods" />
-                <marker date="1465914653761" expanded="true" signature="16365:16424" placeholder="SELECT name,... SuppliersContacts" />
-                <marker date="1465914653761" expanded="true" signature="17322:17401" placeholder="INSERT INTO Contracts... " />
-                <marker date="1465914653761" expanded="true" signature="17796:17921" placeholder="INSERT INTO SuppliersProductAgreements... " />
-                <marker date="1465914653761" expanded="true" signature="19031:19102" placeholder="UPDATE Contr... " />
-                <marker date="1465914653761" expanded="true" signature="19407:19464" placeholder="DELETE FROM " />
-                <marker date="1465914653761" expanded="true" signature="19723:19848" placeholder="INSERT INTO SuppliersProductAgreements... " />
-                <marker date="1465914653761" expanded="true" signature="20989:21059" placeholder="INSERT INTO Orders... " />
-                <marker date="1465914653761" expanded="true" signature="21487:21559" placeholder="INSERT INTO ProductsInOrders... " />
-                <marker date="1465914653761" expanded="true" signature="22367:22400" placeholder="SELECT MAX(I... " />
-                <marker date="1465914653761" expanded="true" signature="23193:23237" placeholder="UPDATE Order... " />
-                <marker date="1465914653761" expanded="true" signature="25042:25081" placeholder="SELECT * FRO... Orders" />
-                <marker date="1465914653761" expanded="true" signature="26672:26716" placeholder="DELETE from " />
-                <marker date="1465914653761" expanded="true" signature="26960:27032" placeholder="INSERT INTO ProductsInOrders... " />
-                <marker date="1465914653761" expanded="true" signature="27831:27860" placeholder="DELETE from " />
-                <marker date="1465914653761" expanded="true" signature="28785:28817" placeholder="SELECT * FRO... Orders" />
-                <marker date="1465914653761" expanded="true" signature="30390:30451" placeholder="SELECT produ... ProductsInOrders" />
-              </folding>
+      <file leaf-file-name="Contracts" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Contracts">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Orders" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Orders">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,101 +123,99 @@
       <file leaf-file-name="OrdersMenu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1694">
-              <caret line="88" column="58" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1342">
-              <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2026#2027#0" expanded="true" />
-                <element signature="e#2056#2057#0" expanded="true" />
-                <element signature="e#2360#2361#0" expanded="true" />
-                <element signature="e#2396#2397#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Supplier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Supplier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
+            <state relative-caret-position="-434">
+              <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuppliersMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4400">
-              <caret line="212" column="64" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+      <file leaf-file-name="Employees_In_Shifts" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Employees_In_Shifts">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StationHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="12" column="27" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="27" />
-              <folding>
-                <marker date="1465311424651" expanded="true" signature="749:801" placeholder="SELECT * FRO... Station" />
-                <marker date="1465311424651" expanded="true" signature="1520:1541" placeholder="SELECT * FRO... Station" />
-                <marker date="1465311424651" expanded="true" signature="2242:2381" placeholder="INSERT INTO Station... " />
-                <marker date="1465311424651" expanded="true" signature="3184:3231" placeholder="delete from " />
-                <marker date="1465311424651" expanded="true" signature="3885:3957" placeholder="UPDATE Stati... " />
-                <marker date="1465311424651" expanded="true" signature="3995:4066" placeholder="UPDATE Stati... " />
-                <marker date="1465311424651" expanded="true" signature="4103:4176" placeholder="UPDATE Stati... " />
-              </folding>
+      <file leaf-file-name="Driver" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Driver">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TransportHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="177" column="17" selection-start-line="177" selection-start-column="17" selection-end-line="177" selection-end-column="17" />
-              <folding>
-                <element signature="e#2272#2283#0" expanded="true" />
-                <marker date="1465913822581" expanded="true" signature="889:999" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="1648:1793" placeholder="SELECT * FRO... Transport_Station" />
-                <marker date="1465913822581" expanded="true" signature="2362:2385" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="2362:2391" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="2362:2398" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="2362:2449" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="2362:2466" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="2362:2480" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="2362:2492" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="2362:2494" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="3110:3267" placeholder="SELECT * FRO... Transport_Station" />
-                <marker date="1465913822581" expanded="true" signature="3834:3857" placeholder="SELECT * FRO... Transport" />
-                <marker date="1465913822581" expanded="true" signature="4475:4632" placeholder="SELECT * FRO... Transport_Station" />
-                <marker date="1465913822581" expanded="true" signature="5246:5399" placeholder="SELECT track... Track" />
-                <marker date="1465913822581" expanded="true" signature="6753:6887" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465913822581" expanded="true" signature="6753:7040" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465913822581" expanded="true" signature="6753:7055" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465913822581" expanded="true" signature="8470:8652" placeholder="INSERT INTO Transport... " />
-                <marker date="1465913822581" expanded="true" signature="9421:9676" placeholder="INSERT INTO Transport_Station... " />
-                <marker date="1465913822581" expanded="true" signature="10470:10568" placeholder="delete from " />
-                <marker date="1465913822581" expanded="true" signature="11653:11791" placeholder="UPDATE Trans... " />
-                <marker date="1465913822581" expanded="true" signature="11825:11962" placeholder="UPDATE Trans... " />
-              </folding>
+      <file leaf-file-name="Track" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Track">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shift_Priorities" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Shift_Priorities">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shifts" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Shifts">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeliveryMethods" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/DeliveryMethods">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -289,7 +282,6 @@
         <option value="$PROJECT_DIR$/src/Employees_Transports/PL/Main.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/ConnectionHandler.java" />
         <option value="$PROJECT_DIR$/src/Store/ConnectionHandler.java" />
-        <option value="$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/TruckHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/MessageHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/JobHandler.java" />
@@ -307,10 +299,11 @@
         <option value="$PROJECT_DIR$/src/Suppliers/Application/Database/Database.java" />
         <option value="$PROJECT_DIR$/src/Store/Store.java" />
         <option value="$PROJECT_DIR$/src/Suppliers/Entities/Order.java" />
-        <option value="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" />
-        <option value="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/ShiftHandler.java" />
         <option value="$PROJECT_DIR$/src/Employees_Transports/DL/TransportHandler.java" />
+        <option value="$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java" />
+        <option value="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java" />
+        <option value="$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java" />
         <option value="$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java" />
       </list>
     </option>
@@ -410,6 +403,10 @@
               <option name="myItemId" value="Suppliers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -430,6 +427,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SuperLee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SuperLee-3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Suppliers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserInterface" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1013,7 +1036,7 @@
       <workItem from="1465284493782" duration="13847000" />
       <workItem from="1465400226264" duration="220000" />
       <workItem from="1465895799178" duration="17804000" />
-      <workItem from="1465914490041" duration="166000" />
+      <workItem from="1465914490041" duration="5633000" />
     </task>
     <task id="LOCAL-00001" summary="Database interface changes.">
       <created>1460462268217</created>
@@ -1344,7 +1367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1465913857554</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Integration commit #4 - Database">
+      <created>1465914703658</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1465914703658</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1380,7 +1410,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149360000" />
+    <option name="totallyTimeSpent" value="154827000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1397,31 +1427,31 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4401806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36004514" sideWeight="0.50214595" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18284424" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19420601" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19849785" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26287553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2607296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10835215" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10835215" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="true" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20118026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4401806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="462" y="605" width="742" height="401" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29909706" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2546448" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1438,7 +1468,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit message" />
     <MESSAGE value="Added: remove,edit" />
     <MESSAGE value="Data base implementation almost done" />
     <MESSAGE value="Data base implementation almost done v2" />
@@ -1463,7 +1492,8 @@
     <MESSAGE value="Integration commit #1" />
     <MESSAGE value="Integration commit #2" />
     <MESSAGE value="Integration commit #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integration commit #3" />
+    <MESSAGE value="Integration commit #4 - Database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integration commit #4 - Database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1508,111 +1538,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/ShiftPriorities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Store/SQLiteConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/MessageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/JobHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/DriverHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/AreaHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/TruckHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/area.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="29" column="128" selection-start-line="29" selection-start-column="128" selection-end-line="29" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/Job.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/ShiftArrangement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/Shift.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/station.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1695,25 +1624,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/ProductAgreement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/DeliveryMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/PaymentMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding>
+            <element signature="e#516#517#0" expanded="false" />
+            <element signature="e#554#555#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1721,6 +1639,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1729,13 +1650,6 @@
         <state relative-caret-position="66">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1769,80 +1683,7 @@
         <state relative-caret-position="963">
           <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenuImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1322">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Contract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Orders">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Suppliers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Supplier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4400">
-          <caret line="212" column="64" selection-start-line="212" selection-start-column="54" selection-end-line="212" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <marker date="1465311424651" expanded="true" signature="749:801" placeholder="SELECT * FRO... Station" />
-            <marker date="1465311424651" expanded="true" signature="1520:1541" placeholder="SELECT * FRO... Station" />
-            <marker date="1465311424651" expanded="true" signature="2242:2381" placeholder="INSERT INTO Station... " />
-            <marker date="1465311424651" expanded="true" signature="3184:3231" placeholder="delete from " />
-            <marker date="1465311424651" expanded="true" signature="3885:3957" placeholder="UPDATE Stati... " />
-            <marker date="1465311424651" expanded="true" signature="3995:4066" placeholder="UPDATE Stati... " />
-            <marker date="1465311424651" expanded="true" signature="4103:4176" placeholder="UPDATE Stati... " />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1852,11 +1693,11 @@
         <state relative-caret-position="1342">
           <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2360#2361#0" expanded="true" />
-            <element signature="e#2396#2397#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2026#2027#0" expanded="false" />
+            <element signature="e#2056#2057#0" expanded="false" />
+            <element signature="e#2360#2361#0" expanded="false" />
+            <element signature="e#2396#2397#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1898,7 +1739,7 @@
         <state relative-caret-position="4400">
           <caret line="212" column="59" selection-start-line="212" selection-start-column="59" selection-end-line="212" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <marker date="1465913556857" expanded="true" signature="831:851" placeholder="SELECT * FRO... Shifts" />
             <marker date="1465913556857" expanded="true" signature="1411:1558" placeholder="DELETE from " />
             <marker date="1465913556857" expanded="true" signature="1890:2007" placeholder="INSERT INTO Shifts... " />
@@ -1921,16 +1762,6 @@
             <marker date="1465913556857" expanded="true" signature="13507:13537" placeholder="SELECT * FRO... Shift_Priorities" />
             <marker date="1465913556857" expanded="true" signature="14285:14454" placeholder="Select * Fro... Employees_In_Shifts" />
             <marker date="1465913556857" expanded="true" signature="15139:15289" placeholder="Select * Fro... Employees_In_Shifts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1694">
-          <caret line="88" column="58" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1967,53 +1798,329 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/category">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/Backend/station.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="1005" column="1" selection-start-line="1005" selection-start-column="1" selection-end-line="1005" selection-end-column="1" />
+        <state relative-caret-position="-286">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Station">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Employees_Transports/DL/StationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          <folding>
+            <marker date="1465916748374" expanded="true" signature="749:801" placeholder="SELECT * FRO... Station" />
+            <marker date="1465916748374" expanded="true" signature="1545:1566" placeholder="SELECT * FRO... Station" />
+            <marker date="1465916748374" expanded="true" signature="2267:2406" placeholder="INSERT INTO Station... " />
+            <marker date="1465916748374" expanded="true" signature="3209:3256" placeholder="delete from " />
+            <marker date="1465916748374" expanded="true" signature="3910:3982" placeholder="UPDATE Stati... " />
+            <marker date="1465916748374" expanded="true" signature="4020:4091" placeholder="UPDATE Stati... " />
+            <marker date="1465916748374" expanded="true" signature="4128:4201" placeholder="UPDATE Stati... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/area">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Employees">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/DeliveryMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/ProductAgreement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/SuppliersContacts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/SuppliersProductAgreements">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Suppliers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/SuppliersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="241" column="36" selection-start-line="241" selection-start-column="36" selection-end-line="241" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4943#4944#0" expanded="true" />
-            <element signature="e#4987#4988#0" expanded="true" />
-            <element signature="e#5052#5053#0" expanded="true" />
-            <element signature="e#5104#5105#0" expanded="true" />
-            <element signature="e#24449#24450#0" expanded="true" />
-            <element signature="e#24506#24507#0" expanded="true" />
-            <element signature="e#24571#24572#0" expanded="true" />
-            <element signature="e#24628#24629#0" expanded="true" />
-            <element signature="e#34423#34424#0" expanded="true" />
-            <element signature="e#34489#34490#0" expanded="true" />
-            <marker date="1465914653761" expanded="true" signature="1156:1244" placeholder="INSERT INTO Suppliers... " />
-            <marker date="1465914653761" expanded="true" signature="1707:1777" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1465914653761" expanded="true" signature="2616:2697" placeholder="UPDATE Suppl... " />
-            <marker date="1465914653761" expanded="true" signature="3148:3196" placeholder="DELETE from " />
-            <marker date="1465914653761" expanded="true" signature="3438:3508" placeholder="INSERT INTO SuppliersContacts... " />
-            <marker date="1465914653761" expanded="true" signature="4308:4348" placeholder="UPDATE Suppl... " />
-            <marker date="1465914653761" expanded="true" signature="5237:5279" placeholder="UPDATE Suppl... " />
-            <marker date="1465914653761" expanded="true" signature="6221:6255" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1465914653761" expanded="true" signature="6288:6345" placeholder="SELECT * FRO... Suppliers" />
-            <marker date="1465914653761" expanded="true" signature="8030:8097" placeholder="SELECT suppl... SuppliersProductAgreements" />
-            <marker date="1465914653761" expanded="true" signature="10199:10242" placeholder="SELECT * FRO... Contracts" />
-            <marker date="1465914653761" expanded="true" signature="11523:11582" placeholder="SELECT * FRO... SuppliersProductAgreements" />
-            <marker date="1465914653761" expanded="true" signature="13616:13733" placeholder="SELECT metho... Contracts" />
-            <marker date="1465914653761" expanded="true" signature="15010:15054" placeholder="SELECT metho... PaymentMethods" />
-            <marker date="1465914653761" expanded="true" signature="16365:16424" placeholder="SELECT name,... SuppliersContacts" />
-            <marker date="1465914653761" expanded="true" signature="17322:17401" placeholder="INSERT INTO Contracts... " />
-            <marker date="1465914653761" expanded="true" signature="17796:17921" placeholder="INSERT INTO SuppliersProductAgreements... " />
-            <marker date="1465914653761" expanded="true" signature="19031:19102" placeholder="UPDATE Contr... " />
-            <marker date="1465914653761" expanded="true" signature="19407:19464" placeholder="DELETE FROM " />
-            <marker date="1465914653761" expanded="true" signature="19723:19848" placeholder="INSERT INTO SuppliersProductAgreements... " />
-            <marker date="1465914653761" expanded="true" signature="20989:21059" placeholder="INSERT INTO Orders... " />
-            <marker date="1465914653761" expanded="true" signature="21487:21559" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1465914653761" expanded="true" signature="22367:22400" placeholder="SELECT MAX(I... " />
-            <marker date="1465914653761" expanded="true" signature="23193:23237" placeholder="UPDATE Order... " />
-            <marker date="1465914653761" expanded="true" signature="25042:25081" placeholder="SELECT * FRO... Orders" />
-            <marker date="1465914653761" expanded="true" signature="26672:26716" placeholder="DELETE from " />
-            <marker date="1465914653761" expanded="true" signature="26960:27032" placeholder="INSERT INTO ProductsInOrders... " />
-            <marker date="1465914653761" expanded="true" signature="27831:27860" placeholder="DELETE from " />
-            <marker date="1465914653761" expanded="true" signature="28785:28817" placeholder="SELECT * FRO... Orders" />
-            <marker date="1465914653761" expanded="true" signature="30390:30451" placeholder="SELECT produ... ProductsInOrders" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/ConsoleMenuImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="62" column="40" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Contract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Entities/Supplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="52" column="94" selection-start-line="52" selection-start-column="77" selection-end-line="52" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/Database/DatabaseImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="407" column="34" selection-start-line="407" selection-start-column="34" selection-end-line="407" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#reactivateSupplier#0;class#DatabaseImplementation#0" expanded="false" />
+            <marker date="1465919139435" expanded="true" signature="1087:1175" placeholder="INSERT INTO Suppliers... " />
+            <marker date="1465919139435" expanded="true" signature="1638:1708" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1465919139435" expanded="true" signature="2547:2628" placeholder="UPDATE Suppl... " />
+            <marker date="1465919139435" expanded="true" signature="3079:3127" placeholder="DELETE from " />
+            <marker date="1465919139435" expanded="true" signature="3369:3439" placeholder="INSERT INTO SuppliersContacts... " />
+            <marker date="1465919139435" expanded="true" signature="4239:4279" placeholder="UPDATE Suppl... " />
+            <marker date="1465919139435" expanded="true" signature="5168:5210" placeholder="UPDATE Suppl... " />
+            <marker date="1465919139435" expanded="true" signature="6152:6186" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1465919139435" expanded="true" signature="6219:6276" placeholder="SELECT * FRO... Suppliers" />
+            <marker date="1465919139435" expanded="true" signature="7961:8028" placeholder="SELECT suppl... SuppliersProductAgreements" />
+            <marker date="1465919139435" expanded="true" signature="10130:10173" placeholder="SELECT * FRO... Contracts" />
+            <marker date="1465919139435" expanded="true" signature="11454:11513" placeholder="SELECT * FRO... SuppliersProductAgreements" />
+            <marker date="1465919139435" expanded="true" signature="13547:13664" placeholder="SELECT metho... Contracts" />
+            <marker date="1465919139435" expanded="true" signature="14931:14975" placeholder="SELECT metho... PaymentMethods" />
+            <marker date="1465919139435" expanded="true" signature="16286:16345" placeholder="SELECT name,... SuppliersContacts" />
+            <marker date="1465919139435" expanded="true" signature="17243:17322" placeholder="INSERT INTO Contracts... " />
+            <marker date="1465919139435" expanded="true" signature="17717:17842" placeholder="INSERT INTO SuppliersProductAgreements... " />
+            <marker date="1465919139435" expanded="true" signature="18952:19023" placeholder="UPDATE Contr... " />
+            <marker date="1465919139435" expanded="true" signature="19328:19385" placeholder="DELETE FROM " />
+            <marker date="1465919139435" expanded="true" signature="19644:19769" placeholder="INSERT INTO SuppliersProductAgreements... " />
+            <marker date="1465919139435" expanded="true" signature="20910:20980" placeholder="INSERT INTO Orders... " />
+            <marker date="1465919139435" expanded="true" signature="21408:21480" placeholder="INSERT INTO ProductsInOrders... " />
+            <marker date="1465919139435" expanded="true" signature="22288:22321" placeholder="SELECT MAX(I... " />
+            <marker date="1465919139435" expanded="true" signature="23114:23158" placeholder="UPDATE Order... " />
+            <marker date="1465919139435" expanded="true" signature="24963:25002" placeholder="SELECT * FRO... Orders" />
+            <marker date="1465919139435" expanded="true" signature="26593:26637" placeholder="DELETE from " />
+            <marker date="1465919139435" expanded="true" signature="26881:26953" placeholder="INSERT INTO ProductsInOrders... " />
+            <marker date="1465919139435" expanded="true" signature="27752:27781" placeholder="DELETE from " />
+            <marker date="1465919139435" expanded="true" signature="28706:28738" placeholder="SELECT * FRO... Orders" />
+            <marker date="1465919139435" expanded="true" signature="30311:30372" placeholder="SELECT produ... ProductsInOrders" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/DeliveryMethods">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Contracts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Orders">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Suppliers/Application/UserInterface/OrdersMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-434">
+          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Employees_In_Shifts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Driver">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Track">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Shift_Priorities">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/62c511ad/0877e4f4-1e1a-4816-ac1a-a27784d71793/Shifts">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

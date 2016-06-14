@@ -1,6 +1,7 @@
 package Suppliers.Application.UserInterface;
 
 import Employees_Transports.Backend.Employee;
+import Employees_Transports.Backend.station;
 import Employees_Transports.DL.EmployeeHandler;
 import Employees_Transports.DL.StationHandler;
 import Employees_Transports.DL.TransportHandler;
@@ -62,15 +63,15 @@ public class OrdersMenu {
         Supplier supplier;
         Map<ProductCatalog, Integer> items;
         double totalPrice;
-        String sourceAddress;
+        station st;
 
-        System.out.println("Please enter your ID:");
+        System.out.println("Please enter your employee ID:");
         while((employee = EmployeeHandler.getInstance().getEmployeeByID(Utils.readLine())) == null){
-            System.out.println("Invalid name. please try again.");
+            System.out.println("Invalid employee id. please try again.");
         }
 
         System.out.println("Please enter current address:");
-        while((sourceAddress = StationHandler.getInstance().getstation(Utils.readLine()).getAddress()) == null) {
+        while((st = StationHandler.getInstance().getstation(Utils.readLine())) == null) {
             System.out.println("Invalid address. please try again.");
         }
 
@@ -84,7 +85,7 @@ public class OrdersMenu {
         }
         items = selectItems(supplier);
         totalPrice = calculatePrice(supplier, items);
-        Order order = new Order(employee, supplier, totalPrice, items, sourceAddress);
+        Order order = new Order(employee, supplier, totalPrice, items, st.getAddress());
         if(supplier.getContract().getDeliveryMethod() == DeliveryMethod.Self){
             if(TransportHandler.getInstance().addTransport(order)){
                 consoleMenu.getDatabase().createOrder(order);

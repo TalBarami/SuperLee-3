@@ -30,6 +30,7 @@ public class StationHandler {
 		try{
 			stmt = c.createStatement();
 			ResultSet rs = stmt.executeQuery( "SELECT * FROM Station where address="+'"'+address+'"');
+			System.out.println();
 			String addresstemp = rs.getString("address");
 			String  p = rs.getString("phoneNum");
 			String  n = rs.getString("contact");

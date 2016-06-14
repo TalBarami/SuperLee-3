@@ -8,9 +8,6 @@ import Inventory.entities.ProductCatalog;
 import Inventory.entities.ProductStock;
 import Store.SQLiteConnector;
 import Suppliers.Entities.*;
-import org.sqlite.SQLiteConfig;
-import org.sqlite.SQLiteConnection;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -408,10 +405,10 @@ public class DatabaseImplementation implements Database {
                     case "Weekly":
                         dm=DeliveryMethod.Weekly;
                         break;
-                    case "On demand":
+                    case "onDemand":
                         dm=DeliveryMethod.onDemand;
                         break;
-                    case "Self delivery":
+                    case "Self":
                         dm=DeliveryMethod.Self;
                         break;
                 }
