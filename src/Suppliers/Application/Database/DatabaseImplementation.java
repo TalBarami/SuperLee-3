@@ -597,11 +597,12 @@ public class DatabaseImplementation implements Database {
         PreparedStatement ps=null;
         try {
 
-            String query = "INSERT INTO Orders (totalPrice, employeeID, supplierID) VALUES (?,?,?)";
+            String query = "INSERT INTO Orders (totalPrice, employeeID, supplierID,sourceAddress) VALUES (?,?,?,?)";
             ps = dbConnection.prepareStatement(query);
             ps.setDouble(1, order.getTotalPrice());
             ps.setInt(2, Integer.parseInt(order.getEmployee().getID()));
             ps.setInt(3, Integer.parseInt(order.getSupplier().getId()));
+            ps.setString(4, order.getSourceAddress());
             ps.executeUpdate();
             int lastOrderID=getLastOrderID();
             for(ProductCatalog product : order.getItems().keySet()){

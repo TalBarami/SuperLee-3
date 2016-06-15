@@ -49,6 +49,10 @@ public class Order {
         this("", employee, supplier, null, false, totalPrice, items, sourceAddress);
     }
 
+    public void setId(String id){
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }

@@ -114,13 +114,15 @@ public class TransportHandler {
 				String source_address=rs.getString("sourceStation");
 				ArrayList<Pair<station, Integer>> temp = new ArrayList<Pair<station, Integer>>();
 				Transport tempt=new Transport(dateans, leaving_time, TruckHandler.getInstance().getruck(""+truck_id), DriverHandler.getInstance().getdriver(""+driver_id), StationHandler.getInstance().getstation(source_address),temp);
-				ResultSet rt = stmt.executeQuery("SELECT * FROM Transport_Station where TransportTracktrackId="+truck_id+" and TransportDate="+"'"+dateans+"'"+" and TransportleavingTime="+"'"+leaving_time+"'");
+				Statement stmt1 = c.createStatement();
+				ResultSet rt = stmt1.executeQuery("SELECT * FROM Transport_Station where TransportTracktrackId="+truck_id+" and TransportDate="+"'"+dateans+"'"+" and TransportleavingTime="+"'"+leaving_time+"'");
 				while(rt.next())
 				{
 					station temp1 = StationHandler.getInstance().getstation(rt.getString("Stationaddress"));
 					int orderNum= rt.getInt("orderNum");
 					tempt.addStop(new Pair<station, Integer>(temp1, orderNum));
 				}
+				stmt1.close();
 
 				ans.add(tempt);
 			}
@@ -166,7 +168,7 @@ public class TransportHandler {
 		for(int i=0;i<7;i++){
 			temp=dayReady.getTime()+i*24*60*60*1000;
 			Date possibleTransport = new Date(temp);
-			ArrayList<Transport> possibleTran = getTransportsByDateAndStation(possibleTransport, o.getSupplier().getAddress());
+			ArrayList<Transport> possibleTran = getTransportsByDateAndStation(possibleTransport, o.getSourceAddress());
 			for(int j=0;j<possibleTran.size();j++)
 			{
 				Transport tran = possibleTran.get(j);
@@ -195,7 +197,7 @@ public class TransportHandler {
 			{
 				stmt = c.createStatement();
 					sql2 = "INSERT INTO Transport_Station (TransportDate,TransportleavingTime,TransportTracktrackId,Stationaddress,orderNum) " +
-							"VALUES ('"+(new SimpleDateFormat("dd/MM/yyyy").format(t.getDate()))+"'"+",'"+t.getLeaving_time()+"',"+t.getTruck_id().id+","+"'"+o.getSupplier().getAddress()+"','"+o.getId()+"')";
+							"VALUES ('"+t.getDate()+"'"+",'"+t.getLeaving_time()+"',"+t.getTruck_id().id+","+"'"+o.getSupplier().getAddress()+"','"+o.getId()+"')";
 					stmt.executeUpdate(sql2);
 			}
 
@@ -217,7 +219,14 @@ public class TransportHandler {
 			return false;
 
 		}
-		for(int i=0;i<station_ordernum.size();i++){
+		if(!ShiftHandler.getInstance().checkIfStorekeeperExists(date, leaving_time, source_address))
+		{
+			System.out.println("*ERROR: There is no Storekeeper in this shift!");
+			System.out.println();
+
+			return false;
+		}
+	/*	for(int i=0;i<station_ordernum.size();i++){
 			if(!ShiftHandler.getInstance().checkIfStorekeeperExists(date, leaving_time, station_ordernum.get(i).getA()))
 			{
 				System.out.println("*ERROR: There is no Storekeeper for station "+station_ordernum.get(i).getA()+"!");
@@ -225,12 +234,12 @@ public class TransportHandler {
 
 				return false;
 			}
-		}
-		if(station_ordernum.size()<1)
+		} */
+	/*	if(station_ordernum.size()<1)
 		{
 			System.out.println("*ERROR: No station to stop!");
 			return false;
-		}
+		} */
 		truck tempT = TruckHandler.getInstance().getruck(truck_id);
 		driver drivert = DriverHandler.getInstance().getdriver(driver_id);
 		if(tempT!=null&&drivert!=null&&tempT.licenseDeg>drivert.getLicense_type())
@@ -276,6 +285,44 @@ public class TransportHandler {
 			if(e.getMessage().equals("UNIQUE constraint failed: Transport_Station.orderNum"))  System.out.println("*ERROR: Order number "+station_ordernum.get(j).getB() +" already exists");
 			else if(e.getMessage().equals("FOREIGN KEY constraint failed"))  System.out.println("*ERROR: Station "+station_ordernum.get(j).getA() +" dosen't exist");
 			else System.out.println(e.getMessage());
+			return false;
+		}
+		return true;
+	}
+
+	public boolean insertTransportAhead(String date, String leaving_time, String truck_id, String driver_id, String source_address)
+	{
+		if(!ShiftHandler.getInstance().checkIfStorekeeperExists(date, leaving_time, source_address))
+		{
+			System.out.println("*ERROR: There is no Storekeeper in this shift!");
+			System.out.println();
+
+			return false;
+		}
+
+		truck tempT = TruckHandler.getInstance().getruck(truck_id);
+		driver drivert = DriverHandler.getInstance().getdriver(driver_id);
+		if(tempT!=null&&drivert!=null&&tempT.licenseDeg>drivert.getLicense_type())
+		{
+			System.out.println("*ERROR: Unable to embed the driver to the transport mission due to lwo level licence type!");
+		}
+
+		Statement stmt;
+		int j=0;
+		try
+		{
+			stmt = c.createStatement();
+			String sql = "INSERT INTO Transport (Date,leavingTime,TracktrackId,DriverdriverId,sourceStation) " +
+					"VALUES ('"+date+"'"+",'"+leaving_time+"',"+truck_id+","+driver_id+",'"+source_address+"')";
+			stmt.executeUpdate(sql);
+		}
+		catch (SQLException e)
+		{
+			if(e.getMessage().contains("UNIQUE constraint")) System.out.println("*ERROR: Transport already exists, or the driver is assigned to another transport!");
+			else System.err.println(e.getMessage());
+			if(DriverHandler.getInstance().getdriver(driver_id)== null)  System.out.println("*ERROR: Driver dosen't exist");
+			if(TruckHandler.getInstance().getruck(truck_id)== null)  System.out.println("*ERROR: Truck dosen't exist");
+			if(StationHandler.getInstance().getstation(source_address)== null)  System.out.println("*ERROR: source station dosen't exist");
 			return false;
 		}
 		return true;

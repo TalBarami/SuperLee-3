@@ -193,7 +193,7 @@ public class ShiftHandler {
 		int truck;
 		if(isMorning) bool=1;
 
-		if(job=="Driver")
+		if(job.equals("Driver"))
 		{
 			truck = TransportHandler.getInstance().getAvailableTruck(new SimpleDateFormat("dd/MM/yyyy").format(date)+"",id);
 			if(truck==0)
@@ -208,7 +208,7 @@ public class ShiftHandler {
 					leavingTime="06:30";
 				else
 					leavingTime="18:30";
-				if(!TransportHandler.getInstance().insertTransport(new SimpleDateFormat("dd/MM/yyyy").format(date)+"",leavingTime, ""+truck, id, station, new ArrayList<Pair<String,String>>()))
+				if(!TransportHandler.getInstance().insertTransportAhead(new SimpleDateFormat("dd/MM/yyyy").format(date)+"",leavingTime, ""+truck, id, station))
 				{
 					System.out.print("Could not add driver.");
 					return false;

@@ -30,4 +30,6 @@ public interface Database {
 
     ProductCatalog getProductByID(int id);
     Map<ProductCatalog,Integer> getMissingProducts();
+
+    int getLastOrderID();
 }
