@@ -96,7 +96,7 @@ public class OrdersMenu {
         if(supplier.getContract().getDeliveryMethod() == DeliveryMethod.Self) {
             System.out.println(TransportHandler.getInstance().addTransport(order) ?
                     "Transport is scheduled." :
-                    "There are no available transports in the next 7 days.");
+                    "There are no available transports in the next 7 days."); // TODO
         }
     }
 

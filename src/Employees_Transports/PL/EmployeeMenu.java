@@ -23,8 +23,11 @@ public class EmployeeMenu {
 		String input;
 		while(!b){
 			try { 
-				System.out.print("Please enter password: ");
+				System.out.print("Please enter password or c to cancel: ");
 				input=in.readLine();
+				if(input.equals("c")){
+					return;
+				}
 				if(input.equals("1234")){
 					System.out.println("Correct!");
 					b=true;

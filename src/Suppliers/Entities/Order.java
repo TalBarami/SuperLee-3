@@ -104,7 +104,7 @@ public class Order {
     public double calculateWeight(){
         double sum = 0;
         for(ProductCatalog p : items.keySet())
-            sum+=p.get_weight();
+            sum+=(p.get_weight()*items.get(p));
         return sum;
     }
 }

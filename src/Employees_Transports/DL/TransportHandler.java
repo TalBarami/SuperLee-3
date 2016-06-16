@@ -180,13 +180,34 @@ public class TransportHandler {
 				}
 				if(currentWeight+ o.calculateWeight() <= truckCap)
 				{
-					addOrderToTransport(tran, o);
-					return true;
+					if(addOrderToTransport(tran, o))
+						return true;
 				}
 			}
 
 		}
 		return false;
+	}
+
+	public ArrayList<Order> ordersWithNoTrans(){
+		DatabaseImplementation dbimpl = new DatabaseImplementation();
+		Statement stmt;
+		ArrayList<Order> ans = new ArrayList<Order>();
+		try {
+			stmt = c.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT ID FROM Orders where ID NOT IN " +
+					"(SELECT orderNum FROM Transport_Station)");
+			while (rs.next()) {
+				ans.add((dbimpl.findOrderByID(""+rs.getInt("ID"))).get(0));
+			}
+			rs.close();
+			stmt.close();
+			return ans;
+		}
+		catch (SQLException e)
+		{
+			return ans;
+		}
 	}
 
 	public boolean addOrderToTransport(Transport t, Order o){
@@ -197,14 +218,13 @@ public class TransportHandler {
 			{
 				stmt = c.createStatement();
 					sql2 = "INSERT INTO Transport_Station (TransportDate,TransportleavingTime,TransportTracktrackId,Stationaddress,orderNum) " +
-							"VALUES ('"+t.getDate()+"'"+",'"+t.getLeaving_time()+"',"+t.getTruck_id().id+","+"'"+o.getSupplier().getAddress()+"','"+o.getId()+"')";
+							"VALUES ('"+t.getDate()+"'"+",'"+t.getLeaving_time()+"',"+t.getTruck_id().id+","+"'"+o.getSupplier().getAddress()+"',"+o.getId()+")";
 					stmt.executeUpdate(sql2);
 			}
 
 
 			catch (SQLException e)
 			{
-				System.out.println(e.getMessage());
 				return false;
 			}
 		return true;
@@ -343,6 +363,7 @@ public class TransportHandler {
 		catch (SQLException e) 
 		{
 			System.out.println("*ERROR: Transport dosen't exist");
+			System.out.println(e);
 			return false;
 		}
 		return true;

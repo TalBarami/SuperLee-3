@@ -23,8 +23,11 @@ public class TransportMenu {
 		String input;
 		while(!b){
 			try {
-				System.out.print("Please enter password: ");
+				System.out.print("Please enter password or c to cancel: ");
 				input=in.readLine();
+				if(input.equals("c")) {
+					return;
+				}
 				if(input.equals("2016")){
 					System.out.println("Correct!");
 					b=true;
