@@ -145,8 +145,8 @@ public class TransportHandler {
 		ResultSet rs = null;
 		try {
 			s = c.createStatement();
-			rs = s.executeQuery("SELECT trackId from Track where licenseDeg= '"+d.getLicense_type()+"' and trackId NOT IN"
-					+ " (SELECT trackId from Transport where Date ='"+date+"')");
+			rs = s.executeQuery("SELECT trackId from Track where licenseDeg<= "+d.getLicense_type()+" and trackId NOT IN"
+					+ " (SELECT TracktrackId from Transport where Date ='"+date+"')");
 			while (rs.next()) {
 				ans = rs.getInt("trackId");
 			}
@@ -198,6 +198,7 @@ public class TransportHandler {
 			ResultSet rs = stmt.executeQuery("SELECT ID FROM Orders where ID NOT IN " +
 					"(SELECT orderNum FROM Transport_Station)");
 			while (rs.next()) {
+				System.out.println("!");
 				ans.add((dbimpl.findOrderByID(""+rs.getInt("ID"))).get(0));
 			}
 			rs.close();
@@ -213,7 +214,8 @@ public class TransportHandler {
 	public boolean addOrderToTransport(Transport t, Order o){
 		Statement stmt;
 			String sql2 ="";
-
+		if(!o.getSourceAddress().equals((t.getSource_address().getAddress())))
+			return false;
 			try
 			{
 				stmt = c.createStatement();
@@ -229,7 +231,7 @@ public class TransportHandler {
 			}
 		return true;
 	}
-	
+	/*
 	public boolean insertTransport(String date, String leaving_time, String truck_id, String driver_id, String source_address, ArrayList<Pair<String,String>> station_ordernum)
 	{
 		if(!ShiftHandler.getInstance().checkDriverInShift(date, leaving_time, driver_id, source_address))
@@ -246,7 +248,7 @@ public class TransportHandler {
 
 			return false;
 		}
-	/*	for(int i=0;i<station_ordernum.size();i++){
+		for(int i=0;i<station_ordernum.size();i++){
 			if(!ShiftHandler.getInstance().checkIfStorekeeperExists(date, leaving_time, station_ordernum.get(i).getA()))
 			{
 				System.out.println("*ERROR: There is no Storekeeper for station "+station_ordernum.get(i).getA()+"!");
@@ -254,12 +256,12 @@ public class TransportHandler {
 
 				return false;
 			}
-		} */
-	/*	if(station_ordernum.size()<1)
+		}
+		if(station_ordernum.size()<1)
 		{
 			System.out.println("*ERROR: No station to stop!");
 			return false;
-		} */
+		}
 		truck tempT = TruckHandler.getInstance().getruck(truck_id);
 		driver drivert = DriverHandler.getInstance().getdriver(driver_id);
 		if(tempT!=null&&drivert!=null&&tempT.licenseDeg>drivert.getLicense_type())
@@ -308,7 +310,7 @@ public class TransportHandler {
 			return false;
 		}
 		return true;
-	}
+	} */
 
 	public boolean insertTransportAhead(String date, String leaving_time, String truck_id, String driver_id, String source_address)
 	{

@@ -1,6 +1,7 @@
 package Employees_Transports.BL;
 
 import Employees_Transports.Backend.*;
+import Suppliers.Entities.Order;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -68,7 +69,6 @@ public interface  BLManager {
 	 boolean insertArea(String name);
 	 boolean insertTruck(String id, String model, String color, String net_weight, String max_weight,String licenseDeg);
 	 boolean insertStation(String address, String phone_Number, String name, String areasname);
-	 boolean insertTransport(String date, String leaving_time, String truck_id, String driver_id, String source_address, ArrayList<Pair<String,String>> station_ordernum);
 	 boolean deleteTransport(String date, String leaving_time,String truck_id);
 	 boolean deleteTrack(String id);
 	 boolean deleteDriver(String id);
@@ -79,7 +79,9 @@ public interface  BLManager {
 	 boolean updateStation(String address,String newData,int option);
 	 boolean updateTransport(String date,String time,String truckId,String newData,int option);
 	 boolean multipleArea(ArrayList<String> stationList);
-	 
+	 boolean addOrderToTransport(Transport t, Order o);
+
+	ArrayList<Order> ordersWithNoTrans();
 	 
 	 void endConnection();
 	 

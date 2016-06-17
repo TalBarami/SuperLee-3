@@ -3,6 +3,7 @@ package Employees_Transports.BL;
 import Employees_Transports.Backend.*;
 import Employees_Transports.DL.*;
 import Store.SQLiteConnector;
+import Suppliers.Entities.Order;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -241,12 +242,7 @@ public class BLManagerImpl implements BLManager {
 		return StationHandler.getInstance().insertStation(address, phone_Number, name, areasname);
 	}
 
-	@Override
-	public boolean insertTransport(String date, String leaving_time,
-			String truck_id, String driver_id, String source_address,
-			ArrayList<Pair<String, String>> station_ordernum) {
-		return TransportHandler.getInstance().insertTransport(date, leaving_time, truck_id, driver_id, source_address, station_ordernum);
-	}
+
 
 	@Override
 	public boolean deleteTransport(String date, String leaving_time,
@@ -300,5 +296,11 @@ public class BLManagerImpl implements BLManager {
 		return AreaHandler.getInstance().multipleArea(stationList);
 	}
 
+	public boolean addOrderToTransport(Transport t, Order o){
+		return TransportHandler.getInstance().addOrderToTransport(t, o);
+	}
 
+	public ArrayList<Order> ordersWithNoTrans() {
+		return TransportHandler.getInstance().ordersWithNoTrans();
+	}
 }

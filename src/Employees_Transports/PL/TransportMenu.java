@@ -2,11 +2,16 @@ package Employees_Transports.PL;
 
 import Employees_Transports.BL.BLManager;
 import Employees_Transports.Backend.*;
+import Suppliers.Application.Database.Database;
+import Suppliers.Application.Database.DatabaseImplementation;
+import Suppliers.Entities.Order;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TransportMenu {
 
@@ -41,13 +46,13 @@ public class TransportMenu {
 		}
 		mainMenu();
 	}
-	
+
 	public int isNumber(String s){
 		int ans;
-		try { 
-			ans=Integer.parseInt(s); 
-		} catch(NumberFormatException e) { 
-			ans= -1; 
+		try {
+			ans=Integer.parseInt(s);
+		} catch(NumberFormatException e) {
+			ans= -1;
 		} catch(NullPointerException e) {
 			ans= -1;
 		}
@@ -81,7 +86,7 @@ public class TransportMenu {
 				deleteMenu();
 				break;
 			case "3":
-				updateMenu(); 
+				updateMenu();
 				break;
 			case "4":
 				try {
@@ -177,7 +182,7 @@ public class TransportMenu {
 		if (bl.deleteArea(name)){
 			System.out.println("area has been removed");
 		}
-		else{ 
+		else{
 			System.out.println("wrong input,try again");
 		}
 	}
@@ -195,7 +200,7 @@ public class TransportMenu {
 		if (bl.deleteStation(add)){
 			System.out.println("station has been removed");
 		}
-		else{ 
+		else{
 			System.out.println("wrong input,try again");
 		}
 	}
@@ -211,7 +216,7 @@ public class TransportMenu {
 		if (bl.deleteTrack(id)){
 			System.out.println("truck has been removed");
 		}
-		else{ 
+		else{
 			System.out.println("wrong input,try again");
 		}
 	}
@@ -227,7 +232,7 @@ public class TransportMenu {
 		if (bl.deleteDriver(id)){
 			System.out.println("driver has been removed");
 		}
-		else{ 
+		else{
 			System.out.println("wrong input,try again");
 		}
 		return;
@@ -252,7 +257,7 @@ public class TransportMenu {
 			System.out.println("Illegal date!");
 			return;
 		}
-			
+
 
 		System.out.println("Insert the hour of the transport in this format: HH");
 		String timeUserHour=in.readLine();
@@ -277,7 +282,7 @@ public class TransportMenu {
 		{
 			System.out.println("tranport has been removed");
 		}
-		else{ 
+		else{
 			System.out.println("Wrong input, try again.");
 		}
 	}
@@ -317,7 +322,7 @@ public class TransportMenu {
 				break;
 			case "4":
 				getTruck();
-				break;			
+				break;
 			case "5":
 				getAreaList();
 				break;
@@ -375,7 +380,7 @@ public class TransportMenu {
 				System.out.println(i.toString());
 			}
 		}
-		else{ 
+		else{
 			System.out.println("There was a problem during the query");
 		}
 		System.out.println("press any key to get back to queries menu");
@@ -398,7 +403,7 @@ public class TransportMenu {
 		if (d!=null){
 			System.out.println(d.toString());
 		}
-		else{ 
+		else{
 			System.out.println("wrong input,try again");
 		}
 	}
@@ -413,7 +418,7 @@ public class TransportMenu {
 		if (d!=null){
 			System.out.println(d.toString());
 		}
-		else{ 
+		else{
 			System.out.println("Wrong input, try again.");
 		}
 	}
@@ -435,7 +440,7 @@ public class TransportMenu {
 		if (d!=null){
 			System.out.println(d.toString());
 		}
-		else{ 
+		else{
 			System.out.println("Wrong input, try again.");
 		}
 	}
@@ -456,7 +461,7 @@ public class TransportMenu {
 			System.out.println("Illegal date!");
 			return;
 		}
-			
+
 
 		System.out.println("Insert the hour of the transport in this format: HH");
 		String timeUserHour=in.readLine();
@@ -475,10 +480,10 @@ public class TransportMenu {
 		System.out.println("Enter the truck id: ");
 		String truckId=in.readLine();
 		Transport t=bl.getTranspot(date, time, truckId);
-		if (t!=null){	
+		if (t!=null){
 			System.out.println(t.toString());
 		}
-		else{ 
+		else{
 			System.out.println("Wrong input, try again.");
 		}
 	}
@@ -494,7 +499,8 @@ public class TransportMenu {
 			System.out.println("Add a station - 2");
 			System.out.println("Add a truck - 3");
 			System.out.println("Add an area - 4");
-			System.out.println("back to main menu - 5");
+			System.out.println("Add a transport - 5");
+			System.out.println("back to main menu - 6");
 
 
 			String userChoise="";
@@ -503,7 +509,7 @@ public class TransportMenu {
 			} catch (IOException e) {
 				System.out.println("Wrong input, try again.");
 				return;
-			}				
+			}
 
 			switch (userChoise){
 		/*	case "1":
@@ -541,7 +547,14 @@ public class TransportMenu {
 					System.out.println("Wrong input, try again.");
 				}
 				break;
-			case "5":
+				case "5":
+					try {
+						addTransport();
+					} catch (IOException e) {
+						System.out.println("Wrong input, try again.");
+					}
+					break;
+			case "6":
 				return;
 			default:
 				System.out.println("Wrong input, try again.");
@@ -625,7 +638,7 @@ public class TransportMenu {
 		weigth = in.readLine();
 		System.out.println("Insert the truck's max weigth: ");
 		String mWeigth="";
-		mWeigth = in.readLine();		
+		mWeigth = in.readLine();
 		System.out.println("Insert the truck's lidense degree: ");
 		String lDeg="";
 		lDeg = in.readLine();
@@ -686,7 +699,7 @@ public class TransportMenu {
 				return;
 			}
 			else{
-				System.out.println("Insert the station's address: ");	
+				System.out.println("Insert the station's address: ");
 				add=in.readLine();
 				System.out.println("Insert the station's phone-number: ");
 				pNumber=in.readLine();
@@ -699,196 +712,123 @@ public class TransportMenu {
 		System.out.println("insert succeed");
 		return;
 	}
-	
-	/*
-	private void addTransport() throws IOException{
+
+
+	private void addTransport() throws IOException {
+		DatabaseImplementation dimpl = new DatabaseImplementation();
 		//	public boolean insertTransport(String date, String leaving_time, String truck_id, String driver_id,
 		//String source_address, ArrayList<pair<String,String>> station_ordernum)
 		System.out.print("\n************************");
 		System.out.print("\nAdd -> Transport\n");
 		Pair<String, String> p;
 		System.out.print("\nInsert transport date (dd/mm/yyyy) or c to cancel: ");
-		String date=in.readLine();
-		if(date.equals("c"))
+		String date = in.readLine();
+		if (date.equals("c"))
 			return;
-		String[] temp=date.split("/");
-		int day=-1,mon=-1,year=-1;
-		if(temp.length==3){
-			day=isNumber(temp[0]);
-			mon=isNumber(temp[1]);
-			year=isNumber(temp[2]);
+		String[] temp = date.split("/");
+		int day = -1, mon = -1, year = -1;
+		if (temp.length == 3) {
+			day = isNumber(temp[0]);
+			mon = isNumber(temp[1]);
+			year = isNumber(temp[2]);
 		}
-		if(!((day>0&&day<32)&&(mon>0&&mon<13)&&(year>1900&&temp[2].length()<5))){
+		if (!((day > 0 && day < 32) && (mon > 0 && mon < 13) && (year > 1900 && temp[2].length() < 5))) {
 			System.out.println("Illegal date!");
 			return;
 		}
-			
+
 
 		System.out.println("Insert the hour of the transport in this format: HH");
-		String timeUserHour=in.readLine();
-		if(!(isNumber(timeUserHour)>0&& isNumber(timeUserHour)<24 && timeUserHour.length()==2)){
+		String timeUserHour = in.readLine();
+		if (!(isNumber(timeUserHour) > 0 && isNumber(timeUserHour) < 24 && timeUserHour.length() == 2)) {
 			System.out.println("Illegal hour!");
 			return;
 		}
 		System.out.println("Insert the minutes of leaving time in this format: MM");
-		String timeUserMin=in.readLine();
-		if(!(isNumber(timeUserMin)>0&& isNumber(timeUserMin)<60 && timeUserMin.length()==2)){
+		String timeUserMin = in.readLine();
+		if (!(isNumber(timeUserMin) > 0 && isNumber(timeUserMin) < 60 && timeUserMin.length() == 2)) {
 			System.out.println("Illegal hour!");
 			return;
 		}
-		String time=timeUserHour+":"+timeUserMin;
+		String time = timeUserHour + ":" + timeUserMin;
 
 		System.out.println("Insert the truck's id: ");
-		String tId="";
+		String tId = "";
 		tId = in.readLine();
+		truck t = bl.getTruck(tId);
+		if (t == null) {
+			System.out.println("Illegal ID! Try again later.");
+			return;
+		}
+		double capacity = t.max_weight;
 
-		System.out.println("Insert the driver's id: ");
-		String dId="";
-		dId = in.readLine();
+		Transport tran = bl.getTranspot(date, time, tId);
+		if(tran==null)
+		{
+			System.out.println("Transport does not exist!");
+			return;
+		}
+		ArrayList<String> allStations = new ArrayList<String>();
+		allStations.add(tran.getSource_address().getAddress());
 
-		System.out.println("Insert transport's source address: ");
-		String sAdd="";
-		sAdd = in.readLine();
-
-		ArrayList<String> allStations=new ArrayList<String>();
-		allStations.add(sAdd);
-
-		ArrayList<Pair<String,String>> station_ordernum=new ArrayList<Pair<String,String>>();
+		ArrayList<Pair<String, String>> station_ordernum = new ArrayList<Pair<String, String>>();
 		System.out.println("Create a list of the transport's destinations. "
-				+ "for each destination, insert its address and the order num.");
-		System.out.println("in the end, insert 'done' as the order number and as the address");
-		System.out.println("Insert a destination's address: ");
-		String dName="";
-		dName = in.readLine();
+				+ "for each destination, insert its order num.");
+		System.out.println("in the end, insert any other key as the order number.");
 
-		allStations.add(dName);
-
-		System.out.println("Insert its order number: ");
-		String orderNum="";
-		orderNum = in.readLine();
-
-
-
-		while ((!(dName.equals("done")))&&(!(orderNum.equals("done")))){
-			///////////////////////////////////////////////
-			p=new Pair<String, String>(dName,orderNum);
-			station_ordernum.add(p);
-			System.out.println("Insert a destination's address: ");
-			dName=in.readLine();
-			allStations.add(dName);
-			System.out.println("Insert its order number: ");
-			orderNum=in.readLine();
+		double currW = 0;
+		for(int i=0;i<tran.getStops_invation().size();i++)
+		{
+			currW = currW + dimpl.findOrderByID(""+tran.getStops_invation().get(i).getB()).get(0).calculateWeight();
+		}
+		boolean addingOrders = true;
+		while(addingOrders) {
+			System.out.println("Insert an order num: ");
+			String orderNum = "";
+			orderNum = in.readLine();
+			List<Order> lst = dimpl.findOrderByID(orderNum);
+			if (lst.size() == 0)
+				addingOrders = false;
+			else {
+				String dName = lst.get(0).getSourceAddress();
+				if (currW + lst.get(0).calculateWeight() <= capacity) {
+					currW = currW + lst.get(0).calculateWeight();
+					allStations.add(dName);
+					p = new Pair<String, String>(dName, orderNum);
+					station_ordernum.add(p);
+				} else {
+					System.out.println("Weight is too high!");
+				}
+			}
 		}
 
 		//checks the transport is in the same area
 
 		if (bl.multipleArea(allStations)){
-			System.out.println("The transport you're inserting contains more than one area");
+			System.out.println("The transport you're interested in contains more than one area");
 			System.out.println("if you want to go back to the add menu, press 1. "
 					+ "otherwise, press any key to continue");
 			String multCh=in.readLine();
 			if (multCh.equals("1")){
 				return;
-			} 
-		}
-
-
-
-		while (!bl.insertTransport(date, time, tId, dId, sAdd, station_ordernum)){
-			System.out.println("Wrong input, try again.");
-			System.out.println("If you want to go back to the add menu, press 1. "
-					+ "\nOtherwise, press any key to continue");
-			String chWrong=in.readLine();
-			if (chWrong.equals("1")){
-				return;
-			}
-			else{
-
-				allStations.clear();
-
-
-				System.out.print("\nInsert transport date (dd/mm/yyyy) or c to cancel: ");
-				date=in.readLine();
-				if(date.equals("c"))
-					return;
-				temp=date.split("/");
-				day=-1; mon=-1; year=-1;
-				if(temp.length==3){
-					day=isNumber(temp[0]);
-					mon=isNumber(temp[1]);
-					year=isNumber(temp[2]);
-				}
-				if(!((day>0&&day<32)&&(mon>0&&mon<13)&&(year>1900&&temp[2].length()<5))){
-					System.out.println("Illegal date!");
-					return;
-				}
-					
-
-				System.out.println("Insert the hour of the transport in this format: HH");
-				timeUserHour=in.readLine();
-				if(!(isNumber(timeUserHour)>0&& isNumber(timeUserHour)<24 && timeUserHour.length()==2)){
-					System.out.println("Illegal hour!");
-					return;
-				}
-				System.out.println("Insert the minutes of leaving time in this format: MM");
-				timeUserMin=in.readLine();
-				if(!(isNumber(timeUserMin)>0&& isNumber(timeUserMin)<60 && timeUserMin.length()==2)){
-					System.out.println("Illegal hour!");
-					return;
-				}
-				time=timeUserHour+":"+timeUserMin;
-				System.out.println("Insert the truck's id: ");
-				tId=in.readLine();
-				System.out.println("Insert the driver's id: ");
-				dId=in.readLine();
-				System.out.println("Insert transport's source address: ");
-
-				sAdd=in.readLine();
-
-				allStations.add(sAdd);
-
-				station_ordernum=new ArrayList<Pair<String,String>>();
-				System.out.println("Create a list of the transport's destinations. "
-						+ "for each destination, insert its address and the order num.");
-				System.out.println("in the end, insert 'done' as the order number and as the address ");
-				System.out.println("Insert a destination's address: ");
-				dName=in.readLine();
-
-				allStations.add(dName);
-
-				System.out.println("Insert its order number: ");
-				orderNum=in.readLine();
-
-				while ((!(dName.equals("done")))&&(!(orderNum.equals("done")))){
-					/////////////////
-					p=new Pair<String, String>(dName,orderNum);
-					station_ordernum.add(p);
-					System.out.println("Insert a destination address: ");
-					dName=in.readLine();
-
-					allStations.add(dName);
-
-					System.out.println("Insert its order number: ");
-					orderNum=in.readLine();
-				}
-
-				if (bl.multipleArea(allStations)){
-					System.out.println("The transport you're inserting contains more than one area");
-					System.out.println("if you want to go back to the add menu, press 1. "
-							+ "otherwise, press any key to continue");
-					String multCh=in.readLine();
-					if (multCh.equals("1")){
-						return;
-					} 
-					//else - continue, multch==1 
-				}
 			}
 		}
-		System.out.println("insert succeed");
-		return;
+
+		boolean checkSuccess = true;
+
+		for(int i =0; i<station_ordernum.size();i++){
+			if(!bl.addOrderToTransport(tran, (dimpl.findOrderByID(station_ordernum.get(i).getB())).get(0)))
+			{
+				System.out.println("Error in adding order "+station_ordernum.get(i).getB());
+				checkSuccess = false;
+			}
+		}
+		if(checkSuccess){
+			System.out.println("Transport added successfully!");
+		}
 	}
-	
-	*/
+
+
 
 
 
@@ -953,7 +893,7 @@ public class TransportMenu {
 				System.out.println("Wrong input, try again.");
 				return;
 			}
-			int updateChInt= isNumber(updateCh); 
+			int updateChInt= isNumber(updateCh);
 
 			if ((updateChInt>3)||(updateChInt<1))
 				return;
@@ -983,7 +923,7 @@ public class TransportMenu {
 			System.out.println("Illegal date!");
 			return;
 		}
-			
+
 
 		System.out.println("Insert the hour of the transport in this format: HH");
 		String timeUserHour=in.readLine();
@@ -1051,8 +991,8 @@ public class TransportMenu {
 				return;
 			}
 
-			
-			int updateChInt= Integer.parseInt(updateCh); 
+
+			int updateChInt= Integer.parseInt(updateCh);
 
 			if ((updateChInt>3)||(updateChInt<1))
 				return;
@@ -1117,7 +1057,7 @@ public class TransportMenu {
 				return;
 			}
 
-			int updateChInt= Integer.parseInt(updateCh); 
+			int updateChInt= Integer.parseInt(updateCh);
 
 			if ((updateChInt>5)||(updateChInt<1))
 				return;

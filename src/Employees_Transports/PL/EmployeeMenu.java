@@ -4,6 +4,7 @@ import Employees_Transports.BL.BLManager;
 import Employees_Transports.Backend.Employee;
 import Employees_Transports.Backend.station;
 import Employees_Transports.Backend.Job;
+import Suppliers.Entities.Order;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class EmployeeMenu {
 	private BLManager bl;
 	private BufferedReader in;
 
-	private void init(){
+	public void run(){
 		boolean b = false;
 		in = new BufferedReader(new InputStreamReader(System.in));
 		String input;
@@ -39,15 +40,12 @@ public class EmployeeMenu {
 				System.out.println("Error reading!!");
 			}
 		}
+		mainMenu();
 	}
 	public EmployeeMenu(BLManager bl){
 		this.bl = bl;
 	}
 
-	public void run(){
-		init();
-		mainMenu();
-	}
 
 	public void printList(LinkedList l){
 		for(int i=1;i<=l.size();i++){
@@ -1074,11 +1072,12 @@ public class EmployeeMenu {
 						if(!jobs.isEmpty()){
 							System.out.println("\nJobs available for the shift: \n");
 							printList(jobs);
-							System.out.print("Please choose a job you want to add to the shift or d if you are done with this shift: ");
+							System.out.println("Please choose a job you want to add to the shift or d if you are done with this shift: ");
 							input=in.readLine();
 							int i=isNumber(input);
 							if(i>0&&i<=jobs.size()){
 								job=jobs.get(i-1).getName();
+								addB2 = true;
 								while(addB2){
 									System.out.println("\nEmployees available for this shift that are "+job+"s: ");
 									empL=bl.getAvailableEmployees(date, isM, jobs.get(i-1), station);
@@ -1366,11 +1365,29 @@ public class EmployeeMenu {
 			}
 		}
 	}
+
+	public void ordersToTransport(){
+		System.out.print("\n************************");
+		System.out.print("\nOrders to transport\n");
+		System.out.print("\nThe following orders have no transport:");
+		ArrayList<Order> allO = bl.ordersWithNoTrans();
+		for(int i=1;i<=allO.size();i++){
+			System.out.println("\n"+i+") "+allO.get(i-1));
+		}
+		System.out.print("\nPress any key to continue.");
+		try {
+			in.readLine();
+		}
+		catch (Exception e)
+		{}
+	}
+
 	public void mainMenu(){
 		while(true){
 			System.out.print("\n************************");
 			System.out.println("\nEMPLOYEE MANAGEMENT\nChoose an option: \n");
-			System.out.println("1) Employees\n2) Shifts\n3) Shift priorities\n4) Shift arrangements\n5) Jobs\n6) Exit");
+			System.out.println("1) Employees\n2) Shifts\n3) Shift priorities\n4) Shift arrangements\n5) Jobs\n" +
+					"6) Orders to transport\n7) Exit");
 			String input;
 			System.out.print("\nYour choice: ");
 			try {
@@ -1392,6 +1409,9 @@ public class EmployeeMenu {
 					jobsMenu();
 					break;
 				case "6":
+					ordersToTransport();
+					break;
+				case "7":
 					System.out.println("\n\n\n\n");
 					return;
 				default:
