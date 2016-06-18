@@ -174,6 +174,13 @@ public class OrdersMenu {
                 System.out.println("A new weekly order has been registered for the next week.");
             }
         }
+        int amountToConfirm;
+        for(ProductCatalog productCatalog : order.getItems().keySet()){
+            System.out.println("Please select the amount to confirm for " + productCatalog.get_name() + ". (Ordered: " + order.getItems().get(productCatalog) + ")");
+            while((amountToConfirm = Utils.checkIntBounds(0,order.getItems().get(productCatalog))) == -1)
+                System.out.println("Invalid amount.");
+            order.getItems().put(productCatalog, amountToConfirm);
+        }
         consoleMenu.getDatabase().confirmOrder(order);
         System.out.printf("Order %s confirmed successfully!\n", order.getId());
     }
