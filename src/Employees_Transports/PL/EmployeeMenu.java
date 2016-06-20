@@ -1373,6 +1373,8 @@ public class EmployeeMenu {
 		ArrayList<Order> allO = bl.ordersWithNoTrans();
 		for(int i=1;i<=allO.size();i++){
 			System.out.println("\n"+i+") "+allO.get(i-1));
+			System.out.println("\tOrder should be prepared in "+allO.get(i-1).getSupplier().getContract().getDeliveryTime()+ " days");
+			System.out.println("\tOrdered from branch: "+allO.get(i-1).getSourceAddress());
 		}
 		System.out.print("\nPress any key to continue.");
 		try {
