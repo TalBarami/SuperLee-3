@@ -41,7 +41,26 @@ public class ConsoleMenuImplementation implements ConsoleMenu {
     }
 
     public void RunStore(){
-        MainMenu();
+        if(login())
+            MainMenu();
+    }
+
+    private boolean login() {
+        System.out.println("Please enter your password: (c to cancel)");
+        String password;
+        while(true) {
+            password = Utils.readLine();
+            switch (password) {
+                case "12345":
+                    System.out.println("You have successfully logged into the suppliers system!");
+                    return true;
+                case "c":
+                    return false;
+                default:
+                    System.out.println("Invalid password, please try again.");
+                    break;
+            }
+        }
     }
 
     private void MainMenu(){

@@ -70,7 +70,7 @@ public class Store {
                     suppliersConsoleMenu.RunStore();
                     break;
                 case 2:
-                    inventoryMainScreen.mainScreen();
+                    inventoryMainScreen.start();
                     break;
                 case 3:
                     employeeMenu.run();

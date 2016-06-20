@@ -1,5 +1,7 @@
 package Inventory.screens;
 
+import Suppliers.Application.Utils;
+
 public class MainScreen {
 	private ProductCatalogScreen proCatScn;
 	private ProductStockScreen proStcScn;
@@ -11,6 +13,29 @@ public class MainScreen {
 		proStcScn = new ProductStockScreen(this);
 		CatScn = new CategoryScreen(this);
 		reportScn = new ReportsScreen(this);
+	}
+
+	public void start(){
+		if(login())
+			mainScreen();
+	}
+
+	private boolean login() {
+		System.out.println("Please enter your password: (c to cancel)");
+		String password;
+		while(true) {
+			password = Utils.readLine();
+			switch (password) {
+				case "54321":
+					System.out.println("You have successfully logged into the inventory system!");
+					return true;
+				case "c":
+					return false;
+				default:
+					System.out.println("Invalid password, please try again.");
+					break;
+			}
+		}
 	}
 
 	public void  mainScreen() {
